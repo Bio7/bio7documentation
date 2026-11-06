@@ -1,0 +1,1285 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package refstyle
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Getting started 
+\end_layout
+
+\begin_layout Section
+Installation 
+\end_layout
+
+\begin_layout Subsection
+System requirements:
+ 
+\end_layout
+
+\begin_layout Standard
+It is recommended that your computer should have at least 1024 mb ram and a 1 ghz processor.
+ A 3d Graphics Card which is OpenGL enabled (only necessary for the “Spatial” view and the embedded “WorldWind” view.
+ To use the LibreOffice feature of Bio7 an installation of LibreOffice >= 4.0 is required.
+ The path to LibreOffice will be automatically fetched by Bio7 from the registry (Windows) or can be adjusted in the Bio7 preferences (Windows,
+ Linux,
+ MacOSX) to the default path.
+ 
+\end_layout
+
+\begin_layout Subsection
+Installation:
+\end_layout
+
+\begin_layout Subsubsection
+Windows
+\end_layout
+
+\begin_layout Standard
+Just download the *.zip distribution file from the Bio7 Github Releases (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/Bio7/bio7/releases
+\end_layout
+
+\end_inset
+
+) and unzip it in your preferred location (avoid spaces in path!).
+ Bio7 comes bundled with Java Adoptium and works out of the box.
+ R and Rserve is not bundled (since Bio7 3.6) anymore by default!
+ Download and install R and adjust the R path in the Bio7 preferences (optional also the default R packages path):
+ Preferences->Preferences Bio7->Preferences R
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename images/chapter2/RPreferences.jpg
+	lyxscale 60
+	width 80text%
+	special height=0.8\textwidth
+	groupId screenshot
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+(1) The path to R.
+ (2) The Path where new R packages will be installed.
+ Default paths on Windows are given and displayed which point to a local Bio7 installation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Install the Rserve package in R (no special Rserve version needed - see below Linux and MacOSX).
+ For the Rserve installation you can also execute a Groovy script in the R-Shell-view after the R installation (start R in the Bio7 console).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Graphics
+	filename images/chapter2/InstallRserve.jpg
+	lyxscale 60
+	width 80text%
+	special height=0.8\textwidth
+	groupId screenshot
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+(1) Start R in the Bio7 console.
+ (2) Execute the Groovy Rserve ‘download and install’ script for all supported platforms.
+ (3) Finally start Rserve within R.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Linux
+\end_layout
+
+\begin_layout Standard
+Download and extract the installation file from Bio7 Github Releases.
+ Bio7 comes bundled with Java (Adoptium).
+ Please note that you have to start Bio7 with Xorg (X display server) because of SWT_AWT which is used by ImageJ.
+ For Linux you have to install R and a special compiled version of Rserve.
+ The default OS path to R is used automatically if not set (like in Windows) in the preferences.
+ Simply execute an available Groovy script in the R-Shell view (see Windows notes above).
+ 
+\begin_inset Newline newline
+\end_inset
+
+To install Rserve manually start the R console and paste the following command,
+ see:
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/Bio7/Rserve-Cooperative
+\end_layout
+
+\end_inset
+
+
+\series bold
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+MacOSX
+\end_layout
+
+\begin_layout Standard
+Download and extract the installation file from Bio7 Github Releases.
+ Bio7 comes bundled with Java (Adoptium).
+ For MacOSX you have to install R and a special compiled version of Rserve.
+ The default OS path to R is used automatically if not set (like in Windows) in the preferences.
+ Simply execute an available Groovy script in the R-Shell view (see Windows notes above).
+ To install Rserve manually start the R console and paste the following command,
+ see:
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/Bio7/Rserve-Cooperative
+\end_layout
+
+\end_inset
+
+
+\series bold
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+To start Bio7 (unsigned) on MacOSX
+\series default
+:
+ 
+\begin_inset Newline newline
+\end_inset
+
+To start Bio7 after installation please follow this advice (sign app locally):
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/Bio7/bio7/discussions/30
+\end_layout
+
+\end_inset
+
+
+\series bold
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Rserve local installation (compiled for cooperative mode on Linux and MacOSX,
+ 64-bit platforms)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Manual local installation on Windows,
+ MacOSX and Linux from R command line (please adapt the file path!):
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+Windows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+install.packages("C:/xxx/Rserve_1.8-8.zip",
+ repos=NULL)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R command to build Rserve (from an archive)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+MacOSX:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+install.packages("/Users/xxx/Rserve_1.8-8.tgz",
+ repos=NULL)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R command to build Rserve (from an archive)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Linux (Compiled with Ubuntu 20.10):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+install.packages("/home/xxx/Rserve_1.8-8.tar.gz",
+ repos=NULL)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R command to build Rserve (from an archive)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Build of Rserve in cooperative mode on Linux or MacOSX (if necessary!)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+Rserve can be build with cooperative mode enabled (from an archive or unpacked) with the shell command:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+sudo PKG_CPPFLAGS=-DCOOPERATIVE R CMD INSTALL --build Rserve_1.8-8.tar.gz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R command to build Rserve (from an archive)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+sudo PKG_CPPFLAGS=-DCOOPERATIVE R CMD INSTALL --build Rserve
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R command to build Rserve (unpacked)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+R Windows specific:
+ 
+\end_layout
+
+\begin_layout Standard
+The default add-on package location in a Bio7 release is now:
+ “Bio7
+\backslash
+plugins
+\backslash
+Bundled_R_x.xx.xx
+\backslash
+R
+\backslash
+site-library”.
+ At this location inside of Bio7 the packages will be installed by default (if not changed!).
+\end_layout
+
+\begin_layout Subsection
+Useful R packages
+\end_layout
+
+\begin_layout Standard
+To use all Bio7 functions ( for editor formating,
+ knitr documents,
+ markdown documents,
+ spatial analysis and import,
+ export of spatial data) some R packages are recommended and required to install.You can install all packages e.g.
+ with a R script available in the R-Shell view context menu of Bio7 (Packages->Install_Default_R_Packages)
+\end_layout
+
+\begin_layout Subsubsection
+R packages Linux specific:
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:R-packages-Linux"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For Linux there are no binaries available.
+ For the compilation of the R packages the Linux packages g++ and gfortran have to be installed (if not available by default!).
+ For the compilation of the rgdal package in addition you need the Linux packages:
+ gdal,
+ libgdal-dev,
+ libproj-dev.
+ If you would like to install the spatstat package,
+ too,
+ you need:
+ libblas-dev,liblapack
+\end_layout
+
+\begin_layout Subsection
+R Markdown
+\end_layout
+
+\begin_layout Standard
+To use the R Markdown features please install the rmarkdown package,
+ knitr from within R and the pandoc binaries from here:
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/jgm/pandoc/releases/latest
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+For Windows and MacOSX pandoc must be on the system PATH – Linux adds the path by default!
+ You can also add the path in R with:
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+MacOSX:
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Add pandoc to the OS PATH.
+ Else type in the R console:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+Sys.setenv(PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R command to set OS PATH in R only
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+or with the \SpecialChar LaTeX
+ path added:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+Sys.setenv(PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Library/TeX/texbin:$HOME/bin")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R command to set OS PATH in R only
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Linux:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+After installation typically available!!!!
+ Else type in the R console:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+Sys.setenv(PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/bin")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R command to set OS PATH in R only
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\series bold
+ 
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+Windows:
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Add pandoc path to the Windows PATH if necessary (evtl.
+ restart).
+ Else type in the R console:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+Sys.setenv(PATH=paste(Sys.getenv("PATH"),"C:/pandoc”,
+ sep=""))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R command to set OS PATH in R only
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+The commands can be copied and saved for each startup (
+\series bold
+only if necessary!
+\series default
+) in the R preferences textfield (see figure below):
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\series bold
+Preferences->Preferences R->R startup commands
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/chapter2/rtextfield.jpg
+	lyxscale 60
+	width 80text%
+	special height=0.8\textwidth
+	groupId screenshot
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The main R preferences with a startup command to set the path for pandoc in R
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+LaTeX 
+\end_layout
+
+\begin_layout Standard
+To use LaTex with Bio7 please install a LaTeX environment e.g.:
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Windows:
+\end_layout
+
+\begin_layout Standard
+MiKTeX (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+http://miktex.org/
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+MacOSX:
+ 
+\end_layout
+
+\begin_layout Standard
+MacTeX (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://tug.org/mactex/
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Linux:
+\end_layout
+
+\begin_layout Standard
+TeX Live (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+http://www.tug.org/texlive/
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+Then adjust the Bio7 path to the pdflatex binary (only necessary if not on the OS path!):
+
+\series bold
+ 
+\series default
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\series bold
+R->Preferences->Rserve preferences->pdflatex path
+\series default
+
+\begin_inset VSpace medskip
+\end_inset
+
+To get the installation location folder on Linux or on MacOSX type:
+
+\series bold
+ 
+\series default
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\series bold
+> which pdflatex
+\series default
+
+\begin_inset VSpace medskip
+\end_inset
+
+For Windows MikeTeX pdflatex can be typically found at:
+\begin_inset VSpace medskip
+\end_inset
+
+
+\series bold
+ C:
+\backslash
+Program Files
+\backslash
+miktex
+\backslash
+bin
+\series default
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Linux
+\end_layout
+
+\begin_layout Standard
+To compile markdown documents with pdflatex two packages seems to be required from texlive
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+sudo apt-get install texlive-latex-extra
+\end_layout
+
+\begin_layout Plain Layout
+sudo apt-get install lmodern
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Linux command (apt) to install required pdflatex packages and styles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Portable (Windows):
+\end_layout
+
+\begin_layout Standard
+It is also possible to install Bio7 on an Usb-Stick with the described procedure.
+ Moreover LibreOffice can also be installed portable with Bio7.
+ Download the portable version (http://portableapps.com/apps/office/libreoffice_portable) and adjust the LibreOffice path to the LibreOfficePortable
+\backslash
+App
+\backslash
+libreoffice
+\backslash
+program subfolder in the Preferences.
+\end_layout
+
+\begin_layout Subsection
+Examples for Bio7:
+\end_layout
+
+\begin_layout Standard
+On the Bio7 SourceForge website you can download examples for the Bio7 application.
+ In addition the examples (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/Bio7/bio7_examples
+\end_layout
+
+\end_inset
+
+) can be accessed on github.
+ To install the Bio7 examples please import the examples from the Examples.zip file.
+
+\series bold
+ 
+\noun on
+File
+\noun default
+\SpecialChar menuseparator
+
+\noun on
+Import
+\noun default
+\SpecialChar menuseparator
+
+\noun on
+Existing Projects into Workspace
+\series default
+\noun default
+.
+ Select the archive file Examples.zip and the two projects.
+ Press Finish to import them into Bio7 (they will be imported to the workspace location).
+ Please take care to import the examples as a *.zip file to restore the relative resource path of the examples (on MacoSX the examples are often unzipped after download.
+ Please adjust the settings to avoid the decompression of the archive file).
+\end_layout
+
+\begin_layout Subsection
+Increased Java memory Windows/Linux
+\end_layout
+
+\begin_layout Standard
+For an increased Java heap space open the Bio7.ini file in the install directory of Bio7.
+ In the file you can change the default memory settings e.g.
+ the initial heap size -Xms and the maximum heap space -Xmx.
+\end_layout
+
+\begin_layout Subsection
+Increased Java memory MacOSX
+\end_layout
+
+\begin_layout Standard
+For an increased Java heap space open the Bio7 package (context menu if you click on the icon) then go to Contents/MacOSX and open the Bio7.ini file with a text editor.
+ In the file you can change the default memory settings e.g.
+ the initial heap size -Xms and the maximum heap space -Xmx
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/chapter2/contentsini.jpg
+	lyxscale 60
+	width 80text%
+	special height=0.8\textwidth
+	groupId screenshot
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Open the package (1) on MacOSX to change the Bio7.in file (2) for more Java memory,
+ etc.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

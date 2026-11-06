@@ -1,0 +1,156 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Definition of Expressions
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Area of Analysis
+\noun default
+: A name for the area in the Points panel which is marked by a green rectangle
+ for spatial point patterns.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Programmatically
+\noun default
+: Using programming to accomplish a task.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Namespace
+\noun default
+ (BeanShell) : A namespace in which methods, variables, and imports (class
+ names) live.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Workspace
+\noun default
+ (R): A saveable environment in which methods, variables and objects exists.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Workspace
+\noun default
+ (Bio7): The location where the projects and files are stored.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Calculation thread
+\noun default
+: A time dependent execution of a compiled method (ecomain) in Bio7 started,
+ e.g.
+ with the Play/Pause button.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Discretize
+\noun default
+: In Bio7 the process of transferring continuous data to discrete data.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+IDE
+\noun default
+ (Integrated Development Environment): a type of software that assists in
+ developing software.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Snippets
+\noun default
+: In Bio7 a small piece of programming source code to demonstrate some of
+ the Bio7 features.
+ 
+\end_layout
+
+\end_body
+\end_document

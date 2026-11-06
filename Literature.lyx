@@ -1,0 +1,280 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Literature and Links
+\end_layout
+
+\begin_layout Section
+Scientific Libraries Available in Bio7
+\end_layout
+
+\begin_layout Itemize
+JScience 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://jscience.org/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Colt 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://dsd.lbl.gov/~hoschek/colt/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Math 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://jakarta.apache.org/commons/math/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Weka 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.cs.waikato.ac.nz/ml/weka/
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+JTS 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.vividsolutions.com/jts/JTSHome.htm
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Joone 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://sourceforge.net/projects/joone/ JDMP http://www.jdmp.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Documentation and Programming Links:
+\end_layout
+
+\begin_layout Itemize
+BeanShell 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.beanshell.org/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+R 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.r-project.org/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Rserve 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.rforge.net/Rserve/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+ImageJ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://rsb.info.nih.gov/ij/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+JavaCompiler 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.janino.net/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Groovy 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://groovdehaus.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Forums 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.nabble.com
+\end_layout
+
+\end_inset
+
+ (search for the different applications BeanShell, R, ImageJ, Janino) 
+\end_layout
+
+\end_body
+\end_document

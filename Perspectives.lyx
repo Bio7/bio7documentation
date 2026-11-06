@@ -1,0 +1,9483 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package refstyle
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 1
+\tocdepth 1
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\listings_params "keywordstyle={\color{blue}}"
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+The Perspectives of Bio7
+\end_layout
+
+\begin_layout Standard
+In the perspective bar several different perspectives can be activated via the perspective buttons.
+ All the views or editors in the perspective can be closed,
+ opened,
+ detached or moved.
+ The perspectives in Bio7 can be extended with several other views which can be opened in the 
+\series bold
+\noun on
+Windows\SpecialChar menuseparator
+Views
+\series default
+\noun default
+ menu or with the default action in the status bar at the bottom left of the program.
+ Additionally self defined perspectives can be created or deleted.
+ From the Eclipse Workbench User Guide (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+http://help.eclipse.org
+\end_layout
+
+\end_inset
+
+):
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Perspectives provide combinations of views and editors that are suited to performing a particular set of tasks....
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+To open a new perspective:
+ 
+\end_layout
+
+\begin_layout Enumerate
+Click the 
+\series bold
+Open Perspective
+\series default
+ button on the shortcut bar on the left side of the Workbench window.
+ (This provides the same function as the 
+\series bold
+\noun on
+Window \SpecialChar menuseparator
+ Open Perspective
+\series default
+\noun default
+ menu on the menu bar.) 
+\end_layout
+
+\begin_layout Enumerate
+To see a complete list of perspectives,
+ select 
+\series bold
+Other...
+
+\series default
+ from the drop-down menu.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Select the perspective that you want to open.
+ When the perspective opens,
+ the title bar of the window changes to display the name of the perspective.
+ In addition,
+ an icon is added to the shortcut bar,
+ allowing you to quickly switch back to that perspective from other perspectives in the same window.
+ 
+\end_layout
+
+\begin_layout Section
+Resource Perspective
+\end_layout
+
+\begin_layout Standard
+After Bio7 has been started the perspective in front is the Resource perspective.
+ The parts of the Resource perspective are:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/resource/resource_perspective.jpg
+	lyxscale 70
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The parts of the Resource perspective (dark theme)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+(1) The 
+\series bold
+Project Explorer
+\series default
+ view to import,
+ export,
+ open and manage files.
+ 
+\end_layout
+
+\begin_layout Description
+(2) The 
+\series bold
+Editor
+\series default
+ area where the editor files are opened.
+ 
+\end_layout
+
+\begin_layout Description
+(3) The 
+\series bold
+Console
+\series default
+ of Bio7.
+ 
+\end_layout
+
+\begin_layout Description
+(4) The 
+\series bold
+Outline
+\series default
+ view (active when an editor has been opened).
+ 
+\end_layout
+
+\begin_layout Description
+(5) The 
+\series bold
+Properties
+\series default
+ view which shows the selected file properties .
+ 
+\end_layout
+
+\begin_layout Description
+(6) The 
+\series bold
+Snippets
+\series default
+ view in which snippets for the different text based editors of Bio7 can be created.
+ 
+\end_layout
+
+\begin_layout Description
+The context menu of the Project Explorer (a right-click) contains several file actions.
+ Some actions are only visisble if a special file type is selected (e.g.
+ the 
+\series bold
+R Packages
+\series default
+ actions are only visible when an R file is selected).
+\end_layout
+
+\begin_layout Subsection
+The Project Explorer
+\end_layout
+
+\begin_layout Standard
+In the Project Explorer files can be managed and stored.
+ The context menu offers several actions to import and export files for the available Bio7 editors and specialized actions dependant on the selected filetype.
+ All the files are managed by projects which can have folders and subfolders,
+ etc.
+ for managing a large amount of different files.
+ These projects and their files can be exported or imported as *.zip files for data exchange.
+ The file navigator (
+\series bold
+Project Explorer
+\series default
+ view) of Bio7 allows you to create different editor files with a help of a file wizard.
+ A double-click on the file in the file navigator will open the file in the default registered editor.
+\end_layout
+
+\begin_layout Subsection
+The Editor Area
+\end_layout
+
+\begin_layout Standard
+The editor area is the area where all files are opened and edited.
+ The context menu varies depending on which file is opened.
+ When opened the text based editors offer typical text functionalities like:
+ Copy,
+ Paste,
+ Undo,
+ Redo,
+ Cut,
+ Find/Replace,
+ Print,
+ etc.
+ in the context menu and in the edit menu (menubar) of Bio7.
+ When a file has been opened editor specific buttons will be added to the toolbar which execute an editor action according to the opened file (compilation respectively interpreting code of Java,
+ BeanShell,
+ Groovy,
+ Jython ,
+ R or execution of a Flow!).
+ The editor area can be enabled in every perspective with the 
+\series bold
+\noun on
+Window
+\noun default
+\SpecialChar menuseparator
+
+\noun on
+Show/Hide Editor
+\series default
+\noun default
+ action in the main Bio7 menu.
+\end_layout
+
+\begin_layout Subsection
+The Console of Bio7
+\end_layout
+
+\begin_layout Standard
+The Bio7 console gives access to several interpreted languages and a pseudo-terminal for the Operating System (OS) environment.
+ In the view menu the different modes can be selected.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/resource/console_view.jpg
+	lyxscale 70
+	width 70text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Console view of Bio7 (the Options and Console menus are in the toolbar of the view)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The script consoles (
+\series bold
+Beanshell,
+ Groovy,
+ Jython
+\series default
+) can interactively communicate with the Bio7 application or simply interpret different instructions in the selected scripting language.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Shell
+\series default
+ pipes commands to the underlying OS with a pseudo-terminal.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Native R
+\series default
+ and 
+\series bold
+Native Python
+\series default
+ consoles pipe commands to the different applications (Please adjust the paths to the language environments in the Preferences!
+ See:
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Native-preferences"
+nolink "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Enumerate
+The default enabled
+\series bold
+ Console Output
+\series default
+ only displays errors and prints messages.
+ In addition it pauses the REPL (read–eval–print loop).The Console is responsible for the:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Output messages for the interpreters and connected applications.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Output messages of the embedded Java compiler (compiler warnings,
+ infos,
+ etc.) 
+\end_layout
+
+\begin_layout Enumerate
+Output of the R interpreter (Rserve warnings,
+ etc.) and evaluated expressions in R.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+In the context menu of the Console view several actions are available to clear displayed text or copy text from the console to the clipboard.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Menu of the Console View
+\end_layout
+
+\begin_layout Standard
+In the 
+\series bold
+Options
+\series default
+ menu of the Console view text encoding properties,
+ font settings and special interpreter commands can be selected.
+ As already noted in the 
+\series bold
+Console
+\series default
+ menu the different interpreters and native connections (R,
+ Python,
+ OS shell) can be selected.
+\end_layout
+
+\begin_layout Subsection
+The Snippets View
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-Snippets-View"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the Snippets view code templates can be created and stored for the different editors in Bio7.
+ The Snippet view plugin comes from the WTP project (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://eclipse.org/webtools/wst/components.html
+\end_layout
+
+\end_inset
+
+).
+ To create snippets inside this view,
+ categories have to be created inside a template editor (
+\series bold
+Customize...
+
+\series default
+ action in the context menu).
+ This editor can be opened with a right-click in the Snippets view.
+ Copied text from any text based editor of Bio7 can be pasted directly as a snippet after a category has been created inside the view.
+ In addition selected text in an editor can be stored as a template.
+ More complex templates with variables and a detailed description can be created,
+ too.
+ This is extremely useful if you want to create custom formulas or statistics.
+ A created template can be transferred to an active opened editor with a double-click of the mouse device.
+ Optional the different categories can also be folded and customized for a better overview (see figure below).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\series bold
+Note:
+
+\series default
+ By default every text based editor of Bio7 has an integrated template editor for the different programming languages with default snippets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/resource/snippets_view.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Snippets view with two categories of snippets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/resource/snippets_customize.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Customize...
+ dialog of the Snippets view available in the context menu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+ImageJ Edit Perspective
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:ImageJ-Edit-Perspective"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The ImageJ Edit perspective is the default perspective for image analysis and supports the creation of ImageJ macros, scripts and Java plugins. ImageJ macros, etc. can directly be opened and edited in a Bio7 editor (BeanShell, Groovy, Jython, JavaScript, ImageJ Macro, Java plugins) from the Project Explorer and executed with the interpret action in the main toolbar of Bio7. The perspective contains the Project Explorer, the Thumbnails view, the editor area, the Outline, the Console and the debug view of the ImageJ macro editor and on the right side the 
+\series bold
+ImageJ-Canvas
+\series default
+ view.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/imagej/imagej_edit_perspective.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The ImageJ Edit perspective with a macro and images in the ImageJ-Canvas view (dark theme)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:imagej-edit"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+SWTImageJ in Bio7
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:SWTImageJ"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Bio7 embeds 
+\series bold
+SWTImageJ
+\series default
+, a version of ImageJ with a native SWT user interface (instead of the former AWT version which was embedded with the SWT_AWT bridge). The images, the menus, the toolbar, the dialogs and the tools of ImageJ are SWT widgets, so they follow the theme of Bio7 (e.g., the dark theme) and work well on high DPI displays. For a description of ImageJ see https://imagej.net/ij/ and the user guide https://imagej.net/ij/docs/guide/. The differences to the regular version of ImageJ are:
+\end_layout
+
+\begin_layout Itemize
+The images are displayed in the tabs of the 
+\series bold
+ImageJ-Canvas
+\series default
+ view or as 
+\series bold
+detached image views
+\series default
+ (see below). An image becomes active when its tab or view is selected.
+\end_layout
+
+\begin_layout Itemize
+The menu of ImageJ (File, Edit, Image, Process, Analyze, Plugins, Window, Help) is the menu of the ImageJ-Canvas view.
+\end_layout
+
+\begin_layout Itemize
+The toolbar of ImageJ (with the status line and the progress bar) is the 
+\series bold
+ImageJ-Toolbar
+\series default
+ view.
+\end_layout
+
+\begin_layout Itemize
+Two actions compile or interpret the source of the active editor on the classpath of ImageJ: 
+\series bold
+Plugins > Compile Java (Eclipse)
+\series default
+ and 
+\series bold
+Plugins > Interpret Script (Eclipse)
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+The actions for the transfer of image data to and from R are available in the 
+\series bold
+Image-Methods
+\series default
+ view (
+\series bold
+Window > Bio7-Toolbar
+\series default
+, see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:R-ImageJ-Analysis-Perspective"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Installed plugins extend the menus of the ImageJ-Canvas view. Macros can extend the main menu of Bio7 and can be created like in the regular version.
+\end_layout
+
+\begin_layout Itemize
+Images, folders (as a stack) and plugins can be dropped on the ImageJ-Canvas view.
+\end_layout
+
+\begin_layout Itemize
+The ImageJ API is accessible with the embedded Java compiler and with BeanShell, Groovy, JavaScript, ImageJ Macro or Jython scripts. Many examples of the ImageJ website can be executed directly in the editors of Bio7.
+\end_layout
+
+\begin_layout Subsubsection
+Image Views and the Window Menu
+\end_layout
+
+\begin_layout Standard
+An image can be displayed in its own view: 
+\series bold
+Window > Open Current Image as View
+\series default
+ detaches the active image, 
+\series bold
+Window > Open All Images As Views
+\series default
+ detaches all images and with 
+\series bold
+Window > Open Images As Views By Default
+\series default
+ new images are opened as views (also a preference). By default a detached view is opened in its own window which follows the active perspective (see the ImageJ preferences). Closing the view closes the image. Many images (e.g., the images of a stack, Image > Stacks > Stack to Images) are opened as views quickly in one step.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Window > Cascade Image Views
+\series default
+ and 
+\series bold
+Window > Tile Image Views
+\series default
+ arrange the windows of the image views: cascaded (with the sizes of the windows) or as a grid which fills the monitor. With more than one monitor a submenu selects the monitor. 
+\series bold
+Window > Fullscreen Image (F2)
+\series default
+ displays the active image in the fullscreen mode (F2 the primary monitor, F3 the secondary, F4 the tertiary, F5 a selected monitor, Escape exits).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/imagej/image_views_tiled.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Image views in windows, arranged with Window > Tile Image Views
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:imagej-tile"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/imagej/image_views_cascaded.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Image views arranged with Window > Cascade Image Views
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+ImageJ Toolbar
+\end_layout
+
+\begin_layout Standard
+The toolbar of ImageJ is the 
+\series bold
+ImageJ-Toolbar
+\series default
+ view (
+\series bold
+Window > ImageJ-Toolbar
+\series default
+, in the R ImageJ Analysis perspective below the editor area). It contains the tools of ImageJ, the status line and the progress bar. A double-click or a right-click on a tool opens its options like in ImageJ. Macros for the toolbar can be installed (as known from ImageJ).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/imagej/imagej_toolbar.png
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The ImageJ-Toolbar view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+ImageJ Plugins and Macro Paths
+\end_layout
+
+\begin_layout Standard
+Bio7 supports plugins and macros for ImageJ. The default folders are:
+\end_layout
+
+\begin_layout Itemize
+Bio7/plugins/com.eco.bio7.image_x.x.x/plugins
+\end_layout
+
+\begin_layout Itemize
+Bio7/plugins/com.eco.bio7.image_x.x.x/macros
+\end_layout
+
+\begin_layout Standard
+Plugins which are copied into the plugins folder extend the menu 
+\series bold
+Plugins
+\series default
+ with submenus. 
+\series bold
+Plugins > Utilities > Control Panel
+\series default
+ displays all installed plugins. The 
+\series bold
+SWTImageJ LLM Assistant
+\series default
+ (a plugin which connects SWTImageJ with OpenAI compatible language models, e.g., of OpenAI, LM Studio or Ollama) is installed by default. Its window can be docked as a custom view of Bio7 and its code tools mark errors, warnings and infos in the editors of Bio7 (a quick fix is applied with a double-click on the marked text).
+\end_layout
+
+\begin_layout Subsubsection
+ImageJ Preferences
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/imagej/imagej_preferences.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The ImageJ preferences
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the ImageJ preferences (
+\series bold
+Preferences Bio7 > Preferences ImageJ
+\series default
+) the 
+\series bold
+Plugins Path
+\series default
+ can be changed (the macros are loaded from the macros folder next to the plugins folder, a restart is necessary), the size of the Image Methods and the ImageJ toolbar dialogs and the settings of the detached image views: 
+\series bold
+Open new images as views by default
+\series default
+, 
+\series bold
+Open detached views in a window
+\series default
+ and the position, the size and the spacing of new image windows. The subpages contain the preferences of the ImageJ macro editor (colors, code, templates, etc.).
+\end_layout
+
+\begin_layout Subsubsection
+Compilation of ImageJ Plugins
+\end_layout
+
+\begin_layout Standard
+ImageJ plugins can be compiled with the compile action of ImageJ (e.g., 
+\series bold
+Plugins > New > Plugin
+\series default
+) or with the Java editor of Bio7 (
+\series bold
+Plugins > Compile Java (Eclipse)
+\series default
+). The file creation wizard of Bio7 contains templates for ImageJ plugins and filters.
+\end_layout
+
+\begin_layout Section
+R ImageJ Analysis Perspective
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:R-ImageJ-Analysis-Perspective"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The R ImageJ Analysis perspective combines image analysis with statistical analysis: the R tools (R-Shell, Packages, Console, Plot, R Snippets, the editor area) and the ImageJ tools (the ImageJ-Canvas view, the ImageJ-Toolbar, the Image-Methods view and the Geometry Selections view) are arranged side by side.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/imagej/r_imagej_perspective.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The R ImageJ Analysis perspective
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:r-imagej"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+ImageJ Interactions with R
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Image-Methods
+\series default
+ view (
+\series bold
+Window > Bio7-Toolbar
+\series default
+ in the ImageJ-Canvas menu, displayed by default in the R ImageJ Analysis perspective) contains the actions to transfer image data to and from R (a connection to R is necessary, see the R perspective).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/imagej/image_methods.png
+	lyxscale 40
+	width 45text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Image-Methods view
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Image-Methods-dialog"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Transfer Selected Data To R
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+IJ RT:
+\series default
+ Transfers the values of an opened ImageJ Results Table to R as a dataframe.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+IJ RasterStack:
+\series default
+ Transfers an opened ImageJ stack as a list of matrices or (with the option Raster?) as a RasterStack to R. The data type is selected in the combo box below Pic<-.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+ROI:
+\series default
+ Transfers the x, y coordinates of the current selection (ROI) to R.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Particles:
+\series default
+ Opens the Analyze Particles dialog of ImageJ, the results of the particle analysis are transferred to R as a dataframe.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pixel:
+\series default
+ Transfers the selected pixels (freehand, rectangle, etc.) of one or several images with or without a signature as a matrix to R.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Selection RM:
+\series default
+ Transfers the coordinates of the selections of the ROI Manager as a list of lists to R (see the Geometry Selections view for spatial data).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pixel RM:
+\series default
+ Transfers the pixels of the selections of the ROI Manager (all images) with or without a signature as a matrix to R.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pixel RM Stack:
+\series default
+ Transfers the pixels of the selections of the ROI Manager for all slices of a stack with or without a signature as a matrix to R.
+\end_layout
+
+\begin_layout Paragraph
+Transfer Image Data From and To R
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pic<-:
+\series default
+ Transfers the image data of the active image to R with the name of the text field below and the data type of the combo box (
+\series bold
+Double
+\series default
+, 
+\series bold
+Integer
+\series default
+, 
+\series bold
+Byte
+\series default
+ or 
+\series bold
+RGB Byte
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pic->:
+\series default
+ Creates an image from an R matrix or vector (the name of the R object in the text field below) with the image type of the combo box (
+\series bold
+Colour
+\series default
+, 
+\series bold
+Greyscale
+\series default
+, 
+\series bold
+Float
+\series default
+, 
+\series bold
+Short
+\series default
+ or 
+\series bold
+Double
+\series default
+). The type Double creates a 64-bit double image of SWTImageJ (the values of R without a conversion to float).
+\end_layout
+
+\begin_layout Paragraph
+Multivariate Image Analysis
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cluster Pic:
+\series default
+ Performs a cluster analysis (clara or kmeans) and creates a new image from the assigned pixels.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+PCA:
+\series default
+ Performs a principal component analysis and creates new images from the components.
+\end_layout
+
+\begin_layout Subsubsection
+Image Transfer to R
+\end_layout
+
+\begin_layout Standard
+With 
+\series bold
+Pic<-
+\series default
+ and 
+\series bold
+Pic->
+\series default
+ the data of the active image are transferred to R or image data from R to ImageJ in a selected data type (image type). It is good practice to transfer the image data in the smallest data type needed for a task. In addition special transfers are available for selected image data:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pixel
+\series default
+ transfers the data of the current selection (one selection) of one or several images (opened tabs or views) in the selected data type without the ROI Manager.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pixel RM
+\series default
+ transfers the pixels of the selections of the ROI Manager (the selected selections or all selections if none is selected) for all opened images with a selected or an incremental signature. If a stack is among the opened images only the first slice is transferred.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pixel RM Stack
+\series default
+ transfers the pixels of the selections of the ROI Manager for all slices of a stack (e.g., multispectral or hyperspectral image data) with a selected or an incremental signature.
+\end_layout
+
+\begin_layout Standard
+Note that image folders can be dropped on the ImageJ-Canvas view to load the images as a regular or virtual stack (in a virtual stack only the displayed image is loaded into the memory). A description of the ROI Manager can be found in the ImageJ user guide.
+\end_layout
+
+\begin_layout Subsubsection
+Supervised Classification with ImageJ and R
+\end_layout
+
+\begin_layout Standard
+The custom class signatures of 
+\series bold
+Pixel RM
+\series default
+ and 
+\series bold
+Pixel RM Stack
+\series default
+ are especially useful for a supervised classification of image data in R: every selection could represent a vegetation or a tissue type (e.g., a plant species or a tumor) with several spectral bands (the slices of a stack) for the training of a classifier. See the Bio7 examples (https://github.com/Bio7/Bio7) and the Bio7 classification plugin (https://github.com/Bio7/Bio7_Classification).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/roiimagestacktransfer.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pixel RM Stack: the transfer of the selected pixels of a stack (RM = ROI Manager)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Transfer of Selection Coordinates
+\end_layout
+
+\begin_layout Standard
+With 
+\series bold
+ROI
+\series default
+ single and with 
+\series bold
+Selection RM
+\series default
+ multiple selection coordinates can be transferred to R, e.g., for a shape analysis or morphometrics. ImageJ has several actions to edit the selections in the menu 
+\series bold
+Edit > Selection
+\series default
+, e.g., an interpolation with a spline or the convex hull to reduce the number of points.
+\end_layout
+
+\begin_layout Subsubsection
+Geometry Selections View
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/imagej/geometry_selections.png
+	lyxscale 40
+	width 45text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Geometry Selections view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Geometry Selections
+\series default
+ view transfers the selections of the ROI Manager:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Selection coordinates as a list
+\series default
+: the selections as a list of coordinates.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Spatial Data (R package 'sp' required!)
+\series default
+: the selections as SpatialPolygons, SpatialLines or SpatialPoints (with an R dataframe as SpatialPolygonsDataFrame, SpatialLinesDataFrame or SpatialPointsDataFrame, see 
+\series bold
+Add selected dataframe
+\series default
+).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Transfer as centroid coordinates
+\series default
+ transfers the selections with the centers of the grid cells instead of the top left corners (e.g., for point data). 
+\series bold
+Add projection from georeferenced file
+\series default
+ adds the projection of a georeferenced raster image (e.g., *.geotiff, a projected coordinate system) to the spatial object in R: the projection is read with GDAL or, if GDAL is not available, with the R package terra. 
+\series bold
+Transfer to R!
+\series default
+ creates the objects in the R workspace.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/giscomparison.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Transfer of point selections as centroids (left: GIS display of the transferred point vector data, right: the selections in ImageJ)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Transfer-of-point"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/giscomparisonpolygonshapes.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Transfer of different selection types (right) and the result in a GIS display (left)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Cluster and PCA Analysis
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Cluster Pic
+\series default
+ and 
+\series bold
+PCA
+\series default
+ open dialogs for an unsupervised classification (the algorithms clara and kmeans) and a principal component analysis of the image data. In the dialog the number of clusters (components) can be specified and arguments can be added. The images (opened tabs or views) for the analysis are selected in the lists. 
+\series bold
+Only Transfer
+\series default
+ transfers the image data to R without an analysis. The data type (Pic<-) can reduce the memory of the analysis drastically.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/clusterdialog.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The dialog of the cluster analysis with the selected images
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Thumbnails
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Thumbnails"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Thumbnails
+\series default
+ view displays the images of a folder as thumbnails: in the context menu of the Project Explorer select 
+\series bold
+Open in Thumbnail view
+\series default
+ on a folder or select a folder with 
+\series bold
+Open
+\series default
+ in the view. The thumbnails are created in parallel and cached in the memory and on the disk, so that thousands of images are displayed fast and a second display of a folder is immediate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/imagej/thumbnails.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Thumbnails view (maximized) with the overview on the right side
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:thumbnails"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Images in a row:
+\series default
+ The number of thumbnails in a row or Fit width (the combo box).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Small, Medium, Large:
+\series default
+ The size of the thumbnails (50, 100 or 200 pixels).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Open:
+\series default
+ Selects the folder which is displayed. 
+\series bold
+Rec.
+\series default
+ includes the images of the subfolders (recursive).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Mag.:
+\series default
+ Shows or hides the overview of all thumbnails at the right side. The blue rectangle shows the visible part and can be moved.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Zoom:
+\series default
+ The zoom of the thumbnails (the combo box).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Refresh:
+\series default
+ Lists the folder again and reloads the thumbnails.
+\end_layout
+
+\begin_layout Standard
+The images which ImageJ opens are displayed (e.g., *.tif, *.png, *.jpg, *.gif, *.bmp, *.dcm), an *.avi file with its first frame, a *.zip file with the first image of a stack (or the ROIs of a ROI Manager file), *.roi and *.txt files (e.g., macros, results) with an icon. A folder with LUT files (*.lut) displays a sample image with each LUT: a click on the thumbnail applies the LUT to the active 8, 16 or 32-bit image.
+\end_layout
+
+\begin_layout Subsubsection
+Mouse and Keys of the Thumbnails View
+\end_layout
+
+\begin_layout Itemize
+A double-click opens the image in ImageJ, a double-click with the right mouse button opens the folder of the image.
+\end_layout
+
+\begin_layout Itemize
+Hovering over a thumbnail displays the information of the image in a popup (a click keeps the popup open).
+\end_layout
+
+\begin_layout Itemize
+The arrow keys, Home, End, PageUp and PageDown move the selection, Enter opens the selected image.
+\end_layout
+
+\begin_layout Section
+The 3d Perspective
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:The-3d-Perspective"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The 3d perspective of Bio7 visualizes data, models and simulations in an OpenGL view (Jogl). It combines several tools in one 3D view: an interactive 
+\series bold
+plot API
+\series default
+ for 3D plots and charts (surfaces, scatter plots, bars, box plots, pie charts, etc.) with an export to an interactive web page (WebGL) or to Blender, the display of 
+\series bold
+height maps
+\series default
+ from ImageJ images, the 
+\series bold
+volume rendering
+\series default
+ and 
+\series bold
+iso surfaces
+\series default
+ of ImageJ stacks with clipping, cuts and 3D 
+\series bold
+measurements
+\series default
+, the import of 
+\series bold
+3D models
+\series default
+ (*.obj, *.stl, *.ply, *.off) and custom 
+\series bold
+OpenGL code
+\series default
+ (Java) for models and simulations. In addition interactive 
+\series bold
+HTML simulations
+\series default
+ can be exported which run in a web browser.
+\end_layout
+
+\begin_layout Standard
+The 3d perspective can be opened in the perspective bar of Bio7 (3d). By default it contains the 
+\series bold
+Space
+\series default
+ view (the 3D view), the 
+\series bold
+Options Space
+\series default
+ view with the settings of the 3D view, the Console and the Project Explorer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/3d_perspective.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The 3d perspective with a surface plot of the plot API (dark theme)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:3d-perspective"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Space View
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-Space-view"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Space
+\series default
+ view displays the 3D scene: the axes, the box of the data, grids, plots, height maps, volumes, iso surfaces and models. With the mouse the view can be rotated (an "Arcball" interface), moved and zoomed (see the table below). The z-axis points to the user (the OpenGL coordinate system is right-handed). The orientation of the axes is displayed in the top right corner of the view.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Device
+\series default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Event
+\series default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Function
+\series default
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Left mouse button
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Drag
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rotation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Right mouse button
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Drag left, right
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Move forward, backward (zoom)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Middle mouse button
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Drag
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Move up, down, left, right
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Left mouse button
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Click on an object number
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Selects a measured object (Measure tab)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Key
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arrow keys
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Move the view (walkthrough: rotate and move the camera)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Key
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PgUp, PgDn
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Move up, down (walkthrough)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Key
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fullscreen on the primary monitor (exits the fullscreen mode in fullscreen)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Key
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F3, F4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fullscreen on the secondary or tertiary monitor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Key
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fullscreen on a selected monitor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Key
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Escape
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exit the fullscreen mode
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The mouse and the keys of the Space view
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-Space-view_Keys"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The toolbar of the Space view contains the actions 
+\series bold
+Reset View
+\series default
+ (the default rotation and distance), 
+\series bold
+Clear Measurements
+\series default
+ (the colors and numbers of measured objects and the picked points) and - if enabled for a plot - 
+\series bold
+Export Plot (WebGL, Blender)
+\series default
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Export-Plots"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+Custom OpenGL Code
+\end_layout
+
+\begin_layout Standard
+Custom OpenGL commands can be written in the Java editor as regular Java code. With the Bio7 wizard a new OpenGL file can be created. Two parameterized methods (
+\family typewriter
+setup
+\family default
+, 
+\family typewriter
+run
+\family default
+) are created which make the gl (glu, glut) context available to draw custom shapes and develop models in a 3-dimensional space. After the compilation the execution is enabled in the 
+\series bold
+Time
+\series default
+ tab of the Options Space view.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+public void setup(GL2 gl, GLU glu, GLUT glut) {
+\end_layout
+
+\begin_layout Plain Layout
+    // Please enter your Java OpenGL setup code here
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+public void run(GL2 gl, GLU glu, GLUT glut) {
+\end_layout
+
+\begin_layout Plain Layout
+    // Please enter your Java OpenGL code here
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Classbody Java OpenGL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since OpenGL is single-threaded the run method is executed from the internal OpenGL display method of the 3D view. TextRenderer objects, textures and models should be created in the setup method with the current OpenGL context (the setup method is invoked again, e.g., after a switch to the fullscreen mode). Several examples demonstrate the use of OpenGL in Bio7.
+\end_layout
+
+\begin_layout Subsection
+The Options Space View
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-Options-Space"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Options Space
+\series default
+ view contains the settings of the 3D view in several tabs: 
+\series bold
+Space
+\series default
+, 
+\series bold
+Time
+\series default
+, 
+\series bold
+Camera
+\series default
+, 
+\series bold
+Light
+\series default
+, 
+\series bold
+Render
+\series default
+, 
+\series bold
+Model
+\series default
+, 
+\series bold
+Heightmap
+\series default
+, 
+\series bold
+Volume
+\series default
+, 
+\series bold
+Iso Surface
+\series default
+, 
+\series bold
+Clipping
+\series default
+ and 
+\series bold
+Measure
+\series default
+. Tabs which don't fit into the view are available in the list at the right of the tabs (»). Most controls show a short description as a tooltip.
+\end_layout
+
+\begin_layout Subsubsection
+Space
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_space.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Space tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Space Size:
+\series default
+ The size of the space (the axes from -size to +size) in x, y and z.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Display:
+\series default
+ 
+\series bold
+Octant
+\series default
+ displays the first octant only (e.g., for a 3D plot). 
+\series bold
+Show Axes
+\series default
+, 
+\series bold
+Show Box
+\series default
+ (the box fitted to the displayed data) and 
+\series bold
+Axis Orientation
+\series default
+ (the orientation of the axes in the top right corner) toggle the components of the view. 
+\series bold
+Draw Axis Numbers
+\series default
+ draws the numbers and ticks of the axes, 
+\series bold
+Image Coordinates
+\series default
+ displays the axis numbers as pixel coordinates of a texture image (y from the top like in ImageJ).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Grid:
+\series default
+ 
+\series bold
+Show Grid
+\series default
+, the 
+\series bold
+Grid Size
+\series default
+ (the distance of the grid lines) and the grids: through the origin (XY, XZ, YZ), at the far side of the box (Max) and the grids of the plot view behind the data (Plot).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Colors:
+\series default
+ The 
+\series bold
+Background Color
+\series default
+ of the space and the 
+\series bold
+Line Color
+\series default
+ of the grids, axes and the box.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Camera:
+\series default
+ The 
+\series bold
+Speed Drag Distance
+\series default
+ (a factor for the speed of the zoom with the mouse), the 
+\series bold
+World Extent
+\series default
+ (the distance of the far plane) and 
+\series bold
+Reset View Distance
+\series default
+ (the default view distance fitted to the displayed data).
+\end_layout
+
+\begin_layout Subsubsection
+Time
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_time.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Time tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After the compilation of custom OpenGL code the execution is enabled with 
+\series bold
+Play/Pause
+\series default
+ in the Time tab. The run method is invoked by the OpenGL timer. The 
+\series bold
+S
+\series default
+ button invokes the setup method of the compiled class. The speed of a simulation can be controlled with the method 
+\family typewriter
+canStep()
+\family default
+ which returns true with the speed of the slider 
+\series bold
+Speed (canStep)
+\series default
+ (in steps per second). 
+\series bold
+No step
+\series default
+ sets canStep() to false (a pause). 
+\series bold
+Show step fps
+\series default
+ and 
+\series bold
+Show fps
+\series default
+ display the frame rates in the view. With 
+\series bold
+Fixed fps
+\series default
+ the rendering speed is limited to the selected frame rate (else the default of 60 fps). 
+\series bold
+Newest OpenGL profile
+\series default
+ uses the newest OpenGL compatibility profile of the system (e.g., OpenGL 4 on Windows and Linux, OpenGL 2.1 on macOS).
+\end_layout
+
+\begin_layout Subsubsection
+Camera
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_camera.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Camera tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Enable Walkthrough
+\series default
+ moves the camera with the arrow keys (Ctrl: sideways) in the x, z plane. With 
+\series bold
+Enable Flythrough
+\series default
+ the camera moves up and down in the view direction, too. The horizontal and vertical speed is set with the sliders. 
+\series bold
+Split View
+\series default
+ shows a second camera in the bottom left corner of the view (the 
+\series bold
+Position
+\series default
+ and the 
+\series bold
+Look At
+\series default
+ coordinates can be set and stored). 
+\series bold
+Custom Camera
+\series default
+ uses the coordinates of a custom camera (e.g., set by a script with 
+\family typewriter
+SpatialUtil.setCustomCamera
+\family default
+). 
+\series bold
+Stereo
+\series default
+ enables an anaglyph stereo view (red/cyan glasses).
+\end_layout
+
+\begin_layout Subsubsection
+Light
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_light.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Light tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Four light sources can be enabled and positioned (x, y, z). With 
+\series bold
+Local Light
+\series default
+ (recommended) the lights rotate with the view like a fixed lamp. Lights have a visible effect for surfaces with normals (e.g., height maps, plots, iso surfaces and models).
+\end_layout
+
+\begin_layout Subsubsection
+Render
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_render.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Render tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Get Image
+\series default
+ transfers a screenshot of the 3D view as an image to ImageJ. 
+\series bold
+Rec.
+\series default
+ renders the frames of the 3D view to an ImageJ stack until the rendering is stopped or the number of frames (
+\series bold
+Render Frames
+\series default
+) is reached. The stack can be saved, e.g., as an *.avi file or an animated *.gif file. The size of the 3D view determines the size of the images (a resize stops the rendering).
+\end_layout
+
+\begin_layout Subsubsection
+Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_model.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Model tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A 3D model can be loaded as a mesh file: *.obj (with materials and textures), *.stl, *.ply (with colors) or *.off (e.g., exported from Blender or another 3D software). 
+\series bold
+Show Model
+\series default
+ displays the model, 
+\series bold
+Lighted
+\series default
+ enables the lighting with the activated lamps. The 
+\series bold
+Position
+\series default
+, 
+\series bold
+Rotation
+\series default
+ and 
+\series bold
+Scale
+\series default
+ can be adjusted, 
+\series bold
+Fit to Scene
+\series default
+ centers and scales the model to the grid (or to a displayed texture, volume or iso surface). 
+\series bold
+Store as Default
+\series default
+ stores the settings for the next start.
+\end_layout
+
+\begin_layout Standard
+With 
+\series bold
+Use as Iso Surface (Measure)
+\series default
+ the model is displayed as an iso surface. Then the measurements (Measure tab), the clipping and the export of the iso surface are available for the model, too (with the 
+\series bold
+Unit
+\series default
+ and the 
+\series bold
+Scale
+\series default
+ of one unit of the file).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/model.jpg
+	lyxscale 40
+	width 70text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A model (*.obj) in the 3D view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Heightmap
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_heightmap.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Heightmap tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Texture
+\series default
+ group displays an image as a textured plane: the active ImageJ image (static, load again after changes, e.g., of the LUT), the active ImageJ image (dynamic, the texture is updated with the image) or an image file. 
+\series bold
+Flip Vertically
+\series default
+ flips the texture, height map, volume and iso surface (by default the image is displayed like in ImageJ with 0,0 at the top left).
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Height Map
+\series default
+ group displays the pixel values of the active ImageJ image (8-bit, 16-bit, 32-bit, e.g., a digital elevation model or a measurement as a 32-bit image) as the heights of a surface which is textured with the selected texture. 
+\series bold
+Plot View
+\series default
+ displays the height map as a surface plot with the axes, the box and the grids of the plot API. 
+\series bold
+Show Triangles
+\series default
+ draws the triangles, 
+\series bold
+Lighted
+\series default
+ enables the lighting, 
+\series bold
+Dynamic Heights
+\series default
+ updates the heights directly from the active image and 
+\series bold
+Negative Heights (Geo)
+\series default
+ scales the heights negative for a geographic view. The 
+\series bold
+Level of Detail
+\series default
+ (the distance of the vertices in pixels) and the 
+\series bold
+Height Factor
+\series default
+ (logarithmic) can be adjusted. 
+\series bold
+Fit Height
+\series default
+ sets the height factor so that the range of the heights is half of the longer side of the image.
+\end_layout
+
+\begin_layout Standard
+With 
+\series bold
+Export Height Map...
+\series default
+ the height map is exported as a 3D mesh with the colors of the image (LUT): glTF binary (*.glb, with the texture, e.g., for Blender), OBJ (with the texture as *.png), PLY (with vertex colors) or STL (3D printing).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/heightmap.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A height map of a 32-bit ImageJ image (Fire LUT as texture) in the plot view
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:3d-heightmap"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Volume
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_volume.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Volume tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Load Stack
+\series default
+ loads the active ImageJ stack as a volume (with the current LUT and the display range, load again after changes of the stack). 
+\series bold
+LUT Colors
+\series default
+ uses the colors of the LUT (else gray values). The 
+\series bold
+Mode
+\series default
+ is 
+\series bold
+Alpha Blending
+\series default
+ (transparent voxels, see Opacity) or 
+\series bold
+Maximum Intensity
+\series default
+ (the maximum along the view direction). With a 
+\series bold
+Transfer Function
+\series default
+ the colors and opacities of the voxels are defined in an editor (
+\series bold
+Edit...
+\series default
+, an opacity curve and a color map). The 
+\series bold
+Opacity
+\series default
+, the 
+\series bold
+Threshold
+\series default
+ and the 
+\series bold
+Sampling
+\series default
+ (quality) can be adjusted. 
+\series bold
+Z Scale
+\series default
+ scales the depth of the volume (by default the calibrated voxel depth), larger stacks are reduced to the 
+\series bold
+Max Size
+\series default
+. 
+\series bold
+Plot View
+\series default
+ displays the volume with the axes of the plot API.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/volume.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The volume rendering of an ImageJ stack (Fire LUT)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:3d-volume"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Iso Surface
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_isosurface.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Iso Surface tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Load Stack
+\series default
+ loads the active ImageJ stack and computes an iso surface (the default iso value is the threshold, if set, or the center of the display range). The 
+\series bold
+Iso Value
+\series default
+, the 
+\series bold
+Smoothing
+\series default
+ of the data, the 
+\series bold
+Mesh Smoothing
+\series default
+ and the 
+\series bold
+Opacity
+\series default
+ can be adjusted. 
+\series bold
+Head Light
+\series default
+ lights the surface from the viewer, 
+\series bold
+Show Triangles
+\series default
+ draws the triangles as lines.
+\end_layout
+
+\begin_layout Standard
+The color of the surface is the LUT color at the iso value (
+\series bold
+LUT Color
+\series default
+) or a selected color. With 
+\series bold
+Colors
+\series default
+ the surface can be colored by the intensity inside of the surface (with a 
+\series bold
+Color Channel
+\series default
+ of a multichannel stack), by the depth (z) or with the image colors. A 
+\series bold
+Transfer Function
+\series default
+ and an 
+\series bold
+Opacity Mapping
+\series default
+ are available, too. 
+\series bold
+Color Depth
+\series default
+ is the distance inside of the surface where the intensity is sampled. 
+\series bold
+Reduce Display (Max Size)
+\series default
+ reduces the displayed surface of large stacks (the measurements always use the full resolution).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Export...
+\series default
+ exports the iso surface with calibrated coordinates: OBJ (with a *.mtl file), STL (3D printing), PLY (with normals and colors), glTF binary (*.glb) or VTK (e.g., for ParaView).
+\end_layout
+
+\begin_layout Subsubsection
+Clipping
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_clipping.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Clipping tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The clipping removes parts of the volume and the iso surface: a 
+\series bold
+Clipping Box
+\series default
+ (x, y, z ranges) and a 
+\series bold
+Cutting Plane
+\series default
+ (Azimuth, Elevation, Offset, 
+\series bold
+Flip Side
+\series default
+ removes the other side). 
+\series bold
+Outline
+\series default
+ draws the outline of the plane, 
+\series bold
+Slice
+\series default
+ displays the cross-section of the plane with the data. 
+\series bold
+Cut Iso Surface Mesh (Closed, Export)
+\series default
+ cuts the mesh with the box and the plane (closed with caps, also for the export).
+\end_layout
+
+\begin_layout Standard
+With the selection of the current ImageJ image the voxels inside or outside can be removed for a range of slices (
+\series bold
+Remove Inside
+\series default
+, 
+\series bold
+Remove Outside
+\series default
+). 
+\series bold
+Mask Image...
+\series default
+ removes the voxels with the value 0 of a binary mask stack. The cuts can be inverted, undone and cleared. With the 
+\series bold
+Mouse
+\series default
+ tool the plane can be dragged in the 3D view or voxels can be removed with an eraser (
+\series bold
+Eraser Size
+\series default
+) along the view direction.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/clip_volume.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A volume (Fire LUT) cut with the clipping box
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:3d-clipping"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Measure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/tab_measure.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Measure tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Measure tab measures the iso surface and the volume. The results are displayed in the Bio7 table:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Measure Iso Surface Objects
+\series default
+: the volume, surface area, sphericity, centroid, ellipsoid axes, Feret diameter and holes of the objects of the iso surface (with a minimum and maximum object size in voxels).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Measure Distances (Nearest Neighbors)
+\series default
+: the nearest neighbors of the objects (the centroids and the surfaces edge to edge), the distance matrices and the Clark-Evans index (optional all distance matrices as CSV files).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Highlight Objects (Colors and Numbers)
+\series default
+: colors the measured objects and displays their numbers (the colors and numbers of the table). A click on a number in the 3D view selects the object.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Measure Region (Clipping)
+\series default
+: statistics of the voxels in the region of the clipping (box, plane and cuts) and the volume above the iso value.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pick Points with the Mouse (Ruler)
+\series default
+: a click on the iso surface or the volume adds a point (position, value and distance) to the table.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/measure.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The measured objects of an iso surface with the results in the Bio7 table
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:3d-measure"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Plot API
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-Plot-API"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The plot API (class 
+\family typewriter
+Plot3D
+\family default
+, package 
+\family typewriter
+com.eco.bio7.spatial
+\family default
+) creates interactive 3D plots in the Space view with a few lines of Java (or Groovy, BeanShell, Jython, etc.). A plot contains one or more layers (e.g., a surface and a scatter plot), the title, the axis titles, the legend and a color bar. The plot is displayed with 
+\family typewriter
+show()
+\family default
+ which opens the 3d perspective if necessary.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+import com.eco.bio7.spatial.Plot3D;
+\end_layout
+
+\begin_layout Plain Layout
+import com.eco.bio7.spatial.PlotLegend;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+int n = 50;
+\end_layout
+
+\begin_layout Plain Layout
+double[] x = new double[n], y = new double[n];
+\end_layout
+
+\begin_layout Plain Layout
+double[][] z = new double[n][n];
+\end_layout
+
+\begin_layout Plain Layout
+for (int i = 0; i < n; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+    x[i] = -3 + 6.0 * i / (n - 1);
+\end_layout
+
+\begin_layout Plain Layout
+    y[i] = x[i];
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\begin_layout Plain Layout
+for (int i = 0; i < n; i++)
+\end_layout
+
+\begin_layout Plain Layout
+    for (int j = 0; j < n; j++)
+\end_layout
+
+\begin_layout Plain Layout
+        z[i][j] = Math.sin(x[i]) * Math.cos(y[j]);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+new Plot3D().title("Surface").axisTitles("x", "y", "z")
+\end_layout
+
+\begin_layout Plain Layout
+    .add(Plot3D.surface(x, y, z).colorMap(PlotLegend.VIRIDIS))
+\end_layout
+
+\begin_layout Plain Layout
+    .colorBarTitle("z")
+\end_layout
+
+\begin_layout Plain Layout
+    .show();
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A surface plot with the plot API
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following layers are available as static factory methods of Plot3D:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Method
+\series default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Plot
+\series default
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+scatter(x, y, z)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A scatter plot (spheres, with values for the colors, a layer for each group)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+line(x, y, z)
+\family default
+, 
+\family typewriter
+filledLine(x, y, z)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lines and filled lines (ribbons)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+surface(x, y, z)
+\family default
+, 
+\family typewriter
+wireframe(x, y, z)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A surface or a wireframe of a grid z[x][y]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+contour(x, y, z)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Contour lines of a grid
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+bars(x, y, z)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3D bars (e.g., a 2D histogram)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+pie(values, labels)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A pie chart
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+lineGraph(x, series)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Line graphs of several series
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+boxplot(groups, names)
+\family default
+, 
+\family typewriter
+violin(groups, names)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Box plots and violin plots of groups
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+histogram(values)
+\family default
+, 
+\family typewriter
+histogram(groups, names)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Histograms
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+area(x, series)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stacked areas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+radar(series, axes)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A radar (spider) chart
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+rose(values, sectors)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A rose chart (e.g., wind directions)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+treemap(values, labels)
+\family default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A treemap
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The layers of the plot API
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/plot_gallery.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Plots of the plot API (examples of the Bio7 Java examples, opengl/plotapi)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:3d-plot-gallery"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The settings of a plot are methods of Plot3D: 
+\family typewriter
+title
+\family default
+, 
+\family typewriter
+axisTitles
+\family default
+, 
+\family typewriter
+logAxes
+\family default
+ (logarithmic axes), 
+\family typewriter
+numberFormats
+\family default
+, 
+\family typewriter
+xRange
+\family default
+, 
+\family typewriter
+yRange
+\family default
+, 
+\family typewriter
+zRange
+\family default
+, 
+\family typewriter
+aspect
+\family default
+, 
+\family typewriter
+categories
+\family default
+ (category labels of an axis), 
+\family typewriter
+grids
+\family default
+, 
+\family typewriter
+colorBarTitle
+\family default
+, 
+\family typewriter
+legend
+\family default
+, 
+\family typewriter
+textColors
+\family default
+ and 
+\family typewriter
+textColor
+\family default
+ (the colors of the title, the axis numbers, the axis titles and the legend) and 
+\family typewriter
+fonts
+\family default
+ and 
+\family typewriter
+font
+\family default
+ (the font families of the texts, the installed families are available with 
+\family typewriter
+Plot3D.availableFonts()
+\family default
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+new Plot3D().title("Fonts of a Plot").axisTitles("Length [cm]", "Width [cm]", "Height")
+\end_layout
+
+\begin_layout Plain Layout
+    .fonts("Georgia", "Courier New", "Times New Roman", "Courier New") // title, numbers, axis titles, legend
+\end_layout
+
+\begin_layout Plain Layout
+    .textColors(0x202020, 0x404040, 0x202020, 0x202020)
+\end_layout
+
+\begin_layout Plain Layout
+    .add(Plot3D.surface(x, y, z).colorMap(PlotLegend.VIRIDIS))
+\end_layout
+
+\begin_layout Plain Layout
+    .show();
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fonts and text colors of a plot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Dynamic Plots
+\end_layout
+
+\begin_layout Standard
+A plot can be updated, e.g., in each step of a simulation: the layers are replaced (
+\family typewriter
+clearLayers
+\family default
+, 
+\family typewriter
+set
+\family default
+, 
+\family typewriter
+remove
+\family default
+, 
+\family typewriter
+add
+\family default
+) and the plot is displayed again with 
+\family typewriter
+update()
+\family default
+ (without a reset of the view, the rotation and the zoom are kept). Several examples are available in the folder opengl/plotapi/dynamic of the Bio7 Java examples (e.g., a dynamic scatter plot, histogram, violin plot or rose chart).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+Plot3D plot = new Plot3D().title("Random Walk").xRange(-30, 30).yRange(-30, 30).zRange(-30, 30);
+\end_layout
+
+\begin_layout Plain Layout
+plot.show();
+\end_layout
+
+\begin_layout Plain Layout
+for (int t = 0; t < 500; t++) {
+\end_layout
+
+\begin_layout Plain Layout
+    step(); // the model
+\end_layout
+
+\begin_layout Plain Layout
+    plot.clearLayers().add(Plot3D.scatter(x, y, z).values(z)).update();
+\end_layout
+
+\begin_layout Plain Layout
+    Thread.sleep(50);
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A dynamic plot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Plots of the Bio7 Table
+\end_layout
+
+\begin_layout Standard
+With the class 
+\family typewriter
+PlotTable
+\family default
+ the data of the Bio7 table can be plotted: 
+\family typewriter
+PlotTable.select(...)
+\family default
+ opens a dialog to select the columns of the active sheet (or of the selected cells) for the roles of a plot (e.g., X, Y, Z and an optional group). The dialog contains the settings of the plot, too: the title, the axis titles, logarithmic axes, the color map and the export action. Examples are available in the folder opengl/plotapi/table (the demo data are created with TableDemoData).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+PlotTable.Selection s = PlotTable.select("3D Scatter Plot", "Select the columns", "X", "Y", "Z", "Group?");
+\end_layout
+
+\begin_layout Plain Layout
+if (s != null) {
+\end_layout
+
+\begin_layout Plain Layout
+    // The title, the axis titles, the log axes and the export action of the dialog
+\end_layout
+
+\begin_layout Plain Layout
+    s.apply(new Plot3D())
+\end_layout
+
+\begin_layout Plain Layout
+        .add(Plot3D.scatter(s.numbers(0), s.numbers(1), s.numbers(2)).label(s.name(2)))
+\end_layout
+
+\begin_layout Plain Layout
+        .show();
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A scatter plot of the Bio7 table (see TableScatterPlot for a layer of each group)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/plot_dialog.jpg
+	lyxscale 40
+	width 60text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The dialog of the table plot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/plot_table.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A scatter plot of the Bio7 table with groups
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:3d-plot-table"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Export of Plots (WebGL, glTF, Blender)
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Export-Plots"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+A plot can be exported to an interactive web page (
+\family typewriter
+exportHtml
+\family default
+, a single HTML file with WebGL, the plot can be rotated and zoomed in any web browser), to a glTF file (
+\family typewriter
+exportGltf
+\family default
+, *.glb) and for Blender (
+\family typewriter
+exportBlender
+\family default
+, a *.glb file and a Python script which imports the plot with the texts, a camera and lights in a new scene: in Blender Scripting - Open - Run Script). With 
+\family typewriter
+exportAction(true)
+\family default
+ the export action is displayed in the toolbar of the Space view (Export Plot (WebGL, Blender)).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+Plot3D plot = new Plot3D().title("Digital Elevation Model")
+\end_layout
+
+\begin_layout Plain Layout
+    .add(Plot3D.surface(x, y, z).colorMap(PlotLegend.TERRAIN));
+\end_layout
+
+\begin_layout Plain Layout
+plot.exportHtml("/path/terrain.html");
+\end_layout
+
+\begin_layout Plain Layout
+plot.exportBlender("/path/terrain.glb"); // writes terrain.glb and terrain.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The export of a plot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/html_export.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+An exported plot in a web browser (WebGL)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/blender_render.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The same plot rendered in Blender
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Blender script uses the fonts of the plot (the font files of the system) and sets the output folder of a rendered animation next to the *.glb file.
+\end_layout
+
+\begin_layout Subsubsection
+Recording of Plots
+\end_layout
+
+\begin_layout Standard
+With the class 
+\family typewriter
+PlotRecorder
+\family default
+ a dynamic plot can be recorded frame by frame and exported to an HTML page with a player (Play/Pause, a timeline, the speed and a loop) or for Blender as an animation (the visibility of the objects is animated in the timeline of Blender, e.g., to render a film).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+PlotRecorder recorder = new PlotRecorder().speed(10);
+\end_layout
+
+\begin_layout Plain Layout
+for (int t = 0; t < 100; t++) {
+\end_layout
+
+\begin_layout Plain Layout
+    step(); // the model
+\end_layout
+
+\begin_layout Plain Layout
+    plot.clearLayers().add(Plot3D.scatter(x, y, z)).update();
+\end_layout
+
+\begin_layout Plain Layout
+    recorder.frame(plot);
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\begin_layout Plain Layout
+recorder.export("/path/recording.html");
+\end_layout
+
+\begin_layout Plain Layout
+recorder.exportBlender("/path/recording.glb");
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The recording of a dynamic plot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/plot_recording.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A recorded plot with the player in a web browser
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+HTML Simulations
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:HTML-Simulations"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The class 
+\family typewriter
+HtmlSimulation
+\family default
+ exports an interactive simulation to a single HTML page (without dependencies, WebGL for 3D). The simulation runs in the web browser: the model is written in JavaScript with the functions 
+\family typewriter
+setup(sim)
+\family default
+ (called at the start and with Reset) and 
+\family typewriter
+step(sim)
+\family default
+ (one time step). The page contains Play/Pause, Step, Reset, the speed, the controls of the settings (sliders, number fields, text fields, check boxes, choices and buttons) and an optional chart of values over time. The settings are available in the model as 
+\family typewriter
+sim.p.name
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+The view of a simulation is a 2D grid (
+\family typewriter
+View.GRID_2D
+\family default
+, e.g., a cellular automaton with optional agents), a 3D scene (
+\family typewriter
+View.SCENE_3D
+\family default
+, points and lines, e.g., a swarm) or a dynamic surface (
+\family typewriter
+View.SURFACE_3D
+\family default
+, e.g., a diffusion).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+new HtmlSimulation("Game of Life")
+\end_layout
+
+\begin_layout Plain Layout
+    .view(HtmlSimulation.View.GRID_2D)
+\end_layout
+
+\begin_layout Plain Layout
+    .number("size", "Grid size (cells)", 120)
+\end_layout
+
+\begin_layout Plain Layout
+    .slider("density", "Start density", 0, 1, 0.01, 0.3)
+\end_layout
+
+\begin_layout Plain Layout
+    .restartOn("size", "density")
+\end_layout
+
+\begin_layout Plain Layout
+    .chart("Population")
+\end_layout
+
+\begin_layout Plain Layout
+    .scriptFile("/path/GameOfLife.js") // the model in a JavaScript file
+\end_layout
+
+\begin_layout Plain Layout
+    .export("/path/GameOfLife.html");
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+An HTML simulation with the model in a JavaScript file
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The model can be embedded as a string (
+\family typewriter
+code
+\family default
+) or loaded from a JavaScript file (
+\family typewriter
+scriptFile
+\family default
+) which can be edited in an editor of Bio7 (e.g., the generic editor). The export copies the script file next to the page or merges it into one HTML file (
+\family typewriter
+embedScript(true)
+\family default
+). A template of a script file is created with 
+\family typewriter
+HtmlSimulation.writeScriptTemplate(file)
+\family default
+. Several examples are available in the folder html of the Bio7 Java examples (e.g., the Game of Life, an epidemic model, a forest fire, a swarm, a heat diffusion, a reaction-diffusion model and foraging ants).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/html_simulations.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Two HTML simulations with the model in a JavaScript file: a reaction-diffusion model (Gray-Scott) and foraging ants
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:3d-html-simulations"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Fullscreen Mode
+\end_layout
+
+\begin_layout Standard
+The Space view can be displayed in the fullscreen mode with the keys F2 (the primary monitor), F3 (the secondary monitor), F4 (the tertiary monitor) and F5 (a selected monitor). The fullscreen mode is quit with the Escape key (or F2). The switch to the fullscreen mode creates a new OpenGL context and invokes the setup method again, so textures, TextRenderer objects and models of custom code should be created in the setup method.
+\end_layout
+
+\begin_layout Section
+The WorldWind Perspective
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:The-WorldWind-Perspective"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The WorldWind perspective can be opened in the perspective bar (WorldWind). It embeds the 
+\series bold
+WorldWind
+\series default
+ view with the virtual globe of NASA WorldWind Java (https://worldwind.arc.nasa.gov/java/) and the 
+\series bold
+Options WorldWind
+\series default
+ view with the settings of the globe in several tabs (Control, Default Layers, Layers, Render, Measure and Projection). The globe displays satellite images, maps, elevations, boundaries and place names and in addition own data: ImageJ images, GeoTIFF images, shapefiles and custom OpenGL layers (Java).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/worldwind_perspective.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The WorldWind perspective (dark theme)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:worldwind-perspective"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The overlays of the globe (the compass, the scale bar, the world map, the view controls, the graticules, the place names, the boundaries and the measure tool) are scaled for high DPI displays (e.g., a Retina display). The compass is drawn with the colors of the active Bio7 theme.
+\end_layout
+
+\begin_layout Subsection
+The Controls of the Globe
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Function
+\series default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Mouse with a scroll wheel
+\series default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Single mouse button
+\series default
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pan
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Left mouse button: click & drag (all directions)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Left mouse button: click & drag, click once to center the view
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zoom
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scroll wheel or left and right mouse button: click & drag up and down
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl and the left mouse button: click & drag up and down
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tilt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Right mouse button: click & drag up and down or PageUp, PageDown
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Shift and the left mouse button: click & drag up and down or PageUp, PageDown
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rotate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Right mouse button: click & drag left and right
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Shift and the left mouse button: click & drag left and right
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stop
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Spacebar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Spacebar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reset heading
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reset all
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fullscreen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F2 (primary monitor), F3 (secondary), F4 (tertiary), F5 (selected monitor)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F2, F3, F4, F5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exit fullscreen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Escape (or F2)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Escape (or F2)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The controls of the globe (see https://worldwind.arc.nasa.gov/java/)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The fullscreen keys are the same in all views of Bio7 with a fullscreen mode (WorldWind, the 3D view, ImageJ and the custom views).
+\end_layout
+
+\begin_layout Subsection
+The Options WorldWind View
+\end_layout
+
+\begin_layout Subsubsection
+Control
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/tab_control.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Control tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the text field of the Control tab coordinates (latitude, longitude) can be entered to fly to a location (
+\series bold
+Set
+\series default
+). The coordinates of the current view can be stored in the list of locations (
+\series bold
+Add
+\series default
+) and visited again with a double-click on a list entry, e.g., for a presentation in the fullscreen mode. Selected locations can be deleted (
+\series bold
+Delete
+\series default
+), the list can be saved and loaded as a *.txt file (
+\series bold
+Save
+\series default
+, 
+\series bold
+Load
+\series default
+). 
+\series bold
+Clear Cache
+\series default
+ deletes the downloaded images and elevations (the tiles of the layers), 
+\series bold
+Open Cache
+\series default
+ opens the location of the cache.
+\end_layout
+
+\begin_layout Subsubsection
+Default Layers
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/tab_defaultlayers.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Default Layers tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Default Layers tab enables and disables the layers of the globe and blends them with an opacity (the sliders). Some layers are enabled by default, other layers can be enabled when needed:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Stars
+\series default
+, 
+\series bold
+Atmosphere
+\series default
+ and the 
+\series bold
+NASA Blue Marble Image
+\series default
+ (included in WorldWind, also available offline).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Blue Marble (WMS) 2004
+\series default
+ (NASA GIBS) and 
+\series bold
+Sentinel-2 cloudless 2016
+\series default
+ (EOX, Copernicus Sentinel data): satellite images of the earth.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bing Imagery
+\series default
+, 
+\series bold
+USGS NAIP Plus
+\series default
+ and 
+\series bold
+USGS Urban Area Ortho
+\series default
+: high resolution aerial images (partly only for the USA).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+OpenStreetMap
+\series default
+: the standard map of OpenStreetMap as sharp tiles (also on high DPI displays), see the figure below.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Political Boundaries
+\series default
+ and 
+\series bold
+Place Names
+\series default
+: the boundaries of the countries and the populated places of Natural Earth (public domain, bundled with Bio7, drawn as vectors and text). More place names are displayed when the view is closer.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+View Controls
+\series default
+, 
+\series bold
+Lat-Lon Graticule
+\series default
+, 
+\series bold
+MGRS Graticule
+\series default
+, 
+\series bold
+World Map
+\series default
+, 
+\series bold
+Scale bar
+\series default
+ and 
+\series bold
+Compass
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+The data of the layers have to be cited, e.g., if a screenshot of the globe is published. 
+\series bold
+Sources and Licenses...
+\series default
+ opens a dialog with the sources, the licenses and the links of the enabled layers (the source of a layer is shown as the tooltip of the layer, too).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/worldwind_naturalearth.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The political boundaries and the place names of Natural Earth over the satellite images
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:worldwind-naturalearth"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/worldwind_osm.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The OpenStreetMap layer (© OpenStreetMap contributors) on the tilted globe
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:worldwind-osm"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/worldwind_sources.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The sources and licenses of the layers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Layers
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/tab_layers.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Layers tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With the Layers tab own data can be displayed on the globe: GeoTIFF images (
+\series bold
+Add GeoTIFF
+\series default
+), shapefiles (
+\series bold
+Add Shapefile
+\series default
+), the active ImageJ image as a static layer (
+\series bold
+IJ image
+\series default
+) or as a dynamic layer which is updated with the image (
+\series bold
+IJ Dynamic
+\series default
+, e.g., an animated stack) and a custom OpenGL layer of compiled Java code (
+\series bold
+Dyn. Layer
+\series default
+). An added layer gets its own panel with the controls of the layer (e.g., the opacity and the removal of the layer).
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Latitude
+\series default
+ and 
+\series bold
+Longitude
+\series default
+ fields define the area of an image on the globe (the minimum and maximum), 
+\series bold
+Go to
+\series default
+ flies to the area. 
+\series bold
+Get Area
+\series default
+ fills the fields with the values of special variables in R (e.g., an area which is georeferenced in R), with 
+\series bold
+Compute
+\series default
+ the corners of an area can be picked on the globe (alternately the minimum and the maximum, disable the toggle after the selection). 
+\series bold
+Image Alpha
+\series default
+ makes a color of an image transparent. So, e.g., an R plot (ImageJ is the default plot device of R in Bio7) can be positioned on the globe.
+\end_layout
+
+\begin_layout Subsubsection
+Render
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/tab_render.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Render tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Capture
+\series default
+ renders the globe to an ImageJ stack (the number of 
+\series bold
+Frames
+\series default
+ and the frame rate 
+\series bold
+FPS
+\series default
+ can be adjusted), e.g., to save an animation of a flight over the globe. 
+\series bold
+Screenshot
+\series default
+ transfers the current view as an image to ImageJ. 
+\series bold
+Info
+\series default
+ shows a short help for the two actions.
+\end_layout
+
+\begin_layout Subsubsection
+Measure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/tab_measure.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Measure tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the Measure tab distances, areas and shapes can be measured on the globe. Before a measurement the 
+\series bold
+Shape
+\series default
+ (a line, a path, a polygon, a circle, an ellipse, a square or a rectangle), the 
+\series bold
+Path type
+\series default
+, the 
+\series bold
+Units
+\series default
+ and the 
+\series bold
+Angle Format
+\series default
+ can be selected. 
+\series bold
+Follow terrain
+\series default
+ includes the heights of the terrain, the 
+\series bold
+Control points
+\series default
+, the 
+\series bold
+Rubber band
+\series default
+, a 
+\series bold
+Free Hand
+\series default
+ selection and the 
+\series bold
+Tooltip
+\series default
+ can be enabled. A measurement is started with 
+\series bold
+New Measur.
+\series default
+, edited with 
+\series bold
+Edit
+\series default
+ and stopped with 
+\series bold
+End
+\series default
+. The colors of the line, the points and the tooltip can be changed. The results (length, area, width, height, heading and center) are displayed in the table and can be transferred to R (
+\series bold
+Values->R
+\series default
+).
+\end_layout
+
+\begin_layout Subsubsection
+Projection
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/tab_projection.png
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Projection tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Flat
+\series default
+ displays the globe as a flat map with the selected projection (Lat-Lon, Mercator, Sinusoidal or modified Sinusoidal).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/worldwind/worldwind_flat.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The flat projection of the globe (Lat-Lon)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:worldwind-flat"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The R Perspective and Menus
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:The-R-Perspective"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Bio7 embeds R for the statistical analysis of data, images and models. R is connected with 
+\series bold
+Rserve
+\series default
+: 
+\series bold
+R > Start Rserve
+\series default
+ starts R in the Bio7 console and the Rserve server in this R session (cooperative mode on Linux and macOS), then Bio7 connects to the server (displayed in the progress dialog and in the console). After the connection has been established R can be used in the R-Shell view, the R editor, the Table view, the ImageJ views and with the scripts and the compiler of Bio7. The path to R, the R startup arguments, the Rserve startup arguments (e.g., a port) and the client port are set in the R preferences (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Rserve-preferences"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+R Menus in the Bio7 Main Menu
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:R-Menus-in"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Start Rserve:
+\series default
+ Starts R with an Rserve connection (or stops the connection).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Load Workspace, Save Workspace:
+\series default
+ Loads or saves an R workspace (*.RData).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Evaluate Expression:
+\series default
+ Opens a dialog to evaluate an R expression, the result is displayed in the console.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Evaluate Line or Selection:
+\series default
+ Evaluates the selected text or the current line of the R editor and moves to the next line. A line is only evaluated if the expression is complete, else it is collected until the expression is complete (interrupt with the action of the R-Shell view).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Evaluate Clipboard:
+\series default
+ Evaluates the R script in the clipboard.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Get Clipboard Data:
+\series default
+ Transfers the data of the clipboard (e.g., cells of a spreadsheet) to the R workspace as the dataframe clip.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Remove All Objects:
+\series default
+ Removes all objects of the current workspace.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Start RGui with Workspace:
+\series default
+ Windows: starts RGui with the current workspace.
+\end_layout
+
+\begin_layout Subsection
+The R Perspective
+\end_layout
+
+\begin_layout Standard
+The R perspective contains the views for the work with R: the 
+\series bold
+R-Shell
+\series default
+ view (expressions and the objects of the workspace), the 
+\series bold
+Packages
+\series default
+ view, the 
+\series bold
+Database
+\series default
+ view and the Project Explorer at the top left, the 
+\series bold
+Console
+\series default
+ (R), the 
+\series bold
+Plot
+\series default
+ view and the 
+\series bold
+R Snippets
+\series default
+ at the bottom left, the editor area (e.g., the R editor), the 
+\series bold
+Table
+\series default
+ view and the Snippets view below and the Outline at the right.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/r/r_perspective.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The R perspective with objects of the R workspace and a dataframe in the Table view (dark theme)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:r-perspective"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The Table View
+\end_layout
+
+\begin_layout Standard
+The Table view is a spreadsheet in which data can be imported, exported, edited and transferred to and from R. Several sheets can be opened side by side. A selection (also several ranges with Ctrl/Cmd or Shift) is highlighted with the accent color of the theme, a click on a column or row header selects the column or the row. Every sheet has its own undo and redo (the arrows in the toolbar of the view). The toolbar adds columns, rows and sheets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/r/table_view.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Table view with a selection and the menus of the view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+File:
+\series default
+ Import: CSV, Excel (97-2003 and 2007-2013 XML), OpenOffice and Bio7 XML (formatted sheets with images). Export: Excel (97-2003 and 2007-2013 XML), OpenOffice, Text and Bio7 XML.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Edit:
+\series default
+ Cut, copy, paste and delete (Ctrl/Cmd+X, C, V, Del), copy an image to the clipboard and paste an image from the clipboard, the background color, the gridline color, the font and the size of the selected cells.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Sheet:
+\series default
+ Add a sheet (or a sheet with a size), rename a sheet (or a double-click on the tab), add rows and columns (before or after the selection) and remove the selected rows or columns.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+R <-:
+\series default
+ Transfers the sheet to R as a dataframe (R<-Table, with the first row as names: R<- Table+head) or the selection as a numeric, factor or character vector.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Scripts:
+\series default
+ Custom Groovy, BeanShell, Jython or R scripts (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Install-Eclipse,-R,"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+The data of a sheet can also be plotted in the 3D view with the plot API (a dialog selects the columns, see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:The-Plot-API"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+File Import for CSV Data
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+File > Import CSV
+\series default
+ of the Table view opens the CSV Reader. A file (
+\series bold
+File
+\series default
+) or the text of the clipboard (
+\series bold
+From clipboard
+\series default
+) is imported with the options of the dialog; the preview shows the result of the options immediately and a message shows problems (e.g., a missing separator):
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Separator character
+\series default
+: comma, semicolon, tab or another character. 
+\series bold
+Detect
+\series default
+ finds the separator (comma, semicolon, tab or pipe) from the first lines.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Quote character
+\series default
+, 
+\series bold
+Escape character
+\series default
+ and 
+\series bold
+Comment character
+\series default
+ (lines starting with this character are skipped).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Start at line
+\series default
+ and the 
+\series bold
+Encoding
+\series default
+ of the file.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Strict Quotes
+\series default
+, 
+\series bold
+Ignore Quotations
+\series default
+, 
+\series bold
+Ignore Leading WS
+\series default
+ (leading whitespace), 
+\series bold
+Trim Values
+\series default
+, 
+\series bold
+Keep CR
+\series default
+ (carriage returns), 
+\series bold
+Skip Empty Rows
+\series default
+ and 
+\series bold
+Column Titles
+\series default
+ (the first row contains the names of the columns).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/r/csv_reader.jpg
+	lyxscale 40
+	width 55text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The CSV Reader with the preview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The R-Shell View
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-R-Shell-View"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The R-Shell view contains an expression field, the actions of the expressions, the list of the objects of the R workspace and the description of a selected object.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/r/r_shell.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The R-Shell view (maximized) with the objects of the workspace
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:r-shell"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+The Expression Field
+\end_layout
+
+\begin_layout Standard
+In the expression field R expressions are parsed and evaluated (Enter). Parse errors are indicated, the code completion opens with Ctrl+Space and the history of the expressions opens with the Arrow Up key (a click transfers an expression to the field). The actions below the field:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Eval:
+\series default
+ Evaluates the expression (several expressions are separated with a semicolon).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Load, Save:
+\series default
+ Imports data to R or loads the history, exports R data or saves the history (up to 100 expressions).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+R Doc:
+\series default
+ Opens the documentation of R.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+?:
+\series default
+ Opens the help of the keyword in the field (a function, a package, etc.).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Interrupt:
+\series default
+ The last button interrupts the R execution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Keys (macOS: Cmd instead of Ctrl)
+\series default
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Function
+\series default
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+Space
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Code completion
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arrow Up
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The history of the expressions
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+Enter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Writes the expression into the R editor (or R Markdown editor) with a line break
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alt+Shift+- (macOS: Cmd+Alt+Shift+B)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inserts the assignment <-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alt+Shift+N (macOS: Cmd+Alt+Shift+N)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inserts the pipe %>%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+Alt+Shift+O, Ctrl+Alt+Shift+S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inserts the code to open or save a file (selected in a dialog)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+Alt+Shift+I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Writes the history into the R editor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ctrl+Alt+Shift+R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reloads the code completion (e.g., after a package has been loaded)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The keys of the expression field
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+The Objects of the Workspace
+\end_layout
+
+\begin_layout Standard
+The list shows the objects of the R workspace. A selected object is described in the panel at the right (type, class and size). The actions:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+List:
+\series default
+ Updates the list of the objects (ls()).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Del:
+\series default
+ Removes the selected objects (several with Ctrl/Cmd or Shift).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Gc:
+\series default
+ Starts the garbage collection of R.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Clear:
+\series default
+ Clears the description panel.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Font:
+\series default
+ Changes the font of the list and the description.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+?:
+\series default
+ Shows the help of the actions.
+\end_layout
+
+\begin_layout Standard
+The key 
+\series bold
+A
+\series default
+ transfers the selected object names to the expression field separated by commas, the key 
+\series bold
+C
+\series default
+ separated by plus characters (e.g., for a formula).
+\end_layout
+
+\begin_layout Paragraph
+Context Menu of the Objects
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Show, Summary:
+\series default
+ Prints the values or the summary of the selected object in the console.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Filter:
+\series default
+ Shows only objects of a kind: Dataframes, Matrices, Vectors, Functions, etc.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Convert:
+\series default
+ Converts the selected object To Character, To Dataframe, To Factor, To List of Objects, To Matrix, To Numeric or To Vector.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Transfer to Table:
+\series default
+ Transfers the object to the Table view: Dataframe with Head (a new sheet with the names in the first row), Dataframe, Matrix, Vector to Rows and Vector to Columns (from the selected cell of the active sheet).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+LibreOffice:
+\series default
+ Opens a LibreOffice spreadsheet and transfers data between R and LibreOffice (Data to R, Data with Head to R).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Scripts:
+\series default
+ Custom scripts in special folders extend the context menu (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Install-Eclipse,-R,"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+The R Snippets View
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/r/r_snippets.jpg
+	lyxscale 40
+	width 55text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The R Snippets view
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The R Snippets view offers templates in thematic tabs (Variables, Data, Math, Statistics, Image, Matrix, Spatial Statistics, ...). A selected template shows its description. A double-click transfers the template to the expression field of the R-Shell view, a double-click with the right mouse button transfers it to an opened R editor.
+\end_layout
+
+\begin_layout Subsubsection
+The Packages view
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+The Install Packages tab
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The packages view consists of three tabs to install,
+ load and manage R packages.
+ In the 
+\series bold
+Install Packages
+\series default
+ tab a package list can be loaded from the default R mirror (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Rserve-preferences"
+nolink "false"
+
+\end_inset
+
+) with the 
+\series bold
+Load Packages list
+\series default
+ action and installed with the 
+\series bold
+Install Selected
+\series default
+ action.
+ If something went wrong with the installation it can make sense to start Rserve in a OS shell to get more information about the installation process (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Rserve-preferences"
+nolink "false"
+
+\end_inset
+
+).
+ To find the right R package some search facilities are available to find the package in the package list and to get some information about the package (select the 
+\series bold
+Open Package Description
+\series default
+ option).
+ With the
+\series bold
+ Update Installed Packages
+\series default
+ action all currently installed R packages (except the Rserve package) will be updated if possible.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/packagesview.jpg
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Install Packages tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+The Load Packages tab
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The
+\series bold
+ Load Packages
+\series default
+ tab displays the currently installed R packages and their version numbers.
+ This list can be refreshed with the 
+\series bold
+Refresh Packages List
+\series default
+ action (a refresh of the list also occurs when the tab is switched!).
+ A 
+\series bold
+double-click
+\series default
+ on the list with the mouse loads the selected package which in turn also reloads the package code completion list for the R-Shell and the R editor.
+ With the
+\series bold
+ Remove Selected Package
+\series default
+ action a R package can be removed.
+ With the
+\series bold
+ Add selected to R editor 
+\series default
+action selected libraries can be added to an opened R editor as text (library(xxx)).
+ With the Update selected Package action selected packages can be updated if an update is available.
+ With the option Open Package Description a browser will be opened to display the current selected package information.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/load_packages.jpg
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Load Packages tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+The Attached Packages tab
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Attached Packages
+\series default
+ tab displays the current loaded R packages.
+ With the 
+\series bold
+Refresh
+\series default
+ 
+\series bold
+Packages List
+\series default
+ action this list can be updated (a refresh of the list also occurs when the tab is switched!).
+ A context menu is available with an 
+\series bold
+Detach
+\series default
+ action to detach a selected package and a 
+\series bold
+Refresh
+\series default
+ packages list action.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/attached_packages.jpg
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Attached Packages tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The Plot Data View
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A selected data structure (in the data view of the Object tab) can be plotted easily with the different plot actions in this view.
+ The selected plot type has to be appropriate for the selected datatype.
+ Default all plots are created as an Image in ImageJ.
+ If the option 
+\series bold
+Detour
+\series default
+ is enabled all commands are transferred to the textfield for customization (templates are available in the context menu of the textfield).
+ The customized command then can be plotted with the 
+\series bold
+Draw Plot
+\series default
+ action.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/rplotshell.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Plot Data view with context menu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The R Editor
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-R-Editor"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/reditor.jpg
+	lyxscale 40
+	scale 40
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The R editor with the opened context menu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The R editor of Bio7 supports the syntax of the R language.
+ If an R file is created with the default wizard the extension of the created R script file is *r.
+ If you have an *.r file outside the workbench,
+ this file can simply be dropped to a project of Bio7.
+ If a R file has been opened,
+ the toolbar of the Bio7 application displays a new action item for the interpretation of R scripts (if a connection to the Rserver and R has been established).
+ 
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+R editor parser
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The R editor of Bio7 is connected to an R parser.
+ Each time the R code in the editor is changed the editor file is parsed and error or warning markers are created - visible as icons in the vertical ruler and underlined in the text where the errors or warnings have been detected.
+ In addition the R parser creates code analytics to detect and inform about several flaws in the code.
+ If some code assistence is available a light bulb will be displayed in the vertical ruler of the editor.
+ A click on the quick fix icon opens a code suggestion which can be applied with a mouse click.
+ The error and warning messages can also also opened if the underlined marked word is hovered.
+ Hovered quick fixes can be confirmed with a mouse click,
+ too.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/errorwarnmarkers.jpg
+	lyxscale 40
+	scale 40
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The R editor with errors and warnings.
+ Error and warning quick fixes are indicated with a light bulb icon.
+ Quick fixes can be opened (and applied) when hovering over the underlined error or warning.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The Database View
+\end_layout
+
+\begin_layout Standard
+The database view contains three tabs to configure a database connection.
+ For a database connection the ODBC drivers have to be installed for the dedicated Operating System.
+ The R packages 
+\series bold
+odbc
+\series default
+ and 
+\series bold
+DBI
+\series default
+ have to be installed,
+ too.
+ In the first tab 
+\series bold
+Connection
+\series default
+ some templates are available which can be selected to be used for a custom connection and displays the connection information of the 
+\series bold
+Database
+\series default
+ and 
+\series bold
+SSH Tunnel
+\series default
+ tab.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+To start with a custom connection:
+ 
+\end_layout
+
+\begin_layout Enumerate
+Install the ODBC drivers and R packages (
+\series bold
+odbc
+\series default
+,
+ 
+\series bold
+DBI
+\series default
+)
+\end_layout
+
+\begin_layout Enumerate
+Select one available default profile
+\end_layout
+
+\begin_layout Enumerate
+Update the login data on the 
+\series bold
+Database
+\series default
+ and (if enabled) 
+\series bold
+SSH Tunnel
+\series default
+ tab.
+ In additon customize the 
+\series bold
+Custom Disconnect Code
+\series default
+ for a live connection.
+ Please note if no database password should be stored for the database connection leave the password field blank.
+ For each live database connection a password dialog will be opened to ask for the username and password (handy if you don't want to store the database password or the password should be hidden in a public area)
+\end_layout
+
+\begin_layout Enumerate
+Store the current profile with the 
+\series bold
+Add Connection Profile
+\series default
+ action
+\end_layout
+
+\begin_layout Enumerate
+Use the 
+\series bold
+Connect
+\series default
+ action to establish a database connection
+\end_layout
+
+\begin_layout Enumerate
+Use the 
+\series bold
+Disconnect
+\series default
+ action to execute the R code given in the 
+\series bold
+Custom Disconnect Code
+\series default
+ textfield
+\end_layout
+
+\begin_layout Standard
+In the following section the different tabs and settings are described in detail.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+The Connection Tab Settings
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Add Connection Profile
+\series default
+ action stores the current settings of the Database and SSH (if enabled) entries in a new profile and adds the selected name to the list of available 
+\series bold
+Stored Profiles
+\series default
+ (saved as a XML file in Bio7).
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Delete Stored Profile
+\series default
+ action deletes the current selected profile and removes the profile from the 
+\series bold
+Stored Profiles
+\series default
+ list.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Use SSH Tunnel
+\series default
+ option adds the settings of the SSH Tunnel tab to the database tab settings which will be previewed in the 
+\series bold
+Preview
+\series default
+ textfield.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Preview
+\series default
+ textfield shows the current settings of the database and SSH connection which can be stored as a database profile.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Insert in Editor
+\series default
+ action transfers the database connection code to the current opened editor.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Connect
+\series default
+ action establish a connection with the credentials given from the Database and SSH Tunnel tab.
+ The connection is stored in the variable 
+\series bold
+con
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Disconnect
+\series default
+ action executes R code given in the textfield 
+\series bold
+Custom Disconnect Code
+\series default
+ (available to control the SSH connection!)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/database1.jpg
+	lyxscale 70
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Connection tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+The Database Tab Settings
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+List ODBC Drivers
+\series default
+ action searches for available ODBC drivers on the OS and add them to the 
+\series bold
+ODBC Driver
+\series default
+ list
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+ODBC Driver
+\series default
+ list let you select a ODBC driver for a database connection by name found by the
+\series bold
+ 
+\series default
+action
+\series bold
+ List ODBC Drivers
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Server
+\series default
+ textfield to enter the server address of the database
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Database
+\series default
+ textfield to enter the database name of the connection
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Port
+\series default
+ to enter the port of the database
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+User
+\series default
+ textfield to enter the username.If empty a login dialog will automatically be opened for the username and password
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Password
+\series default
+ textfield to enter the password of the database connection.
+ If empty a login dialog will automatically be opened to enter the username and password
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/database2.png
+	lyxscale 70
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Database tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+The SSH Tunnel Tab Settings
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+SSH Host
+\series default
+ textfield and 
+\series bold
+Port
+\series default
+ spinner for the server address and port of the SSH connection
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Username
+\series default
+ of the SSH connection (password should be stored in the SSH key!)
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Sleep
+\series default
+ spinner to execute the sleep command on the remote server (default to 10s)
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Private Key file
+\series default
+ textfield and file dialog action to set the location of the private SSH key
+\end_layout
+
+\begin_layout Enumerate
+The
+\series bold
+ Local Port
+\series default
+ to set the port for port forwarding (This setting lets you specify a local port that will be forwarded to your remote host and remote port)
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Custom arguments
+\series default
+ textfield to change or add custom SSH client options
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/database3.jpg
+	lyxscale 70
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The SSH Tunnel tab
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Plotting
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since Bio7 1.7.1 it is possible to plot single and multiple plots with ImageJ as the default R plot device.
+ Multiple plots are displayed in an ImageJ image stack (with the available slider you can select one plot in the stack).
+ Plots and plot stacks can be saved as images and movies with ImageJ in different formats (e.g.
+ stacks can be stored as *.avi or animated *.gif).
+ The size of the plots and the format can be changed in the Rserve Plot Preferences of Bio7 (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:R-Plot-Preferences"
+nolink "false"
+
+\end_inset
+
+) .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/rplots.png
+	lyxscale 40
+	scale 40
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A R Plot opened in ImageJ as the default device
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+R Debugging Interface
+\end_layout
+
+\begin_layout Standard
+Since Bio7 2.0 a debugging GUI for R is integrated as part of the R editor.
+ To debug a R script a breakpoint has to be set inside a R function.
+ If a breakpoint is set several actions are added to the default Bio7 console.
+ For the debugging process the native R console has to be started (The Rserve connection will be automatically change to the native mode if alive!).
+ To start a debugging process the 
+\begin_inset Quotes eld
+\end_inset
+
+Debug Trace Action
+\begin_inset Quotes erd
+\end_inset
+
+ has to be invoked and the traced function has to be executed in the R shell (see screenshot below).
+ In the shell several debugging actions are available:
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Debug Trace Action
+\series default
+ to start the debugging process.
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Stop
+\series default
+ action to stop the debugging process.
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Next
+\series default
+ action to go to the next statement.
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Continue
+\series default
+ action which continues with the execution without single stepping.
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Step Into
+\series default
+ action to step into function calls.
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Finish
+\series default
+ action to finish the current loop or function.
+\end_layout
+
+\begin_layout Enumerate
+A 
+\series bold
+Help
+\series default
+ action to display R debugging console commands.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/rdebugging.jpg
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R debugging perspective with debugging toolbar actions enabled.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+R Debugging Perspective and Views
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+To inspect the current variables a 
+\series bold
+Debug perspective with a Debug(x)
+\series default
+ view is available to display the environment variables and objects.
+ Single variables can be changed in the spreadsheet (
+\begin_inset Quotes eld
+\end_inset
+
+Value
+\begin_inset Quotes erd
+\end_inset
+
+ column) to inspect the effect on the environment.
+ In addition a 
+\series bold
+Debug Text
+\series default
+ view is availabe to display external R source not displayed in the opened R file (e.g.
+ if stepped in an package function call).
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Debug Context Menu
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+The context menu offers several actions to:
+\end_layout
+
+\begin_layout Enumerate
+Set a breakpoint.
+\end_layout
+
+\begin_layout Enumerate
+Set a conditional breakpoint - Syntax e.g.
+ :
+ 
+\emph on
+if (x==5) browser() 
+\emph default
+which is a wrapper for:
+
+\emph on
+ trace(fun,
+ quote(if (x == 5) browser())).
+\end_layout
+
+\begin_layout Enumerate
+Edit a conditional breakpoint.
+\end_layout
+
+\begin_layout Enumerate
+Delete a selected breakpoint.
+\end_layout
+
+\begin_layout Enumerate
+Delete all breakpoints.
+\end_layout
+
+\begin_layout Subsubsection
+R Plot Preferences
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:R-Plot-Preferences"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/rserveplotpref.jpg
+	lyxscale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Rserve preferences to select and adjust the R plot device
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+In the preferences several options are available to adjust the R plots.
+ The default plot size can be changed in the textfield 
+\series bold
+Device Definition
+\series default
+ (or the whole plot definition).
+ Beside the option to plot images in ImageJ it is possible to open plots in different applications.
+ Some templates in the preferences can be selected to switch e.g.
+ to a *.pdf (multiple plots can be displayed) or *.svg plot (displaying a single plot) which will be opened with the default registered software if available – for *.svg i recommend 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+http://www.inkscape.org
+\end_layout
+
+\end_inset
+
+ to improve the plot appearance).
+ Antialiased image plots can be enabled with the 
+\series bold
+Image Cairo
+\series default
+ option.
+ To change the default 
+\series bold
+Device Definition
+\series default
+ in the textfield press the action
+\series bold
+ Apply
+\series default
+.
+ With the
+\series bold
+ Special image plot options
+\series default
+ plots can be opened in individual image tabs or macros can be excuted after image creation (handy if you automatically want to scale images after plot creation).
+ Please note that the preferences will be saved if you press the 
+\series bold
+OK
+\series default
+ or 
+\series bold
+Apply
+\series default
+ button.
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Special Plot Function
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+RGL (a special package for 3D plots) and some native windows need a GUI thread which is not available.
+ To trigger a repaint with Bio7 please select the Bio7 window and press the key combination 
+\series bold
+ALT+A.
+ 
+\series default
+This is not necessary if you simply switch to the R native mode!
+\end_layout
+
+\begin_layout Subsubsection
+Help
+\end_layout
+
+\begin_layout Standard
+As noted earlier if a command has been typed in the textfield of the R-Shell view and the 
+\series bold
+?
+
+\series default
+ button has been pressed the action tries to open the default help page for the command in the Bio7 browser (same as typing ?+command in R).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/chapter4/rfunctionhelp.png
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+	draft
+	rotateOrigin center
+	special height=1.0\textwidth
+	groupId screenshot
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Help Browser
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Rserve preferences
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Rserve-preferences"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are several Rserve preferences available wich are described in this section.The following preferences can be adjusted:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/rservepreferences.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Main Rserve preferences
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+(1) 
+\series bold
+General
+\end_layout
+
+\begin_layout Itemize
+The path to the R install location.
+\end_layout
+
+\begin_layout Itemize
+The default package install location.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Path to temporary R folder 
+\series default
+options sets the path to the Bio7 R temp folder.
+ In the temp.
+ folder some plot images and R files are temporarily stored.
+ 
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Install path at startup
+\series default
+ option installs a registry path to R in the Windows registry (deprecated).
+\end_layout
+
+\begin_layout Itemize
+The option 
+\series bold
+Check at startup for running R process(es) 
+\series default
+warns for running R processes which can interfer a newly started R/Rserve native process.
+\end_layout
+
+\begin_layout Itemize
+The
+\series bold
+ Rserve startup arguments
+\series default
+ can be adjusted to start Rserve with custom arguments.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+R startup arguments
+\series default
+ can be adjusted to start R with arguments when started together with Rserve.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Rserve TCP client port
+\series default
+ option configures the running Rserve client port of the rserve application.
+\end_layout
+
+\begin_layout Description
+(2) In the 
+\series bold
+Packages
+\series default
+ preferences you can select the default R package mirror to download R packages from.
+ In addition you can set the install location of the packages.
+\end_layout
+
+\begin_layout Description
+(3) In the 
+\series bold
+Transfer to Table options
+\series default
+ the transfer method to the Bio7 Table from R can be specified to adjust the numerical precision of numbers.
+ Please consult the R documentation for the command 
+\series bold
+format
+\series default
+.
+\end_layout
+
+\begin_layout Description
+(4) The option 
+\series bold
+R-Shell:...
+
+\series default
+ enables the automatic code completion of the R-Shell view (restart of Bio7 necessary!).
+\end_layout
+
+\begin_layout Subsubsection
+R Editor
+\end_layout
+
+\begin_layout Standard
+For a description of the R editor see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:The-R-Editor"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Native R Excution
+\end_layout
+
+\begin_layout Standard
+In Bio7 it is possible to execute R scripts and R commands without Rserve (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "rnativepreference"
+nolink "false"
+
+\end_inset
+
+).
+ In the Bio7 console an independant R console can be started which pipes commands directly to an instance of R.
+ If the editor should be used with the native communication this has to be selected in the R preferences of Bio7.
+ Some commands and GUI interfaces cannot be used if the native execution is selected
+\end_layout
+
+\begin_layout Subsubsection
+Create R Packages
+\end_layout
+
+\begin_layout Standard
+If R files are selected in the Project Explorer an action is available which opens a dialog to create a R package skeleton from files or selected R workspace variables.
+ After the creation if the created R package folder is selected several available actions help in the build process of a package.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Build PDF From .Rd 
+\series default
+to create PDF documentation of *.Rd files.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Check R Package
+\series default
+ - To check if the package is properly configured.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Build R Package
+\series default
+ - to start the build process of the package
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Install R Package
+\series default
+ - to install the R package.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/rpackagecreation.jpg
+	lyxscale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dialog to create R package skeleton
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Create R Packages with the devtools package.
+\end_layout
+
+\begin_layout Standard
+Since Bio7 2.5 a new way of creating packages have been added to the context menu of the Project Explorer by using the devtools library (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/hadley/devtools
+\end_layout
+
+\end_inset
+
+) to create,
+ test,
+ compile and distribute a new R package.
+ To setup a new R package create a project folder in the workspace of Bio7 and then select the folder and execute the 
+\begin_inset Quotes eld
+\end_inset
+
+setup
+\begin_inset Quotes erd
+\end_inset
+
+ action in the context menu of the Project Explorer.
+ Documentation will be created if roxygen comments have been added to the R scripts by executing the 
+\begin_inset Quotes eld
+\end_inset
+
+Document
+\begin_inset Quotes erd
+\end_inset
+
+ action.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Setup
+\series default
+ - Setup R package in (project) folder (devtools)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Load All
+\series default
+ - Simulates installing and reloading (devtools)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Document
+\series default
+ - Updates the documentation,
+ etc.
+ (devtools)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Test
+\series default
+ - Tests the packages (devtools)
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Install
+\series default
+ - Installs the packages
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Build
+\series default
+ - Builds the packages
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Check
+\series default
+ - Checks the packages
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Build Windows
+\series default
+ - Builds the package on Windows
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Run Examples 
+\series default
+- Runs all examples of the package
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Check Manuals
+\series default
+ - Checks all manuals
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Release
+\series default
+ - Releases the package
+\end_layout
+
+\begin_layout Standard
+For some of the listed actions above the OS pseudo terminal in the console view has to be activated or will be activated.
+ Custom flags can be added in the 
+\series bold
+R Preferences Built Tools
+\series default
+ of Bio7.
+ Please note:
+ For the built process of R package binaries some extra tools are needed (especially for Windows).
+ Please consult the R instructions (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+http://cran.r-project.org/doc/manuals/R-exts.html
+\end_layout
+
+\end_inset
+
+) on the internet or search for available tutorials.
+ For tests on the Windows OS I installed a Latex environment (MiKe\SpecialChar TeX
+ with inconsolata.sty style file installed) and the Rtools distribution for Windows (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+http://cran.r-project.org/bin/windows/Rtools/)
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Document Perspective
+\end_layout
+
+\begin_layout Standard
+A special document perspective is available which opens a rendered document (HTML,
+ PDF,
+ etc.) side by side with a Bio7 editor (e.g.,
+ markdown,
+ latex,
+ HTML).
+ The editor in this perpspective is shown by default.
+\end_layout
+
+\begin_layout Section
+The HTML (Web) Perspective
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:The-HTML-Perspective"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The HTML perspective (
+\series bold
+Web
+\series default
+ in the perspective bar) is a perspective to create websites and HTML documents: the Project Explorer (left), the editor area and the 
+\series bold
+Browser
+\series default
+ view below the editor to display the result. Bio7 opens *.html files by default in a simple HTML editor (a source page and a rich text page). The former JavaFX GUI editor for HTML documents is not available anymore.
+\end_layout
+
+\begin_layout Standard
+For a full editor for HTML, CSS, JavaScript, TypeScript, JSON, YAML and XML (syntax highlighting, code completion, validation, formatting, color previews, etc.) it is recommended to install the 
+\series bold
+Eclipse Wild Web Developer
+\series default
+ with the Update Manager of Bio7 from the update site https://download.eclipse.org/wildwebdeveloper/releases/latest/ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Update-Manager"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+). After the installation an *.html file is opened with 
+\series bold
+Open With > Generic Code Editor
+\series default
+ in the editor of the Wild Web Developer (it can also be set as the default editor of *.html files in the preferences: General > Editors > File Associations).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/web/web_perspective.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Web perspective with an HTML file in the editor of the Eclipse Wild Web Developer and the Browser view
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:web-perspective"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Custom Perspective, Views and Menus
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Custom-Perspective"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Bio7 can be extended with own user interfaces in 
+\series bold
+custom views
+\series default
+ and with a 
+\series bold
+custom perspective
+\series default
+ (
+\series bold
+Custom
+\series default
+ in the perspective bar) for special tasks. In addition all views of the application can be used to lay out the custom perspective.
+\end_layout
+
+\begin_layout Subsection
+Custom Views
+\end_layout
+
+\begin_layout Standard
+A custom view (class 
+\family typewriter
+CustomView
+\family default
+, package 
+\family typewriter
+com.eco.bio7.collection
+\family default
+) embeds an own user interface in Bio7: SWT widgets, Draw2d figures, Swing (JPanel) and AWT panels. Several custom views can be created, each view has a unique id (the secondary id of the view) and is displayed in a tab with a title. The content of a custom view can be displayed in the fullscreen mode (F2 the primary monitor, F3 the secondary, F4 the tertiary, F5 a selected monitor, Escape exits).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+import com.eco.bio7.collection.CustomView;
+\end_layout
+
+\begin_layout Plain Layout
+import org.eclipse.swt.SWT;
+\end_layout
+
+\begin_layout Plain Layout
+import org.eclipse.swt.layout.FillLayout;
+\end_layout
+
+\begin_layout Plain Layout
+import org.eclipse.swt.widgets.*;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+CustomView view = new CustomView("Control Panel");
+\end_layout
+
+\begin_layout Plain Layout
+Display.getDefault().syncExec(() -> {
+\end_layout
+
+\begin_layout Plain Layout
+    Composite parent = view.getComposite("panel1");
+\end_layout
+
+\begin_layout Plain Layout
+    parent.setLayout(new FillLayout());
+\end_layout
+
+\begin_layout Plain Layout
+    Button button = new Button(parent, SWT.PUSH);
+\end_layout
+
+\begin_layout Plain Layout
+    button.setText("Start");
+\end_layout
+
+\begin_layout Plain Layout
+    parent.layout();
+\end_layout
+
+\begin_layout Plain Layout
+});
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A custom view with an SWT button
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With 
+\family typewriter
+getDraw2d(id)
+\family default
+ a Draw2d LightweightSystem is returned (e.g., for the gauges of the Nebula visualization widgets), with 
+\family typewriter
+setPanel(jpanel, id)
+\family default
+ a Swing panel is embedded. Further classes extend the custom views:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+DetachableCustomView
+\family default
+: a custom view which is opened as a detached window, optionally on a selected monitor (
+\family typewriter
+MonitorChooser
+\family default
+).
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+DetachedControlPanel
+\family default
+: a floating control panel (a top-level window) which stays visible in all perspectives, e.g., for the controls of a simulation.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+Work.moveViewToPanel(customView, viewId, panel, title)
+\family default
+: moves a view of Bio7 (e.g., the Console) into a panel of a custom view.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+Work.openPerspective(id)
+\family default
+, 
+\family typewriter
+Work.closePerspective(idOrName)
+\family default
+, 
+\family typewriter
+Work.openView(id)
+\family default
+ and 
+\family typewriter
+Work.closeView(id)
+\family default
+ open and close perspectives and views from a script.
+\end_layout
+
+\begin_layout Subsection
+The Custom Perspective
+\end_layout
+
+\begin_layout Standard
+The custom perspective (id 
+\family typewriter
+com.eco.bio7.CustomPerspective
+\family default
+) provides places for custom views: a custom view with one of the secondary ids 
+\series bold
+left
+\series default
+, 
+\series bold
+right
+\series default
+, 
+\series bold
+subLeftTop
+\series default
+, 
+\series bold
+subLeftBottom
+\series default
+, 
+\series bold
+subRightTop
+\series default
+, 
+\series bold
+subRightBottom
+\series default
+, 
+\series bold
+subRightBottomLeft
+\series default
+ or 
+\series bold
+subRightBottomRight
+\series default
+ is placed at this position of the perspective (e.g., left and right are the two halves, the sub ids divide them further). So a complete user interface, e.g., a dashboard of a model or a measurement, can be created with a script. Examples are available in the folder gui of the Bio7 Java examples (e.g., Gauges_4_Views, Gauges_8_Views, FourQuadrantExample and StationsDashboardExample).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\rmfamily},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+Work.openPerspective("com.eco.bio7.CustomPerspective");
+\end_layout
+
+\begin_layout Plain Layout
+CustomView view = new CustomView("Speed");
+\end_layout
+
+\begin_layout Plain Layout
+LightweightSystem lws = view.getDraw2d("left"); // the left half of the perspective
+\end_layout
+
+\begin_layout Plain Layout
+GaugeFigure gauge = new GaugeFigure();
+\end_layout
+
+\begin_layout Plain Layout
+gauge.setRange(0, 220);
+\end_layout
+
+\begin_layout Plain Layout
+lws.setContents(gauge);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A custom view with a gauge in the custom perspective
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/custom/custom_perspective_gauges.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The custom perspective with eight custom views (Gauges_8_Views example)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:custom-perspective"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/custom/custom_view_dashboard.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A dashboard of custom views (StationsDashboardExample)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Custom Menus
+\end_layout
+
+\begin_layout Standard
+Another nice feature of Bio7 is the simple way to extend the Script menus in Bio7 with BeanShell,
+ Groovy,
+ Jython scripts,
+ R scripts and ImageJ macros.
+ Bio7 recognizes files dropped to special folders automatically and extends the menus with the filename of the dropped files.
+ for an overview see (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Install-Eclipse,-R,"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Custom Startup 
+\end_layout
+
+\begin_layout Standard
+Groovy scripts can be used to customize the platform directly behind the start of the Bio7 application.
+ These scripts will be executed with the Groovy interpreter.
+ The scripts have to be placed in a specialized folder (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Install-Eclipse,-R,"
+nolink "false"
+
+\end_inset
+
+) for custom activities like :
+\end_layout
+
+\begin_layout Itemize
+BeanShell,
+ Groovy,
+ Jython,
+ R,
+ JavaScript,
+ ImageJ customizations or imports at startup.
+\end_layout
+
+\begin_layout Itemize
+Open or close a custom perspective or a view.
+\end_layout
+
+\begin_layout Itemize
+Execute a startup setup in the different panels.
+\end_layout
+
+\begin_layout Itemize
+Invoke an action from the Bio7 platform.
+\end_layout
+
+\begin_layout Itemize
+Import libraries.
+\end_layout
+
+\begin_layout Itemize
+Start a server application at startup.
+\end_layout
+
+\end_body
+\end_document

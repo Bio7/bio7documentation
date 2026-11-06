@@ -1,0 +1,295 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Preferences
+\end_layout
+
+\begin_layout Section
+The Bio7 Preferences
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:The-Bio7-Preferences"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Application Paths
+\end_layout
+
+\begin_layout Standard
+If the topmost item in the Bio7 Preferences dialog is selected several text
+ fields are displayed which store different paths for the Bio7 application
+ (
+\series bold
+\noun on
+Preferences\SpecialChar \menuseparator
+Preferences Bio7
+\series default
+\noun default
+).
+ The two topmost paths (Path to R, Path to LibreOffice) are paths for the
+ R application (embedded) and Open Office (if installed!) which will be
+ eventually fetched from the registry (Windows) when Bio7 starts.
+ They can also be adjusted manually to any location in the file system where
+ R or LibreOffice are installed (
+\series bold
+Browse...
+
+\series default
+ button).
+ It should be mentioned that the path to R can be changed to any R installation.
+ The communication between Bio7 and R will be successful if the Rserve package
+ is installed correctly in the referenced R application.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/preferencespaths.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bio7 path preferences
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Script Paths
+\end_layout
+
+\begin_layout Standard
+The following paths in the Preferences Bio7 are script path locations where
+ scripts and macros (ImageJ macros) can be dropped which update the menu
+ (except Startup Scripts!) of the Bio7 application at runtime (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Install-Eclipse,-R,"
+
+\end_inset
+
+).
+ The import and export scripts will update the file menu.
+ The other scripts and macros (General, R-Scripts, Spatial-Scripts, ImageJ-Macro
+s, etc.) will update the scripts or special custom menus of Bio7.The locations
+ of the scripts can be browsed easily with the browse action and files can
+ be transferred simply by copy and paste from the Project Explorer.
+ The files will be detected automatically and displayed in the appropriate
+ menu for execution.
+\end_layout
+
+\begin_layout Subsection
+Bio7 Editor Preferences
+\end_layout
+
+\begin_layout Standard
+The Preferences of the different language editors in Bio7 (R, BeanShell/Groovy,
+ Java, Jython) offering methods to adjust the default colours and fonts
+ and templates of the editors.
+
+\series bold
+ 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+
+\series bold
+\noun on
+Preferences Bio7
+\noun default
+\SpecialChar \menuseparator
+
+\noun on
+Preferences xxx-Editor
+\series default
+\noun default
+ for changing the default colours.
+ 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+
+\series bold
+\noun on
+Preferences Bio7
+\noun default
+\SpecialChar \menuseparator
+
+\noun on
+Preferences xxx-Editor
+\noun default
+\SpecialChar \menuseparator
+
+\noun on
+Template Editor xxx 
+\series default
+\noun default
+to change the default templates.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset VSpace medskip
+\end_inset
+
+Note:
+\end_layout
+
+\begin_layout Standard
+It should be mentioned that some aspects of the language editors can be
+ changed in the default text preferences of the platform (e.g.
+ font attributes).
+\end_layout
+
+\begin_layout Subsection
+Preferences Rserve
+\end_layout
+
+\begin_layout Standard
+As already described the preferences for the Rserve application (
+\series bold
+\noun on
+Preferences Bio7
+\noun default
+\SpecialChar \menuseparator
+
+\noun on
+Preferences Rserve or R
+\noun default
+\SpecialChar \menuseparator
+
+\noun on
+Preferences
+\series default
+\noun default
+) offers some options for code templates, editor colors and general adjustments
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Rserve-preferences"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Default Platform Preferences
+\end_layout
+
+\begin_layout Standard
+A detailed description of the preferences of the platform can be found on
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://help.eclipse.org/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

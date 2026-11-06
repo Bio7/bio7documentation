@@ -1,0 +1,257 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Additional Views and Interfaces
+\end_layout
+
+\begin_layout Section
+Additional Eclipse views in Bio7
+\end_layout
+
+\begin_layout Standard
+By default some more views are available in Bio7:
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Bookmarks
+\series default
+ view is a view which shows marked bookmarks in all language editors of
+ Bio7 to easily find points in code which have to be edited.
+ 
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Tasks
+\series default
+ view in the R-Editor serves as a marker for plots in the source code.
+ For all other editors it can be used to leave some information about tasks
+ that have to be done or as information in the Bio7 language editors (They
+ can be marked with different priorities!).
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Problems
+\series default
+ view to indicate compiler error and problems.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Cheat Sheets
+\series default
+ view can be used to load created Cheat Sheets from Eclipse.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Progress
+\series default
+ view shows information about running jobs in the application.
+ Each time a job has started this progress view can be opened in the progress
+ dialog of the status bar.
+\end_layout
+
+\begin_layout Section
+Java and Script Interaction with R
+\end_layout
+
+\begin_layout Standard
+Additionally a nice feature in Bio7 is the direct interaction with the Rserve
+ interpreter.
+ Not only for evaluation, but also to obtain values from R to Java or BeanShell,
+ Groovy and Jython is valuable for the creation and of models, etc.
+ Not only a call to a R method is possible by means of compiled code but
+ also calls from the BeanShell, Groovy and Jython interpreter can be made
+ to transfer values e.g.
+ to a BeanShell, Groovy, Jython workspace.
+ R calculations can be interrupted (if supported by the package) with an
+ opened system shell using the Strg+Break key combination on the shell (Windows)
+, or with the pseudo terminal in in the Console view of Bio7 by typing:
+ killall -INT Rserve (Linux, MacOSX).
+ Because of the bidirectional transfer several things can be done, e.g.:
+\end_layout
+
+\begin_layout Enumerate
+Custom GUI's can be created in Java or in the script interpreters and the
+ values can be evaluated in R.
+ After evaluation the results can be sent back to the interpreters workspace
+ or to a method in Java.
+\end_layout
+
+\begin_layout Enumerate
+Build frontends for R methods with a scripted language (e.g.
+ in SWT or Swing).
+\end_layout
+
+\begin_layout Enumerate
+Interaction between R and the API of ImageJ to automize image analysis tasks.
+\end_layout
+
+\begin_layout Enumerate
+Extend the script menus of Bio7 with R methods called by the script interpreters.
+\end_layout
+
+\begin_layout Section
+LibreOffice features of Bio7
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:LibreOffice-features-of"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the free office software LibreOffice is installed, some methods for data
+ acquisition and a small API for interaction with the LibreOffice spreadsheet
+ are available in Bio7.
+ To use the LibreOffice features it is necessary to establish a connection
+ between LibreOffice and Bio7.
+ This will be done automatically when selecting the action 
+\series bold
+LibreOffice connection
+\series default
+ in the toolbar of Bio7.
+ If a connection is established, several methods for the interaction with
+ LibreOffice will be available in the LibreOffice menu.
+\end_layout
+
+\begin_layout Enumerate
+To receive or transfer values from or to the spreadsheet of LibreOffice
+ it is necessary to open a spreadsheet.
+ This can easily be done with the action 
+\series bold
+\noun on
+LibreOffice\SpecialChar \menuseparator
+Open Spreadsheet
+\series default
+\noun default
+.
+ After a spreadsheet has been opened (also possible by means of a small
+ API) the spreadsheet can be filled with values by hand or with values from
+ a file (in the opened spreadsheet menu of LibreOffice call the menu action:
+ 
+\series bold
+\noun on
+Insert\SpecialChar \menuseparator
+Sheet from file
+\series default
+\noun default
+).
+\end_layout
+
+\begin_layout Enumerate
+With the action 
+\series bold
+Data to R
+\series default
+ LibreOffice spreadsheet values can be transferred to the active R workspace
+ by means of the Rserve connection (the columns will be stored as lists
+ and the selected values as a dataframe).
+\end_layout
+
+\begin_layout Enumerate
+With the action 
+\series bold
+Data with head to R
+\series default
+ numeric values (type double) with a head can be transferred directly to
+ R.
+\end_layout
+
+\begin_layout Enumerate
+With the action
+\series bold
+ Send Bio7 counts
+\series default
+ counted values of the activated states in a simulation for all time steps
+ are transferred to an opened spreadsheet which then can be stored to all
+ kinds of data files.
+\end_layout
+
+\begin_layout Enumerate
+There is also a small API available for the transfer of data (get and set),
+ inserting new sheets, getting values from sheets and the marking of the
+ data in a spreadsheet (see Bio7 Snippets and Bio7 API docs).
+\end_layout
+
+\end_body
+\end_document

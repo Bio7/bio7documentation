@@ -1,0 +1,9 @@
+.DS_Store
+*~
+*.lyx~
+#*.lyx#
+.print_tmp.html
+*.tabs.pdf
+__pycache__/
+*.pdf
+.settings/

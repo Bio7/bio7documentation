@@ -1,0 +1,1485 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+What else ?
+\end_layout
+
+\begin_layout Section
+Native Preferences
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Native-preferences"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the native preferences some native connections to interpreters (R, Python)
+ and OS shell preferences can be adjusted.
+ The following preferences are available:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter10/nativepreferences.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Native preferences of Bio7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+(1) With the 
+\series bold
+Shell
+\series default
+ preferences the OS shell can be started within Bio7 with some arguments.
+\end_layout
+
+\begin_layout Description
+(2) In the 
+\series bold
+R
+\series default
+ preference the R editor script can be executed with the native connection
+ instead of the Rserve connection (deprecated - only useful if Rserve is
+ started independent from the shell!).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "rnativepreference"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+(3) In the 
+\series bold
+Python/Blender
+\series default
+ preference it can be adjusted to execute Python code of the editor with
+ a native Python connection instead of the default Jython interpreter.
+ The path to a Python interpreter has to be adjusted.
+ In addition a Blender Python interpreter (which is embedded in an Blender
+ installation) can be used to execute editor code.
+ The different options are described in 
+\series bold
+(4)
+\series default
+.
+ Once again the path has to be adjusted.
+\end_layout
+
+\begin_layout Description
+(4) In the 
+\series bold
+Blender Default Options
+\series default
+ some preferences can be selected and changed to start the Python interpreter
+ and execute editor code in different ways.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+None
+\series default
+ will simply startup Blender without a Python script execution (arguments
+ can be specified in the 
+\series bold
+Blender Arguments
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+The option
+\series bold
+ Interactive Shell
+\series default
+ if selected starts the Python connection as an interactiv shell (argument:
+ --python-console).
+ A special script customization is possible by defining code elements which
+ will be executed before and after the editor code (the default code in
+ the two textfields redraws the 3d GUI of Blender!)
+\end_layout
+
+\begin_layout Itemize
+The option 
+\series bold
+Python Script 
+\series default
+starts Blender and executes the editor script in Blender Python without
+ an interactive shell.
+\end_layout
+
+\begin_layout Itemize
+With the 
+\series bold
+Blender Arguments
+\series default
+ additional arguments can be specified for the startup of Blender (e.g.
+ with the option 
+\series bold
+None
+\series default
+ some rendering tasks can be executed instead of executing a python script).
+\end_layout
+
+\begin_layout Section
+Drag, Drop, Compile and Start
+\end_layout
+
+\begin_layout Standard
+Since Bio7 1.5 it is possible to store grid patterns in an *.xml file.
+ If a Java editor is available the source code of an opened editor can be
+ saved with the pattern.
+ If source in a pattern file is available, too the source of the file will
+ be loaded and compiled and the setup method (if available) will be executed.
+ This can be used to execute a Java model with drag and drop.
+ In addition this drag and drop action can also be used in conjunction with
+ different java model types (3d models etc.).
+ Please note that a package declaration in a Java file is not supported!
+ Simply use the default /src project folder as created by the Bio7 project
+ wizard when saving the file.
+ Some examples can be found on GitHub: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/Bio7/Bio7
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Drag and Drop Files
+\end_layout
+
+\begin_layout Standard
+Several external file types can be dragged on the Bio7 interface.
+ Here is an overview of the supported file types and the action involved:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="33col%">
+<column alignment="left" valignment="top" width="33col%">
+<column alignment="left" valignment="top" width="33col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+GUI Comp.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+File Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Action
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Global 
+\series bold
+(1)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+*.exml
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Loads a pattern, compiles Java code (if availabe) and executes the setup
+ method of the compiled code.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Global 
+\series bold
+(1)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+*.RData
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Starts Rserve (if not alive) and loads the *RData into the R workspace.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Project Explorer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+*.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Copies all file types in a project of Bio7 (in the Bio7 workspace).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ImageJ-Canvas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+*.png, *.jpg, etc.
+ 
+\series bold
+(2)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opens images, stacks, etc.
+ in the ImageJ view.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ImageJ-Canvas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+*.jar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Installs and loads ImageJ plugins (default folder has to be selected).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ImageJ-Toolbar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+*.png, *.jpg, etc.
+ 
+\series bold
+(2)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opens images, stacks, etc.
+ in the ImageJ view
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Points
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+*.png, *.jpg, etc.
+ 
+\series bold
+(3)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opens images in the Points panel and adjusts the “Area of Analysis”.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Drag And Drop actions in Bio7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+(1) Except some Bio7 components with special drag and drop support and the
+ editor area.
+\end_layout
+
+\begin_layout Description
+(2) All supported ImageJ file types and libs.
+\end_layout
+
+\begin_layout Description
+(3) Default Java supported image types.
+\end_layout
+
+\begin_layout Section
+Install Eclipse, R, ImageJ Plugins or Packages in Bio7
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Install-Eclipse,-R,"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bio7 can be extended in several different ways with Eclipse plugins, R packages,
+ ImageJ plugins and custom scripts (scripts to extend a menu or executed
+ at startup).
+\end_layout
+
+\begin_layout Enumerate
+To install (suitable) Eclipse plugins the Update-Manager can be used to
+ install plugins from a remote website.
+ 
+\end_layout
+
+\begin_layout Enumerate
+R packages can be added in two different ways.
+ One way is to use the package installer GUI of Bio7.
+ Additionally the command line in R can be used to install packages.
+\end_layout
+
+\begin_layout Enumerate
+ImageJ plugins (*.class or *.jar files) have to be installed in the plugins
+ folder of ImageJ which is is located in Bio7: Bio7/plugins/com.eco.bio7.image_x.xx.x
+/plugins.
+ Note: In the ImageJ Eclipse plugin the typical ImageJ folder structure
+ can be found!
+\end_layout
+
+\begin_layout Enumerate
+Groovy, BeanShell, Jython, JavaScript and R scripts, as well as ImageJ macros
+ can be dropped to special folders to extend the default Bio7 menu (startup)
+ functionality.
+ The folders which are scanned by default are shown in the table below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="40col%">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="20col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Folder Location (see Preferences Bio7!)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Script Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Menu
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Bio7 Component
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bio7
+\backslash
+plugins
+\backslash
+com.eco.bio7_x.x.x
+\backslash
+scripts
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Java, BeanShell,Groovy, Jython, R, JavaScript, ImageJ Macro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Menu or submenus created from scripts and (nested) folders
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bio7 main menu
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bio7
+\backslash
+plugins
+\backslash
+com.eco.bio7_x.x.x
+\backslash
+grid_scripts
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Java, BeanShell,Groovy, Jython, R, JavaScript, ImageJ Macro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Menu or submenus created from scripts and (nested) folders
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Table view menu
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bio7
+\backslash
+plugins
+\backslash
+com.eco.bio7_x.x.x
+\backslash
+r_shell_scripts
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Java, BeanShell,Groovy, Jython, R, JavaScript, ImageJ Macro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Menu or submenus created from scripts and (nested) folders
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R-Shell context menu
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bio7
+\backslash
+plugins
+\backslash
+com.eco.bio7_x.x.x
+\backslash
+startup_scripts
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Groovy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scripts executed at startup if option enabled
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Scripts and their install locations for Bio7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bio7 Themes
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Bio7-Themes"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Bio7 has a light and a dark default theme (
+\series bold
+Bio7 Light
+\series default
+ and 
+\series bold
+Bio7 Dark
+\series default
+) and 
+\series bold
+custom themes
+\series default
+: a custom theme is based on the light or dark default theme and defines the colors of the workbench (the windows, views, tabs, toolbars, editors, the console and the widgets), the fonts, the style of the view tabs, an artwork image which fades over the main toolbar (and optional the view tab rows) and the colors of the icons. Several example themes are shipped with Bio7: Modern Light, Modern Midnight, Nightshift, Ocean, Ocean Waves and Stars.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter10/themes/theme_gallery.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The default themes and the example themes of Bio7 (3d perspective)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bio7-themes"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A theme is selected with 
+\series bold
+Window > Switch Theme...
+\series default
+ which opens the preferences of the themes (
+\series bold
+Preferences Bio7 > Preferences Appearance
+\series default
+). There the themes are listed: select a theme and press 
+\series bold
+Activate
+\series default
+. The default themes and the custom themes are switched without a restart (a change of the icon colors is applied after a restart, Bio7 asks for it).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter10/themes/theme_dark.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bio7 with the dark default theme
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bio7-dark-theme"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Custom Themes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter10/themes/theme_preferences.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The preferences of the themes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:theme-preferences"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the preferences of the themes new custom themes can be created (
+\series bold
+New
+\series default
+, based on the light or the dark default theme), duplicated (
+\series bold
+Duplicate
+\series default
+, e.g., to change an example theme), deleted, imported and exported (
+\series bold
+Import...
+\series default
+, 
+\series bold
+Export...
+\series default
+: a theme is stored as one *.bio7theme file which can be shared). The default themes can not be changed. A preview shows the toolbar and the view tabs with the settings of the selected theme. The settings of a custom theme are:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Name, Author, Based on:
+\series default
+ The name, the author and the default theme which is the base of the theme (light or dark).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Toolbar:
+\series default
+ The style of the main toolbar (e.g., flat, gradient or raised).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Colors:
+\series default
+ The colors of the window and view backgrounds, the view panels, the text, the tab row, the selected tab, the tab text, the tab border, the view toolbar text, the toolbar (top and bottom of the gradient) and its text, the status bar, the icon and icon detail color, the editor background and text, the console, the buttons and the text fields. 
+\series bold
+Reset Colors
+\series default
+ restores the original colors of the theme.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+View Tabs:
+\series default
+ The style of the tab rows of the views (flat, gradient or raised) with an optional artwork image (an own fade and opacity), the artwork in the tab rows below the first row and the opacity of the selected tab.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Fonts:
+\series default
+ The font of the views and widgets and the text font of the editors and the console.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Toolbar Artwork:
+\series default
+ An image (SVG, PNG, JPG, GIF, TIFF, BMP) for the background of the main toolbar: the mode (tiled or stretched), the tile size, the opacity and the fade (e.g., visible at the left and faded out to the right). With 
+\series bold
+Continue in the view tab rows
+\series default
+ the artwork continues from the toolbar into the tab rows below it (one picture).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Layout (all themes):
+\series default
+ The gap below the main toolbar and between the views. The gaps can be saved with the selected theme (they are exported with the theme).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter10/themes/theme_stars_toolbar.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The toolbar artwork of the theme Stars continued in the view tab rows
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter10/themes/theme_oceanwaves_toolbar.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The toolbar artwork of the light theme Ocean Waves
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Icon Colors
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter10/themes/theme_icons.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The preferences of the icon colors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In 
+\series bold
+Preferences Appearance > Icons
+\series default
+ the colors of the Bio7 icons (*.svg) can be changed: the icon color and the detail color (white by default, e.g., the letters of the file icons) for the light and the dark theme. The preview shows the icons with the colors. A custom theme has its own icon colors. The Eclipse icons and the Bio7 logo keep their colors. A change is applied after a restart of Bio7.
+\end_layout
+
+\begin_layout Section
+Install Git
+\end_layout
+
+\begin_layout Standard
+One useful plugin for Bio7 is the Git plugin which can easily installed
+ with the Update Manager of Bio7.
+ Open the Update Manager and select the Update site for the plugin (see
+ screenshot below).
+ Then select the appropriate plugins.
+ After installation a vast amounts of Git methods can be used easily with
+ a Graphical User Interface.
+ For a documentation please visit: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.eclipse.org/egit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter10/installgit.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Installation of the EclipseGit plugin
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bio7 Browser
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Bio7-Browser"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Bio7 embeds a web browser in the 
+\series bold
+Browser
+\series default
+ view (
+\series bold
+Help > Bio7 Internet
+\series default
+). The view uses the SWT browser, the web engine of the operating system (no JavaFX browser is used anymore). By default it opens the online manual of Bio7. The toolbar of the view contains link menus to useful resources (e.g., the ImageJ documentation, plugins and forum, the R task views, tutorials and references, OpenStreetMap), the address field with 
+\series bold
+Go
+\series default
+, 
+\series bold
+Back
+\series default
+, 
+\series bold
+Forward
+\series default
+, 
+\series bold
+Stop
+\series default
+, 
+\series bold
+Refresh
+\series default
+, 
+\series bold
+Home
+\series default
+ and 
+\series bold
+Bio7 Manual
+\series default
+ and a zoom. Files (e.g., *.html or *.pdf) can be dropped on the address field to open them.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/web/browser_view.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Browser view (maximized) with the online manual of Bio7
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:browser-view"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The browser is used for the R help, rmarkdown and knitr documents (*.html, *.pdf). In the browser preferences (
+\series bold
+Preferences Bio7 > Preferences Browser
+\series default
+) PDF files can be embedded in the Browser view, the URL of the help for the installation of R packages can be changed and JavaScript scripts of the JavaScript editor can be executed in the current browser page.
+\end_layout
+
+\begin_layout Section
+Uninstall Eclipse Plugins
+\end_layout
+
+\begin_layout Standard
+The about dialog embeds an action to uninstall installed Eclipse plugins
+ or revert the installation of Bio7 to a specific date of installation.
+ In this way a corrupted installation can be reverted to a previous state
+ of installation.
+\end_layout
+
+\begin_layout Section
+Programming Examples for Bio7
+\end_layout
+
+\begin_layout Standard
+The application Bio7 is distributed with a rich set of programming examples,
+ which should facilitate the development of ecological models.
+ The examples are so called Snippets (short programming examples) which
+ are numbered and divided into two projects.
+ One project (
+\series bold
+Bio7_Java_Examples
+\series default
+) contains Java snippets for the different components of Bio7 which demonstrates
+ how to use them and the flexibility of the platform in general.
+ The other project 
+\series bold
+Bio7_Script_Examples
+\series default
+ contains snippets as examples for the scripting languages.
+ This Snippets also show that you can use the different embedded application
+ and modules to understand and analyze complex systems or bundle them in
+ ecological modeling for more complex purposes.
+ The examples are available as projects.
+ Please import them with 
+\series bold
+\noun on
+File\SpecialChar \menuseparator
+Import\SpecialChar \menuseparator
+Existing Projects into Workspace
+\series default
+\noun default
+ into your Bio7 workspace.
+ The Snippets can also be browsed and downloaded on github: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/Bio7
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

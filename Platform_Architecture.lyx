@@ -1,0 +1,532 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+The Platform-Architecture
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:The-Platform-Architecture"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+After Bio7 has been launched an Eclipse workbench window is displayed. A window contains a page with an arrangement of views and editors whose layout is defined by a perspective. The perspectives are switched in the perspective bar, views and editors can be moved, stacked, minimized, maximized (double-click on a tab) and detached.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter3/window_components.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The components of the Bio7 window (Resource perspective with an R script, dark theme)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:window-components"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(1) The main toolbar
+\series default
+ with the actions of Bio7 and of the active editor (see below).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(2) The search
+\series default
+ (Ctrl/Cmd+3): finds commands, views, perspectives and preferences by their names.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(3) The perspective bar
+\series default
+: opens and switches the perspectives (e.g., R, Document, ImageJ Edit, Resource, R ImageJ Analysis, 3d, WorldWind, Web, Custom).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(4) and (8) Views
+\series default
+, e.g., the Project Explorer and the Outline.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(5) The editor area
+\series default
+ with the opened editors (e.g., the R editor).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(6) Views below the editor
+\series default
+, e.g., the Console, the Properties and the Snippets.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(7) The status line
+\series default
+: the memory (a click on the trash icon starts the garbage collection of Java), the selection, the time steps of a simulation (see Counter Reset) and the state of the editor (e.g., Writable, Insert, the line).
+\end_layout
+
+\begin_layout Section
+The Toolbar
+\end_layout
+
+\begin_layout Standard
+The toolbar contains the default actions of Bio7 which are described below. Editors and plugins add their own actions to the toolbar (e.g., the actions of the active editor). The toolbar can be hidden with 
+\series bold
+Window > Show/Hide Toolbar
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter3/toolbar.png
+	lyxscale 40
+	width 60text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The toolbar of Bio7 (with the action of the R editor)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:toolbar"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(1) Play/Pause:
+\series default
+ Starts or stops a simulation: the repeated, time based invocation of the run method of a compiled Java class (a class which extends the class Model). The menu of the action contains 
+\series bold
+Set Time Interval
+\series default
+ (the interval of the invocation) and 
+\series bold
+Counter Reset
+\series default
+ (sets the time steps of the status line to 0).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(2) Setup:
+\series default
+ Invokes the setup method of the compiled Java class (if available).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(3) R:
+\series default
+ Starts R with an Rserve connection (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:The-R-Perspective"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+). The menu of the action contains 
+\series bold
+Start Rserve/Stop Rserve (within R)
+\series default
+, 
+\series bold
+Terminate R
+\series default
+ and 
+\series bold
+Kill All R Processes
+\series default
+ (if necessary).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(4) Create Projects or Files:
+\series default
+ Creates a project with a default file in one step: a Bio7 Java project (also with a WindowBuilder GUI, OpenGL, WorldWind or an ImageJ plugin), a project with an R, R Markdown, R Shiny, Python, Jython, Groovy, JavaScript, ImageJ macro or LaTeX file, a reproducible project or another project or file (
+\series bold
+Other...
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(5) Editor actions:
+\series default
+ The actions of the active editor, e.g., 
+\series bold
+Interpret R
+\series default
+ for the R editor, the compilation of Java code for the Java editor or 
+\series bold
+Interpret ImageJ Macro
+\series default
+ for the ImageJ macro editor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(6) Open a Terminal:
+\series default
+ Opens a terminal (a shell of the operating system) in the Terminal view.
+\end_layout
+
+\begin_layout Section
+The Menu
+\end_layout
+
+\begin_layout Standard
+The menu bar of Bio7 contains the menus for the work with the components of the application:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+File:
+\series default
+ New projects and files, Save, Save All, Save As, Refresh, Import and Export of projects and files and 
+\series bold
+Restart in Debug Mode...
+\series default
+ (a restart with a port for a Java debugger).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Edit:
+\series default
+ Undo, Redo, Cut, Copy, Paste, Delete, Find/Replace, Select All and Print for the editors of Bio7.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Search:
+\series default
+ The search in files and projects.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Preferences:
+\series default
+ Opens the preferences of Bio7 (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:The-Bio7-Preferences"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Scripts:
+\series default
+ Submenus with own scripts (BeanShell, Groovy, Jython, R scripts and ImageJ macros) of special folders (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Install-Eclipse,-R,"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+R:
+\series default
+ The actions for the interaction with R and the transfer of data (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:R-Menus-in"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Window:
+\series default
+ 
+\series bold
+Show Selected View
+\series default
+, 
+\series bold
+Show View
+\series default
+ and 
+\series bold
+Open Perspective
+\series default
+, 
+\series bold
+Show/Hide Editor
+\series default
+, 
+\series bold
+Show/Hide Toolbar
+\series default
+, 
+\series bold
+Show All Menus
+\series default
+, 
+\series bold
+Hide All Menus
+\series default
+ and 
+\series bold
+Fullscreen/Hide Menus
+\series default
+, 
+\series bold
+Switch Theme...
+\series default
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bio7-Themes"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) and 
+\series bold
+Save Perspective As
+\series default
+ (a custom arrangement of views).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Help:
+\series default
+ The help of the application, the dynamic help, 
+\series bold
+Bio7 Internet
+\series default
+ (the Browser view), the installation of new software and updates (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Update-Manager"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) and the About dialog (with the uninstallation of plugins).
+\end_layout
+
+\begin_layout Standard
+LibreOffice can be connected with the R-Shell view and the Table view of Bio7 (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:LibreOffice-features-of"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\end_body
+\end_document

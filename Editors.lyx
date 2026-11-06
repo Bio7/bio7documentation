@@ -1,0 +1,1931 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+The Editors of Bio7
+\end_layout
+
+\begin_layout Section
+General Features
+\end_layout
+
+\begin_layout Standard
+There are several editors integrated in Bio7 which support the syntax of
+ different programming languages and a specialized Flow editor to drop files
+ from the other editors for execution.
+ The "language" editors support the syntax of the languages Java, BeanShell,Groo
+vy, Jython and R.
+ A text editor is also offered by default integrated in the platform (an
+ editor for arbitrary files as well!).
+ All editors if opened offer more or less customized menus and toolbars
+ and also offer custom context menus for the work with the different languages.
+ By activating a language editor, typical text tools are activated in the
+ edit menu of the main menubar of the Bio7 application.
+ Some creation notes are listed below.
+\end_layout
+
+\begin_layout Itemize
+Before creating a file, a 
+\series bold
+Project
+\series default
+ has to be created where the files can be placed (
+\series bold
+\noun on
+File\SpecialChar \menuseparator
+New\SpecialChar \menuseparator
+General\SpecialChar \menuseparator
+Project
+\series default
+\noun default
+).
+\end_layout
+
+\begin_layout Itemize
+A file can be created by using a wizard, which can be activated in the 
+\series bold
+File
+\series default
+ menu.
+ (
+\series bold
+\noun on
+File\SpecialChar \menuseparator
+New\SpecialChar \menuseparator
+Other\SpecialChar \menuseparator
+xxx
+\series default
+\noun default
+) or in the context menu of the Project Explorer.
+ (e.g.: 
+\series bold
+\noun on
+New\SpecialChar \menuseparator
+Other\SpecialChar \menuseparator
+xxx
+\series default
+\noun default
+).
+\end_layout
+
+\begin_layout Itemize
+The file itself will be opened in the editor area, which can be hidden or
+ shown in a perspective by selecting the action 
+\series bold
+\noun on
+Window
+\noun default
+\SpecialChar \menuseparator
+
+\noun on
+Show/Hide Editor
+\series default
+\noun default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/filewizard.jpg
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dialog to create projects and files with a wizard for the different editors
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Editor Code Templates
+\end_layout
+
+\begin_layout Standard
+Alternatively to the simple 
+\series bold
+Snippets
+\series default
+ view (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:The-Snippets-View"
+
+\end_inset
+
+) all language editors offer code templates by pressing the key combination
+ Ctrl+Space (see below).
+ Eventually the key settings have to be changed depending on the OS!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/codetemplatesdialog.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Editor code templates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Templates for the Bio7 editors can be created and stored in the preferences
+ dialog (
+\series bold
+\noun on
+Preferences
+\noun default
+\SpecialChar \menuseparator
+
+\noun on
+Preferences Bio7
+\noun default
+\SpecialChar \menuseparator
+
+\noun on
+Preferences xxx-Editor 
+\noun default
+\SpecialChar \menuseparator
+
+\noun on
+Template Editor xxx
+\series default
+\noun default
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/codetemplates.jpg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Template preferences
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For a detailed description of the Code Templates see: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingSta
+rted%2Fqs-EditorTemplates.htm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+Note: 
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By default it is possible to share this self defined code templates with
+ others by using the integrated import/export functions of the different
+ template editors available for each language in Bio7.
+\end_layout
+
+\begin_layout Subsection
+Preferences of the Editors
+\end_layout
+
+\begin_layout Standard
+In the preferences dialog of Bio7 there are a lot of functions available
+ to customize the different language editors.
+ For example, the fonts for all editors can be customized under 
+\series bold
+\noun on
+General\SpecialChar \menuseparator
+Appearance\SpecialChar \menuseparator
+Colours and Fonts
+\series default
+\noun default
+.
+ If the colours of the keywords, etc.
+ should be changed, it could be done under 
+\series bold
+\noun on
+Preferences Bio7\SpecialChar \menuseparator
+Preferences xxx-Editor
+\series default
+\noun default
+ for a selected editor.
+\end_layout
+
+\begin_layout Subsection
+The R Editor
+\end_layout
+
+\begin_layout Standard
+Bio7 contains a R editor which is described in the R perspective section
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:The-R-Perspective"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+R Markdown Editor
+\end_layout
+
+\begin_layout Standard
+Since Bio7 2.3 it is possible to write R markdown documents with the help
+ of the rmarkdown package
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+ https://cran.r-project.org/web/packages/rmarkdown/index.html
+\end_layout
+
+\end_inset
+
+.
+ A simple markdown editor is available by default in Bio7 with helps in
+ the creation of rmarkdown supported document types.
+ A wizard in the file menu is available, too to help in the creation of
+ a default rmarkdown document export type.
+\end_layout
+
+\begin_layout Subsection
+LaTeX Editor
+\end_layout
+
+\begin_layout Standard
+The Texlipse editor 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://texlipse.sourceforge.net/
+\end_layout
+
+\end_inset
+
+ integrated in Bio7 can be used to create LaTeX and LaTeX knitr documents.
+ For a complete manual see: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://texlipse.sourceforge.net/manual/
+\end_layout
+
+\end_inset
+
+.
+ If the editor is opened with a *.Rtex knitr file an action will be available
+ to compile the document to a valid *.tex file eventually with embedded R
+ commands and plots.
+\end_layout
+
+\begin_layout Subsection
+HTML Editor
+\end_layout
+
+\begin_layout Standard
+The HTML editor of Bio7 embedded, e.g., in the HTML perspective (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:The-HTML-Perspective"
+
+\end_inset
+
+) is a graphical and text based editor (multi page) for the creation of
+ pure HTML and rmarkdown HTML files.If the editor is opened with a *.Rhtml
+ knitr file an action will be available to compile the document to a valid
+ *.html file eventually with embedded R commands and plots.
+\end_layout
+
+\begin_layout Subsection
+Java
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/javaeditor.jpg
+	lyxscale 40
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Java editor of Bio7 with opened context menu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Since Bio7 2.0 the JDT Java editor is used to edit Java source files.
+ A description of the JDT editor can be found on the Eclipse documentation
+ website 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://help.eclipse.org/luna
+\end_layout
+
+\end_inset
+
+ or in the Bio7 help.
+\end_layout
+
+\begin_layout Subsubsection
+
+\series bold
+Since Bio7 1.7.1 Full Class and Multiple Class Compilation is Supported!
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+In the Java preferences of Bio7 you can switch between full class and classbody
+ compilation - deprecated in Bio7 2.0 - 
+\series bold
+(1)
+\series default
+.
+ In addition it is possible to adjust some compiler properties.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/javapreferences.jpg
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Java compiler preferences to switch e.g.
+ between dynamic classbody (deprecated) and (multiple) class compilation
+ (1).
+ The editors colours and fonts (2) can be adjusted, too.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+BeanShell and Groovy
+\end_layout
+
+\begin_layout Standard
+The BeanShell/Groovy editor as well as the Java editor supports the Java
+ syntax.
+ Code templates, (identically to that in the Java editor) are available,
+ too (some script code templates may differ!).
+ In general BeanShell or Groovy are capable to interpret ordinary Java code
+ but also have complete scripting capabilities to facilitate the development
+ process of programming.
+ Scripting code as well as Java code can be executed with the actions which
+ are shown in the toolbar.
+ 
+\end_layout
+
+\begin_layout Standard
+The reasons that BeanShell, Groovy and a separate Java compiler have been
+ added to Bio7 are the following:
+\end_layout
+
+\begin_layout Enumerate
+Need for speed in complex applications: The embedded Java compiler compiles
+ the Java code to bytecode while the interpreted languages interpret the
+ code which is much slower and sometimes is not sufficient for resource
+ intensive calculations (though compiled code will be executed also very
+ efficiently by BeanShell, Groovy or Jython!).
+ However new versions of the different interpreters close this speed gap
+ more and more.
+\end_layout
+
+\begin_layout Enumerate
+Scripting capabilities: With BeanShell, Groovy (and Jython) it is possible
+ to create highly dynamic applications with customized scripts.
+ Script templates like the snippets can easily be recycled for custom modificati
+ons.
+ Scripts can be used to extend the Bio7 
+\series bold
+Script
+\series default
+ menus.
+\end_layout
+
+\begin_layout Enumerate
+Direct interaction: With the BeanShell, Groovy (or Jython) console you can
+ interact directly with the methods and integrated API's of Bio7.
+\end_layout
+
+\begin_layout Standard
+Code, which was written for the Java compiler can easily be switched to
+ BeanShell (supports full Java syntax up to version 1.4!) or Groovy (minor
+ differences).
+ 
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset VSpace medskip
+\end_inset
+
+Note: 
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The default imports for the BeanShell, Groovy and Jython interpreter can
+ be changed in the file ...
+\backslash
+plugins
+\backslash
+com.eco.bio7_x.x.x
+\backslash
+bin
+\backslash
+imports
+\backslash
+xxxxx.properties (Windows)
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Special Actions in the Context Menu of the Java and BeanShell/Groovy Editor
+\end_layout
+
+\begin_layout Standard
+The context menu of the BeanShell/Groovy editor and the Java editor offers
+ some methods for editing the source and for source conversions.
+ These are (beside the regular actions of the platform):
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Add Block Comment
+\series default
+: Surrounds the selected code with a block comment.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Remove Block Comment
+\series default
+: Removes a selected block comment.
+ (A precise selection is necessary!).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Format Java
+\series default
+: Formats regular Java code (To work with BeanShell or Groovy please create
+ Java code inside the BeanShell/Groovy editor!).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Format selected Java
+\series default
+: Formats only the selected code.
+ This is sometimes necessary if the formatter can not format the entire
+ code.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+R Source Conversion
+\series default
+: Converts Rscript code.
+ This converter helps to convert R expressions for the use e.g.
+ in an BeanShell or Groovy script using the Rserve API.
+ 
+\end_layout
+
+\begin_layout Subsection
+The Python/Jython Editor
+\end_layout
+
+\begin_layout Standard
+A Python/Jython editor is available to execute Python/Jython scripts.
+ The Bio7 API can be used with Python/Jython, too.
+ The editor comes with typical editor actions similiar to those which were
+ already described for the other language editors.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\normalsize},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# A Jython example which overrides the run method
+\end_layout
+
+\begin_layout Plain Layout
+
+# of the inherited Model class of Bio7!
+\end_layout
+
+\begin_layout Plain Layout
+
+# The method run can be called from the Start/Pause action
+\end_layout
+
+\begin_layout Plain Layout
+
+# of the Bio7 toolbar!
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class jythonClass(Model):
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+def run(self):
+\end_layout
+
+\begin_layout Plain Layout
+
+#print index
+\end_layout
+
+\begin_layout Plain Layout
+
+Field.chance();
+\end_layout
+
+\begin_layout Plain Layout
+
+Field.doPaint();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#We instantiate the class!
+\end_layout
+
+\begin_layout Plain Layout
+
+model = jythonClass()
+\end_layout
+
+\begin_layout Plain Layout
+
+#We set the class as the compiled class!
+\end_layout
+
+\begin_layout Plain Layout
+
+Compiled.setModel(model);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jython example which uses the Bio7 API
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Native Python Execution
+\end_layout
+
+\begin_layout Standard
+It is also possible to execute Python scripts with the Jython editor if
+ the native execution is enabled in the Native preferences of Bio7 (see:
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Native-preferences"
+
+\end_inset
+
+).
+ If the Python package 
+\begin_inset Quotes eld
+\end_inset
+
+Py4J
+\begin_inset Quotes erd
+\end_inset
+
+ is installed (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+ http://py4j.sourceforge.net/
+\end_layout
+
+\end_inset
+
+) in the Python distribution the Bio7 API and Java libs can be acessed from
+ within CPython (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Py4J example"
+
+\end_inset
+
+).
+ Therefore the Java Py4J Server has to be started in the scripts menu of
+ Bio7 (which is momentarily by default available in the Linux and Mac version
+ of Bio7 2.0).
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\series bold
+Note:
+\series default
+ It is also possible to install the popular 
+\begin_inset Quotes eld
+\end_inset
+
+PyDev
+\begin_inset Quotes erd
+\end_inset
+
+ Python editor (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+ http://pydev.org/
+\end_layout
+
+\end_inset
+
+) into Bio7 and execute the opened Python scripts (you have to open them
+ with the PyDev editor) with the available Bio7 action in the main toolbar.
+ The available Bio7 action cares about the execution of the script in the
+ Bio7 Python/Jython environment and console.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "basicstyle={\normalsize},language=Java,numbers=left"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# A Python Py4J example which transfers values
+\end_layout
+
+\begin_layout Plain Layout
+
+# from the ImageJ Results table and plots them with
+\end_layout
+
+\begin_layout Plain Layout
+
+# the Matplot lib.
+\end_layout
+
+\begin_layout Plain Layout
+
+# For this example Py4J has to be installed in Python
+\end_layout
+
+\begin_layout Plain Layout
+
+# and the Py4J Server has to be started!
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+import numpy as np 
+\end_layout
+
+\begin_layout Plain Layout
+
+import matplotlib.pyplot as plt 
+\end_layout
+
+\begin_layout Plain Layout
+
+from py4j.java_gateway import JavaGateway 
+\end_layout
+
+\begin_layout Plain Layout
+
+from py4j.java_collections import JavaArray
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+gateway = JavaGateway() 
+\end_layout
+
+\begin_layout Plain Layout
+
+results=gateway.jvm.ij.measure.ResultsTable 
+\end_layout
+
+\begin_layout Plain Layout
+
+analyzer=gateway.jvm.ij.plugin.filter.Analyzer
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#get the results from the Java ImageJ API!
+\end_layout
+
+\begin_layout Plain Layout
+
+rt=analyzer.getResultsTable() 
+\end_layout
+
+\begin_layout Plain Layout
+
+res=rt.getColumn(0) 
+\end_layout
+
+\begin_layout Plain Layout
+
+lastCol=rt.getLastColumn();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+values=[[0 for x in range(len(res))] for x in range(lastCol+1)]
+\end_layout
+
+\begin_layout Plain Layout
+
+for x in range (0,lastCol+1): 
+\end_layout
+
+\begin_layout Plain Layout
+
+	vals=rt.getColumnAsDoubles(x) 
+\end_layout
+
+\begin_layout Plain Layout
+
+	if (isinstance(vals,JavaArray)): 	
+\end_layout
+
+\begin_layout Plain Layout
+
+		print ('')   		   		
+\end_layout
+
+\begin_layout Plain Layout
+
+		for y in range (0,len(res)): 			
+\end_layout
+
+\begin_layout Plain Layout
+
+			values[x][y]=vals[y]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Plot the values!
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.boxplot(values) 
+\end_layout
+
+\begin_layout Plain Layout
+
+plt.show()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Py4J example"
+
+\end_inset
+
+CPython Py4J example which uses the Java ImageJ API
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The ImageJ Macro Editor
+\end_layout
+
+\begin_layout Standard
+Bio7 embedds a complete ImageJ macro editor with dynamic error detection,
+ syntax highlightening, code completion, formatiing features, debugging
+ interface, etc.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/imagejmacroeditor.jpg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The opened ImageJ Macro editor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+In the ImageJ Edit perspective several views are arranged to support the
+ creation and execution of ImageJ Macro files.
+ A special debugging interface is available in the Debug view.
+\end_layout
+
+\begin_layout Subsection*
+5.1.5 The Flow Editor
+\end_layout
+
+\begin_layout Standard
+The Flow editor of the Bio7 application is capable to handle and execute
+ different files by their extension and display and arrange them in a flowchart
+ like structure.The Flow editor is useful to:
+\end_layout
+
+\begin_layout Itemize
+It can be used to create complex sensitivity analysis for created models
+\end_layout
+
+\begin_layout Itemize
+It can serve as a guide for complex analysis of all tools offered by Bio7.
+\end_layout
+
+\begin_layout Itemize
+Or it simply can be used to visualize complex workflows.
+\end_layout
+
+\begin_layout Standard
+The main strength of this tool is that you can assemble all methods and
+ information, created by files for modeling, statistical analysis or image
+ analysis in a profound analysis.
+ The Flow editor of Bio7 helps to organize and visualize the creation and
+ analysis of ecological models.
+ A flowchart by definition is a graphic representation of a sequence of
+ operations.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/flow.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Flow editor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+If the editor is opened default actions will be added to the Bio7 toolbar
+\series bold
+ (1)
+\series default
+ and a new menu will appear in the menubar of the application.
+ Additionally, a specialized context menu will be available for calling
+ different methods inside the Flow editor.
+ In the flowchart of Bio7 files can simply be dragged from the 
+\series bold
+Project Explorer
+\series default
+
+\series bold
+ (2)
+\series default
+ of Bio7 and dropped into the Flow editor 
+\series bold
+(3)
+\series default
+ of the application.
+ According to their file extension these files are executed in the sequence
+ of the flow which has been created.
+ A created Flow editor file has the extension *.ecoflow.
+ Some other files will be handled by default from the Flow editor when they
+ are dragged from outside the workspace.
+ Executable files (*.exe) will be executed, too and it is also possible to
+ execute these files with an argument (by creating a file with the extension
+ *.argument).
+ Files from external that have different extensions will be executed according
+ to their registration in the system environment.
+ Furthermore an 
+\series bold
+Outline
+\series default
+ view
+\series bold
+ (4)
+\series default
+ on the left will show an overview of the flow - if the flow cannot easily
+ be displayed in the main window because of its size a blue rectangle will
+ be displayed in the 
+\series bold
+Outline
+\series default
+ for a flow selection.
+ The selection is the area of the flow which can be displayed in the main
+ Flow editor window.
+ A new 
+\series bold
+Palette
+\series default
+ bar 
+\series bold
+(5)
+\series default
+ will also be displayed for inserting flowchart elements in a newly created
+ file.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Execute and Verify a Flow
+\end_layout
+
+\begin_layout Standard
+The execution of a flow will be triggered with the item 
+\series bold
+FlowAction
+\series default
+ in the top-right of the toolbar 
+\series bold
+(1)
+\series default
+.
+ In addition since Bio7 1.5 a new action - left action - is available to
+ verify the connections for a valid Bio7 flow graph.
+\end_layout
+
+\begin_layout Subsubsection
+The Palette of the Flow Editor
+\end_layout
+
+\begin_layout Standard
+For the creation of a running flowchart it is necessary to create a start
+ and a stop element in the flowchart.
+ By activating an element in the 
+\series bold
+Palette
+\series default
+ these elements can be placed anywhere in the flowchart with the mouse at
+ the appropriate coordinates (pressing mouse button will drop the component).
+ Additionally when an element has been placed in the flow it can be dragged
+ to any coordinates in the flow panel.
+ All other elements in the 
+\series bold
+Palette
+\series default
+ can be placed by this procedure too.
+ The following elements are available and their values can be adjusted in
+ the 
+\series bold
+Properties
+\series default
+ view.
+ Furthermore some properties can be changed directly in the shape (mouse
+ click on the element) The following elements are available:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Start
+\series default
+ : The start of the flow - necessary for execution !
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Stop
+\series default
+ : The end of the flow - necessary for execution !
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Loop
+\series default
+ : A loop will repeat a sequence in the flowchart.
+ The number of iterations can be adjusted with an integer value directly
+ in the shape (click and hold ca.
+ one second to edit).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Decision
+\series default
+ : A decision in the flow will execute an if statement.
+ According to a self defined condition a static variable (Bio7Flow.setDecision(“t
+rue”)) can be set to true or false.
+ The direction of the flow then depends on the linked connection which can
+ be set to true or false in the properties dialog (select the connections
+ to set the values).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Info
+\series default
+ : A single line label for an info which can be edited in the shape.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Connection
+\series default
+: To determine the sequence of the flow 
+\series bold
+Connections
+\series default
+ are available to connect components.
+ If selected in the Palette directed connections can be drawn from component
+ to component.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Selections
+\series default
+ can be made with the 
+\series bold
+Marquee
+\series default
+ tool and the 
+\series bold
+Select
+\series default
+ tool (multiple selections are possible).
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+Options for the Layout
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are several tools available for adjusting the components and the layout
+ of the flow.
+ In the toolbar of Bio7 several items will be enabled when components are
+ selected alone or in a group.
+ By default the zoom action and the flow action are enabled.
+ 
+\end_layout
+
+\begin_layout Itemize
+With the
+\series bold
+ Zoom In, Out
+\series default
+ actions it is possible to zoom in or to zoom out in the flow (by using
+ the combo box or the lens items).
+ If an opened flow was changed, the toolbar items for undo and redo could
+ be used to undo or redo changes in the flow.
+ 
+\end_layout
+
+\begin_layout Itemize
+Furthermore components can be deleted with the
+\series bold
+ Delete
+\series default
+ item and so removed from the flow (or by pressing the delete key).
+ 
+\end_layout
+
+\begin_layout Itemize
+If more than one component is selected the alignment actions (
+\series bold
+Align Width
+\series default
+, etc.) and the 
+\series bold
+Match Width/Height
+\series default
+ actions will be available to align shapes to the first selected shape or
+ adjust the width or the height of selected shapes to the properties of
+ the first selected component.
+ 
+\end_layout
+
+\begin_layout Itemize
+Additionally the added menu 
+\series bold
+Flowaction
+\series default
+ in the menubar of Bio7 offers three further options for the alignment and
+ layout of the components.
+\end_layout
+
+\begin_layout Itemize
+When the option Rulers is selected and marked rulers in the flow will be
+ made visible for the exact layout of the flow components.
+ By dragging horizontal and vertical lines from the ruler (like it is known
+ from image software) components can easily be aligned to the visible ruler
+ lines.
+ The alignment will be supported by artificial lines (red lines) which occur
+ when the alignment criteria are met.
+ 
+\end_layout
+
+\begin_layout Itemize
+The option 
+\series bold
+Grid
+\series default
+ will enable a grid in the flow.
+ When enabled, the components can be arranged in discrete coordinate steps
+ according to the default grid size in the flow.
+ Furthermore artificial lines will occur (green lines) with the enabled
+ option 
+\series bold
+Snap to Geometry
+\series default
+ when a translated component matches the alignment of another component
+ in the flow.
+ The grid size can be adjusted in the context menu of the Flow editor.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+The Context Menu
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The context menu offers some of the aforementioned methods and several new
+ methods.
+ The new methods are:
+\end_layout
+
+\begin_layout Enumerate
+The options 
+\series bold
+Manhatten Router
+\series default
+ and 
+\series bold
+Shortest Path
+\series default
+ action are responsible for the layout of the connections.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The Shortest Path action applies the shortest path algorithm to find paths
+ around obstacles in the flow.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The Manhatten Router algorithm will use rectangular lines for connections
+ in the flow.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The 
+\series bold
+Save
+\series default
+ action will save the current flow to the before defined file (Save as in
+ the Bio7 main menu available!).
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Save Image
+\series default
+ action will save an image in the formats *.gif*, *.jpeg, *.ico to a file.
+ The current size of the flow will determine the pic size (the rulers display
+ the size of the flow in pixel.
+ So be cautious not to store large images with a resized flow !).
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+Debug Mode
+\series default
+ option enables a visualization of the current flow by colouring the active
+ shape white to mark files that are currently interpreted or compiled, etc.
+ A mouse-click on the flow deletes marked components.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Size Layout Grid
+\series default
+ opens a dialog to resize the grid (layout) if enabled.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+The Properties for the Components
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If a shape or a connection is activated the properties of the component
+ or the connection can be adjusted in the 
+\series bold
+Properties
+\series default
+ view.
+ This view is activated by default below the Flow editor or can be activated
+ with the 
+\series bold
+\noun on
+Windows \SpecialChar \menuseparator
+Show View
+\series default
+\noun default
+ menu action.
+ The properties dialog will only be necessary if you want create a decision
+ inside a flow.
+ All other component attributes are adjustable with the mouse.
+ The following properties are displayed and can be adjusted:
+\end_layout
+
+\begin_layout Enumerate
+The 
+\series bold
+File/Loop/Info/Condition
+\series default
+ property displays the following attributes in dependence of the selected
+ component:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The filepath of a dropped component (relative path in the workspace.
+ This path will be used for execution!)
+\end_layout
+
+\begin_layout Enumerate
+The amount of loops which should be made when the loop component has been
+ selected.
+\end_layout
+
+\begin_layout Enumerate
+An info text if the info component has been selected.
+\end_layout
+
+\begin_layout Enumerate
+When a decision component has been selected this property will be interpreted
+ as a scripting expression in BeanShell.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The filetype property shows the extension of the selected file, which has
+ been dropped into the flow (has no effect on the other components).
+\end_layout
+
+\begin_layout Enumerate
+The properties Height,Width, X,Y display the size of the component and the
+ location inside the flow which can also be adjusted in the properties view.
+\end_layout
+
+\begin_layout Enumerate
+There are two properties if a connection is selected.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The property LineStyle can be set to dashed or solid (by default the style
+ is solid).
+ 
+\end_layout
+
+\begin_layout Enumerate
+The Boolean property is important when a decision is created in the flow.
+ The property can be set to true or false.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+Note
+\series default
+: The properties File and Filetype are important for the execution of a
+ file inside the flow editor! The file type information is used to select
+ the appropriate interpreter or compiler.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset VSpace medskip
+\end_inset
+
+What to Consider when Creating a Flow
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It should be mentioned that some rules are important for the creation of
+ a regular flow in the Flow editor.
+\end_layout
+
+\begin_layout Enumerate
+A start and a stop component have to be placed in the flow and they have
+ to be connected with the components for a regular Bio7 flow.
+\end_layout
+
+\begin_layout Enumerate
+A flow follows the outgoing direction (directed graph) marked with an outgoing
+ arrowhead.
+\end_layout
+
+\begin_layout Enumerate
+Files: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+A dropped file in the flow editor (rectangular shape) can only be connected
+ with another file or by means of a loop which connects on or two files.
+\end_layout
+
+\begin_layout Enumerate
+A file component has to have one outgoing connection.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Files in the flow editor will be executed sequently by means of the information
+ in the file property and the filetype property (the appropriate interpreter
+ or program will be selected automatically).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Loops:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+A loop can have one incoming and one outgoing connection.
+\end_layout
+
+\begin_layout Enumerate
+A loop cannot be the first component (after the start) in a Bio7 flow.
+ 
+\end_layout
+
+\begin_layout Enumerate
+It is possible to execute a loop with one file component.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Loops can be created nested.
+ The loops are executed “iteratively” (not “recursive” !).
+ 
+\end_layout
+
+\begin_layout Enumerate
+A loop can be connected (point) to a decision .
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Decisions:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+A decision gets an input from a component and has to have two outgoing connectio
+ns.
+ One connection has to be set to false and the other has to be set to true.
+ 
+\end_layout
+
+\begin_layout Enumerate
+A decision can be connected to another decision (else if).
+ 
+\end_layout
+
+\begin_layout Enumerate
+A decision cannot be connected (point) directly to a loop.
+ 
+\end_layout
+
+\begin_layout Enumerate
+It is allowed in Bio7 to place a decision right after the start.
+ 
+\end_layout
+
+\begin_layout Enumerate
+The condition of a decision component can be set directly in the properties
+ view or in the component itself.
+ The static variable decision has to be set to "true" or "false" (type:
+ String) to follow a connection with the appropriate value - (API method:
+ BatchModel.setDecision(“true”);).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Info: An info component can be placed outside the connected flow for an
+ information display.
+ It is also allowed to draw connections to a file component as a pointer
+ (optionally you can mark this connection with a changed line style).
+\end_layout
+
+\begin_layout Paragraph
+How to Cancel a Flow!
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A running flow can be interrupted at the next possible flow position with
+ the 
+\series bold
+Cancel
+\series default
+ action in the progress dialog (the dialog is only displayed for long operations
+) or by selecting the key combination Ctrl+x (short and long operations).
+ If R is used in some operations it makes sense to start Rserve with a system
+ console (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Rserve-preferences"
+
+\end_inset
+
+) before executing a flow.
+ Only with a shell it is possible to interrupt an R calculation - if supported
+ by the package creator.
+ In some cases where the application Rserve is involved it can become necessary
+ to stop and restart the application (this can be done with the Rserve connectio
+n action in the toolbar of Bio7).
+ If possible it is highly recommend to test all files before they are used
+ in the flow editor.
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+Dropped from the Project Explorer
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Flow editor recognizes several different file types.
+ Files, created with the Bio7 editors, will be executed in the flow with
+ the appropriate interpreter or the embedded compiler (e.g.
+ *.bsh, *.java, *.py, *.r, *.txt, *.ecor).
+ Additionally the Flow editor will also execute *.exe files.
+ Files with the extension *.argument can be created and dropped before the
+ *.exe file in the flow sequence.
+ This will execute the dropped program with an argument (xxx -argument).
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+Dropped from Outside the Project Explorer
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Files dropped from outside the navigator, will be opened or executed with
+ the registered program of the operating system !
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+Important to Know
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The dropped file components in the flow can be opened and edited with a
+ double-click on that component.
+ A static variable is available to trigger the flow interrupt - Bio7 method:
+ Bio7Flow.setCancel(true) .
+ Please consult the Bio7 API and examples for more reusable flow methods
+ and components.
+ 
+\end_layout
+
+\end_body
+\end_document

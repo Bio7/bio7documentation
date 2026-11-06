@@ -1,0 +1,210 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+The application Bio7 is an integrated development environment for ecological
+ modelling and contains powerful tools for model creation, scientific image
+ analysis and statistical analysis.
+ The application itself is based on an RCP-Eclipse-Environment (Rich-Client-Plat
+form) which offers a huge flexibility in configuration and extensibility
+ because of its plug-in structure and the possibility of customization.
+ Over the past years Bio7 evolved to a general simulation and analysis platform
+ also useful for a variety of other scientific disciplines.
+ In this platform powerful known tools were integrated for the purpose of
+ simulations and analysis.
+ The complexity of a modelling process is hidden behind a user-friendly
+ flexible Graphical User Interface which should assist the development and
+ analysis of simulation models.
+ Therefore Bio7 offers and embeds also powerful and well proofed third party
+ tools which are capable to do Image Analysis (ImageJ), Statistical Analysis
+ (R), easy to learn scripting languages to ease the development of simulation
+ models and an embedded compiler for the need of speed in complex calculations.
+ Additionally editors (Java, R, BeanShell/Groovy, Jython) and different
+ panels for visualization are integrated for an easier development.
+ Communication in between the different components is possible by means
+ of scripts and compiled code and can be collected in a executeable flowchart
+ for 
+\begin_inset Quotes eld
+\end_inset
+
+Sensitivity Analysis
+\begin_inset Quotes erd
+\end_inset
+
+, etc.
+ Furthermore an advantage of this platform is the plugin structure which
+ can be extended with all kind of third party plugins to support theoretical
+ hypothesis on ecosystems functioning and the understanding of complex systems.
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/chapter1/bio7_splash.png
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Chapter
+Why Bio7?
+\end_layout
+
+\begin_layout Section
+Ecological Background
+\end_layout
+
+\begin_layout Standard
+The application Bio7 was originally developed for the chair of experimental
+ and systems biology (Bio7) to create and analyze spatially explizit simulation
+ models on dry acidic grasslands on inland sand dunes.
+ Only specialists like Corynephorus canescens, Polytrichum piliferum, etc.
+ can settle on this nutrient poor water limited sandy soils.
+ Additionally high temperatures on the surface of the soil and erosion make
+ it very hard for other species to settle there.
+ In comparison to other ecosystems this habitat is less complex in its species
+ structure and nutrient dynamics which facilitates monitoring of vegetation
+ dynamics to identify the driving forces or key factors of the system.
+ With the exploration of this ecosystem several questions and hypothesis
+ should be answered and verified.
+ Because many specialized plants and animals occur in this habitat the main
+ question is, how we can protect and preserve this valuable ecosystem at
+ all.
+ Also the key factors are from high interest and can maybe serve to identify
+ similar processes in more complex systems like the tropical rainforest.
+ From various experiments in these systems we have knowledge about seed
+ dispersal, competition, and nutrients availability or dependencies from
+ different species which are typical for this habitat.
+ We use the capabilities of this application to express the features of
+ this system in syntactical rules for simulation.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter1/c11.jpg
+	lyxscale 70
+	width 100text%
+	height 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dry Acidic Grasslands
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
