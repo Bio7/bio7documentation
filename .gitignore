@@ -4,6 +4,7 @@
 #*.lyx#
 .print_tmp.html
 *.tabs.pdf
+*.tmp.pdf
+markdown/
 __pycache__/
-*.pdf
 .settings/

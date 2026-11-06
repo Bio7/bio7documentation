@@ -216,7 +216,7 @@ a { color: var(--accent); text-decoration: none; }
 .cover h1 { font-size: 34pt; line-height: 1.1; margin: 0 0 3mm; font-weight: 750; letter-spacing: -.4pt; color: #1f2b24; }
 .cover .sub { font-size: 13pt; color: #5d6b62; margin: 0; }
 .cover .authors { position: absolute; left: 24mm; right: 24mm; bottom: 24mm; font-size: 10.5pt; color: #5d6b62; line-height: 1.7; }
-.cover .band { position: absolute; left: 0; right: 0; bottom: 0; height: 5mm; background: linear-gradient(90deg, #2f7a3b, #6cbf3c); }
+.cover .band { position: absolute; left: 0; right: 0; bottom: 0; height: 5mm; background: #4c9a35; }
 
 /* The table of contents */
 .contents { page: toc; break-after: page; }
@@ -285,6 +285,34 @@ tr:first-child td { background: var(--soft); font-weight: 600; }
 </html>
 """
 
+def optimize(pdf):
+    """
+    Makes the PDF smaller: identical objects (e.g., the fonts of the running
+    header of every page) are stored once and the screenshots are reduced to the
+    resolution of the print (170 dpi). Needs the Python package pymupdf (else only
+    the identical objects are merged with pypdf).
+    """
+    before = os.path.getsize(pdf)
+    tmp = pdf + ".tmp.pdf"
+    try:
+        import pymupdf
+        doc = pymupdf.open(pdf)
+        doc.rewrite_images(dpi_threshold=200, dpi_target=170, quality=82)
+        doc.save(tmp, garbage=4, deflate=True, clean=True)
+        doc.close()
+    except ImportError:
+        try:
+            import pypdf
+        except ImportError:
+            return
+        writer = pypdf.PdfWriter(clone_from=pdf)
+        writer.compress_identical_objects(remove_identicals=True, remove_orphans=True)
+        with open(tmp, "wb") as f:
+            writer.write(f)
+    os.replace(tmp, pdf)
+    print("PDF size: %.1f MB -> %.1f MB" % (before / 1e6, os.path.getsize(pdf) / 1e6))
+
+
 if __name__ == "__main__":
     src = sys.argv[1] if len(sys.argv) > 1 else "Bio7_Manual.html"
     pdf = sys.argv[2] if len(sys.argv) > 2 else "Bio7_Manual.pdf"
@@ -296,4 +324,5 @@ if __name__ == "__main__":
         print_pdf(page_html(title, authors, body, toc, pages), pdf)
         TITLE_OF_COVER[0] = re.sub(r"\s*Version.*$", "", title)
         finish(pdf, toc, pages)
+    optimize(pdf)
     print("Created %s" % pdf)
