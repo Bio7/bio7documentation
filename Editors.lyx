@@ -947,17 +947,17 @@ Clear
 \series default
 . The output (text and plots) is displayed below the chunk without a change of the document. The context menu contains 
 \series bold
-Run R Chunk
+Run Chunk
 \series default
  (Ctrl+Shift+Enter), 
 \series bold
-Run All R Chunks
+Run All Chunks
 \series default
  (Ctrl+Alt+R) and 
 \series bold
-Clear R Chunk Output
+Clear Chunk Output
 \series default
- (also for Python chunks). R chunks run in the embedded R, Python chunks in the embedded Python. If a Python chunk uses a name of a chunk above which wasn't executed, a hint proposes 
+ (for R and Python chunks). R chunks run in the embedded R, Python chunks in the embedded Python. If a Python chunk uses a name of a chunk above which wasn't executed, a hint proposes 
 \series bold
 Run Above
 \series default
