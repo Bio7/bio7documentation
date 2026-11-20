@@ -74,11 +74,15 @@ Additional Views and Interfaces
 \end_layout
 
 \begin_layout Section
-Additional Eclipse views in Bio7
+Additional Eclipse Views in Bio7
 \end_layout
 
 \begin_layout Standard
-By default some more views are available in Bio7:
+Some views of the Eclipse platform are available in Bio7 (
+\series bold
+Window > Show View
+\series default
+):
 \end_layout
 
 \begin_layout Itemize
@@ -86,9 +90,7 @@ The
 \series bold
 Bookmarks
 \series default
- view is a view which shows marked bookmarks in all language editors of
- Bio7 to easily find points in code which have to be edited.
- 
+ view shows the bookmarks of all editors to easily find points in code which have to be edited.
 \end_layout
 
 \begin_layout Itemize
@@ -96,10 +98,7 @@ The
 \series bold
 Tasks
 \series default
- view in the R-Editor serves as a marker for plots in the source code.
- For all other editors it can be used to leave some information about tasks
- that have to be done or as information in the Bio7 language editors (They
- can be marked with different priorities!).
+ view shows the tasks (e.g., TODO comments) of the editors with priorities.
 \end_layout
 
 \begin_layout Itemize
@@ -107,15 +106,7 @@ The
 \series bold
 Problems
 \series default
- view to indicate compiler error and problems.
-\end_layout
-
-\begin_layout Itemize
-The 
-\series bold
-Cheat Sheets
-\series default
- view can be used to load created Cheat Sheets from Eclipse.
+ view shows the errors and warnings of the compiler and of the code analysis of the editors.
 \end_layout
 
 \begin_layout Itemize
@@ -123,56 +114,135 @@ The
 \series bold
 Progress
 \series default
- view shows information about running jobs in the application.
- Each time a job has started this progress view can be opened in the progress
- dialog of the status bar.
+ view shows the running jobs (e.g., Python scripts and the installation of packages) with a stop button. It can also be opened with the progress indicator of the status line.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Properties
+\series default
+ view shows the properties of a selected resource.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Error Log
+\series default
+ view shows the messages and errors of the platform.
 \end_layout
 
 \begin_layout Section
-Java and Script Interaction with R
+The LLM Assistant
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:LLM-Assistant"
+
+\end_inset
+
 \end_layout
 
 \begin_layout Standard
-Additionally a nice feature in Bio7 is the direct interaction with the Rserve
- interpreter.
- Not only for evaluation, but also to obtain values from R to Java or BeanShell,
- Groovy and Jython is valuable for the creation and of models, etc.
- Not only a call to a R method is possible by means of compiled code but
- also calls from the BeanShell, Groovy and Jython interpreter can be made
- to transfer values e.g.
- to a BeanShell, Groovy, Jython workspace.
- R calculations can be interrupted (if supported by the package) with an
- opened system shell using the Strg+Break key combination on the shell (Windows)
-, or with the pseudo terminal in in the Console view of Bio7 by typing:
- killall -INT Rserve (Linux, MacOSX).
- Because of the bidirectional transfer several things can be done, e.g.:
-\end_layout
-
-\begin_layout Enumerate
-Custom GUI's can be created in Java or in the script interpreters and the
- values can be evaluated in R.
- After evaluation the results can be sent back to the interpreters workspace
- or to a method in Java.
-\end_layout
-
-\begin_layout Enumerate
-Build frontends for R methods with a scripted language (e.g.
- in SWT or Swing).
-\end_layout
-
-\begin_layout Enumerate
-Interaction between R and the API of ImageJ to automize image analysis tasks.
-\end_layout
-
-\begin_layout Enumerate
-Extend the script menus of Bio7 with R methods called by the script interpreters.
+The 
+\series bold
+LLM Assistant
+\series default
+ is a chat with a large language model (LLM) which helps with the analysis of images and the writing of code. It is a plugin of SWTImageJ which is installed by default: 
+\series bold
+Plugins > LLM Assistant > Chat...
+\series default
+ in the ImageJ menu opens the chat, which Bio7 docks as the view 
+\series bold
+LLM Assistant
+\series default
+ (
+\series bold
+Open as Window
+\series default
+ in the toolbar of the view opens it as a window). The assistant works with servers which are compatible with the OpenAI API (e.g., OpenAI, OpenRouter, or local servers like LM Studio and Ollama). In 
+\series bold
+Plugins > LLM Assistant > General Preferences...
+\series default
+ the API keys (or the environment variable 
+\family typewriter
+OPENAI_API_KEY
+\family default
+; local servers need no key), the base URL and the default model are set (
+\series bold
+Test connection
+\series default
+ checks the connection). 
+\series bold
+Documents...
+\series default
+ manages documents for the context of the chat. The assistant can write code into the editors of Bio7: new files are created in the project 
+\family typewriter
+LLM_Code
+\family default
+ of the workspace, 
+\series bold
+Remove Code Tool Markers
+\series default
+ in the editor removes the markers of the assistant.
 \end_layout
 
 \begin_layout Section
-LibreOffice features of Bio7
+Java Libraries (Maven and the Dynamic Classpath)
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:LibreOffice-features-of"
+name "sec:Java-Libraries"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Java code in Bio7 (the embedded Java compiler, the Java editor, the scripts and the GUIs) can use additional Java libraries (*.jar files), e.g., a chart library, a database driver or an image processing library. The libraries are managed in 
+\series bold
+Preferences Bio7 > Preferences Java Dynamic Compilation > Preferences Libraries
+\series default
+. They can be added as files or downloaded with their dependencies from Maven Central.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_javalibs.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Libraries: the data storage location, the libraries of the dynamic compiler and the OSGi fragment libraries
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:java-libraries"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -180,78 +250,714 @@ name "sec:LibreOffice-features-of"
 \end_layout
 
 \begin_layout Standard
-If the free office software LibreOffice is installed, some methods for data
- acquisition and a small API for interaction with the LibreOffice spreadsheet
- are available in Bio7.
- To use the LibreOffice features it is necessary to establish a connection
- between LibreOffice and Bio7.
- This will be done automatically when selecting the action 
+The preference page has three groups:
+\end_layout
+
+\begin_layout Itemize
 \series bold
-LibreOffice connection
+Data Storage Location:
 \series default
- in the toolbar of Bio7.
- If a connection is established, several methods for the interaction with
- LibreOffice will be available in the LibreOffice menu.
+ the folder of the downloaded libraries (the Maven cache) and of the fragment libraries: 
+\series bold
+Installation folder (portable)
+\series default
+ (in the Bio7 installation, e.g., on a USB stick), 
+\series bold
+User home folder
+\series default
+ (Bio7 in the home folder) or 
+\series bold
+Custom location
+\series default
+ (
+\series bold
+Browse...
+\series default
+). A change needs a restart of Bio7 (the stored data are not moved).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Dynamic Compiler Libraries:
+\series default
+ the libraries of the dynamic compiler (available on the classpath of the compiled code): 
+\series bold
+Add Files...
+\series default
+, 
+\series bold
+Scan Directory...
+\series default
+, 
+\series bold
+Maven...
+\series default
+, 
+\series bold
+Open Location
+\series default
+ (opens the folder of a selected library) and 
+\series bold
+Remove
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+OSGi Fragment Libraries:
+\series default
+ libraries which are loaded as OSGi fragments (available to all plugins of Bio7 at runtime), enabled with 
+\series bold
+Enable OSGi Fragment Loading
+\series default
+ (a change needs a restart). 
+\series bold
+Copy to Fragment Libraries
+\series default
+ and 
+\series bold
+Copy to Compiler Libraries
+\series default
+ copy the selected libraries between the two lists.
+\end_layout
+
+\begin_layout Subsection
+How to Add a Library File
 \end_layout
 
 \begin_layout Enumerate
-To receive or transfer values from or to the spreadsheet of LibreOffice
- it is necessary to open a spreadsheet.
- This can easily be done with the action 
+Open 
 \series bold
-\noun on
-LibreOffice\SpecialChar \menuseparator
-Open Spreadsheet
+Preferences Bio7 > Preferences Java Dynamic Compilation > Preferences Libraries
 \series default
-\noun default
 .
- After a spreadsheet has been opened (also possible by means of a small
- API) the spreadsheet can be filled with values by hand or with values from
- a file (in the opened spreadsheet menu of LibreOffice call the menu action:
+\end_layout
+
+\begin_layout Enumerate
+\series bold
+Add Files...
+\series default
+ selects one or several *.jar files, 
+\series bold
+Scan Directory...
+\series default
+ adds all *.jar files of a folder.
+\end_layout
+
+\begin_layout Enumerate
+Press 
+\series bold
+Apply and Close
+\series default
+. The dynamic compiler uses the libraries at the next compilation.
+\end_layout
+
+\begin_layout Enumerate
+Recalculate the classpath of your Java project for the code completion of the editor (see below).
+\end_layout
+
+\begin_layout Subsection
+How to Download a Library from Maven
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Maven-Download"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/maven_dialog.jpg
+	lyxscale 40
+	width 75text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The dialog Download from Maven Central with the coordinates of a library (JFreeChart)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:maven-dialog"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Press 
+\series bold
+Maven...
+\series default
+ in the preferences of the libraries. The dialog 
+\series bold
+Download from Maven Central
+\series default
+ opens.
+\end_layout
+
+\begin_layout Enumerate
+Enter the coordinates of the library: 
+\series bold
+Group ID
+\series default
+ (e.g., 
+\family typewriter
+org.jfree
+\family default
+), 
+\series bold
+Artifact ID
+\series default
+ (e.g., 
+\family typewriter
+jfreechart
+\family default
+) and 
+\series bold
+Version
+\series default
+ (e.g., 
+\family typewriter
+1.5.4
+\family default
+). 
+\series bold
+Fetch
+\series default
+ lists the available versions of the library in the combo box. The coordinates can also be entered in other ways: 
+\series bold
+Quick Select
+\series default
+ offers popular libraries (e.g., JFreeChart, SQLite JDBC, PostgreSQL JDBC, MySQL Connector, H2, JavaCV, BoofCV, Pi4J, Deeplearning4j and ND4J), 
+\series bold
+Paste from Clipboard (single)
+\series default
+ reads coordinates from the clipboard (e.g., 
+\family typewriter
+org.jfree:jfreechart:1.5.4
+\family default
+ or a Maven dependency), and several dependencies of a Maven 
+\family typewriter
+pom.xml
+\family default
+ (with the 
+\family typewriter
+<properties>
+\family default
+ of the versions) can be pasted into the text field at the top and read with 
+\series bold
+Parse Dependencies
+\series default
+.
+\end_layout
+
+\begin_layout Enumerate
+Select the options: 
+\series bold
+Download all modules from group
+\series default
+ (all artifacts of the group in the version), 
+\series bold
+Download dependencies (compile/runtime)
+\series default
+ (the libraries which the library needs, recommended) and 
+\series bold
+Download native JARs
+\series default
+ for the current platform (e.g., for JavaCV). 
+\series bold
+Repositories:
+\series default
  
 \series bold
-\noun on
-Insert\SpecialChar \menuseparator
-Sheet from file
+Maven Central
 \series default
-\noun default
+ and the 
+\series bold
+SciJava Repository
+\series default
+ (for artifacts which are not on Maven Central, e.g., of ImageJ2 and imglib2).
+\end_layout
+
+\begin_layout Enumerate
+\series bold
+Preview
+\series default
+ lists the files which will be downloaded.
+\end_layout
+
+\begin_layout Enumerate
+\series bold
+Download
+\series default
+ downloads the libraries into the Maven cache of the data storage location and adds them to the 
+\series bold
+Dynamic Compiler Libraries
+\series default
+. If a library is already in the list in another version, a dialog asks to replace it.
+\end_layout
+
+\begin_layout Enumerate
+Press 
+\series bold
+Apply and Close
+\series default
+ in the preferences.
+\end_layout
+
+\begin_layout Subsection
+Code Completion: Fix Project Classpath
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Fix-Project-Classpath"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The Java editor (code completion, imports, error markers) uses the classpath of the Java project. New Java projects which are created with the Bio7 wizards contain the libraries of the preferences automatically. After a library has been added (or removed), the classpath of an existing project has to be recalculated: select the Java project in the Project Explorer and choose 
+\series bold
+Fix Project Classpath
+\series default
+ in its context menu. Bio7 sets the classpath of the project to the bundled JDK, the libraries of Bio7 and the added libraries and confirms "Java Bio7 Project Libraries Recalculated!". Then the classes of the new library are proposed by the code completion and can be imported (e.g., 
+\family typewriter
+import org.jfree.chart.JFreeChart;
+\family default
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\ttfamily\small},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A Java class which uses a library downloaded from Maven (JFreeChart) after Fix Project Classpath
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+import org.jfree.chart.ChartFactory;
+\end_layout
+
+\begin_layout Plain Layout
+import org.jfree.chart.JFreeChart;
+\end_layout
+
+\begin_layout Plain Layout
+import org.jfree.data.general.DefaultPieDataset;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+public class PieChartExample {
+\end_layout
+
+\begin_layout Plain Layout
+    public PieChartExample() {
+\end_layout
+
+\begin_layout Plain Layout
+        DefaultPieDataset<String> data = new DefaultPieDataset<>();
+\end_layout
+
+\begin_layout Plain Layout
+        data.setValue("Forest", 45);
+\end_layout
+
+\begin_layout Plain Layout
+        data.setValue("Grassland", 30);
+\end_layout
+
+\begin_layout Plain Layout
+        data.setValue("Water", 25);
+\end_layout
+
+\begin_layout Plain Layout
+        JFreeChart chart = ChartFactory.createPieChart("Land cover", data);
+\end_layout
+
+\begin_layout Plain Layout
+        System.out.println(chart.getTitle().getText());
+\end_layout
+
+\begin_layout Plain Layout
+    }
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+Preferences Modules
+\series default
+ adds Java modules for the compilation (
+\family typewriter
+--module-path
+\family default
+, 
+\family typewriter
+--add-modules
+\family default
+), e.g., for libraries which are distributed as Java modules.
+\end_layout
+
+\begin_layout Section
+Java and Script Interaction with R and Python
+\end_layout
+
+\begin_layout Standard
+Java (compiled with the embedded compiler) and the script languages of Bio7 (Groovy, BeanShell, JavaScript) can use the embedded R and the embedded Python directly: values are transferred without files or sockets. In this way, e.g., GUIs can be created in Java which evaluate R or Python code, models can use statistical methods of R or Python, and the R and Python methods can be combined with the API of ImageJ.
+\end_layout
+
+\begin_layout Standard
+R (class 
+\family typewriter
+com.eco.bio7.rbridge.RUtil
+\family default
+):
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+RUtil.isAlive()
+\family default
+, 
+\family typewriter
+RUtil.exec(code)
+\family default
+ (evaluate) and 
+\family typewriter
+RUtil.eval(code)
+\family default
+ (evaluate and return the value as an 
+\family typewriter
+RValue
+\family default
+), 
+\family typewriter
+RUtil.print(code)
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+Java to R: 
+\family typewriter
+RUtil.toR(name, values)
+\family default
+ (double, int, String and boolean values or a double matrix), 
+\family typewriter
+dataFrameToR
+\family default
+, 
+\family typewriter
+listToR
+\family default
+ and 
+\family typewriter
+imageToR
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+R to Java: 
+\family typewriter
+fromRDoubles
+\family default
+, 
+\family typewriter
+fromRDouble
+\family default
+, 
+\family typewriter
+fromRInts
+\family default
+, 
+\family typewriter
+fromRStrings
+\family default
+, 
+\family typewriter
+fromRString
+\family default
+, 
+\family typewriter
+fromRMatrix
+\family default
+, 
+\family typewriter
+fromRList
+\family default
+ and 
+\family typewriter
+imageFromR
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Python (class 
+\family typewriter
+com.eco.bio7.pybridge.PythonUtil
+\family default
+):
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+PythonUtil.isAlive()
+\family default
+, 
+\family typewriter
+PythonUtil.start()
+\family default
+, 
+\family typewriter
+PythonUtil.exec(code)
+\family default
+, 
+\family typewriter
+PythonUtil.eval(code)
+\family default
+ and 
+\family typewriter
+PythonUtil.run(file)
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+Java to Python: 
+\family typewriter
+toPython(name, values)
+\family default
+, 
+\family typewriter
+imageToPython
+\family default
+ and 
+\family typewriter
+resultsTableToPython
+\family default
+; Python to Java: 
+\family typewriter
+fromPython
+\family default
+, 
+\family typewriter
+fromPythonDoubles
+\family default
+ and 
+\family typewriter
+imageFromPython
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+Between Python and R: 
+\family typewriter
+pythonToR(pythonExpression, rName)
+\family default
+ and 
+\family typewriter
+rToPython(rExpression, pythonName)
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+PythonCalls.register(name, function)
+\family default
+ registers a Java function which Python calls with 
+\family typewriter
+bio7.call(name, ...)
+\family default
+. Python itself calls the Java API with 
+\family typewriter
+bio7.java
+\family default
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:The-Python-Perspective"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\ttfamily\small},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+R and Python from a Groovy script: a vector to R, the mean computed in R and the values transferred to Python
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+import com.eco.bio7.rbridge.RUtil
+\end_layout
+
+\begin_layout Plain Layout
+import com.eco.bio7.pybridge.PythonUtil
+\end_layout
+
+\begin_layout Plain Layout
+RUtil.toR("x", [1.5, 2.5, 3.5] as double[])
+\end_layout
+
+\begin_layout Plain Layout
+println RUtil.fromRDouble("mean(x)")
+\end_layout
+
+\begin_layout Plain Layout
+PythonUtil.rToPython("x", "x")
+\end_layout
+
+\begin_layout Plain Layout
+PythonUtil.exec("print(sum(x))")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+LibreOffice Features of Bio7
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:LibreOffice-features-of"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+If LibreOffice is installed (the path is set in 
+\series bold
+Preferences Bio7
+\series default
+, 
+\series bold
+Path to LibreOffice
+\series default
+), data can be exchanged with the spreadsheet of LibreOffice. The actions are in the context menu of the R-Shell view, submenu 
+\series bold
+LibreOffice
+\series default
+:
+\end_layout
+
+\begin_layout Enumerate
+\series bold
+Open LibreOffice Connection
+\series default
+ starts LibreOffice and connects it with Bio7.
+\end_layout
+
+\begin_layout Enumerate
+\series bold
+Open Spreadsheet
+\series default
+ opens a new spreadsheet. The spreadsheet can be filled by hand or with data from a file (in LibreOffice: 
+\series bold
+Sheet > Insert Sheet from File
+\series default
 ).
 \end_layout
 
 \begin_layout Enumerate
-With the action 
 \series bold
 Data to R
 \series default
- LibreOffice spreadsheet values can be transferred to the active R workspace
- by means of the Rserve connection (the columns will be stored as lists
- and the selected values as a dataframe).
+ transfers the selected cells to the R workspace (the columns as lists and the selected values as a data frame).
 \end_layout
 
 \begin_layout Enumerate
-With the action 
 \series bold
-Data with head to R
+Data with Head to R
 \series default
- numeric values (type double) with a head can be transferred directly to
- R.
+ transfers numeric values with a head (the column names) to R.
 \end_layout
 
-\begin_layout Enumerate
-With the action
+\begin_layout Standard
+The Table view imports and exports LibreOffice spreadsheets, too (
 \series bold
- Send Bio7 counts
+Import LibreOffice (ODS)
 \series default
- counted values of the activated states in a simulation for all time steps
- are transferred to an opened spreadsheet which then can be stored to all
- kinds of data files.
+ and 
+\series bold
+Export as LibreOffice (ODS)
+\series default
+ in its File menu). A small API for the data transfer with LibreOffice is demonstrated in the script examples (LibreOffice_Snippets).
 \end_layout
 
-\begin_layout Enumerate
-There is also a small API available for the transfer of data (get and set),
- inserting new sheets, getting values from sheets and the marking of the
- data in a spreadsheet (see Bio7 Snippets and Bio7 API docs).
-\end_layout
 
 \end_body
 \end_document

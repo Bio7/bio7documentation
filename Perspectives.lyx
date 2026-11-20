@@ -318,6 +318,13 @@ Project Explorer
  A double-click on the file in the file navigator will open the file in the default registered editor.
 \end_layout
 
+\begin_layout Standard
+\series bold
+Paste Clipboard as File...
+\series default
+ (context menu, Cmd/Ctrl+Shift+V in the Project Explorer) creates a new file from the text of the clipboard (e.g., an R script or an ImageJ macro copied from a web page) in the selected project or folder. The type of the code is detected (R, ImageJ macro, Java, BeanShell, Python, Groovy, JavaScript, R Markdown, Markdown, Sweave, LaTeX, HTML or text) and gives the extension of the suggested file name, which can be changed. The file is opened in its editor.
+\end_layout
+
 \begin_layout Subsection
 The Editor Area
 \end_layout
@@ -338,7 +345,7 @@ The editor area is the area where all files are opened and edited.
  When a file has been opened editor specific buttons will be added to the toolbar which execute an editor action according to the opened file (compilation respectively interpreting code of Java,
  BeanShell,
  Groovy,
- Jython ,
+ Python,
  R or execution of a Flow!).
  The editor area can be enabled in every perspective with the 
 \series bold
@@ -406,7 +413,7 @@ The script consoles (
 \series bold
 Beanshell,
  Groovy,
- Jython
+ Python
 \series default
 ) can interactively communicate with the Bio7 application or simply interpret different instructions in the selected scripting language.
  
@@ -470,7 +477,7 @@ Output messages of the embedded Java compiler (compiler warnings,
 \end_layout
 
 \begin_layout Enumerate
-Output of the R interpreter (Rserve warnings,
+Output of the R interpreter (warnings,
  etc.) and evaluated expressions in R.
  
 \end_layout
@@ -647,7 +654,7 @@ name "sec:ImageJ-Edit-Perspective"
 \end_layout
 
 \begin_layout Standard
-The ImageJ Edit perspective is the default perspective for image analysis and supports the creation of ImageJ macros, scripts and Java plugins. ImageJ macros, etc. can directly be opened and edited in a Bio7 editor (BeanShell, Groovy, Jython, JavaScript, ImageJ Macro, Java plugins) from the Project Explorer and executed with the interpret action in the main toolbar of Bio7. The perspective contains the Project Explorer, the Thumbnails view, the editor area, the Outline, the Console and the debug view of the ImageJ macro editor and on the right side the 
+The ImageJ Edit perspective is the default perspective for image analysis and supports the creation of ImageJ macros, scripts and Java plugins. ImageJ macros, etc. can directly be opened and edited in a Bio7 editor (BeanShell, Groovy, Python, JavaScript, ImageJ Macro, Java plugins) from the Project Explorer and executed with the interpret action in the main toolbar of Bio7. The perspective contains the Project Explorer, the Thumbnails view, the editor area, the Outline, the Console and the debug view of the ImageJ macro editor and on the right side the 
 \series bold
 ImageJ-Canvas
 \series default
@@ -784,7 +791,7 @@ Images, folders (as a stack) and plugins can be dropped on the ImageJ-Canvas vie
 \end_layout
 
 \begin_layout Itemize
-The ImageJ API is accessible with the embedded Java compiler and with BeanShell, Groovy, JavaScript, ImageJ Macro or Jython scripts. Many examples of the ImageJ website can be executed directly in the editors of Bio7.
+The ImageJ API is accessible with the embedded Java compiler and with BeanShell, Groovy, JavaScript, ImageJ Macro or Python scripts. Many examples of the ImageJ website can be executed directly in the editors of Bio7.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1128,6 +1135,179 @@ name "fig:r-imagej"
 \end_layout
 
 \begin_layout Subsection
+Image Analysis with R or Python (the R/Python Switch)
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:R-Python-Switch"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The image analysis views 
+\series bold
+Image-Methods
+\series default
+ and 
+\series bold
+Geometry Selections
+\series default
+ work with R or with Python. The language is selected with the two radio buttons 
+\series bold
+R
+\series default
+ and 
+\series bold
+Python
+\series default
+ in the toolbar of the Image-Methods view or of the Geometry Selections view. A switch in one view switches the other view, too, and the choice is kept for the next start of Bio7. With the switch:
+\end_layout
+
+\begin_layout Itemize
+the icons of the views and of their buttons change to the R or the Python icon, the groups are named 
+\series bold
+Transfer Selected Data To R
+\series default
+ (
+\series bold
+To Python
+\series default
+) and 
+\series bold
+Transfer Image Data From and To R
+\series default
+ (
+\series bold
+From and To Python
+\series default
+);
+\end_layout
+
+\begin_layout Itemize
+the Python-Shell view and the Python Packages view are opened instead of the R-Shell view and the Packages view of R (with the option 
+\series bold
+Image-Methods: the switch R/Python closes the views of the other language
+\series default
+ of the Python preferences the views of the other language are closed);
+\end_layout
+
+\begin_layout Itemize
+the actions transfer the data to the workspace of the selected language and the analyses run in R or in Python.
+\end_layout
+
+\begin_layout Standard
+The actions of the Image-Methods view in Python (the names of the created Python objects):
+\end_layout
+
+\begin_layout Itemize
+\series bold
+IJ RT:
+\series default
+ the ImageJ results table as the pandas DataFrame 
+\family typewriter
+IJResultsTable
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+IJ RasterStack:
+\series default
+ the opened stack as 
+\family typewriter
+imageStack
+\family default
+ (numpy arrays).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+ROI:
+\series default
+ the coordinates of the selection as 
+\family typewriter
+selectionx
+\family default
+ and 
+\family typewriter
+selectiony
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Particles:
+\series default
+ the results of the particle analysis as the DataFrame 
+\family typewriter
+Particles
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Pixel:
+\series default
+ the pixels of the selection as a DataFrame (optionally with a class column).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Selection RM:
+\series default
+ the selections of the ROI Manager as 
+\family typewriter
+roiSelections
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Pixel RM, Pixel RM Stack:
+\series default
+ a DataFrame for each selection and all pixels as 
+\family typewriter
+roi_pixels
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Pic<-, Pic->:
+\series default
+ the image as a numpy array and an array as an image.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Cluster Pic:
+\series default
+ a k-means cluster analysis with scikit-learn (without scikit-learn with numpy) which creates the cluster image and plots.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+PCA:
+\series default
+ a principal component analysis with scikit-learn which creates the images of the components and plots of the explained variance and the loadings.
+\end_layout
+
+\begin_layout Standard
+In the Geometry Selections view the selections are transferred as lists of numpy arrays (coordinates) or as spatial data with the Python packages shapely and geopandas (polygons, lines or points, optionally with the columns of a selected pandas DataFrame). The projection of a georeferenced file is read with rasterio. 
+\series bold
+Transfer to Python!
+\series default
+ creates the objects. The Python packages numpy, pandas, matplotlib, scikit-learn, shapely, geopandas and rasterio are used (they can be installed in the Python Packages view).
+\end_layout
+
+
+\begin_layout Subsection
 ImageJ Interactions with R
 \end_layout
 
@@ -1372,7 +1552,7 @@ Pixel RM Stack
 \end_layout
 
 \begin_layout Standard
-Note that image folders can be dropped on the ImageJ-Canvas view to load the images as a regular or virtual stack (in a virtual stack only the displayed image is loaded into the memory). A description of the ROI Manager can be found in the ImageJ user guide.
+Note that image folders can be dropped on the ImageJ-Canvas view to load the images as a regular or virtual stack (in a virtual stack only the displayed image is loaded into the memory). A description of the ROI Manager can be found in the ImageJ user guide. With the option ROI Manager in the Bio7 ImageJ preferences the ROI Manager is displayed as a view (with the ImageJ icon) instead of a window.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2319,7 +2499,7 @@ The toolbar of the Space view contains the actions
 \series bold
 Reset View
 \series default
- (the default rotation and distance), 
+ with the menu of the action, 
 \series bold
 Clear Measurements
 \series default
@@ -2338,7 +2518,27 @@ nolink "false"
 
 \end_inset
 
-).
+). 
+\series bold
+Reset View
+\series default
+ resets all settings of the 3D view to the defaults of the first start (the camera, the grids, the axes, the lights, the colors, the step rate, the height map and the clipping): the loaded data stay. 
+\series bold
+Remove All Data...
+\series default
+ in the menu of the action removes the iso surface (with its edits), the volume, the texture and the height map, the model, the plot, the compiled OpenGL model and the measurements: the settings stay.
+\end_layout
+
+\begin_layout Standard
+In addition to the keys of the table: Cmd/Ctrl+Z undoes and Shift+Cmd/Ctrl+Z (or Ctrl+Y) redoes the removal of the surface (also with 
+\series bold
+Edit > Undo
+\series default
+ and 
+\series bold
+Edit > Redo
+\series default
+), Delete or Backspace deletes the active point of the selected measurement (with Shift the whole measurement), Escape switches a measure tool off and Alt (Option) or the space key with a drag rotates the view while a tool is active.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2428,6 +2628,337 @@ Classbody Java OpenGL
 \begin_layout Standard
 Since OpenGL is single-threaded the run method is executed from the internal OpenGL display method of the 3D view. TextRenderer objects, textures and models should be created in the setup method with the current OpenGL context (the setup method is invoked again, e.g., after a switch to the fullscreen mode). Several examples demonstrate the use of OpenGL in Bio7.
 \end_layout
+
+\begin_layout Subsubsection
+Scripting the 3D View
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Scripting-3D"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The 3D view can be controlled from Java, Groovy and the other script languages of Bio7 with static methods (package 
+\family typewriter
+com.eco.bio7.spatial
+\family default
+), e.g., to set up a scene, the camera or a simulation:
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+SpatialUtil
+\family default
+: 
+\family typewriter
+setup()
+\family default
+, 
+\family typewriter
+startStop()
+\family default
+ and 
+\family typewriter
+isStarted()
+\family default
+ (the simulation), 
+\family typewriter
+setSplitView(boolean)
+\family default
+ and 
+\family typewriter
+setSplitScreenSizeLocation(x, y, width, height)
+\family default
+, 
+\family typewriter
+setCustomCamera(boolean)
+\family default
+, 
+\family typewriter
+setMainCamera(boolean)
+\family default
+, 
+\family typewriter
+setRotationX/Y/Z(float)
+\family default
+ and 
+\family typewriter
+resetRotation()
+\family default
+, 
+\family typewriter
+setFullscreen()
+\family default
+ and 
+\family typewriter
+setFullscreen(monitor)
+\family default
+, 
+\family typewriter
+setLightPos1(x, y, z)
+\family default
+ to 
+\family typewriter
+setLightPos4(x, y, z)
+\family default
+, 
+\family typewriter
+showGrid(boolean)
+\family default
+, 
+\family typewriter
+showAxes(boolean)
+\family default
+, 
+\family typewriter
+showQuad(boolean)
+\family default
+, 
+\family typewriter
+setBackgroundColor(r, g, b)
+\family default
+, 
+\family typewriter
+setLinesColor(r, g, b)
+\family default
+ and the access to the data: 
+\family typewriter
+getModel()
+\family default
+, 
+\family typewriter
+getIsoSurface()
+\family default
+, 
+\family typewriter
+getClipping()
+\family default
+, 
+\family typewriter
+getMeasurement()
+\family default
+ and 
+\family typewriter
+getVolumeRenderer()
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+SpatialCamera
+\family default
+: the cameras (position x, y, z and look at x, y, z). 
+\family typewriter
+setCustomCamera(xpos, ypos, zpos, xlook, ylook, zlook)
+\family default
+ and 
+\family typewriter
+getCustomCamera()
+\family default
+ (the custom camera), 
+\family typewriter
+setCustomCameraInMainView(boolean)
+\family default
+, 
+\family typewriter
+setCustomCameraWalkthroughCoordinates(boolean)
+\family default
+ (the coordinates follow the walk camera, e.g., a camera which follows an agent of a model) and 
+\family typewriter
+copyWalkthroughToCustomCamera()
+\family default
+; the same methods for the camera of the split view (
+\family typewriter
+setSplitCamera
+\family default
+, 
+\family typewriter
+getSplitCamera
+\family default
+, 
+\family typewriter
+setSplitCameraWalkthroughCoordinates
+\family default
+, 
+\family typewriter
+copyWalkthroughToSplitCamera
+\family default
+) and for the main view camera (
+\family typewriter
+setMainCameraEnabled(boolean)
+\family default
+, 
+\family typewriter
+setMainCamera
+\family default
+, 
+\family typewriter
+getMainCamera
+\family default
+, 
+\family typewriter
+setMainCameraWalkthroughCoordinates
+\family default
+, 
+\family typewriter
+copyViewToMainCamera()
+\family default
+, 
+\family typewriter
+copyWalkthroughToMainCamera()
+\family default
+). 
+\family typewriter
+getWalkthroughCamera()
+\family default
+, 
+\family typewriter
+getViewCamera()
+\family default
+ and 
+\family typewriter
+getXCamPos()
+\family default
+, 
+\family typewriter
+getYCamPos()
+\family default
+, 
+\family typewriter
+getZCamPos()
+\family default
+ return the current positions.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+SpatialEvents
+\family default
+: the mouse and the keys in the 3D view for custom OpenGL code (e.g., in the 
+\family typewriter
+run
+\family default
+ method): 
+\family typewriter
+isMouseClicked()
+\family default
+ and 
+\family typewriter
+getClickEvent()
+\family default
+, 
+\family typewriter
+isMouseDoubleClicked()
+\family default
+, 
+\family typewriter
+isMouseTripleClicked()
+\family default
+, 
+\family typewriter
+isRightMouseClicked()
+\family default
+, 
+\family typewriter
+isMouseWheelClicked()
+\family default
+, 
+\family typewriter
+isMouseWheelMoved()
+\family default
+ and 
+\family typewriter
+getMouseWheelEvent()
+\family default
+, 
+\family typewriter
+isMouseDragged()
+\family default
+ and 
+\family typewriter
+getDragEvent()
+\family default
+, 
+\family typewriter
+isMousePressed()
+\family default
+, 
+\family typewriter
+isMouseMoved()
+\family default
+, 
+\family typewriter
+isMouseEntered()
+\family default
+, 
+\family typewriter
+isMouseExited()
+\family default
+, 
+\family typewriter
+isKeyPressed()
+\family default
+ and 
+\family typewriter
+getKeyPressEvent()
+\family default
+, 
+\family typewriter
+isKeyReleased()
+\family default
+ and 
+\family typewriter
+isKeyTyped()
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\ttfamily\small},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A custom camera which looks from above at the center of the scene (Groovy)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+import com.eco.bio7.spatial.*
+\end_layout
+
+\begin_layout Plain Layout
+SpatialCamera.setCustomCamera(0, 800, 600, 0, 0, 0)
+\end_layout
+
+\begin_layout Plain Layout
+SpatialCamera.setCustomCameraInMainView(true)
+\end_layout
+
+\begin_layout Plain Layout
+SpatialUtil.setCustomCamera(true)
+\end_layout
+
+\begin_layout Plain Layout
+SpatialUtil.showGrid(false)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 
 \begin_layout Subsection
 The Options Space View
@@ -2776,7 +3307,7 @@ Custom Camera
 \series default
  uses the coordinates of a custom camera (e.g., set by a script with 
 \family typewriter
-SpatialUtil.setCustomCamera
+SpatialCamera.setCustomCamera
 \family default
 ). 
 \series bold
@@ -2784,6 +3315,94 @@ Stereo
 \series default
  enables an anaglyph stereo view (red/cyan glasses).
 \end_layout
+
+\begin_layout Standard
+The groups of the Camera tab: 
+\series bold
+Walkthrough
+\series default
+ (
+\series bold
+Horizontal Speed
+\series default
+, 
+\series bold
+Vertical Speed
+\series default
+), 
+\series bold
+Main View Camera
+\series default
+, 
+\series bold
+Split View
+\series default
+, 
+\series bold
+Custom Camera
+\series default
+ and 
+\series bold
+Camera Modes
+\series default
+ (
+\series bold
+Custom Camera
+\series default
+, 
+\series bold
+Stereo
+\series default
+). With 
+\series bold
+Main View Camera
+\series default
+ the main view shows the scene from a fixed 
+\series bold
+Position
+\series default
+ and 
+\series bold
+Look At
+\series default
+ (x, y, z) instead of the camera of the mouse. 
+\series bold
+From Current View
+\series default
+ takes the coordinates of the current view, 
+\series bold
+From Walk/Flythrough
+\series default
+ the coordinates of the walk camera and 
+\series bold
+Store
+\series default
+ stores the coordinates. With 
+\series bold
+Walkthrough Coordinates
+\series default
+ a camera follows the walk camera (e.g., a camera behind an agent of a model). The Split View and the Custom Camera group have the same fields; the custom camera is displayed 
+\series bold
+In Main View
+\series default
+ or 
+\series bold
+In Split View
+\series default
+. The cameras can also be set by a script (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Scripting-3D"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
 
 \begin_layout Subsubsection
 Light
@@ -3120,7 +3739,7 @@ With
 \series bold
 Export Height Map...
 \series default
- the height map is exported as a 3D mesh with the colors of the image (LUT): glTF binary (*.glb, with the texture, e.g., for Blender), OBJ (with the texture as *.png), PLY (with vertex colors) or STL (3D printing).
+ the height map is exported as a 3D mesh with the colors of the image (LUT): glTF binary (*.glb, with the texture, e.g., for Blender), OBJ (with the texture as *.png), PLY (with vertex colors), STL (3D printing) or VTK legacy (*.vtk, e.g., for ParaView). With the option Export the Image as Texture (group Export, default on) the texture is embedded in the *.glb file or written as a *.png file next to the *.obj file; the other formats get the colors as vertex colors. The z values are the heights multiplied with the height factor. Texture Workaround (Gc) is an option for graphics cards which need another assignment of the textures.
 \end_layout
 
 \begin_layout Standard
@@ -3308,6 +3927,58 @@ name "fig:3d-volume"
 
 
 \end_layout
+
+\begin_layout Standard
+\series bold
+Values
+\series default
+ (Volume and Iso Surface tab) selects the voxels which are loaded: 
+\series bold
+All Values
+\series default
+, 
+\series bold
+Threshold of the Image
+\series default
+ (only the voxels inside of the threshold of ImageJ: set the threshold, then load the stack) or 
+\series bold
+Labels (List)
+\series default
+ for label images of a segmentation (the labels in the text field, e.g., 1, 5, 10-20, Enter applies). With a selection of values the label of the iso value shows 
+\series bold
+Iso Value: (selected values)
+\series default
+ and the slider is disabled. The colors of the iso surface (
+\series bold
+Single Color
+\series default
+, 
+\series bold
+Intensity (LUT)
+\series default
+, 
+\series bold
+Depth (LUT)
+\series default
+ or 
+\series bold
+Image Colors
+\series default
+), 
+\series bold
+Show Surface
+\series default
+, 
+\series bold
+Show Volume
+\series default
+ and 
+\series bold
+Remove
+\series default
+ are in the Iso Surface tab.
+\end_layout
+
 
 \begin_layout Subsubsection
 Iso Surface
@@ -3514,7 +4185,7 @@ Mouse
 \series bold
 Eraser Size
 \series default
-) along the view direction.
+) along the view direction. The Mouse modes are Rotate View, Move Plane (Shift: Rotate) and Erase Voxels (Shift: Restore): with Shift the eraser restores the removed voxels.
 \end_layout
 
 \begin_layout Standard
@@ -3604,47 +4275,43 @@ The Measure tab
 \end_layout
 
 \begin_layout Standard
-The Measure tab measures the iso surface and the volume. The results are displayed in the Bio7 table:
+The Measure tab measures the iso surface and the volume (the figures show the stack Fly Brain of the ImageJ samples, loaded in the tab Iso Surface). The results are displayed in sheets of the Bio7 table: the rows of a sheet and the measurements in the 3D view select each other (a click on a row highlights the measurement, a click on a measurement selects its row). Closing a sheet removes its measurements, 
+\series bold
+Delete Rows
+\series default
+ or the Delete key in the sheets 3D Points and 3D Areas remove the measurements of the rows.
 \end_layout
 
 \begin_layout Itemize
+\series bold
+Min. Object Size, Max. Object Size (Voxels):
+\series default
+ the objects with fewer voxels (e.g., noise) or more voxels are not measured (0: all sizes).
+\end_layout
 
+\begin_layout Itemize
+\series bold
+Measurement Resolution:
+\series default
+ 1x measures the voxels of the stack, 2x to 4x a finer surface (more precise for small objects, slower).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Decimals of the Tables:
+\series default
+ the decimals of the values in the sheets (or full precision).
+\end_layout
+
+\begin_layout Standard
 \series bold
 Measure Iso Surface Objects
 \series default
-: the volume, surface area, sphericity, centroid, ellipsoid axes, Feret diameter and holes of the objects of the iso surface (with a minimum and maximum object size in voxels).
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Measure Distances (Nearest Neighbors)
-\series default
-: the nearest neighbors of the objects (the centroids and the surfaces edge to edge), the distance matrices and the Clark-Evans index (optional all distance matrices as CSV files).
-\end_layout
-
-\begin_layout Itemize
-
+ measures the objects of the iso surface (each closed part of the surface is an object): the volume, the surface area, the sphericity, the centroid, the axes of the ellipsoid, the Feret diameter and the holes. The results are in the sheet Iso Objects (with the name of the stack). With 
 \series bold
 Highlight Objects (Colors and Numbers)
 \series default
-: colors the measured objects and displays their numbers (the colors and numbers of the table). A click on a number in the 3D view selects the object.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Measure Region (Clipping)
-\series default
-: statistics of the voxels in the region of the clipping (box, plane and cuts) and the volume above the iso value.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Pick Points with the Mouse (Ruler)
-\series default
-: a click on the iso surface or the volume adds a point (position, value and distance) to the table.
+ the objects are colored and numbered like the rows of the sheet. A click on a number in the 3D view or on a row selects the object (the other objects are dimmed).
 \end_layout
 
 \begin_layout Standard
@@ -3672,7 +4339,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The measured objects of an iso surface with the results in the Bio7 table
+The measured objects of the fly brain with their colors and numbers and the sheet Iso Objects
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:3d-measure"
@@ -3689,6 +4356,340 @@ name "fig:3d-measure"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\series bold
+Measure Distances (Nearest Neighbors)
+\series default
+ measures the nearest neighbor of each object: by the distance of the centroids and by the distance of the surfaces (edge to edge), with the Clark-Evans index. The results are in the sheet Distances. The distance lines are drawn in the 3D view; the line of the selected object is highlighted. Optional: 
+\series bold
+Show Distance Matrices
+\series default
+ (the matrices of the centroid and the surface distances in the table) and 
+\series bold
+Save All Distance Matrices as CSV
+\series default
+ (any number of objects).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/measure_distances.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The nearest neighbors of the objects (sheet Distances), the selected object 3 is highlighted
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+Measure Region (Clipping)
+\series default
+ measures the statistics of the voxels in the region of the clipping (box, plane and cuts, see the Clipping tab) and the volume above the iso value.
+\end_layout
+
+\begin_layout Standard
+\series bold
+Measure with the Mouse:
+\series default
+ the tools measure directly on the iso surface. The info line at the top of the tab explains the selected tool. Alt (Option) or the space key with a drag rotates the view while a tool is selected, Escape switches the tool off. A click inside a measured area or on a line selects the whole measurement. The tools (from left to right):
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Rotate:
+\series default
+ the mouse rotates the view (no measurement).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Straight line, Segmented line:
+\series default
+ click the start and the end (or the points of a segmented line, a double-click ends it): the length, straight or along the surface (
+\series bold
+Lines Follow the Surface
+\series default
+). The results are in the sheet 3D Points.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Angle:
+\series default
+ three points, the second point is the vertex: the angle in 3D.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Point:
+\series default
+ the position, the value and the object of each point.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Polygon, Freehand:
+\series default
+ click the corners (a double-click or a click on the first corner closes the polygon) or drag around an area: the perimeter, the polygon area and the surface area (sheet 3D Areas). 
+\series bold
+Fit Spline
+\series default
+ smooths the lines and areas.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Volume:
+\series default
+ a click on an object measures its volume, a drag of an outline the volume inside of the outline (the whole depth), see below.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Surface eraser:
+\series default
+ a drag over the surface removes the visible triangles under the brush (the surface is cut open, e.g., to measure a cavity inside). Undo and Redo with Cmd/Ctrl+Z and Shift+Cmd/Ctrl+Z; 
+\series bold
+Eraser Size
+\series default
+ sets the size of the brush. 
+\series bold
+Remove Surface of the Area
+\series default
+ removes the surface inside of a measured area.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Help (i):
+\series default
+ how to measure with the mouse.
+\end_layout
+
+\begin_layout Standard
+\series bold
+Show Numbers
+\series default
+ displays the numbers of the measurements in the 3D view (the points underlined, the areas circled, the selected measurement in yellow).
+\end_layout
+
+\begin_layout Standard
+\series bold
+Cut the Surface Open:
+\series default
+ 
+\series bold
+Remove Surface of the Area
+\series default
+ removes the surface of the selected area (else of the last polygon, freehand, object or cavity area); measured objects are still measured complete. 
+\series bold
+Eraser Size (Points)
+\series default
+ sets the size of the eraser (1 to 200 points, default 12). 
+\series bold
+Undo
+\series default
+ and 
+\series bold
+Redo
+\series default
+ undo and redo the removals, 
+\series bold
+Restore Surface
+\series default
+ restores the whole surface (this can be undone, too). The removed surface is kept when the iso surface is computed again (e.g., with another smoothing).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/measure_mouse.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Measurements with the mouse: a straight line (sheet 3D Points), a polygon area and a measured volume (sheet 3D Areas) with their numbers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+The Volume tool:
+\series default
+ before the click the closed surface under the mouse is highlighted in the color of what a click measures (orange: an object, blue: the inner wall of a cavity) and the info line describes it. A click measures the volume; only the measured object or cavity is displayed (the other objects are not colored or numbered). The result is a row of the sheet 3D Areas (type Volume (Object) or Volume (Cavity)). A cavity can be measured after the object has been cut open (Surface eraser or clipping). The options of 
+\series bold
+Measured Volumes (Volume Tool)
+\series default
+:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Object:
+\series default
+ Material (the volume without its cavities) or Filled (the volume inside of the outer surface, with its cavities).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Cavity:
+\series default
+ Whole space (the objects in the cavity included) or Free space (without the objects in it, which are shown in red).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Display:
+\series default
+ the measured volume on the surface, through the surface (visible inside of a closed object) or only the measured volumes; 
+\series bold
+Show as Triangles
+\series default
+ draws them as a wireframe.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/measure_volume_preview.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Volume tool: the object under the mouse is highlighted in orange before the click, the info line describes what a click measures
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/3d/measure_volume.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The measured volume of the object (sheet 3D Areas); only the measured object is displayed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+Clear Points and Areas
+\series default
+ removes the measurements with the mouse, 
+\series bold
+Clear Measurements
+\series default
+ all measurements of the 3D view.
 \end_layout
 
 \begin_layout Subsection
@@ -3710,7 +4711,7 @@ Plot3D
 \family typewriter
 com.eco.bio7.spatial
 \family default
-) creates interactive 3D plots in the Space view with a few lines of Java (or Groovy, BeanShell, Jython, etc.). A plot contains one or more layers (e.g., a surface and a scatter plot), the title, the axis titles, the legend and a color bar. The plot is displayed with 
+) creates interactive 3D plots in the Space view with a few lines of Java (or Groovy, BeanShell, Python, etc.). A plot contains one or more layers (e.g., a surface and a scatter plot), the title, the axis titles, the legend and a color bar. The plot is displayed with 
 \family typewriter
 show()
 \family default
@@ -6249,15 +7250,26 @@ name "sec:The-R-Perspective"
 \end_layout
 
 \begin_layout Standard
-Bio7 embeds R for the statistical analysis of data, images and models. R is connected with 
+Bio7 embeds R for the statistical analysis of data, images and models: R runs 
 \series bold
-Rserve
+embedded
 \series default
-: 
+ in the process of Bio7 (R 4.3 or later, see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Embedded-R"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+). 
 \series bold
-R > Start Rserve
+Start R
 \series default
- starts R in the Bio7 console and the Rserve server in this R session (cooperative mode on Linux and macOS), then Bio7 connects to the server (displayed in the progress dialog and in the console). After the connection has been established R can be used in the R-Shell view, the R editor, the Table view, the ImageJ views and with the scripts and the compiler of Bio7. The path to R, the R startup arguments, the Rserve startup arguments (e.g., a port) and the client port are set in the R preferences (see 
+ in the main toolbar or in the R menu starts R in the Bio7 console. R can then be used in the R-Shell view, the R editor, the Markdown editor, the Table view, the ImageJ views and with the scripts and the compiler of Bio7. The path to R, the R startup commands and the other settings are in the R preferences (see 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Rserve-preferences"
@@ -6284,9 +7296,16 @@ name "subsec:R-Menus-in"
 \begin_layout Itemize
 
 \series bold
-Start Rserve:
+Start R:
 \series default
- Starts R with an Rserve connection (or stops the connection).
+ Starts the embedded R (the menu of the toolbar action Start R contains Start R and Interrupt R). R can't be restarted without a restart of Bio7.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Interrupt R:
+\series default
+ Interrupts the evaluation (embedded R: Terminate and Kill are not available, R runs in the process of Bio7).
 \end_layout
 
 \begin_layout Itemize
@@ -6343,6 +7362,62 @@ Remove All Objects:
 Start RGui with Workspace:
 \series default
  Windows: starts RGui with the current workspace.
+\end_layout
+
+\begin_layout Subsection
+R Plot Devices
+\end_layout
+
+\begin_layout Standard
+The plots of R are displayed in Bio7 with the device selected in the R plot preferences (
+\series bold
+Preferences R > Plot
+\series default
+, 
+\series bold
+Use Custom Device
+\series default
+):
+\end_layout
+
+\begin_layout Itemize
+\series bold
+SWT Vector Plot (embedded R, default):
+\series default
+ each plot device is a view (
+\series bold
+R Plot [n]
+\series default
+, R icon) with vector graphics. The plot is drawn again in the size of the view when the view is resized. The view opens next to the ImageJ-Canvas view and comes to the current perspective with a new plot.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+ImageJ Plot Canvas (embedded R):
+\series default
+ the plots are displayed in the ImageJ plot canvas (resizable, HiDPI, locator(), save and copy as an image).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+ImageJ View Display Size, ImageJ Image:
+\series default
+ the plots are created as images in the size of the ImageJ-Canvas view (or of variables in R) and opened as images in ImageJ.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Image, PDF, SVG, PostScript:
+\series default
+ file devices.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Plot history
+\series default
+ (R plot preferences) sets the number of recorded plots of a device (0: no history), which can be browsed in the plot views.
 \end_layout
 
 \begin_layout Subsection
@@ -6406,7 +7481,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The R perspective with objects of the R workspace and a dataframe in the Table view (dark theme)
+The R perspective (dark theme): the R-Shell view with the objects of the workspace, an R script in the editor, the Outline view, the console and an R plot in the R Plot view
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:r-perspective"
@@ -6430,7 +7505,7 @@ The Table View
 \end_layout
 
 \begin_layout Standard
-The Table view is a spreadsheet in which data can be imported, exported, edited and transferred to and from R. Several sheets can be opened side by side. A selection (also several ranges with Ctrl/Cmd or Shift) is highlighted with the accent color of the theme, a click on a column or row header selects the column or the row. Every sheet has its own undo and redo (the arrows in the toolbar of the view). The toolbar adds columns, rows and sheets.
+The Table view is a spreadsheet in which data can be imported, exported, edited and transferred to and from R and Python. Several sheets can be opened side by side (the tabs at the bottom of the view). The columns are titled A, B, C ... (like in LibreOffice), the rows are numbered. A selection (also several ranges with Ctrl/Cmd or Shift) is highlighted with the accent color of the theme; a click on a column or row header selects the whole column or row. Every sheet has its own undo and redo history.
 \end_layout
 
 \begin_layout Standard
@@ -6458,7 +7533,13 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The Table view with a selection and the menus of the view
+The Table view with the iris data in the sheet iris, a selection of numeric cells and the menus of the view (File, Edit, Sheet, R <-, Python <-, Scripts) followed by Undo, Redo, Add Sheet, Add Column, Add Row and Fit Column Widths
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:table-view"
+
+\end_inset
+
 \end_layout
 
 \end_inset
@@ -6471,44 +7552,355 @@ The Table view with a selection and the menus of the view
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
+The toolbar of the view contains six menus and some actions. The menus:
+\end_layout
 
+\begin_layout Standard
 \series bold
-File:
+File
 \series default
- Import: CSV, Excel (97-2003 and 2007-2013 XML), OpenOffice and Bio7 XML (formatted sheets with images). Export: Excel (97-2003 and 2007-2013 XML), OpenOffice, Text and Bio7 XML.
+ (import and export of the sheets):
 \end_layout
 
 \begin_layout Itemize
-
 \series bold
-Edit:
+Import CSV:
 \series default
- Cut, copy, paste and delete (Ctrl/Cmd+X, C, V, Del), copy an image to the clipboard and paste an image from the clipboard, the background color, the gridline color, the font and the size of the selected cells.
+ imports a CSV or text file with the import dialog (separator, quotes, decimal sign, encoding, see the next section).
 \end_layout
 
 \begin_layout Itemize
-
 \series bold
-Sheet:
+Import Excel (97-2003)
 \series default
- Add a sheet (or a sheet with a size), rename a sheet (or a double-click on the tab), add rows and columns (before or after the selection) and remove the selected rows or columns.
+, 
+\series bold
+Import Excel (2007-2013 XML)
+\series default
+ and 
+\series bold
+Import LibreOffice (ODS):
+\series default
+ import a spreadsheet file (*.xls, *.xlsx, *.ods).
 \end_layout
 
 \begin_layout Itemize
-
 \series bold
-R <-:
+Load Bio7 XML:
 \series default
- Transfers the sheet to R as a dataframe (R<-Table, with the first row as names: R<- Table+head) or the selection as a numeric, factor or character vector.
+ loads a sheet stored in the Bio7 format (with the formatting: colors, fonts, images).
 \end_layout
 
 \begin_layout Itemize
+\series bold
+Export as Excel (97-2003)
+\series default
+, 
+\series bold
+Export as Excel (2007-2013 XML)
+\series default
+, 
+\series bold
+Export as LibreOffice (ODS)
+\series default
+ and 
+\series bold
+Export as Text:
+\series default
+ export the active sheet.
+\end_layout
 
+\begin_layout Itemize
+\series bold
+Save as Bio7 XML:
+\series default
+ saves the sheet with its formatting (colors, fonts, images).
+\end_layout
+
+\begin_layout Standard
+\series bold
+Edit
+\series default
+ (the selected cells):
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Cut
+\series default
+, 
+\series bold
+Copy
+\series default
+, 
+\series bold
+Paste
+\series default
+ and 
+\series bold
+Delete
+\series default
+ (Ctrl/Cmd+C, Ctrl/Cmd+V, Del): edit the selected cells.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Copy Image To Clipboard
+\series default
+ and 
+\series bold
+Paste Image From Clipboard:
+\series default
+ copy the image of a cell or paste an image (e.g., a plot or a part of an image of ImageJ) into the selected cell.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Background Colour
+\series default
+, 
+\series bold
+Gridline Colour
+\series default
+ and 
+\series bold
+Font:
+\series default
+ the background color and the font of the selected cells and the color of the grid lines.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Resize Selected Cells:
+\series default
+ the width and the height of the selected columns and rows.
+\end_layout
+
+\begin_layout Standard
+\series bold
+Sheet
+\series default
+ (the structure of the sheet):
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Add Sheet
+\series default
+ adds a sheet, 
+\series bold
+Add Sized Sheet
+\series default
+ a sheet with a given number of columns and rows.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Rename Sheet
+\series default
+ renames the active sheet (or a double-click on the tab).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Add Column (Before)
+\series default
+, 
+\series bold
+Add Column (After)
+\series default
+, 
+\series bold
+Add Row (Before)
+\series default
+ and 
+\series bold
+Add Row (After)
+\series default
+ insert columns or rows next to the selection.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Delete Columns
+\series default
+ and 
+\series bold
+Delete Rows
+\series default
+ remove the selected columns or rows.
+\end_layout
+
+\begin_layout Standard
+\series bold
+R <-
+\series default
+ (transfers the data to the R workspace; R must be running):
+\end_layout
+
+\begin_layout Itemize
+\series bold
+R<-Table:
+\series default
+ the whole sheet as a data frame, 
+\series bold
+R<- Table+head
+\series default
+ with the first row as the column names.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+R<-Selection(numeric)
+\series default
+, 
+\series bold
+R<-Selection(factor)
+\series default
+ and 
+\series bold
+R<-Selection(character)
+\series default
+: the selected cells as a vector of the type.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+R<-Selection as Matrix:
+\series default
+ the selection as a numeric matrix.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+R<-Selection as Data Frame
+\series default
+ (also 
+\series bold
++head
+\series default
+), 
+\series bold
+R<-Selection Columns as List
+\series default
+ and 
+\series bold
+R<-Selection Rows as List
+\series default
+ (also 
+\series bold
++head
+\series default
+): the selection as a data frame or as a list of the columns or the rows.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+R<-Selection Columns as Variables
+\series default
+ (also 
+\series bold
++head
+\series default
+): each selected column as a single variable (with the head: named after the first row).
+\end_layout
+
+\begin_layout Standard
+A name for the created R object is asked in a dialog. The transfer from R to the table is done in the R-Shell view (
+\series bold
+Transfer to Table
+\series default
+ in the context menu of the objects).
+\end_layout
+
+\begin_layout Standard
+\series bold
+Python <-
+\series default
+ (transfers the data to the embedded Python; the same structure as R <-):
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Python<-Table
+\series default
+ and 
+\series bold
+Python<-Table+head:
+\series default
+ the sheet as a pandas DataFrame (without or with the column names of the first row).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Python<-Selection(numeric)
+\series default
+, 
+\series bold
+Python<-Selection(character)
+\series default
+ and 
+\series bold
+Python<-Selection(categorical)
+\series default
+: the selected cells as a numpy array of numbers (text and empty cells become NaN), as a list of strings or as a pandas Categorical (a factor).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Python<-Selection as Array:
+\series default
+ the selection as a numpy array.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Python<-Selection as DataFrame
+\series default
+ (also 
+\series bold
++head
+\series default
+), 
+\series bold
+Python<-Selection Columns as Dict
+\series default
+ and 
+\series bold
+Python<-Selection Rows as Dict
+\series default
+ (also 
+\series bold
++head
+\series default
+): the selection as a DataFrame or as a dict of the columns or the rows.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Python<-Selection Columns as Variables
+\series default
+ (also 
+\series bold
++head
+\series default
+): each selected column as a single variable.
+\end_layout
+
+\begin_layout Standard
+Data frames and arrays of Python are transferred to the table with 
+\series bold
+Transfer to Table
+\series default
+ in the context menu of the Python-Shell view.
+\end_layout
+
+\begin_layout Standard
 \series bold
 Scripts:
 \series default
- Custom Groovy, BeanShell, Jython or R scripts (see 
+ the scripts of the folder of the Table menu scripts (R, Python, Groovy, BeanShell, JavaScript, Java or ImageJ macros, see 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Install-Eclipse,-R,"
@@ -6519,7 +7911,124 @@ nolink "false"
 
 \end_inset
 
-).
+), e.g., to compute new columns from the selected data. Subfolders are displayed as submenus.
+\end_layout
+
+\begin_layout Standard
+The actions of the toolbar after the menus:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Undo
+\series default
+ and 
+\series bold
+Redo
+\series default
+ (also Cmd/Ctrl+Z, Shift+Cmd/Ctrl+Z): undo and redo the changes of the active sheet (each sheet has its own history).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Add Sheet
+\series default
+ (Add Spread), 
+\series bold
+Add Column
+\series default
+ and 
+\series bold
+Add Row:
+\series default
+ add a sheet, a column or a row.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Fit Column Widths:
+\series default
+ fits the widths of the columns to their content (the complete numbers and texts); press it again for the widths before.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/r/table_menu.jpg
+	lyxscale 40
+	width 50text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The context menu of the cells of the Table view
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:table-menu"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The context menu of the cells contains 
+\series bold
+Cut
+\series default
+, 
+\series bold
+Copy
+\series default
+, 
+\series bold
+Paste
+\series default
+, 
+\series bold
+Copy Image To Clipboard
+\series default
+, 
+\series bold
+Paste Image from Clipboard
+\series default
+, 
+\series bold
+Delete Contents
+\series default
+, 
+\series bold
+Delete Rows
+\series default
+ and 
+\series bold
+Delete Columns
+\series default
+.
 \end_layout
 
 \begin_layout Standard
@@ -6536,6 +8045,7 @@ nolink "false"
 
 ).
 \end_layout
+
 
 \begin_layout Subsubsection
 File Import for CSV Data
@@ -6706,7 +8216,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The R-Shell view (maximized) with the objects of the workspace
+The R-Shell view (maximized) with the objects of the workspace (the data frame iris is selected and described at the right)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:r-shell"
@@ -7072,8 +8582,51 @@ C
 Context Menu of the Objects
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
 
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/r/r_shell_menu.jpg
+	lyxscale 40
+	width 45text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The context menu of the objects of the R-Shell view (the data frame iris is selected); the submenus at the end are the scripts of the R-Shell scripts folder
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:r-shell-menu"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
 \series bold
 Show, Summary:
 \series default
@@ -7081,43 +8634,146 @@ Show, Summary:
 \end_layout
 
 \begin_layout Itemize
-
 \series bold
 Filter:
 \series default
- Shows only objects of a kind: Dataframes, Matrices, Vectors, Functions, etc.
+ Shows only the objects of a kind: 
+\series bold
+Dataframes
+\series default
+, 
+\series bold
+Matrices
+\series default
+, 
+\series bold
+Vectors
+\series default
+, 
+\series bold
+Functions
+\series default
+ or 
+\series bold
+Factor
+\series default
+.
 \end_layout
 
 \begin_layout Itemize
-
 \series bold
 Convert:
 \series default
- Converts the selected object To Character, To Dataframe, To Factor, To List of Objects, To Matrix, To Numeric or To Vector.
+ Converts the selected object 
+\series bold
+To Dataframe
+\series default
+, 
+\series bold
+To Matrix
+\series default
+, 
+\series bold
+To List of Objects
+\series default
+, 
+\series bold
+To Vector
+\series default
+, 
+\series bold
+To Numeric
+\series default
+, 
+\series bold
+To Factor
+\series default
+ or 
+\series bold
+To Character
+\series default
+.
 \end_layout
 
 \begin_layout Itemize
+\series bold
+Plot:
+\series default
+ Plots the selected objects (several together): line, area, scatter, histogram, density, ECDF, boxplot, violin, strip, barplot, pie, scatter matrix, correlation matrix, heatmap, contour, 3D surface, Q-Q plot or image. 
+\series bold
+Plot with Options...
+\series default
+ opens the Plot Options view (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Plotting-R-Shell"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+To Python:
+\series default
+ Transfers the selected object to the embedded Python (with the same name).
+\end_layout
+
+\begin_layout Itemize
 \series bold
 Transfer to Table:
 \series default
- Transfers the object to the Table view: Dataframe with Head (a new sheet with the names in the first row), Dataframe, Matrix, Vector to Rows and Vector to Columns (from the selected cell of the active sheet).
+ Transfers the object to the Table view: 
+\series bold
+Dataframe with Head
+\series default
+ (a new sheet with the names in the first row), 
+\series bold
+Dataframe
+\series default
+, 
+\series bold
+Matrix
+\series default
+, 
+\series bold
+Vector to Rows
+\series default
+ and 
+\series bold
+Vector to Columns
+\series default
+ (from the selected cell of the active sheet).
 \end_layout
 
 \begin_layout Itemize
-
 \series bold
 LibreOffice:
 \series default
- Opens a LibreOffice spreadsheet and transfers data between R and LibreOffice (Data to R, Data with Head to R).
+ Opens a LibreOffice spreadsheet and transfers data between R and LibreOffice (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:LibreOffice-features-of"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
-
 \series bold
 Scripts:
 \series default
- Custom scripts in special folders extend the context menu (see 
+ The R, Python, Groovy, BeanShell, JavaScript and Java scripts of the R-Shell scripts folder are listed at the end of the menu (subfolders as submenus, e.g., Classification, General, Examples, Packages, GIS); they work with the selected objects (see 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Install-Eclipse,-R,"
@@ -7130,6 +8786,7 @@ nolink "false"
 
 ).
 \end_layout
+
 
 \begin_layout Subsubsection
 The R Snippets View
@@ -7223,15 +8880,7 @@ Load Packages list
 Install Selected
 \series default
  action.
- If something went wrong with the installation it can make sense to start Rserve in a OS shell to get more information about the installation process (see 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Rserve-preferences"
-nolink "false"
-
-\end_inset
-
-).
+ The output of the installation is displayed in the console.
  To find the right R package some search facilities are available to find the package in the package list and to get some information about the package (select the 
 \series bold
 Open Package Description
@@ -7241,7 +8890,7 @@ Open Package Description
 \series bold
  Update Installed Packages
 \series default
- action all currently installed R packages (except the Rserve package) will be updated if possible.
+ action all currently installed R packages will be updated if possible.
  
 \end_layout
 
@@ -7449,68 +9098,70 @@ The Attached Packages tab
 \end_layout
 
 \begin_layout Subsubsection
-The Plot Data View
-\end_layout
+Plotting from the R-Shell View
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Plotting-R-Shell"
 
-\begin_layout Paragraph
-\begin_inset VSpace medskip
 \end_inset
-
 
 \end_layout
 
 \begin_layout Standard
-A selected data structure (in the data view of the Object tab) can be plotted easily with the different plot actions in this view.
- The selected plot type has to be appropriate for the selected datatype.
- Default all plots are created as an Image in ImageJ.
- If the option 
+The objects of the R workspace can be plotted directly from the R-Shell view: select one or several objects and choose a plot type in the 
 \series bold
-Detour
+Plot
 \series default
- is enabled all commands are transferred to the textfield for customization (templates are available in the context menu of the textfield).
- The customized command then can be plotted with the 
+ menu of the context menu (the plots use the default plot device, by default the R Plot view). 
 \series bold
-Draw Plot
+Plot with Options...
 \series default
- action.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename images/chapter4/rplotshell.png
-	lyxscale 70
-	scale 70
+ opens the 
+\series bold
+Plot Options (R)
+\series default
+ view: the variables of the workspace are selected for 
+\series bold
+Y
+\series default
+, 
+\series bold
+X
+\series default
+, 
+\series bold
+Group
+\series default
+ and 
+\series bold
+Z
+\series default
+, the plot type, the style, the palette, the texts, the axes, the legend, the lines, the points and the bars are adjusted and 
+\series bold
+Plot
+\series default
+ draws the plot. 
+\series bold
+Copy Source
+\series default
+ and 
+\series bold
+Open in Editor
+\series default
+ reuse the R code of the plot in a script. The Plot Options view is the same for R and Python (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:The-Python-Perspective"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-
+).
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-The Plot Data view with context menu
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Subsubsection
 The R Editor
@@ -7563,7 +9214,7 @@ The R editor of Bio7 supports the syntax of the R language.
  If you have an *.r file outside the workbench,
  this file can simply be dropped to a project of Bio7.
  If a R file has been opened,
- the toolbar of the Bio7 application displays a new action item for the interpretation of R scripts (if a connection to the Rserver and R has been established).
+ the toolbar of the Bio7 application displays a new action item for the interpretation of R scripts (if R is running).
  
 \end_layout
 
@@ -8099,19 +9750,18 @@ Plotting
 \end_layout
 
 \begin_layout Standard
-Since Bio7 1.7.1 it is possible to plot single and multiple plots with ImageJ as the default R plot device.
- Multiple plots are displayed in an ImageJ image stack (with the available slider you can select one plot in the stack).
- Plots and plot stacks can be saved as images and movies with ImageJ in different formats (e.g.
- stacks can be stored as *.avi or animated *.gif).
- The size of the plots and the format can be changed in the Rserve Plot Preferences of Bio7 (see 
+Plots can also be displayed with ImageJ as the R plot device (ImageJ Plot Canvas or ImageJ images): multiple plots are displayed in an ImageJ stack (with the slider one plot of the stack is selected). Plots and plot stacks can be saved as images and movies with ImageJ in different formats (e.g., stacks as *.avi or animated *.gif). The size of the plots and the format are set in the R plot preferences (see 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:R-Plot-Preferences"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
 
-) .
+).
 \end_layout
 
 \begin_layout Standard
@@ -8157,192 +9807,24 @@ R Debugging Interface
 \end_layout
 
 \begin_layout Standard
-Since Bio7 2.0 a debugging GUI for R is integrated as part of the R editor.
- To debug a R script a breakpoint has to be set inside a R function.
- If a breakpoint is set several actions are added to the default Bio7 console.
- For the debugging process the native R console has to be started (The Rserve connection will be automatically change to the native mode if alive!).
- To start a debugging process the 
-\begin_inset Quotes eld
-\end_inset
-
-Debug Trace Action
-\begin_inset Quotes erd
-\end_inset
-
- has to be invoked and the traced function has to be executed in the R shell (see screenshot below).
- In the shell several debugging actions are available:
-\end_layout
-
-\begin_layout Enumerate
-The 
+Bio7 has a debugger for R scripts, functions, class methods and the R chunks of R Markdown and Quarto documents: breakpoints are set in the R editor, the debugger stops in the editor and the 
 \series bold
-Debug Trace Action
+Debug
 \series default
- to start the debugging process.
-\end_layout
-
-\begin_layout Enumerate
-The 
-\series bold
-Stop
-\series default
- action to stop the debugging process.
-\end_layout
-
-\begin_layout Enumerate
-The 
-\series bold
-Next
-\series default
- action to go to the next statement.
-\end_layout
-
-\begin_layout Enumerate
-The 
-\series bold
-Continue
-\series default
- action which continues with the execution without single stepping.
-\end_layout
-
-\begin_layout Enumerate
-The 
-\series bold
-Step Into
-\series default
- action to step into function calls.
-\end_layout
-
-\begin_layout Enumerate
-The 
-\series bold
-Finish
-\series default
- action to finish the current loop or function.
-\end_layout
-
-\begin_layout Enumerate
-A 
-\series bold
-Help
-\series default
- action to display R debugging console commands.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename images/chapter4/rdebugging.jpg
-	lyxscale 40
-	scale 40
+ view shows the variables, the watch expressions and the call stack. The debugger is described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:The-R-Debugger"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-
+.
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-R debugging perspective with debugging toolbar actions enabled.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-R Debugging Perspective and Views
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace medskip
-\end_inset
-
-To inspect the current variables a 
-\series bold
-Debug perspective with a Debug(x)
-\series default
- view is available to display the environment variables and objects.
- Single variables can be changed in the spreadsheet (
-\begin_inset Quotes eld
-\end_inset
-
-Value
-\begin_inset Quotes erd
-\end_inset
-
- column) to inspect the effect on the environment.
- In addition a 
-\series bold
-Debug Text
-\series default
- view is availabe to display external R source not displayed in the opened R file (e.g.
- if stepped in an package function call).
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace medskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Debug Context Menu
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace medskip
-\end_inset
-
-The context menu offers several actions to:
-\end_layout
-
-\begin_layout Enumerate
-Set a breakpoint.
-\end_layout
-
-\begin_layout Enumerate
-Set a conditional breakpoint - Syntax e.g.
- :
- 
-\emph on
-if (x==5) browser() 
-\emph default
-which is a wrapper for:
-
-\emph on
- trace(fun,
- quote(if (x == 5) browser())).
-\end_layout
-
-\begin_layout Enumerate
-Edit a conditional breakpoint.
-\end_layout
-
-\begin_layout Enumerate
-Delete a selected breakpoint.
-\end_layout
-
-\begin_layout Enumerate
-Delete all breakpoints.
-\end_layout
 
 \begin_layout Subsubsection
 R Plot Preferences
@@ -8378,7 +9860,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Rserve preferences to select and adjust the R plot device
+R plot preferences to select and adjust the R plot device
 \end_layout
 
 \end_inset
@@ -8513,150 +9995,164 @@ The Help Browser
 \end_layout
 
 \begin_layout Subsubsection
-Rserve preferences
+R Preferences
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Rserve-preferences"
 
 \end_inset
 
-
 \end_layout
 
 \begin_layout Standard
-There are several Rserve preferences available wich are described in this section.The following preferences can be adjusted:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename images/chapter4/rservepreferences.jpg
+The preferences of R are in 
+\series bold
+Preferences Bio7 > Preferences R
+\series default
+ (and the pages 
+\series bold
+Preferences R Plots
+\series default
+, 
+\series bold
+Preferences R Build Tools
+\series default
+ and 
+\series bold
+Preferences R Debug
+\series default
+). The page shows the restrictions of embedded R (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Embedded-R"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Main Rserve preferences
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-(1) 
-\series bold
-General
+). The preferences:
 \end_layout
 
 \begin_layout Itemize
-The path to the R install location.
+\series bold
+Path to R:
+\series default
+ the R installation which is embedded. 
+\series bold
+R Setup...
+\series default
+ (
+\series bold
+Find or install R
+\series default
+) searches the installed R versions (
+\series bold
+Search Again
+\series default
+, 
+\series bold
+Use for Bio7
+\series default
+) and helps to install R.
 \end_layout
 
 \begin_layout Itemize
-The default package install location.
+\series bold
+Package install location:
+\series default
+ the folder where new R packages are installed.
 \end_layout
 
 \begin_layout Itemize
-The 
 \series bold
-Path to temporary R folder 
+Path to temporary R folder:
 \series default
-options sets the path to the Bio7 R temp folder.
- In the temp.
- folder some plot images and R files are temporarily stored.
- 
+ the folder for temporary files of R (e.g., plot images).
 \end_layout
 
 \begin_layout Itemize
-The 
 \series bold
-Install path at startup
+R startup commands:
 \series default
- option installs a registry path to R in the Windows registry (deprecated).
+ R commands which are executed at each start of R (e.g., to set paths or options).
 \end_layout
 
 \begin_layout Itemize
-The option 
 \series bold
-Check at startup for running R process(es) 
+Package Server
 \series default
-warns for running R processes which can interfer a newly started R/Rserve native process.
+ (
+\series bold
+Select Server
+\series default
+): the CRAN mirror for the installation of packages.
 \end_layout
 
 \begin_layout Itemize
-The
 \series bold
- Rserve startup arguments
+Transfer with "format" to table
 \series default
- can be adjusted to start Rserve with custom arguments.
-\end_layout
-
-\begin_layout Itemize
-The 
+ and 
 \series bold
-R startup arguments
+Digits:
 \series default
- can be adjusted to start R with arguments when started together with Rserve.
-\end_layout
-
-\begin_layout Itemize
-The 
-\series bold
-Rserve TCP client port
-\series default
- option configures the running Rserve client port of the rserve application.
-\end_layout
-
-\begin_layout Description
-(2) In the 
-\series bold
-Packages
-\series default
- preferences you can select the default R package mirror to download R packages from.
- In addition you can set the install location of the packages.
-\end_layout
-
-\begin_layout Description
-(3) In the 
-\series bold
-Transfer to Table options
-\series default
- the transfer method to the Bio7 Table from R can be specified to adjust the numerical precision of numbers.
- Please consult the R documentation for the command 
-\series bold
+ the formatting of the numbers which are transferred from R to the Bio7 table (see the R function 
+\family typewriter
 format
-\series default
-.
+\family default
+).
 \end_layout
 
-\begin_layout Description
-(4) The option 
+\begin_layout Itemize
 \series bold
-R-Shell:...
-
+R-Shell:
 \series default
- enables the automatic code completion of the R-Shell view (restart of Bio7 necessary!).
+ 
+\series bold
+Update R Workspace Objects after evaluation
+\series default
+, 
+\series bold
+Display output/error stream of console
+\series default
+ and the options of the code completion of the R-Shell view (activation characters, key combination, size of the popup).
 \end_layout
+
+\begin_layout Itemize
+\series bold
+Options for the source command:
+\series default
+ the arguments of 
+\family typewriter
+source()
+\family default
+ when an R script is executed.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Execute R command on shutdown:
+\series default
+ an R command which is executed when Bio7 is closed.
+\end_layout
+
+\begin_layout Standard
+\series bold
+Preferences R Build Tools
+\series default
+ contains, e.g., the port of Shiny apps (
+\series bold
+Shiny port
+\series default
+), 
+\series bold
+Preferences R Debug
+\series default
+ the port of the debugger.
+\end_layout
+
 
 \begin_layout Subsubsection
 R Editor
@@ -8675,23 +10171,17 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsubsection
-Native R Excution
+R in the Console
 \end_layout
 
 \begin_layout Standard
-In Bio7 it is possible to execute R scripts and R commands without Rserve (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "rnativepreference"
-nolink "false"
-
-\end_inset
-
-).
- In the Bio7 console an independant R console can be started which pipes commands directly to an instance of R.
- If the editor should be used with the native communication this has to be selected in the R preferences of Bio7.
- Some commands and GUI interfaces cannot be used if the native execution is selected
+The R of the Bio7 console is the embedded R (
+\series bold
+Native R
+\series default
+ in the interpreter menu of the Console view): R commands can be typed directly into the console, the output of R and of the scripts is displayed there. Ctrl+C in the console interrupts a computation. The R editor, the R-Shell view and the console use the same R workspace.
 \end_layout
+
 
 \begin_layout Subsubsection
 Create R Packages
@@ -8931,6 +10421,1071 @@ http://cran.r-project.org/bin/windows/Rtools/)
 
 .
 \end_layout
+
+\begin_layout Section
+The Python Perspective
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:The-Python-Perspective"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Bio7 embeds Python (CPython) like R: Python runs in the process of Bio7 (embedded Python), so data, images and plots are transferred directly between Python, R, ImageJ and the Bio7 table. The installation and the preferences of Python are described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Embedded-Python"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+. Python is started with 
+\series bold
+Start Python
+\series default
+ in the main toolbar (or automatically with the first Python action).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/python/python_perspective.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Python perspective (dark theme): the Python-Shell view with the objects of the workspace (left), a Python script in the editor (center), a matplotlib figure in the Python Plot view, the console and the Outline view (right).
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:python-perspective"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Python
+\series default
+ perspective arranges the Python tools around the editor area:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Left top:
+\series default
+ the 
+\series bold
+Python-Shell
+\series default
+, 
+\series bold
+Python Packages
+\series default
+ and 
+\series bold
+Project Explorer
+\series default
+ views.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Left bottom:
+\series default
+ the 
+\series bold
+Console
+\series default
+ view (the output of Python).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Center:
+\series default
+ the editor area with the Python editor (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:The-Python-Editor"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Below the editor:
+\series default
+ the 
+\series bold
+Table
+\series default
+ view, the 
+\series bold
+Python Plot
+\series default
+ view and the 
+\series bold
+Snippets
+\series default
+ view.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Right:
+\series default
+ the 
+\series bold
+Outline
+\series default
+ view of the opened Python script.
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Python Debug
+\series default
+ perspective is opened automatically when the debugging of a Python script starts (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:The-Python-Debugger"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+): the Project Explorer and the Python-Shell view (left top), the 
+\series bold
+Python Debug
+\series default
+ view (left bottom), the editor, the Console, the Table and the Python Plot view below the editor and the Outline view.
+\end_layout
+
+\begin_layout Subsection
+The Python-Shell View
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/python/python_shell.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Python-Shell view (maximized) with the objects of the Python workspace (a selected object is described at the right, see the context menu below)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:python-shell"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Python-Shell view is the interactive interface to the embedded Python. Python expressions are typed in the input field at the top: 
+\series bold
+Enter
+\series default
+ evaluates the line, 
+\series bold
+Up
+\series default
+ and 
+\series bold
+Down
+\series default
+ browse the history and the code completion (key combination of the preferences) proposes the names of the modules and of the variables of the running Python.
+\end_layout
+
+\begin_layout Standard
+The buttons of the view:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Eval:
+\series default
+ Evaluates the expression of the input field.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Load:
+\series default
+ Imports a file into the workspace (*.npy, *.npz, *.csv, *.tsv, *.xlsx, *.pkl) or runs a Python script (*.py).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Save:
+\series default
+ Saves the selected object (*.npy, *.csv, *.xlsx, *.pkl) or the history as a Python script.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Py Doc
+\series default
+ and 
+\series bold
+?:
+\series default
+ Open the documentation of Python or the help of the expression of the input field.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Stop
+\series default
+ (icon): Interrupts the running Python code.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+List:
+\series default
+ Lists the objects of the workspace.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Del:
+\series default
+ Deletes the selected objects.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Gc:
+\series default
+ Runs the garbage collector of Python.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Clear:
+\series default
+ Clears the output.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Font:
+\series default
+ Changes the font of the view.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/python/python_shell_menu.jpg
+	lyxscale 40
+	width 45text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The context menu of the objects of the Python-Shell view; the submenus at the end are the scripts of the Python-Shell scripts folder
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:python-shell-menu"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The list of the objects has a context menu with the following actions:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Show
+\series default
+ and 
+\series bold
+Summary:
+\series default
+ Display the selected object or a summary of it.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Filter:
+\series default
+ Shows all objects or only arrays, DataFrames, Series, lists, dicts or functions.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Convert:
+\series default
+ Converts the selected object to a numpy array, a DataFrame, a list, a float, a categorical or a string.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Transfer to Table:
+\series default
+ Transfers the selected objects to the Bio7 table (a DataFrame with or without the head, a matrix, a vector to rows or columns, the selected objects as columns or rows, the elements of a list as columns or rows).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+To R
+\series default
+ and 
+\series bold
+To ImageJ:
+\series default
+ Transfer the selected object to the R workspace or create an ImageJ image from an array.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Plot:
+\series default
+ Plots the selected objects with matplotlib (line, area, scatter, histogram, density, ECDF, boxplot, violin, strip, barplot, pie, scatter matrix, correlation matrix, heatmap, contour, 3D surface, Q-Q plot and image). 
+\series bold
+Plot with Options...
+\series default
+ opens the Plot Options view (see below).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Delete:
+\series default
+ Deletes the selected objects.
+\end_layout
+
+\begin_layout Itemize
+The scripts of the Python-Shell scripts folder (Python preferences) are listed at the end of the menu. In these scripts the names of the selected objects are available as 
+\family typewriter
+bio7_shell_vars
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+The status line shows the memory of Python (
+\series bold
+Py:
+\series default
+) and, while Python code runs, the running time. A double-click on it interrupts Python.
+\end_layout
+
+\begin_layout Subsection
+The Python Plot View
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/python/python_plot.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Python Plot view (maximized) with a matplotlib figure of the logistic growth model
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:python-plot"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The figures of matplotlib are displayed in the 
+\series bold
+Python Plot
+\series default
+ view (Bio7 sets a matplotlib backend for the view). The figures are drawn again in the size of the view when the view is resized. The toolbar of the view browses the figures (previous and next figure, 
+\series bold
+Figure n (i/N)
+\series default
+), saves a figure as PNG, SVG or PDF (
+\series bold
+Save...
+\series default
+), copies it to the clipboard (
+\series bold
+Copy
+\series default
+), opens it as an image in ImageJ in a selected resolution (
+\series bold
+ImageJ
+\series default
+) and closes the figure (
+\series bold
+Close
+\series default
+). The size, the resolution, the matplotlib style (e.g., ggplot, seaborn, colorblind), the font size and the resolution of saved PNG images are set in the preferences 
+\series bold
+Preferences Python Plot
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Interactive charts of plotly, altair, bokeh, folium, holoviews and hvplot (
+\family typewriter
+fig.show()
+\family default
+) are displayed in the Browser view of Bio7. Any chart or HTML string can be displayed with 
+\family typewriter
+bio7.show_html(obj)
+\family default
+.
+\end_layout
+
+\begin_layout Subsection
+The Plot Options View
+\end_layout
+
+\begin_layout Standard
+\series bold
+Plot with Options...
+\series default
+ in the Plot menu of the Python-Shell view (and of the R-Shell view) opens the 
+\series bold
+Plot Options (Python)
+\series default
+ view (
+\series bold
+Plot Options (R)
+\series default
+ for R). The variables of the workspace are selected for 
+\series bold
+Y
+\series default
+ (the values), 
+\series bold
+X
+\series default
+, 
+\series bold
+Group
+\series default
+ and 
+\series bold
+Z
+\series default
+ (a matrix). The plot is adjusted with the options of the groups 
+\series bold
+Plot
+\series default
+ (type, style Modern or Classic, palette, color, opacity), 
+\series bold
+Text
+\series default
+ (title, subtitle, caption, axis labels, font sizes), 
+\series bold
+Axes and Legend
+\series default
+ (limits, legend, grid, a logarithmic y axis, horizontal) and 
+\series bold
+Lines, Points and Bars
+\series default
+ (line width and style, point size and shape, bins, value labels, observations). 
+\series bold
+Plot
+\series default
+ creates the plot (the view stays open), 
+\series bold
+Copy Source
+\series default
+ copies the plot code to the clipboard and 
+\series bold
+Open in Editor
+\series default
+ inserts it at the cursor of the editor, so a plot created interactively can be reused in a script. 
+\series bold
+Defaults
+\series default
+ resets the options, 
+\series bold
+Refresh
+\series default
+ reads the variables again.
+\end_layout
+
+\begin_layout Subsection
+The Python Packages View
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Python Packages
+\series default
+ view (also available as a dialog: 
+\series bold
+Python Packages...
+\series default
+ in the Python preferences and in the menu of the Console view) installs and manages the Python packages of the used Python. The first line shows the Python. 
+\series bold
+Create Bio7 Environment...
+\series default
+ creates a virtual environment (venv) for Bio7. The view has three tabs and a log of the output (with a 
+\series bold
+Cancel
+\series default
+ button):
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Install Packages:
+\series default
+ Installs the packages typed in the 
+\series bold
+Packages
+\series default
+ field (
+\series bold
+Install
+\series default
+, 
+\series bold
+Info
+\series default
+ shows the information of a package). 
+\series bold
+Bundles for Bio7
+\series default
+ installs groups of packages: 
+\series bold
+Scientific
+\series default
+ (numpy, scipy, pandas, matplotlib), 
+\series bold
+Images
+\series default
+ (scikit-image, tifffile, imageio), 
+\series bold
+OpenCV
+\series default
+ (opencv-python-headless) and 
+\series bold
+Editor tools
+\series default
+ (jedi, ruff). 
+\series bold
+Install from requirements.txt...
+\series default
+ and 
+\series bold
+Update Installed Packages
+\series default
+ are also available.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Installed Packages:
+\series default
+ The installed packages with the version and the latest version (filter field). 
+\series bold
+Refresh Packages List
+\series default
+, 
+\series bold
+Check Updates
+\series default
+, 
+\series bold
+Update Selected
+\series default
+, 
+\series bold
+Remove Selected
+\series default
+, 
+\series bold
+Add Selected To Editor
+\series default
+ (inserts the import statements) and 
+\series bold
+Export requirements.txt...
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Imported Modules:
+\series default
+ The modules imported in the running Python (optionally with the standard library). 
+\series bold
+List Functions
+\series default
+ lists the functions of a module and 
+\series bold
+Reload Selected
+\series default
+ reloads a changed module.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/python/python_packages_install.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Install Packages tab of the Python Packages view with the bundles for Bio7
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:python-packages-install"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter4/python/python_packages_installed.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Installed Packages tab with the versions of the installed packages
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:python-packages-installed"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The packages are installed with pip (or with uv, see the Python preferences).
+\end_layout
+
+\begin_layout Subsection
+The Table View and Python
+\end_layout
+
+\begin_layout Standard
+The 
+\series bold
+Python <-
+\series default
+ menu of the Table view transfers the data of the Bio7 table to Python: the whole table (
+\series bold
+Python<-Table
+\series default
+, with the head 
+\series bold
+Python<-Table+head
+\series default
+) or the selection as numeric, character or categorical data, as a dict of columns or rows, as a numpy array, as a DataFrame or with the columns as single variables. A DataFrame or an array is transferred to the table with 
+\series bold
+Transfer to Table
+\series default
+ of the Python-Shell view.
+\end_layout
+
+\begin_layout Subsection
+Running Python Scripts
+\end_layout
+
+\begin_layout Standard
+A Python script opened in the editor is executed with 
+\series bold
+Interpret Python
+\series default
+ in the toolbar of the editor (Ctrl+Alt+Shift+P): the file is saved and executed in the embedded Python. Scripts which run longer than half a second are displayed as a job (
+\series bold
+Python: <name>
+\series default
+) in the status line and in the Progress view with the running time and a stop button which interrupts Python. Long computations can report their progress:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\ttfamily\small},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Progress of a Python script in Bio7 (a job with a progress bar)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+import bio7
+\end_layout
+
+\begin_layout Plain Layout
+for i in range(100):
+\end_layout
+
+\begin_layout Plain Layout
+    bio7.progress(i + 1, 100, "Computing")      # progress of the job
+\end_layout
+
+\begin_layout Plain Layout
+with bio7.task("Analysis", total=10) as t:      # an own job
+\end_layout
+
+\begin_layout Plain Layout
+    for k in range(10):
+\end_layout
+
+\begin_layout Plain Layout
+        t.update()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Progress bars of tqdm are displayed as Bio7 jobs, too.
+\end_layout
+
+\begin_layout Subsection
+The bio7 Module
+\end_layout
+
+\begin_layout Standard
+The module 
+\family typewriter
+bio7
+\family default
+ connects Python with Bio7:
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.image(title=None)
+\family default
+: the active (or the named) ImageJ image as a numpy array.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.show_image(array, title, display_range)
+\family default
+: displays an array as a new ImageJ image.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.update_image(array, title, display_range)
+\family default
+: replaces the pixels of an opened image (e.g., for a video or a live view).
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.results_table()
+\family default
+: the ImageJ results table as a pandas DataFrame.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.roi()
+\family default
+: the x and y coordinates of the current selection.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.ij_macro(code, arg)
+\family default
+, 
+\family typewriter
+bio7.ij_macro_file(path, arg)
+\family default
+ and 
+\family typewriter
+bio7.ij_run(command, options)
+\family default
+: run ImageJ macros and commands.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.r(code)
+\family default
+, 
+\family typewriter
+bio7.from_r(name)
+\family default
+ and 
+\family typewriter
+bio7.to_r(name, value)
+\family default
+: evaluate R code and transfer data from and to R.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.show_html(obj)
+\family default
+: displays a chart or HTML in the Browser view.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.progress(done, total, text)
+\family default
+ and 
+\family typewriter
+bio7.task(text, ...)
+\family default
+: the progress of a computation (see above).
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.java
+\family default
+: the Java API of Bio7, ImageJ and the Java libraries, e.g., 
+\family typewriter
+bio7.java.ij.IJ.getImage()
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+\family typewriter
+bio7.call(function, *args)
+\family default
+: calls a Java function registered in Bio7.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\ttfamily\small},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+An ImageJ image as a numpy array, filtered and displayed again
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+import bio7
+\end_layout
+
+\begin_layout Plain Layout
+import numpy as np
+\end_layout
+
+\begin_layout Plain Layout
+img = bio7.image()                              # the active image
+\end_layout
+
+\begin_layout Plain Layout
+bio7.show_image(np.sqrt(img.astype(float)), "Square root")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 
 \begin_layout Section
 Document Perspective
@@ -9418,7 +11973,7 @@ Custom Menus
 \begin_layout Standard
 Another nice feature of Bio7 is the simple way to extend the Script menus in Bio7 with BeanShell,
  Groovy,
- Jython scripts,
+ Python scripts,
  R scripts and ImageJ macros.
  Bio7 recognizes files dropped to special folders automatically and extends the menus with the filename of the dropped files.
  for an overview see (see 
@@ -9453,7 +12008,7 @@ nolink "false"
 \begin_layout Itemize
 BeanShell,
  Groovy,
- Jython,
+ Python,
  R,
  JavaScript,
  ImageJ customizations or imports at startup.

@@ -73,6 +73,34 @@
 Preferences
 \end_layout
 
+\begin_layout Standard
+The preferences of Bio7 are opened with 
+\series bold
+Preferences
+\series default
+ in the main menu (on macOS in the application menu 
+\series bold
+Bio7
+\series default
+). The tree on the left side lists the preference pages of Bio7 (
+\series bold
+Preferences Bio7
+\series default
+ and its subpages) and of the Eclipse platform; the filter field above the tree finds a page by its name. 
+\series bold
+Restore Defaults
+\series default
+ resets the settings of a page, 
+\series bold
+Apply
+\series default
+ applies them and 
+\series bold
+Apply and Close
+\series default
+ applies them and closes the dialog. The screenshots of this chapter show the default settings of Bio7 4.0 (dark theme).
+\end_layout
+
 \begin_layout Section
 The Bio7 Preferences
 \begin_inset CommandInset label
@@ -81,41 +109,16 @@ name "sec:The-Bio7-Preferences"
 
 \end_inset
 
-
 \end_layout
 
 \begin_layout Subsection
-Application Paths
-\end_layout
-
-\begin_layout Standard
-If the topmost item in the Bio7 Preferences dialog is selected several text
- fields are displayed which store different paths for the Bio7 application
- (
-\series bold
-\noun on
-Preferences\SpecialChar \menuseparator
 Preferences Bio7
-\series default
-\noun default
-).
- The two topmost paths (Path to R, Path to LibreOffice) are paths for the
- R application (embedded) and Open Office (if installed!) which will be
- eventually fetched from the registry (Windows) when Bio7 starts.
- They can also be adjusted manually to any location in the file system where
- R or LibreOffice are installed (
-\series bold
-Browse...
-
-\series default
- button).
- It should be mentioned that the path to R can be changed to any R installation.
- The communication between Bio7 and R will be successful if the Rserve package
- is installed correctly in the referenced R application.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status open
@@ -123,7 +126,10 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename images/chapter6/preferencespaths.jpg
+	filename images/chapter6/pref_bio7.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
 
 \end_inset
 
@@ -134,8 +140,124 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bio7 path preferences
+Preferences Bio7: the path to LibreOffice, the script locations and the console
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-bio7"
+
+\end_inset
+
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Path to LibreOffice:
+\series default
+ the installation of LibreOffice for the LibreOffice features (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:LibreOffice-features-of"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Script location:
+\series default
+ the folders of the scripts which extend the menus of Bio7 or are executed at startup: 
+\series bold
+Path to startup Scripts
+\series default
+, 
+\series bold
+Path to main menu scripts
+\series default
+ (the Scripts menu), 
+\series bold
+Path to 'R-Shell' context menu scripts
+\series default
+, 
+\series bold
+Path to 'Python-Shell' context menu scripts
+\series default
+ and 
+\series bold
+Path to 'Table' menu scripts
+\series default
+. By default the folders are located in the Bio7 plugin. Scripts which are copied into these folders are detected automatically (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Install-Eclipse,-R,"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Save all editors on close:
+\series default
+ saves the opened editors when Bio7 is closed.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Bio7 Console:
+\series default
+ 
+\series bold
+Interpret ASCII control characters
+\series default
+ and 
+\series bold
+Interpret Carriage Return (
+\backslash
+r) as control character
+\series default
+ in the console (a restart of Bio7 applies the change).
+\end_layout
+
+\begin_layout Subsection
+Preferences Startup
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_startup.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
 
 \end_inset
 
@@ -143,6 +265,15 @@ Bio7 path preferences
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Startup
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-startup"
+
+\end_inset
 
 \end_layout
 
@@ -151,120 +282,537 @@ Bio7 path preferences
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Start at the startup of Bio7 (in the background):
+\series default
+ 
+\series bold
+Start R
+\series default
+ and 
+\series bold
+Start Python
+\series default
+ start R and Python when Bio7 starts. 
+\series bold
+The console shows (if both are started)
+\series default
+ selects the language of the console: 
+\series bold
+R
+\series default
+ or 
+\series bold
+Python
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Enable startup scripts:
+\series default
+ executes the scripts of the startup folder (Java, R, Python, Groovy, BeanShell, JavaScript) and the 
+\series bold
+Startup Commands (Groovy Script)
+\series default
+ when Bio7 starts.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+JDT:
+\series default
+ 
+\series bold
+Enable JDT Gui elements
+\series default
+ shows the menus and actions of the Eclipse Java development tools (JDT).
+\end_layout
+
 \begin_layout Subsection
-Script Paths
+Preferences Appearance and Icons
 \end_layout
 
 \begin_layout Standard
-The following paths in the Preferences Bio7 are script path locations where
- scripts and macros (ImageJ macros) can be dropped which update the menu
- (except Startup Scripts!) of the Bio7 application at runtime (see 
+The themes (light, dark and custom themes) and the colors of the icons are described in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Install-Eclipse,-R,"
+reference "sec:Bio7-Themes"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-).
- The import and export scripts will update the file menu.
- The other scripts and macros (General, R-Scripts, Spatial-Scripts, ImageJ-Macro
-s, etc.) will update the scripts or special custom menus of Bio7.The locations
- of the scripts can be browsed easily with the browse action and files can
- be transferred simply by copy and paste from the Project Explorer.
- The files will be detected automatically and displayed in the appropriate
- menu for execution.
+.
+\end_layout
+
+\begin_layout Section
+Preferences R and the R Tools
 \end_layout
 
 \begin_layout Subsection
-Bio7 Editor Preferences
+Preferences R
 \end_layout
 
 \begin_layout Standard
-The Preferences of the different language editors in Bio7 (R, BeanShell/Groovy,
- Java, Jython) offering methods to adjust the default colours and fonts
- and templates of the editors.
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
 
-\series bold
- 
-\end_layout
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_r.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
 
-\begin_layout Itemize
-\noindent
-
-\series bold
-\noun on
-Preferences Bio7
-\noun default
-\SpecialChar \menuseparator
-
-\noun on
-Preferences xxx-Editor
-\series default
-\noun default
- for changing the default colours.
- 
-\end_layout
-
-\begin_layout Itemize
-\noindent
-
-\series bold
-\noun on
-Preferences Bio7
-\noun default
-\SpecialChar \menuseparator
-
-\noun on
-Preferences xxx-Editor
-\noun default
-\SpecialChar \menuseparator
-
-\noun on
-Template Editor xxx 
-\series default
-\noun default
-to change the default templates.
-\end_layout
-
-\begin_layout Paragraph*
-\begin_inset VSpace medskip
 \end_inset
 
-Note:
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences R: the path to R, the packages, the transfer to the table and the code completion of the R-Shell view
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-r"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-It should be mentioned that some aspects of the language editors can be
- changed in the default text preferences of the platform (e.g.
- font attributes).
-\end_layout
-
-\begin_layout Subsection
-Preferences Rserve
-\end_layout
-
-\begin_layout Standard
-As already described the preferences for the Rserve application (
+The main preferences of R (the path to R, 
 \series bold
-\noun on
-Preferences Bio7
-\noun default
-\SpecialChar \menuseparator
-
-\noun on
-Preferences Rserve or R
-\noun default
-\SpecialChar \menuseparator
-
-\noun on
-Preferences
+R Setup...
 \series default
-\noun default
-) offers some options for code templates, editor colors and general adjustments
- (see 
+, the package install location, the temporary folder, the R startup commands, the package server, the transfer to the table and the R-Shell view) are described in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Rserve-preferences"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Preferences R Plots
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_rplots.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences R Plots: the plot device of R
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-rplots"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Use Custom Device:
+\series default
+ uses the device selected below (else the default device of R).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Select Device:
+\series default
+ 
+\series bold
+SWT Vector Plot (embedded R)
+\series default
+ (the default: each plot in an R Plot view), 
+\series bold
+ImageJ Plot Canvas (embedded R)
+\series default
+, the image devices of ImageJ (
+\series bold
+ImageJ View Display Size
+\series default
+, 
+\series bold
+ImageJ Image
+\series default
+, also with Cairo) and the file devices (
+\series bold
+Image
+\series default
+, 
+\series bold
+PDF
+\series default
+, 
+\series bold
+SVG
+\series default
+, 
+\series bold
+PostScript
+\series default
+). 
+\series bold
+Apply
+\series default
+ shows the definition of the device, 
+\series bold
+Restore Defaults
+\series default
+ restores it.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Plot history (number of plots, 0 = off):
+\series default
+ the number of recorded plots of a device which can be browsed in the plot view.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Device Definition:
+\series default
+ the R code of the device (the size of the plots can be changed here), 
+\series bold
+Filename
+\series default
+ the name of the plot files.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+PDF Reader (Linux):
+\series default
+ the program which opens PDF plots on Linux.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Special image plot options:
+\series default
+ 
+\series bold
+Show image plots as ImageJ virtual (disk resident) stack
+\series default
+, 
+\series bold
+Open plots in individual tab
+\series default
+ and 
+\series bold
+Execute ImageJ macro after creation
+\series default
+ (with the macro in the text field, e.g., to scale the plots).
+\end_layout
+
+\begin_layout Subsection
+Preferences R Build Tools
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_rbuild.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences R Build Tools
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-rbuild"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+Built package options:
+\series default
+ the arguments of 
+\series bold
+R CMD check
+\series default
+, 
+\series bold
+R CMD INSTALL
+\series default
+ and 
+\series bold
+R CMD build
+\series default
+ (see the creation of R packages in the R perspective). 
+\series bold
+Knitr Options HTML:
+\series default
+ the chunk options of knitr for HTML documents (e.g., the device and the resolution of the plots). 
+\series bold
+Shiny port:
+\series default
+ the port of Shiny apps which are started with 
+\series bold
+Start Shiny App
+\series default
+.
+\end_layout
+
+\begin_layout Subsection
+Preferences R Debug
+\end_layout
+
+\begin_layout Standard
+\series bold
+Port:
+\series default
+ the port of the R debugger (default 21555).
+\end_layout
+
+\begin_layout Subsection
+Preferences Native
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_native.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Native
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-native"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The settings of the OS shell and the R of the console (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Native-preferences"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+): 
+\series bold
+Command After Startup
+\series default
+ (e.g., 
+\family typewriter
+export TERM=xterm
+\family default
+), 
+\series bold
+Execute Editor Source in R
+\series default
+ and 
+\series bold
+Path R
+\series default
+.
+\end_layout
+
+\begin_layout Subsection
+Preferences Browser
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_browser.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Browser
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-browser"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+Select browser:
+\series default
+ the SWT browser (the web engine of the operating system). 
+\series bold
+Embed PDF in browser view
+\series default
+ displays PDF files (e.g., of R Markdown documents) in the Browser view. 
+\series bold
+URL: Install R packages help descr.
+\series default
+ is the URL of the help for the installation of R packages. 
+\series bold
+Execute JavaScript editor script in current browser
+\series default
+ executes the scripts of the JavaScript editor in the page of the browser (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bio7-Browser"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -272,24 +820,1134 @@ reference "subsec:Rserve-preferences"
 \end_layout
 
 \begin_layout Subsection
+Preferences LaTeX
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_latex.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences LaTeX
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-latex"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+pdflatex/xelatex/bibtex Dir:
+\series default
+ the folder of the LaTeX programs (only necessary if they are not found on the PATH). 
+\series bold
+TeX Engine:
+\series default
+ pdflatex or xelatex. 
+\series bold
+Include BibTeX
+\series default
+ and 
+\series bold
+BibTeX engine
+\series default
+ compile the bibliography, 
+\series bold
+Make Index
+\series default
+ creates an index, 
+\series bold
+Clean Auxiliary Files
+\series default
+ removes the files with the 
+\series bold
+File Extensions
+\series default
+ after the compilation, 
+\series bold
+LaTeX compile flags
+\series default
+ are additional arguments (e.g., 
+\family typewriter
+-shell-escape
+\family default
+).
+\end_layout
+
+\begin_layout Subsection
+Preferences Database
+\end_layout
+
+\begin_layout Standard
+\series bold
+Database Configuration File:
+\series default
+ the file which stores the connections of the Database view (see the Database view of the R perspective).
+\end_layout
+
+\begin_layout Subsection
+The Preferences of the R Editor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_reditor.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Editor: the color schemes and colors of the R editor
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-reditor"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Preferences Editor:
+\series default
+ the 
+\series bold
+Color scheme
+\series default
+ for the light theme (
+\series bold
+Bio7 Classic
+\series default
+, 
+\series bold
+Clear Light
+\series default
+, 
+\series bold
+One Light
+\series default
+, 
+\series bold
+Solarized Light
+\series default
+) and for the dark theme (
+\series bold
+Bio7 Dark
+\series default
+, 
+\series bold
+One Dark
+\series default
+, 
+\series bold
+Clear Dark
+\series default
+, 
+\series bold
+Dracula
+\series default
+, 
+\series bold
+Nord
+\series default
+, 
+\series bold
+Monokai
+\series default
+) and the colors of the syntax elements (keywords, types, strings, comments, operators, braces, numbers, assignments; optionally bold). The font is set in 
+\series bold
+General > Appearance > Colors and Fonts
+\series default
+ of the platform. The color schemes are available for all editors of Bio7 (R, Python, Markdown, BeanShell/Groovy, ImageJ macro).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Preferences Editor Code:
+\series default
+ 
+\series bold
+Code Folding
+\series default
+ (functions, loops, conditions), 
+\series bold
+Code context
+\series default
+ (
+\series bold
+Show Infopopup
+\series default
+, 
+\series bold
+Enable Hovers
+\series default
+, 
+\series bold
+Show Hover Popup
+\series default
+, 
+\series bold
+Mark selected words
+\series default
+), 
+\series bold
+Code completion/templates
+\series default
+ (open when typing, the activation characters, templates after a word length, the packages of an opened script for the completion), 
+\series bold
+Editor performance
+\series default
+ and 
+\series bold
+Automatic close
+\series default
+ of braces, parentheses, brackets and strings.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Preferences Editor Code Analysis:
+\series default
+ the checks of the code analysis (unused functions and variables, the availability of functions and variables, wrong constants, already defined names, missing and too many arguments, assignments in function calls, installed libraries, comparisons with NULL, NA and NaN).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Preferences Editor Formatting:
+\series default
+ the 
+\series bold
+Formatter
+\series default
+: 
+\series bold
+Bio7 (built-in, no R needed)
+\series default
+ with its options (indentation, continuation, spaces around operators and after commas, replacing 
+\family typewriter
+=
+\family default
+ with 
+\family typewriter
+<-
+\family default
+, braces on a new line, blank lines), 
+\series bold
+styler (R package)
+\series default
+ with the arguments of styler or 
+\series bold
+formatR (R package)
+\series default
+ with its options.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Preferences Editor Templates:
+\series default
+ the code templates of the R editor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_ranalysis.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Editor Code Analysis
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-ranalysis"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_rformat.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Editor Formatting
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-rformat"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Preferences Markdown Editor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_markdown.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Markdown Editor
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-markdown"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The colors of the Markdown editor, 
+\series bold
+Larger font for headings (H1 to H3)
+\series default
+, 
+\series bold
+Show formatting (bold, italic, code, links, quotes, lists)
+\series default
+, 
+\series bold
+Open Word in Bio7 view
+\series default
+, 
+\series bold
+Automatically compile markdown after editor changes
+\series default
+ (a live preview) with the 
+\series bold
+Compile markdown interval
+\series default
+ and 
+\series bold
+Enable Spell Checking
+\series default
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:The-Markdown-Editor"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
+Preferences Python
+\end_layout
+
+\begin_layout Subsection
+Preferences Python
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_python.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Python
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-python"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Image-Methods: the switch R/Python closes the views of the other language
+\series default
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:R-Python-Switch"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Embedded Python:
+\series default
+ Python runs in the process of Bio7 (data transfer, plots; a change of the Python needs a restart).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Execute Editor Source in Seperate Python Process (not sent to Bio7 Python Shell)
+\series default
+ and 
+\series bold
+Python 3 is used to evaluate scripts
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Path Python:
+\series default
+ the Python installation (empty: the Python found on the computer). 
+\series bold
+Detect Python...
+\series default
+ searches the installed Python versions, 
+\series bold
+Python Packages...
+\series default
+ opens the Python Packages dialog, 
+\series bold
+Install packages with uv instead of pip
+\series default
+ uses uv for the installation.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Python-Shell code completion:
+\series default
+ open when typing, the activation characters, the key combination and the size of the popup.
+\end_layout
+
+\begin_layout Subsection
+Preferences Python Plot
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_pyplot.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Python Plot
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-pyplot"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+Draw the figures in the size of the view
+\series default
+ (else in their size, figsize), 
+\series bold
+Draw with the resolution of the screen
+\series default
+ (sharp on HiDPI screens), the 
+\series bold
+matplotlib style
+\series default
+ and the 
+\series bold
+Font size
+\series default
+ for new figures and the 
+\series bold
+Resolution of saved PNG images
+\series default
+ (dpi).
+\end_layout
+
+\begin_layout Subsection
+The Preferences of the Python Editor
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Preferences Python Editor:
+\series default
+ the color schemes and the colors of the Python editor (as for the R editor).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Preferences Python Editor Code:
+\series default
+ 
+\series bold
+Enable Hovers
+\series default
+, the code completion (open when typing, activation characters, delay) and 
+\series bold
+Propose the variables of the running Python
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Preferences Python Editor Code Analysis:
+\series default
+ 
+\series bold
+Show warnings
+\series default
+, 
+\series bold
+Check for installed modules (imports)
+\series default
+ and the use of ruff (
+\series bold
+Use ruff
+\series default
+, the 
+\series bold
+Rules
+\series default
+, the 
+\series bold
+Ignored rules
+\series default
+ and the 
+\series bold
+Line length
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Preferences Python Editor Formatting:
+\series default
+ the 
+\series bold
+Formatter
+\series default
+ (
+\series bold
+Automatic (ruff, else black)
+\series default
+), the 
+\series bold
+Line length
+\series default
+, the 
+\series bold
+Quotes of strings
+\series default
+, 
+\series bold
+Indent with tabs
+\series default
+ and 
+\series bold
+Sort the imports
+\series default
+ (ruff). The configuration of a project (pyproject.toml, ruff.toml) is used for the other settings.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Template Editor Python:
+\series default
+ the code templates of the Python editor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_pyanalysis.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Python Editor Code Analysis
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-pyanalysis"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Preferences ImageJ
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_imagej.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences ImageJ
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-imagej"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+Plugins Path:
+\series default
+ the plugins folder of ImageJ (the macros are loaded from the folder macros next to it, a restart is necessary). 
+\series bold
+Image Methods Dialog Size
+\series default
+ and 
+\series bold
+ImageJ Toolbar Dialog Size:
+\series default
+ the sizes of the detached Image-Methods and ImageJ-Toolbar dialogs. 
+\series bold
+ROI Manager:
+\series default
+ 
+\series bold
+Open the ROI Manager in a view (instead of a window)
+\series default
+. 
+\series bold
+Detached ImageJ Views:
+\series default
+ 
+\series bold
+Open new images as views by default
+\series default
+, 
+\series bold
+Open detached views in a window
+\series default
+ and the position, the size and the spacing of the detached image views. The subpages contain the colors (
+\series bold
+Preferences ImageJ Macro Editor
+\series default
+), the code settings (
+\series bold
+Preferences ImageJ Macro Code
+\series default
+) and the templates of the ImageJ macro editor.
+\end_layout
+
+\begin_layout Section
+Preferences Java
+\end_layout
+
+\begin_layout Subsection
+Preferences Java Dynamic Compilation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_java.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences Java Dynamic Compilation
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-java"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+Java Version:
+\series default
+ the Java version of the compiled code (27). 
+\series bold
+Generate Debugging Information
+\series default
+, 
+\series bold
+Verbose
+\series default
+, 
+\series bold
+Generate Warnings
+\series default
+, 
+\series bold
+Create Compilation Markers
+\series default
+ (markers of the errors in the editor), 
+\series bold
+Use ImageJ Plugin Classloader
+\series default
+ (compiles with the classloader of ImageJ, e.g., for ImageJ plugins) and 
+\series bold
+Compile and create object
+\series default
+ (creates an instance of the compiled class).
+\end_layout
+
+\begin_layout Subsection
+Preferences Libraries and Modules
+\end_layout
+
+\begin_layout Standard
+The Java libraries of the compiler, the OSGi fragment libraries and the data storage location are described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Java-Libraries"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+: how to add a library file, how to download a library with the Maven dialog (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Maven-Download"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) and how to update the code completion of a Java project with Fix Project Classpath (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Fix-Project-Classpath"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+). 
+\series bold
+Preferences Modules
+\series default
+ adds the Java modules for the compilation (
+\series bold
+Add modules path for dynamic compilation (--module-path)
+\series default
+, 
+\series bold
+Add modules (--add-modules)
+\series default
+).
+\end_layout
+
+\begin_layout Subsection
+Preferences BeanShell/Groovy
+\end_layout
+
+\begin_layout Standard
+The color schemes and the colors of the BeanShell/Groovy editor (as for the R editor) and, on a subpage, its templates.
+\end_layout
+
+\begin_layout Section
+Preferences GDAL
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter6/pref_gdal.jpg
+	lyxscale 40
+	width 90text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Preferences GDAL
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pref-gdal"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bio7 uses an installation of GDAL on the computer (raster and vector formats, coordinate systems) with the Foreign Function and Memory API. 
+\series bold
+Activate GDAL (loaded when it is used)
+\series default
+ and 
+\series bold
+Load GDAL at startup (in the background)
+\series default
+ enable GDAL. 
+\series bold
+GDAL library
+\series default
+ is the GDAL library (empty: automatic search); 
+\series bold
+Detect...
+\series default
+ searches it, 
+\series bold
+Test
+\series default
+ tests it (a new library is tested first in a separate process) and 
+\series bold
+Install GDAL...
+\series default
+ shows how to install GDAL. The status line shows the loaded library and the datum grids of PROJ.
+\end_layout
+
+\begin_layout Section
 Default Platform Preferences
 \end_layout
 
 \begin_layout Standard
-A detailed description of the preferences of the platform can be found on
- 
+The other pages are the preferences of the Eclipse platform (e.g., 
+\series bold
+General > Appearance > Colors and Fonts
+\series default
+ for the fonts of the editors and the console, 
+\series bold
+General > Editors > Text Editors
+\series default
+, 
+\series bold
+Install/Update
+\series default
+). A detailed description of the preferences of the platform can be found in the Eclipse documentation 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://help.eclipse.org/
+https://help.eclipse.org
 \end_layout
 
 \end_inset
 
 .
 \end_layout
+
 
 \end_body
 \end_document

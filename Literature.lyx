@@ -78,112 +78,137 @@ Scientific Libraries Available in Bio7
 \end_layout
 
 \begin_layout Itemize
-JScience 
+Apache Commons Math 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://jscience.org/ 
+https://commons.apache.org/proper/commons-math/
 \end_layout
 
 \end_inset
-
 
 \end_layout
 
 \begin_layout Itemize
-Colt 
+Parallel Colt 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://dsd.lbl.gov/~hoschek/colt/ 
+https://github.com/rwl/ParallelColt
 \end_layout
 
 \end_inset
-
 
 \end_layout
 
 \begin_layout Itemize
-Math 
+JAMA (linear algebra) 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://jakarta.apache.org/commons/math/ 
+https://math.nist.gov/javanumerics/jama/
 \end_layout
 
 \end_inset
-
 
 \end_layout
 
 \begin_layout Itemize
-Weka 
+mXparser (math expressions) 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://www.cs.waikato.ac.nz/ml/weka/
+https://mathparser.org
 \end_layout
 
 \end_inset
 
- 
 \end_layout
 
 \begin_layout Itemize
-JTS 
+JBullet (physics) 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://www.vividsolutions.com/jts/JTSHome.htm
+http://jbullet.advel.cz
 \end_layout
 
 \end_inset
 
- 
 \end_layout
 
 \begin_layout Itemize
-Joone 
+Apache POI (Excel files) 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://sourceforge.net/projects/joone/ JDMP http://www.jdmp.org/
+https://poi.apache.org
 \end_layout
 
 \end_inset
 
+\end_layout
+
+\begin_layout Itemize
+OpenCSV 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://opencsv.sourceforge.net
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+JOGL (OpenGL for Java) 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://jogamp.org
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+NASA WorldWind Java 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://worldwind.arc.nasa.gov/java/
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+GDAL 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://gdal.org
+\end_layout
+
+\end_inset
 
 \end_layout
 
 \begin_layout Section
-Documentation and Programming Links:
-\end_layout
-
-\begin_layout Itemize
-BeanShell 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://www.beanshell.org/ 
-\end_layout
-
-\end_inset
-
-
+Documentation and Programming Links
 \end_layout
 
 \begin_layout Itemize
@@ -192,27 +217,69 @@ R
 status open
 
 \begin_layout Plain Layout
-
-http://www.r-project.org/ 
+https://www.r-project.org
 \end_layout
 
 \end_inset
-
 
 \end_layout
 
 \begin_layout Itemize
-Rserve 
+CRAN Task Views 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://www.rforge.net/Rserve/ 
+https://cran.r-project.org/web/views/
 \end_layout
 
 \end_inset
 
+\end_layout
+
+\begin_layout Itemize
+Python 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://www.python.org
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+NumPy, pandas, matplotlib 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://numpy.org
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://pandas.pydata.org
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://matplotlib.org
+\end_layout
+
+\end_inset
 
 \end_layout
 
@@ -222,27 +289,46 @@ ImageJ
 status open
 
 \begin_layout Plain Layout
-
-http://rsb.info.nih.gov/ij/ 
+https://imagej.net/ij/
 \end_layout
 
 \end_inset
-
 
 \end_layout
 
 \begin_layout Itemize
-JavaCompiler 
+SWTImageJ 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://www.janino.net/ 
+https://github.com/eclipse-swtimagej/SWTImageJ
 \end_layout
 
 \end_inset
 
+\end_layout
+
+\begin_layout Itemize
+Eclipse 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://www.eclipse.org
+\end_layout
+
+\end_inset
+
+ and the Eclipse documentation 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://help.eclipse.org
+\end_layout
+
+\end_inset
 
 \end_layout
 
@@ -252,29 +338,147 @@ Groovy
 status open
 
 \begin_layout Plain Layout
-
-http://groovdehaus.org/
+https://groovy-lang.org
 \end_layout
 
 \end_inset
-
 
 \end_layout
 
 \begin_layout Itemize
-Forums 
+BeanShell 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://www.nabble.com
+https://github.com/beanshell/beanshell
 \end_layout
 
 \end_inset
 
- (search for the different applications BeanShell, R, ImageJ, Janino) 
 \end_layout
+
+\begin_layout Itemize
+R Markdown (the package rmarkdown) 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://cran.r-project.org/package=rmarkdown
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+Quarto 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://quarto.org
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+pandoc 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://pandoc.org
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+Shiny 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://shiny.posit.co
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+Bio7 source code and releases 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/Bio7/bio7
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+Bio7 examples 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/Bio7/bio7_examples
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+Forums
+\end_layout
+
+\begin_layout Itemize
+Bio7 discussions 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://github.com/Bio7/bio7/discussions
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+Image.sc forum (ImageJ) 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://forum.image.sc
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+R mailing lists 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+https://www.r-project.org/mail.html
+\end_layout
+
+\end_inset
+
+\end_layout
+
 
 \end_body
 \end_document

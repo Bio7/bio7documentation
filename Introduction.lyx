@@ -95,7 +95,7 @@ form) which offers a huge flexibility in configuration and extensibility
  tools which are capable to do Image Analysis (ImageJ), Statistical Analysis
  (R), easy to learn scripting languages to ease the development of simulation
  models and an embedded compiler for the need of speed in complex calculations.
- Additionally editors (Java, R, BeanShell/Groovy, Jython) and different
+ Additionally editors (Java, R, BeanShell/Groovy, Python) and different
  panels for visualization are integrated for an easier development.
  Communication in between the different components is possible by means
  of scripts and compiled code and can be collected in a executeable flowchart

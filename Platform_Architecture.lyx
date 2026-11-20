@@ -272,11 +272,10 @@ Counter Reset
 \end_layout
 
 \begin_layout Itemize
-
 \series bold
 (3) R:
 \series default
- Starts R with an Rserve connection (see 
+ Starts the embedded R (see 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:The-R-Perspective"
@@ -289,17 +288,13 @@ nolink "false"
 
 ). The menu of the action contains 
 \series bold
-Start Rserve/Stop Rserve (within R)
-\series default
-, 
-\series bold
-Terminate R
+Start R
 \series default
  and 
 \series bold
-Kill All R Processes
+Interrupt R
 \series default
- (if necessary).
+. R runs in the process of Bio7 and can't be restarted without a restart of Bio7.
 \end_layout
 
 \begin_layout Itemize
@@ -307,7 +302,7 @@ Kill All R Processes
 \series bold
 (4) Create Projects or Files:
 \series default
- Creates a project with a default file in one step: a Bio7 Java project (also with a WindowBuilder GUI, OpenGL, WorldWind or an ImageJ plugin), a project with an R, R Markdown, R Shiny, Python, Jython, Groovy, JavaScript, ImageJ macro or LaTeX file, a reproducible project or another project or file (
+ Creates a project with a default file in one step: a Bio7 Java project (also with a WindowBuilder GUI, OpenGL, WorldWind or an ImageJ plugin), a project with an R, R Markdown, Quarto, R Shiny, Python, Groovy, JavaScript, ImageJ macro or LaTeX file, a WindowBuilder GUI for a Bio7 model, R or Python, a reproducible project or another project or file (
 \series bold
 Other...
 \series default
@@ -398,7 +393,7 @@ nolink "false"
 \series bold
 Scripts:
 \series default
- Submenus with own scripts (BeanShell, Groovy, Jython, R scripts and ImageJ macros) of special folders (see 
+ Submenus with own scripts (BeanShell, Groovy, Python, R scripts and ImageJ macros) of special folders (see 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Install-Eclipse,-R,"

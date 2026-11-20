@@ -73,8 +73,9 @@ def convert(src, dst):
         w = re.search(r"max-width: (\d+)px", tag)
         tag = re.sub(r'\sstyle="[^"]*"', "", tag)
         if w:
-            # The screenshots of the 3d perspective have the double resolution (Retina)
-            width = int(w.group(1)) // (2 if "/chapter4/3d/" in src else 1)
+            # The screenshots of the 3d perspective (and other new screenshots) have the double resolution (Retina)
+            retina = "/chapter4/3d/" in src or "/chapter5/" in src or src.endswith("/chapter4/r/r_shell.jpg")
+            width = int(w.group(1)) // (2 if retina else 1)
             tag = tag.replace("<img ", '<img style="width: %dpx" ' % width, 1)
         extra = ' data-narrow="1"' if "/tab_" in src or "dialog" in src else ""
         return tag.replace("<img ", '<img loading="lazy" decoding="async"' + extra + " ", 1)

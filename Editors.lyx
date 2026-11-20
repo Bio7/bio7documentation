@@ -81,8 +81,7 @@ General Features
 There are several editors integrated in Bio7 which support the syntax of
  different programming languages and a specialized Flow editor to drop files
  from the other editors for execution.
- The "language" editors support the syntax of the languages Java, BeanShell,Groo
-vy, Jython and R.
+ The "language" editors support the syntax of the languages Java, BeanShell, Groovy, Python, R, Markdown (R Markdown, Quarto) and the ImageJ macro language.
  A text editor is also offered by default integrated in the platform (an
  editor for arbitrary files as well!).
  All editors if opened offer more or less customized menus and toolbars
@@ -163,8 +162,9 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/chapter5/filewizard.jpg
-	lyxscale 70
-	scale 70
+	lyxscale 40
+	width 45text%
+	keepAspectRatio
 
 \end_inset
 
@@ -218,7 +218,10 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename images/chapter5/codetemplatesdialog.jpg
+	filename images/chapter5/rtemplates_editor.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
 
 \end_inset
 
@@ -282,6 +285,9 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/chapter5/codetemplates.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
 
 \end_inset
 
@@ -371,43 +377,700 @@ Preferences xxx-Editor
 
 \begin_layout Subsection
 The R Editor
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Editors-R-Editor"
+
+\end_inset
+
 \end_layout
 
 \begin_layout Standard
-Bio7 contains a R editor which is described in the R perspective section
- (see 
+The R editor is described in the R perspective section (see 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:The-R-Perspective"
+reference "subsec:The-R-Editor"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+). Besides the code completion, the code analysis, the outline and the templates the R editor offers:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Classes in the outline:
+\series default
+ Reference classes, R6 classes, S4 classes and S7 classes (
+\family typewriter
+new_class
+\family default
+ with its properties as children, the S7 generics and the methods 
+\family typewriter
+method(generic, class) <-
+\family default
+ below their class) are displayed in the Outline view. Templates for S3, S4, Reference and R6 classes are available.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Refactoring
+\series default
+ (context menu 
+\series bold
+Refactor
+\series default
+): 
+\series bold
+Rename
+\series default
+ (Ctrl+Alt+W), 
+\series bold
+Extract Function
+\series default
+ (Ctrl+Alt+X), 
+\series bold
+Extract Variable
+\series default
+ (Ctrl+Alt+V), 
+\series bold
+Inline Variable
+\series default
+ (Ctrl+Alt+I), 
+\series bold
+Collect Library Calls
+\series default
+, 
+\series bold
+Extract Editor Selection to File
+\series default
+ (Ctrl+Alt+E) and 
+\series bold
+Create new File from Clipboard
+\series default
+ (Ctrl+Alt+Z).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Formatting
+\series default
+ (
+\series bold
+R Format
+\series default
+): 
+\series bold
+Format R Source
+\series default
+ (Ctrl+Shift+F) and 
+\series bold
+Format Selected R Source
+\series default
+. The formatter is selected in 
+\series bold
+Preferences Editor Formatting
+\series default
+: 
+\series bold
+Bio7 (built-in, no R needed)
+\series default
+, 
+\series bold
+formatR (R package)
+\series default
+ or 
+\series bold
+styler (R package)
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Documentation:
+\series default
+ 
+\series bold
+Insert Roxygen Comment
+\series default
+ (Ctrl+Alt+Shift+R, 
+\series bold
+R Docs
+\series default
+) inserts a Roxygen comment for the function at the cursor, the Roxygen tags are proposed by the code completion.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Code analysis
+\series default
+ (
+\series bold
+Preferences Editor Code Analysis
+\series default
+): unused or missing functions and variables, duplicate definitions, the arguments of function calls, not installed libraries and comparisons with NULL or NA. Quick fixes are available in the ruler (
+\series bold
+QuickFix
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Surround with tryCatch
+\series default
+ (Ctrl+Alt+Shift+E, 
+\series bold
+R Source
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Profiling
+\series default
+ (
+\series bold
+Profile
+\series default
+): 
+\series bold
+Profile Script
+\series default
+ and 
+\series bold
+Profile Selection
+\series default
+ measure the running time of the lines; the times are displayed as marks in the editor (
+\series bold
+Clear Profile Marks
+\series default
+ removes them).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Shiny apps:
+\series default
+ if the active R file is a Shiny app (
+\family typewriter
+app.R
+\family default
+, 
+\family typewriter
+ui.R
+\family default
+, 
+\family typewriter
+server.R
+\family default
+ or a file with 
+\family typewriter
+shinyApp(...)
+\family default
+) the main toolbar shows the action 
+\series bold
+Start Shiny App
+\series default
+ (also in the context menu of folders and files). The port is set in 
+\series bold
+Preferences R Build Tools
+\series default
+ (
+\series bold
+Shiny port
+\series default
+).
+\end_layout
+
+\begin_layout Subsubsection
+The R Debugger
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-R-Debugger"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Bio7 contains a debugger for R scripts, functions and class methods. The debugger stops at breakpoints in the editor, shows the current line and displays the variables of the current environment.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/r_debugger.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The R debugger: the debugger stepped into the method step of a Reference class which is defined in another file (World.R); the Debug Text view and the console show the steps.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:r-debugger"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+Breakpoints:
+\series default
+ a double-click on the ruler of the R editor (or of the Markdown editor) sets or removes a breakpoint. The context menu of the ruler contains 
+\series bold
+Toggle Breakpoint
+\series default
+, 
+\series bold
+Breakpoint Properties...
+\series default
+ and 
+\series bold
+Remove All Breakpoints
+\series default
+. In the properties a breakpoint can get a 
+\series bold
+Condition
+\series default
+ (R stops only if the condition is TRUE), a hit count (
+\series bold
+Stop at hit
+\series default
+) or a log message (
+\series bold
+Log, don't stop
+\series default
+: the message is printed, R doesn't stop). A breakpoint in a line where R can't stop (e.g., a line of a multi-line call) moves to the next line where R can stop; a breakpoint in a line of a statement which spans several lines stops before the statement.
+\end_layout
+
+\begin_layout Standard
+\series bold
+Starting the debugger:
+\series default
+ the action 
+\series bold
+Debug
+\series default
+ of the 
+\series bold
+Debug
+\series default
+ view (opened with the first breakpoint, perspective 
+\series bold
+R Debug
+\series default
+) saves the editor and executes the script with the breakpoints. Without breakpoints the debugger stops at the first statement. With 
+\series bold
+Debug Function
+\series default
+ in the context menu of the editor R stops at the next call of the selected function (also of a function of a package); a selected call, e.g., 
+\family typewriter
+f(3)
+\family default
+, is executed immediately.
+\end_layout
+
+\begin_layout Standard
+The actions of the Debug view:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Debug:
+\series default
+ starts the debugging of the script of the editor.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Stop (Q):
+\series default
+ ends the debugging.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Next (n):
+\series default
+ executes the current line.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Step Into (s):
+\series default
+ steps into the function call of the line, also into the methods of Reference classes, R6 and S7 objects.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Finish (f):
+\series default
+ finishes the current loop or function.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Continue (c):
+\series default
+ continues to the next breakpoint.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Run to Cursor:
+\series default
+ continues to the line of the cursor.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+(?):
+\series default
+ prints the commands of the R browser (n, s, f, c, Q, where, help).
+\end_layout
+
+\begin_layout Standard
+The commands can also be typed into the console at the 
+\family typewriter
+Browse[1]>
+\family default
+ prompt (n, s, f, c, Q or an R expression): the editor and the variables stay in sync.
+\end_layout
+
+\begin_layout Standard
+The tabs of the Debug view:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Variables:
+\series default
+ the variables of the current environment with their name, class, dimension, size and value. Changed values are highlighted. A value can be edited; a double-click opens it. The context menu contains 
+\series bold
+Open in Table
+\series default
+, 
+\series bold
+Open Matrix as Image
+\series default
+, 
+\series bold
+Add to Watch
+\series default
+ and 
+\series bold
+Copy
+\series default
+. A data frame is opened in a sheet of the Bio7 table, a numeric matrix as an image in ImageJ, a numeric vector as a plot and other objects in the 
+\series bold
+Debug Text
+\series default
+ view.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Watch:
+\series default
+ R expressions which are evaluated at each stop (
+\series bold
+Add
+\series default
+, 
+\series bold
+Remove
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Call Stack:
+\series default
+ the calls of the current stop; a click on a call shows its variables and its line.
+\end_layout
+
+\begin_layout Standard
+During a debugging session the mouse over a variable in the editor shows its class, its size and a preview of the value (with 
+\series bold
+Open in Table
+\series default
+). If an error occurs R stops in the environment of the error.
+\end_layout
+
+\begin_layout Standard
+\series bold
+Several files:
+\series default
+ scripts which load other R files with 
+\family typewriter
+source()
+\family default
+ (also nested) are debugged with the breakpoints of all files: the debugger opens the editor of the file of the current line. Scripts which find their own folder (e.g., with 
+\family typewriter
+sys.frame(1)$ofile
+\family default
+) work, too.
+\end_layout
+
+\begin_layout Standard
+\series bold
+Live changes:
+\series default
+ breakpoints can be set or removed during a debugging session and R files can be changed and saved: the changed functions and classes are defined again and the changes apply at the next call (the running code keeps the old version).
+\end_layout
+
+\begin_layout Standard
+\series bold
+R Markdown and Quarto:
+\series default
+ breakpoints can be set in the R chunks of *.Rmd and *.qmd documents. The R chunks are debugged as a script (not knitted: inline R code, child documents and the cache are not used), the line numbers are the lines of the document. The 
+\family typewriter
+params
+\family default
+ of the YAML header are available.
+\end_layout
+
+
+\begin_layout Subsection
+The Markdown Editor (Markdown, R Markdown, Quarto)
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-Markdown-Editor"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The Markdown editor of Bio7 edits Markdown (*.md), R Markdown (*.Rmd) and Quarto documents (*.qmd). The headings (H1 to H3) are displayed with larger fonts, the formatting (bold, italic, code, links, quotes, lists) is displayed in the editor (
+\series bold
+Preferences Markdown Editor
+\series default
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/markdown_editor.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The Markdown editor with R and Python chunks: the output of a chunk is displayed below the chunk.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:markdown-editor"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+Chunks:
+\series default
+ each R and Python chunk has a bar with the actions 
+\series bold
+Run
+\series default
+, 
+\series bold
+Run Above
+\series default
+ and 
+\series bold
+Clear
+\series default
+. The output (text and plots) is displayed below the chunk without a change of the document. The context menu contains 
+\series bold
+Run R Chunk
+\series default
+ (Ctrl+Shift+Enter), 
+\series bold
+Run All R Chunks
+\series default
+ (Ctrl+Alt+R) and 
+\series bold
+Clear R Chunk Output
+\series default
+ (also for Python chunks). R chunks run in the embedded R, Python chunks in the embedded Python. If a Python chunk uses a name of a chunk above which wasn't executed, a hint proposes 
+\series bold
+Run Above
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\series bold
+Code completion and analysis:
+\series default
+ inside the R chunks the code completion of the R editor, inside the Python chunks the code completion of the Python editor is available (with the names of the chunks above). The chunks are checked by the code analysis of R and Python. Outside of the chunks the templates insert, e.g., R and Python chunks (also with matplotlib), headings, tables, links and equations.
+\end_layout
+
+\begin_layout Standard
+\series bold
+Rendering:
+\series default
+ the action 
+\series bold
+Markdown
+\series default
+ in the toolbar (Ctrl+Alt+Shift+M) renders the document:
+\end_layout
+
+\begin_layout Itemize
+*.md: converted without R to HTML, or with pandoc to PDF, Word, ODT, RTF or EPUB (the 
+\family typewriter
+output
+\family default
+ of the YAML header).
+\end_layout
+
+\begin_layout Itemize
+*.Rmd: rendered with 
+\family typewriter
+rmarkdown::render()
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+*.qmd: rendered with the R package quarto, if installed, else with the Quarto program (found automatically, see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:RMarkdown-Quarto"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+). The output format is the 
+\family typewriter
+format
+\family default
+ of the YAML header (HTML, PDF, Word, Typst, Reveal.js, Beamer, dashboard).
+\end_layout
+
+\begin_layout Standard
+HTML is displayed in the Bio7 browser, PDF and Word as set in the preferences (
+\series bold
+Open Word in Bio7 view
+\series default
+). With 
+\series bold
+Automatically compile markdown after editor changes
+\series default
+ the document is rendered again after changes (a live preview). The R chunks of R Markdown and Quarto documents can be debugged (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:The-R-Debugger"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
 ).
 \end_layout
 
-\begin_layout Subsection
-R Markdown Editor
-\end_layout
-
 \begin_layout Standard
-Since Bio7 2.3 it is possible to write R markdown documents with the help
- of the rmarkdown package
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
- https://cran.r-project.org/web/packages/rmarkdown/index.html
-\end_layout
-
-\end_inset
-
+\series bold
+Wizards:
+\series default
+ 
+\series bold
+File > New
+\series default
+ creates R Markdown documents (
+\series bold
+R Markdown
+\series default
+: HTML, PDF, Word, ODT, RTF, Markdown, GitHub, ioslides, slidy, Beamer) and Quarto documents (
+\series bold
+Quarto Document
+\series default
+: title, author and the format HTML, PDF, Word, Typst (PDF), Presentation (Reveal.js), Presentation (Beamer PDF) or Dashboard (HTML)). The toolbar menu 
+\series bold
+Create Projects or Files
+\series default
+ contains 
+\series bold
+Project with R Markdown file
+\series default
+ and 
+\series bold
+Project with Quarto document
+\series default
 .
- A simple markdown editor is available by default in Bio7 with helps in
- the creation of rmarkdown supported document types.
- A wizard in the file menu is available, too to help in the creation of
- a default rmarkdown document export type.
 \end_layout
+
 
 \begin_layout Subsection
 LaTeX Editor
@@ -476,7 +1139,8 @@ status open
 \begin_inset Graphics
 	filename images/chapter5/javaeditor.jpg
 	lyxscale 40
-	scale 40
+	width 100text%
+	keepAspectRatio
 
 \end_inset
 
@@ -545,8 +1209,9 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/chapter5/javapreferences.jpg
-	lyxscale 70
-	scale 70
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
 
 \end_inset
 
@@ -557,10 +1222,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Java compiler preferences to switch e.g.
- between dynamic classbody (deprecated) and (multiple) class compilation
- (1).
- The editors colours and fonts (2) can be adjusted, too.
+The Java compiler preferences of Bio7 (Preferences Java Dynamic Compilation): the Java version and the options of the compiler (e.g., debugging information, warnings, markers, the ImageJ plugin classloader).
+ The colours and fonts of the editors can be adjusted in the preferences of the editors.
 \end_layout
 
 \end_inset
@@ -576,6 +1239,637 @@ Java compiler preferences to switch e.g.
 
 
 \end_layout
+
+\begin_layout Subsubsection
+Profiling Java Code
+\end_layout
+
+\begin_layout Standard
+\series bold
+Profile > Profile Java (compile and run)
+\series default
+ in the context menu of the Java editor compiles and executes the class like 
+\series bold
+Compile Java
+\series default
+ and samples the execution with the Java Flight Recorder. The report opens in the browser with the tabs 
+\series bold
+Lines
+\series default
+, 
+\series bold
+Flame Graph
+\series default
+ and 
+\series bold
+Functions
+\series default
+; the times of the lines are displayed as marks in the editor (
+\series bold
+Clear Profile Marks
+\series default
+ removes them). The profile measures the CPU time (waiting or sleeping is not counted).
+\end_layout
+
+\begin_layout Subsection
+WindowBuilder GUIs: Export to Shiny and JavaScript
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:WindowBuilder-Export"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+Graphical user interfaces for Bio7 are designed with the WindowBuilder (a visual SWT designer, 
+\series bold
+Open With > WindowBuilder Editor
+\series default
+ on a Java file). A GUI can be used in Bio7 (for a Java model, R or Python) and it can be converted to a 
+\series bold
+Shiny app
+\series default
+ (WindowBuilder Shiny) or to a 
+\series bold
+JavaScript app
+\series default
+ (WindowBuilder JavaScript: HTML, JavaScript and CSS, also with WebGL), so that one design is available as a desktop GUI and as a web app.
+\end_layout
+
+\begin_layout Subsubsection
+The WindowBuilder Wizards
+\end_layout
+
+\begin_layout Standard
+The wizards are in 
+\series bold
+File > New > Other... > Java Bio7 Projects
+\series default
+. The three GUI projects (Bio7 model, R and Python) are also available in the toolbar menu 
+\series bold
+Create Projects or Files
+\series default
+ (below the separator of the Java projects):
+\end_layout
+
+\begin_layout Itemize
+\series bold
+WindowBuilder GUI Project (Bio7 Model):
+\series default
+ a Java model (
+\family typewriter
+My_Model.java
+\family default
+) with a GUI (
+\family typewriter
+ModelGui.java
+\family default
+).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+WindowBuilder GUI Project for R
+\series default
+ and 
+\series bold
+WindowBuilder GUI Project for Python:
+\series default
+ a GUI which executes R (Python) code in a background thread. The project contains the launcher class (e.g., 
+\family typewriter
+RGui.java
+\family default
+, started with the run action of the Java editor, the GUI opens in a custom view) and the panel (
+\family typewriter
+RGuiPanel.java
+\family default
+) which is designed with the WindowBuilder.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+WindowBuilder Shiny App Project:
+\series default
+ a GUI (
+\family typewriter
+ShinyGui.java
+\family default
+, the example "Distribution Explorer") which is converted to a Shiny app.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+WindowBuilder JavaScript App Project:
+\series default
+ a GUI (
+\family typewriter
+RandomWalkGui.java
+\family default
+, the example "Random Walks") which is converted to a JavaScript app.
+\end_layout
+
+\begin_layout Standard
+The Shiny and the JavaScript wizard have the option 
+\series bold
+Create the app in its own project
+\series default
+: the app is created in a separate project (
+\family typewriter
+<project>_Shiny
+\family default
+ or 
+\family typewriter
+<project>_Web
+\family default
+), else in the folder 
+\family typewriter
+shiny/<class>
+\family default
+ or 
+\family typewriter
+web/<class>
+\family default
+ of the project.
+\end_layout
+
+\begin_layout Subsubsection
+How to Export a GUI
+\end_layout
+
+\begin_layout Enumerate
+Design the GUI with the WindowBuilder (a class which extends Composite) and save it.
+\end_layout
+
+\begin_layout Enumerate
+In the Project Explorer open the context menu of the Java file of the GUI and select 
+\series bold
+WindowBuilder Apps > Create Shiny App (WindowBuilder Shiny)
+\series default
+ or 
+\series bold
+WindowBuilder Apps > Create JavaScript App (WindowBuilder JavaScript)
+\series default
+.
+\end_layout
+
+\begin_layout Enumerate
+The first time, a dialog asks for the location of the app: 
+\series bold
+A new project
+\series default
+ (to edit and share the app on its own, the default name is 
+\family typewriter
+<class>_Shiny
+\family default
+ or 
+\family typewriter
+<class>_Web
+\family default
+), 
+\series bold
+A folder in the project of the GUI class
+\series default
+ (
+\family typewriter
+shiny/<class>
+\family default
+ or 
+\family typewriter
+web/<class>
+\family default
+) or 
+\series bold
+A folder of the workspace
+\series default
+ (
+\series bold
+Browse...
+\series default
+). Bio7 remembers the choice for this GUI class: later exports write to the same location without a question. 
+\series bold
+Change Shiny App Location...
+\series default
+ and 
+\series bold
+Change JavaScript App Location...
+\series default
+ in the same submenu select another location (the old files are not removed).
+\end_layout
+
+\begin_layout Enumerate
+Bio7 writes the files and opens the code file in the editor. A dialog lists the location, the widgets which couldn't be converted and the code stubs of new widgets. 
+\series bold
+Start the app now?
+\series default
+ starts the Shiny app, 
+\series bold
+Open the app now?
+\series default
+ opens the JavaScript app in the browser.
+\end_layout
+
+\begin_layout Enumerate
+Write the computations in the code file (
+\family typewriter
+server.R
+\family default
+ or 
+\family typewriter
+app.js
+\family default
+). After changes of the design export the GUI again.
+\end_layout
+
+\begin_layout Standard
+The design file (
+\family typewriter
+ui.R
+\family default
+ or 
+\family typewriter
+index.html
+\family default
+) is written again with each export. The code files (
+\family typewriter
+server.R
+\family default
+, 
+\family typewriter
+app.js
+\family default
+, 
+\family typewriter
+style.css
+\family default
+) are only created if they don't exist, so your code is never overwritten: the stubs of new widgets are listed in the dialog and can be copied into the code. A Shiny app can also be started later with 
+\series bold
+Start Shiny App
+\series default
+ (main toolbar or context menu).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/windowbuilder/shiny_app.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A Shiny app (predator-prey model) created from a WindowBuilder GUI with WindowBuilder Shiny
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wb-shiny"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The Conversion of the Widgets
+\end_layout
+
+\begin_layout Standard
+The converter reads the source code of the GUI class (the code is not executed): the constructor and the methods without arguments which it calls (e.g., 
+\family typewriter
+createContents()
+\family default
+). The variable names of the widgets become the ids of the inputs and outputs (
+\family typewriter
+input$name
+\family default
+ in Shiny, 
+\family typewriter
+document.getElementById("name")
+\family default
+ in JavaScript). A Label or a Text whose name starts with 
+\family typewriter
+out
+\family default
+ becomes an output. The widgets:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Scale, Slider:
+\series default
+ 
+\family typewriter
+sliderInput
+\family default
+ (Shiny), a range input with the value (HTML).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Spinner:
+\series default
+ 
+\family typewriter
+numericInput
+\family default
+, a number input (the digits are respected).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Text
+\series default
+ (single line, multi line, password): 
+\family typewriter
+textInput
+\family default
+, 
+\family typewriter
+textAreaInput
+\family default
+, 
+\family typewriter
+passwordInput
+\family default
+ (the message is the placeholder); a Text named 
+\family typewriter
+out...
+\family default
+: 
+\family typewriter
+verbatimTextOutput
+\family default
+, a 
+\family typewriter
+pre
+\family default
+ element.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Combo:
+\series default
+ 
+\family typewriter
+selectInput
+\family default
+, a select element; 
+\series bold
+List:
+\series default
+ a list box (also with multiple selection).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Button:
+\series default
+ push buttons become 
+\family typewriter
+actionButton
+\family default
+, check and toggle buttons 
+\family typewriter
+checkboxInput
+\family default
+, radio buttons of a parent 
+\family typewriter
+radioButtons
+\family default
+ (the id is the name of the Group, else of the first button).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+DateTime:
+\series default
+ 
+\family typewriter
+dateInput
+\family default
+ or a time input.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Label:
+\series default
+ a label; a Label named 
+\family typewriter
+out...
+\family default
+: 
+\family typewriter
+textOutput
+\family default
+, a span element. 
+\series bold
+Link:
+\series default
+ HTML.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Canvas:
+\series default
+ 
+\family typewriter
+plotOutput
+\family default
+ (Shiny), a 2D canvas (HTML, the size of the width and height hint, default 600 x 300).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+GLCanvas
+\series default
+ or a Canvas named 
+\family typewriter
+gl
+\family default
+ followed by an uppercase letter, a digit or an underscore (e.g., 
+\family typewriter
+glView
+\family default
+, 
+\family typewriter
+gl3d
+\family default
+): 
+\family typewriter
+rgl::rglwidgetOutput
+\family default
+ (Shiny, 3D plots with the R package rgl), a WebGL canvas (HTML).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Table:
+\series default
+ 
+\family typewriter
+tableOutput
+\family default
+, a table; 
+\series bold
+Browser:
+\series default
+ 
+\family typewriter
+uiOutput
+\family default
+, a div element.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Composite, SashForm, ScrolledComposite:
+\series default
+ a div; 
+\series bold
+Group:
+\series default
+ 
+\family typewriter
+wellPanel
+\family default
+ with the title, a fieldset; 
+\series bold
+TabFolder, CTabFolder:
+\series default
+ 
+\family typewriter
+tabsetPanel
+\family default
+ with 
+\family typewriter
+tabPanel
+\family default
+, tabs.
+\end_layout
+
+\begin_layout Standard
+The layouts: a 
+\series bold
+GridLayout
+\series default
+ becomes 
+\family typewriter
+fluidRow
+\family default
+ and 
+\family typewriter
+column
+\family default
+ (the width is 12 times the horizontal span divided by the number of columns) in Shiny and a CSS grid in HTML (a column which grabs the space is flexible, the spans are kept). A 
+\series bold
+FillLayout
+\series default
+ becomes equal columns, a 
+\series bold
+RowLayout
+\series default
+ a flow layout; other layouts display the widgets one below the other.
+\end_layout
+
+\begin_layout Standard
+The generated code: 
+\family typewriter
+server.R
+\family default
+ contains 
+\family typewriter
+function(input, output, session)
+\family default
+ with an 
+\family typewriter
+observeEvent
+\family default
+ for each button and a 
+\family typewriter
+render...
+\family default
+ function with example code for each output (e.g., a plot, a table, a 3D plot with rgl). 
+\family typewriter
+app.js
+\family default
+ contains a variable for each element, a click listener for each button, a draw function with a 2D or WebGL context for each canvas and a fill function for each table.
+\end_layout
+
+\begin_layout Standard
+Widgets which can't be converted are written as comments and listed in the dialog. Only literal values (e.g., the minimum and maximum of a slider) are read, listeners of the Java code are not converted.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/windowbuilder/webgl_app.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A JavaScript app with a WebGL canvas created from a WindowBuilder GUI (WindowBuilder JavaScript)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wb-webgl"
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 
 \begin_layout Subsection
 BeanShell and Groovy
@@ -604,13 +1898,13 @@ Need for speed in complex applications: The embedded Java compiler compiles
  the Java code to bytecode while the interpreted languages interpret the
  code which is much slower and sometimes is not sufficient for resource
  intensive calculations (though compiled code will be executed also very
- efficiently by BeanShell, Groovy or Jython!).
+ efficiently by BeanShell or Groovy!).
  However new versions of the different interpreters close this speed gap
  more and more.
 \end_layout
 
 \begin_layout Enumerate
-Scripting capabilities: With BeanShell, Groovy (and Jython) it is possible
+Scripting capabilities: With BeanShell and Groovy it is possible
  to create highly dynamic applications with customized scripts.
  Script templates like the snippets can easily be recycled for custom modificati
 ons.
@@ -622,7 +1916,7 @@ Script
 \end_layout
 
 \begin_layout Enumerate
-Direct interaction: With the BeanShell, Groovy (or Jython) console you can
+Direct interaction: With the BeanShell or Groovy console you can
  interact directly with the methods and integrated API's of Bio7.
 \end_layout
 
@@ -648,7 +1942,7 @@ Note:
 \end_layout
 
 \begin_layout Standard
-The default imports for the BeanShell, Groovy and Jython interpreter can
+The default imports for the BeanShell and Groovy interpreter can
  be changed in the file ...
 \backslash
 plugins
@@ -722,400 +2016,298 @@ R Source Conversion
 \series default
 : Converts Rscript code.
  This converter helps to convert R expressions for the use e.g.
- in an BeanShell or Groovy script using the Rserve API.
+ in a BeanShell or Groovy script which evaluates R code.
  
 \end_layout
 
 \begin_layout Subsection
-The Python/Jython Editor
+The Python Editor
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-Python-Editor"
+
+\end_inset
+
 \end_layout
 
 \begin_layout Standard
-A Python/Jython editor is available to execute Python/Jython scripts.
- The Bio7 API can be used with Python/Jython, too.
- The editor comes with typical editor actions similiar to those which were
- already described for the other language editors.
+The Python editor edits and executes Python scripts in the embedded Python of Bio7 (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Embedded-Python"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:The-Python-Perspective"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+). 
+\series bold
+Interpret Python
+\series default
+ in the toolbar of the editor (Ctrl+Alt+Shift+P) saves and executes the script. The editor offers:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Code completion
+\series default
+ with jedi (if installed) or the standard library, with the variables of the running Python and templates.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Code analysis
+\series default
+ with ruff (if installed), else with the checks of Bio7 (undefined names, unused imports and variables). Quick fixes are available with a click on the ruler or with 
+\series bold
+Quick Assist
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Outline
+\series default
+ of the classes, functions and variables, hovers (
+\series bold
+Enable Hovers
+\series default
+) and syntax colors.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Format Python Code
+\series default
+ (with ruff or black).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Refactor:
+\series default
+ 
+\series bold
+Rename
+\series default
+, 
+\series bold
+Extract Variable
+\series default
+, 
+\series bold
+Extract Function
+\series default
+, 
+\series bold
+Inline Variable
+\series default
+, 
+\series bold
+Organize Imports
+\series default
+, 
+\series bold
+Surround with try/except
+\series default
+ and 
+\series bold
+Insert Docstring
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Add Block Comment
+\series default
+ and 
+\series bold
+Remove Block Comment
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Profile:
+\series default
+ 
+\series bold
+Profile Python Script
+\series default
+ and 
+\series bold
+Profile Selection
+\series default
+ (the times of the lines as marks in the editor, 
+\series bold
+Clear Profile Marks
+\series default
+).
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset listings
-lstparams "basicstyle={\normalsize},language=Java,numbers=left"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# A Jython example which overrides the run method
-\end_layout
-
-\begin_layout Plain Layout
-
-# of the inherited Model class of Bio7!
-\end_layout
-
-\begin_layout Plain Layout
-
-# The method run can be called from the Start/Pause action
-\end_layout
-
-\begin_layout Plain Layout
-
-# of the Bio7 toolbar!
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-class jythonClass(Model):
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-def run(self):
-\end_layout
-
-\begin_layout Plain Layout
-
-#print index
-\end_layout
-
-\begin_layout Plain Layout
-
-Field.chance();
-\end_layout
-
-\begin_layout Plain Layout
-
-Field.doPaint();
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#We instantiate the class!
-\end_layout
-
-\begin_layout Plain Layout
-
-model = jythonClass()
-\end_layout
-
-\begin_layout Plain Layout
-
-#We set the class as the compiled class!
-\end_layout
-
-\begin_layout Plain Layout
-
-Compiled.setModel(model);
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Jython example which uses the Bio7 API
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+The preferences of the editor are in 
+\series bold
+Preferences Python Editor
+\series default
+ (with the pages 
+\series bold
+Code
+\series default
+, 
+\series bold
+Code Analysis
+\series default
+ and 
+\series bold
+Formatting
+\series default
+) and 
+\series bold
+Template Editor Python
+\series default
+. Jython is not part of Bio7 anymore: the Python scripts run in CPython.
 \end_layout
 
 \begin_layout Subsubsection
-Native Python Execution
-\end_layout
-
-\begin_layout Standard
-It is also possible to execute Python scripts with the Jython editor if
- the native execution is enabled in the Native preferences of Bio7 (see:
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Native-preferences"
-
-\end_inset
-
-).
- If the Python package 
-\begin_inset Quotes eld
-\end_inset
-
-Py4J
-\begin_inset Quotes erd
-\end_inset
-
- is installed (
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
- http://py4j.sourceforge.net/
-\end_layout
-
-\end_inset
-
-) in the Python distribution the Bio7 API and Java libs can be acessed from
- within CPython (see 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Py4J example"
-
-\end_inset
-
-).
- Therefore the Java Py4J Server has to be started in the scripts menu of
- Bio7 (which is momentarily by default available in the Linux and Mac version
- of Bio7 2.0).
- 
-\begin_inset VSpace medskip
-\end_inset
-
-
-\series bold
-Note:
-\series default
- It is also possible to install the popular 
-\begin_inset Quotes eld
-\end_inset
-
-PyDev
-\begin_inset Quotes erd
-\end_inset
-
- Python editor (
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
- http://pydev.org/
-\end_layout
-
-\end_inset
-
-) into Bio7 and execute the opened Python scripts (you have to open them
- with the PyDev editor) with the available Bio7 action in the main toolbar.
- The available Bio7 action cares about the execution of the script in the
- Bio7 Python/Jython environment and console.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset listings
-lstparams "basicstyle={\normalsize},language=Java,numbers=left"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-# A Python Py4J example which transfers values
-\end_layout
-
-\begin_layout Plain Layout
-
-# from the ImageJ Results table and plots them with
-\end_layout
-
-\begin_layout Plain Layout
-
-# the Matplot lib.
-\end_layout
-
-\begin_layout Plain Layout
-
-# For this example Py4J has to be installed in Python
-\end_layout
-
-\begin_layout Plain Layout
-
-# and the Py4J Server has to be started!
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-import numpy as np 
-\end_layout
-
-\begin_layout Plain Layout
-
-import matplotlib.pyplot as plt 
-\end_layout
-
-\begin_layout Plain Layout
-
-from py4j.java_gateway import JavaGateway 
-\end_layout
-
-\begin_layout Plain Layout
-
-from py4j.java_collections import JavaArray
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-gateway = JavaGateway() 
-\end_layout
-
-\begin_layout Plain Layout
-
-results=gateway.jvm.ij.measure.ResultsTable 
-\end_layout
-
-\begin_layout Plain Layout
-
-analyzer=gateway.jvm.ij.plugin.filter.Analyzer
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#get the results from the Java ImageJ API!
-\end_layout
-
-\begin_layout Plain Layout
-
-rt=analyzer.getResultsTable() 
-\end_layout
-
-\begin_layout Plain Layout
-
-res=rt.getColumn(0) 
-\end_layout
-
-\begin_layout Plain Layout
-
-lastCol=rt.getLastColumn();
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-values=[[0 for x in range(len(res))] for x in range(lastCol+1)]
-\end_layout
-
-\begin_layout Plain Layout
-
-for x in range (0,lastCol+1): 
-\end_layout
-
-\begin_layout Plain Layout
-
-	vals=rt.getColumnAsDoubles(x) 
-\end_layout
-
-\begin_layout Plain Layout
-
-	if (isinstance(vals,JavaArray)): 	
-\end_layout
-
-\begin_layout Plain Layout
-
-		print ('')   		   		
-\end_layout
-
-\begin_layout Plain Layout
-
-		for y in range (0,len(res)): 			
-\end_layout
-
-\begin_layout Plain Layout
-
-			values[x][y]=vals[y]
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#Plot the values!
-\end_layout
-
-\begin_layout Plain Layout
-
-plt.boxplot(values) 
-\end_layout
-
-\begin_layout Plain Layout
-
-plt.show()
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
+The Python Debugger
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Py4J example"
+name "subsec:The-Python-Debugger"
 
 \end_inset
 
-CPython Py4J example which uses the Java ImageJ API
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+Python scripts can be debugged in the embedded Python:
 \end_layout
 
-\end_inset
-
-
+\begin_layout Itemize
+\series bold
+Breakpoints:
+\series default
+ a double-click on the ruler of the Python editor sets or removes a breakpoint. The context menu of the ruler contains 
+\series bold
+Toggle Python Breakpoint
+\series default
+, 
+\series bold
+Python Breakpoint Condition
+\series default
+ (a condition, a hit count or a log message) and 
+\series bold
+Remove All Python Breakpoints
+\series default
+.
 \end_layout
+
+\begin_layout Itemize
+\series bold
+Start:
+\series default
+ 
+\series bold
+Debug Python Script
+\series default
+ in the context menu of the editor or the first action of the 
+\series bold
+Python Debug
+\series default
+ view. Bio7 opens the Python Debug perspective. Without breakpoints the debugger stops at the first line.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Actions
+\series default
+ of the Python Debug view: 
+\series bold
+Debug
+\series default
+, 
+\series bold
+Stop
+\series default
+, 
+\series bold
+Next (n)
+\series default
+, 
+\series bold
+Step Into (s)
+\series default
+, 
+\series bold
+Step Return (r)
+\series default
+, 
+\series bold
+Continue (c)
+\series default
+ and 
+\series bold
+Run to Cursor
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Tabs:
+\series default
+ 
+\series bold
+Variables
+\series default
+ (name, type, size, value), 
+\series bold
+Watch
+\series default
+ (expressions) and 
+\series bold
+Call Stack
+\series default
+ (function, file, line). The context menu of the variables contains 
+\series bold
+Show Value
+\series default
+, 
+\series bold
+Add to Watch
+\series default
+, 
+\series bold
+Copy to Python Workspace
+\series default
+ and 
+\series bold
+Copy Value
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+While the debugger is stopped, the console evaluates Python code in the current frame and accepts the commands n, s, r, c and q. The mouse over a variable in the editor shows its value.
+\end_layout
+
 
 \begin_layout Subsection
 The ImageJ Macro Editor
@@ -1138,8 +2330,9 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/chapter5/imagejmacroeditor.jpg
-	lyxscale 50
-	scale 50
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
 
 \end_inset
 
@@ -1208,6 +2401,9 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename images/chapter5/flow.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
 
 \end_inset
 
@@ -1841,20 +3037,7 @@ Cancel
 \series default
  action in the progress dialog (the dialog is only displayed for long operations
 ) or by selecting the key combination Ctrl+x (short and long operations).
- If R is used in some operations it makes sense to start Rserve with a system
- console (see 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Rserve-preferences"
-
-\end_inset
-
-) before executing a flow.
- Only with a shell it is possible to interrupt an R calculation - if supported
- by the package creator.
- In some cases where the application Rserve is involved it can become necessary
- to stop and restart the application (this can be done with the Rserve connectio
-n action in the toolbar of Bio7).
+ An R calculation can be interrupted with Interrupt R (menu of the toolbar action Start R) or with Ctrl+C in the console.
  If possible it is highly recommend to test all files before they are used
  in the flow editor.
 \end_layout

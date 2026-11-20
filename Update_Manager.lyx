@@ -80,7 +80,49 @@ name "chap:Update-Manager"
 \end_layout
 
 \begin_layout Standard
+With the update manager of the Eclipse platform plugins can be installed, updated and removed:
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Help > Install New Software...
+\series default
+ installs plugins from an update site (select a site in 
+\series bold
+Work with
+\series default
+, then the plugins).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Help > Check for Updates
+\series default
+ updates the installed plugins.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Help > About Bio7 > Installation Details
+\series default
+ lists the installed software: plugins can be uninstalled and the 
+\series bold
+Installation History
+\series default
+ reverts the installation to an earlier state (e.g., after a corrupted installation).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Preferences > Install/Update > Available Software Sites
+\series default
+ manages the update sites.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status open
@@ -89,6 +131,9 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/chapter8/updatemanager.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
 
 \end_inset
 
@@ -100,6 +145,12 @@ status open
 
 \begin_layout Plain Layout
 The Update Manager
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:update-manager"
+
+\end_inset
+
 \end_layout
 
 \end_inset
@@ -107,40 +158,36 @@ The Update Manager
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
+\begin_layout Standard
+Bio7 comes with preconfigured update sites, e.g., for the ImageJ plugin and the R editor of Bio7, the WindowBuilder, PyDev, EGit (Git, see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Install-Git"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
 \end_inset
 
-With the update manager Eclipse plugins can be easily installed or deleted.
- Update sites can be added as a installation source for existing external
- plugins.
- Installed third party plugins locations can be managed in the
-\series bold
- Available Software Sites
-\series default
- preferences.
- Plugins can be deinstalled following the 
-\series bold
-already installed
-\series default
- link - it is even possible to return to a certain state of installation
- because the Eclipse Framework registers all configurations dates and changes.
- For more information about the update manager please consult the Eclipse
- documentation 
+), Eclipse Wild Web Developer and the Eclipse release (2026-09) of Bio7. Bio7 itself is updated with a new download (see the chapter Getting started). For more information about the update manager please consult the Eclipse documentation 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://help.eclipse.org
+https://help.eclipse.org
 \end_layout
 
 \end_inset
 
 .
 \end_layout
+
 
 \end_body
 \end_document

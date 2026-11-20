@@ -74,83 +74,110 @@ Definition of Expressions
 \end_layout
 
 \begin_layout Itemize
-
-\noun on
-Area of Analysis
-\noun default
-: A name for the area in the Points panel which is marked by a green rectangle
- for spatial point patterns.
+\series bold
+Calculation thread:
+\series default
+ The execution of a model in time steps (e.g., the run method of a compiled Java model), started with the Start/Pause action of the toolbar.
 \end_layout
 
 \begin_layout Itemize
-
-\noun on
-Programmatically
-\noun default
-: Using programming to accomplish a task.
+\series bold
+Chunk:
+\series default
+ A block of code in an R Markdown or Quarto document (e.g., an R or a Python chunk) which is executed when the document is rendered (or inline in the Markdown editor of Bio7).
 \end_layout
 
 \begin_layout Itemize
+\series bold
+Custom view:
+\series default
+ A view of Bio7 which is created programmatically (e.g., for a GUI of a model, an R plot or a Python plot).
+\end_layout
 
-\noun on
+\begin_layout Itemize
+\series bold
+Discretize:
+\series default
+ In Bio7 the process of transferring continuous data to discrete data.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Embedded R, embedded Python:
+\series default
+ R and Python run in the process of Bio7 (Foreign Function & Memory API of Java): the data are transferred directly, without a server or a separate process.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+IDE
+\series default
+ (Integrated Development Environment): A type of software that assists in developing software.
+\end_layout
+
+\begin_layout Itemize
+\series bold
 Namespace
-\noun default
- (BeanShell) : A namespace in which methods, variables, and imports (class
- names) live.
+\series default
+ (BeanShell): A namespace in which methods, variables, and imports (class names) live.
 \end_layout
 
 \begin_layout Itemize
-
-\noun on
-Workspace
-\noun default
- (R): A saveable environment in which methods, variables and objects exists.
+\series bold
+Perspective:
+\series default
+ An arrangement of views and editors for a task (e.g., the R perspective, the 3d perspective).
 \end_layout
 
 \begin_layout Itemize
+\series bold
+Programmatically:
+\series default
+ Using programming to accomplish a task.
+\end_layout
 
-\noun on
+\begin_layout Itemize
+\series bold
+Snippets:
+\series default
+ In Bio7 a small piece of programming source code to demonstrate some of the Bio7 features.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Theme:
+\series default
+ The colors, fonts, icon colors and artwork of the Bio7 user interface (light, dark or a custom theme).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+View:
+\series default
+ A window of the Bio7 workbench (e.g., the R-Shell view or the Space view) which can be arranged in a perspective.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+WindowBuilder:
+\series default
+ A visual designer for SWT user interfaces; in Bio7 a WindowBuilder GUI can be exported as a Shiny app or a JavaScript app.
+\end_layout
+
+\begin_layout Itemize
+\series bold
 Workspace
-\noun default
+\series default
  (Bio7): The location where the projects and files are stored.
 \end_layout
 
 \begin_layout Itemize
-
-\noun on
-Calculation thread
-\noun default
-: A time dependent execution of a compiled method (ecomain) in Bio7 started,
- e.g.
- with the Play/Pause button.
+\series bold
+Workspace
+\series default
+ (R, Python): The environment in which the objects (variables, functions, data) of the running R or Python exist (in R it can be saved as an *.RData file).
 \end_layout
 
-\begin_layout Itemize
-
-\noun on
-Discretize
-\noun default
-: In Bio7 the process of transferring continuous data to discrete data.
-\end_layout
-
-\begin_layout Itemize
-
-\noun on
-IDE
-\noun default
- (Integrated Development Environment): a type of software that assists in
- developing software.
-\end_layout
-
-\begin_layout Itemize
-
-\noun on
-Snippets
-\noun default
-: In Bio7 a small piece of programming source code to demonstrate some of
- the Bio7 features.
- 
-\end_layout
 
 \end_body
 \end_document

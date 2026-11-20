@@ -81,185 +81,78 @@ name "sec:Native-preferences"
 
 \end_inset
 
-
 \end_layout
 
 \begin_layout Standard
-In the native preferences some native connections to interpreters (R, Python)
- and OS shell preferences can be adjusted.
- The following preferences are available:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename images/chapter10/nativepreferences.jpg
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Native preferences of Bio7
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-(1) With the 
+In 
 \series bold
-Shell
+Preferences Bio7 > Preferences R > Preferences Native
 \series default
- preferences the OS shell can be started within Bio7 with some arguments.
+ some settings of the console are adjusted:
 \end_layout
 
-\begin_layout Description
-(2) In the 
+\begin_layout Itemize
 \series bold
-R
+Shell:
 \series default
- preference the R editor script can be executed with the native connection
- instead of the Rserve connection (deprecated - only useful if Rserve is
- started independent from the shell!).
  
+\series bold
+Command After Startup
+\series default
+ is executed when the OS shell is started in the console of Bio7.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+R:
+\series default
+ with 
+\series bold
+Execute Editor Source in R
+\series default
+ the scripts of the R editor are executed in the R console (the R of the console is the embedded R, 
+\series bold
+Native R
+\series default
+ in the interpreter menu of the Console view) instead of the R-Shell view. 
+\series bold
+Path R
+\series default
+ is the path to the R of the console.
 \begin_inset CommandInset label
 LatexCommand label
 name "rnativepreference"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Description
-(3) In the 
-\series bold
-Python/Blender
-\series default
- preference it can be adjusted to execute Python code of the editor with
- a native Python connection instead of the default Jython interpreter.
- The path to a Python interpreter has to be adjusted.
- In addition a Blender Python interpreter (which is embedded in an Blender
- installation) can be used to execute editor code.
- The different options are described in 
-\series bold
-(4)
-\series default
-.
- Once again the path has to be adjusted.
-\end_layout
-
-\begin_layout Description
-(4) In the 
-\series bold
-Blender Default Options
-\series default
- some preferences can be selected and changed to start the Python interpreter
- and execute editor code in different ways.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-None
-\series default
- will simply startup Blender without a Python script execution (arguments
- can be specified in the 
-\series bold
-Blender Arguments
-\series default
-).
-\end_layout
-
-\begin_layout Itemize
-The option
-\series bold
- Interactive Shell
-\series default
- if selected starts the Python connection as an interactiv shell (argument:
- --python-console).
- A special script customization is possible by defining code elements which
- will be executed before and after the editor code (the default code in
- the two textfields redraws the 3d GUI of Blender!)
-\end_layout
-
-\begin_layout Itemize
-The option 
-\series bold
-Python Script 
-\series default
-starts Blender and executes the editor script in Blender Python without
- an interactive shell.
-\end_layout
-
-\begin_layout Itemize
-With the 
-\series bold
-Blender Arguments
-\series default
- additional arguments can be specified for the startup of Blender (e.g.
- with the option 
-\series bold
-None
-\series default
- some rendering tasks can be executed instead of executing a python script).
-\end_layout
-
-\begin_layout Section
-Drag, Drop, Compile and Start
 \end_layout
 
 \begin_layout Standard
-Since Bio7 1.5 it is possible to store grid patterns in an *.xml file.
- If a Java editor is available the source code of an opened editor can be
- saved with the pattern.
- If source in a pattern file is available, too the source of the file will
- be loaded and compiled and the setup method (if available) will be executed.
- This can be used to execute a Java model with drag and drop.
- In addition this drag and drop action can also be used in conjunction with
- different java model types (3d models etc.).
- Please note that a package declaration in a Java file is not supported!
- Simply use the default /src project folder as created by the Bio7 project
- wizard when saving the file.
- Some examples can be found on GitHub: 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-https://github.com/Bio7/Bio7
-\end_layout
+The Python of Bio7 is selected in 
+\series bold
+Preferences Python
+\series default
+ (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Embedded-Python"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
- 
+).
 \end_layout
+
 
 \begin_layout Section
 Drag and Drop Files
 \end_layout
 
 \begin_layout Standard
-Several external file types can be dragged on the Bio7 interface.
- Here is an overview of the supported file types and the action involved:
+Several file types can be dropped on the Bio7 interface:
 \end_layout
 
 \begin_layout Standard
@@ -270,19 +163,21 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="3">
+<lyxtabular version="3" rows="9" columns="3">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="33col%">
-<column alignment="left" valignment="top" width="33col%">
-<column alignment="left" valignment="top" width="33col%">
+<column alignment="left" valignment="top" width="33text%">
+<column alignment="left" valignment="top" width="33text%">
+<column alignment="left" valignment="top" width="33text%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size small
 \series bold
-GUI Comp.
+Bio7 Component
+\series default
 \end_layout
 
 \end_inset
@@ -292,8 +187,10 @@ GUI Comp.
 
 \begin_layout Plain Layout
 
+\size small
 \series bold
 File Type
+\series default
 \end_layout
 
 \end_inset
@@ -303,8 +200,10 @@ File Type
 
 \begin_layout Plain Layout
 
+\size small
 \series bold
 Action
+\series default
 \end_layout
 
 \end_inset
@@ -315,9 +214,9 @@ Action
 \begin_inset Text
 
 \begin_layout Plain Layout
-Global 
-\series bold
-(1)
+
+\size small
+Bio7 window
 \end_layout
 
 \end_inset
@@ -326,38 +225,8 @@ Global
 \begin_inset Text
 
 \begin_layout Plain Layout
-*.exml
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Loads a pattern, compiles Java code (if availabe) and executes the setup
- method of the compiled code.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Global 
-\series bold
-(1)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size small
 *.RData
 \end_layout
 
@@ -367,7 +236,9 @@ Global
 \begin_inset Text
 
 \begin_layout Plain Layout
-Starts Rserve (if not alive) and loads the *RData into the R workspace.
+
+\size small
+Starts R (if not running) and loads the file into the R workspace (with Execute Editor Source in R into the R console).
 \end_layout
 
 \end_inset
@@ -378,6 +249,43 @@ Starts Rserve (if not alive) and loads the *RData into the R workspace.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
+Editor area
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+all files
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Opens the file in the editor of its type.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
 Project Explorer
 \end_layout
 
@@ -387,7 +295,9 @@ Project Explorer
 \begin_inset Text
 
 \begin_layout Plain Layout
-*.
+
+\size small
+all files
 \end_layout
 
 \end_inset
@@ -396,7 +306,9 @@ Project Explorer
 \begin_inset Text
 
 \begin_layout Plain Layout
-Copies all file types in a project of Bio7 (in the Bio7 workspace).
+
+\size small
+Copies (or links) the files into a project of the workspace.
 \end_layout
 
 \end_inset
@@ -407,6 +319,8 @@ Copies all file types in a project of Bio7 (in the Bio7 workspace).
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 ImageJ-Canvas
 \end_layout
 
@@ -416,10 +330,9 @@ ImageJ-Canvas
 \begin_inset Text
 
 \begin_layout Plain Layout
-*.png, *.jpg, etc.
- 
-\series bold
-(2)
+
+\size small
+images, stacks, macros, etc.
 \end_layout
 
 \end_inset
@@ -428,8 +341,9 @@ ImageJ-Canvas
 \begin_inset Text
 
 \begin_layout Plain Layout
-Opens images, stacks, etc.
- in the ImageJ view.
+
+\size small
+Opens the files with ImageJ (all file types which ImageJ opens).
 \end_layout
 
 \end_inset
@@ -440,7 +354,9 @@ Opens images, stacks, etc.
 \begin_inset Text
 
 \begin_layout Plain Layout
-ImageJ-Canvas
+
+\size small
+ImageJ macro editor
 \end_layout
 
 \end_inset
@@ -449,7 +365,9 @@ ImageJ-Canvas
 \begin_inset Text
 
 \begin_layout Plain Layout
-*.jar
+
+\size small
+all files
 \end_layout
 
 \end_inset
@@ -458,7 +376,9 @@ ImageJ-Canvas
 \begin_inset Text
 
 \begin_layout Plain Layout
-Installs and loads ImageJ plugins (default folder has to be selected).
+
+\size small
+Inserts the paths of the files as variables (path_1 = "...").
 \end_layout
 
 \end_inset
@@ -469,7 +389,9 @@ Installs and loads ImageJ plugins (default folder has to be selected).
 \begin_inset Text
 
 \begin_layout Plain Layout
-ImageJ-Toolbar
+
+\size small
+Browser view (address field)
 \end_layout
 
 \end_inset
@@ -478,10 +400,9 @@ ImageJ-Toolbar
 \begin_inset Text
 
 \begin_layout Plain Layout
-*.png, *.jpg, etc.
- 
-\series bold
-(2)
+
+\size small
+all files
 \end_layout
 
 \end_inset
@@ -490,8 +411,44 @@ ImageJ-Toolbar
 \begin_inset Text
 
 \begin_layout Plain Layout
-Opens images, stacks, etc.
- in the ImageJ view
+
+\size small
+Opens the file in the browser.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Flow editor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+all files
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Creates a flow component with the file.
 \end_layout
 
 \end_inset
@@ -502,7 +459,9 @@ Opens images, stacks, etc.
 \begin_inset Text
 
 \begin_layout Plain Layout
-Points
+
+\size small
+R-Shell view (expression field)
 \end_layout
 
 \end_inset
@@ -511,10 +470,9 @@ Points
 \begin_inset Text
 
 \begin_layout Plain Layout
-*.png, *.jpg, etc.
- 
-\series bold
-(3)
+
+\size small
+text
 \end_layout
 
 \end_inset
@@ -523,7 +481,9 @@ Points
 \begin_inset Text
 
 \begin_layout Plain Layout
-Opens images in the Points panel and adjusts the “Area of Analysis”.
+
+\size small
+Inserts the dropped text (e.g., names of the objects of the list).
 \end_layout
 
 \end_inset
@@ -534,13 +494,16 @@ Opens images in the Points panel and adjusts the “Area of Analysis”.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Drag And Drop actions in Bio7
+Drag and drop actions in Bio7
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:drag-drop"
+
+\end_inset
+
 \end_layout
 
 \end_inset
@@ -553,18 +516,6 @@ Drag And Drop actions in Bio7
 
 \end_layout
 
-\begin_layout Description
-(1) Except some Bio7 components with special drag and drop support and the
- editor area.
-\end_layout
-
-\begin_layout Description
-(2) All supported ImageJ file types and libs.
-\end_layout
-
-\begin_layout Description
-(3) Default Java supported image types.
-\end_layout
 
 \begin_layout Section
 Install Eclipse, R, ImageJ Plugins or Packages in Bio7
@@ -574,40 +525,79 @@ name "sec:Install-Eclipse,-R,"
 
 \end_inset
 
-
 \end_layout
 
 \begin_layout Standard
-Bio7 can be extended in several different ways with Eclipse plugins, R packages,
- ImageJ plugins and custom scripts (scripts to extend a menu or executed
- at startup).
+Bio7 can be extended with Eclipse plugins, R packages, Python packages, Java libraries, ImageJ plugins and custom scripts (scripts which extend a menu or are executed at startup):
 \end_layout
 
 \begin_layout Enumerate
-To install (suitable) Eclipse plugins the Update-Manager can be used to
- install plugins from a remote website.
- 
+Eclipse plugins are installed with the update manager (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Update-Manager"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Enumerate
-R packages can be added in two different ways.
- One way is to use the package installer GUI of Bio7.
- Additionally the command line in R can be used to install packages.
+R packages are installed with the Packages view of the R perspective or with the R command line.
 \end_layout
 
 \begin_layout Enumerate
-ImageJ plugins (*.class or *.jar files) have to be installed in the plugins
- folder of ImageJ which is is located in Bio7: Bio7/plugins/com.eco.bio7.image_x.xx.x
-/plugins.
- Note: In the ImageJ Eclipse plugin the typical ImageJ folder structure
- can be found!
+Python packages are installed with the Python Packages view (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:The-Python-Perspective"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Enumerate
-Groovy, BeanShell, Jython, JavaScript and R scripts, as well as ImageJ macros
- can be dropped to special folders to extend the default Bio7 menu (startup)
- functionality.
- The folders which are scanned by default are shown in the table below.
+Java libraries are added in the preferences of the dynamic compiler, also downloaded from Maven (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Java-Libraries"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+ImageJ plugins (*.class or *.jar files) are installed in the plugins folder of ImageJ (Bio7/plugins/com.eco.bio7.image_x.x.x/plugins) or dropped on the ImageJ-Canvas view (
+\series bold
+Plugins > Install...
+\series default
+ of ImageJ).
+\end_layout
+
+\begin_layout Enumerate
+Scripts (Java, R, Python, Groovy, BeanShell, JavaScript and ImageJ macros) can be placed in special folders to extend the menus of Bio7 or to be executed at startup. The folders are set in 
+\series bold
+Preferences Bio7
+\series default
+ (
+\series bold
+Script location
+\series default
+). Subfolders become submenus, an underscore in a file name is displayed as a space.
 \end_layout
 
 \begin_layout Standard
@@ -618,20 +608,21 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="4">
+<lyxtabular version="3" rows="6" columns="3">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="40col%">
-<column alignment="left" valignment="top" width="20col%">
-<column alignment="left" valignment="top" width="20col%">
-<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="33text%">
+<column alignment="left" valignment="top" width="33text%">
+<column alignment="left" valignment="top" width="33text%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size small
 \series bold
-Folder Location (see Preferences Bio7!)
+Folder
+\series default
 \end_layout
 
 \end_inset
@@ -641,19 +632,10 @@ Folder Location (see Preferences Bio7!)
 
 \begin_layout Plain Layout
 
+\size small
 \series bold
-Script Type
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-Menu
+Script types
+\series default
 \end_layout
 
 \end_inset
@@ -663,8 +645,10 @@ Menu
 
 \begin_layout Plain Layout
 
+\size small
 \series bold
-Bio7 Component
+Menu
+\series default
 \end_layout
 
 \end_inset
@@ -675,12 +659,8 @@ Bio7 Component
 \begin_inset Text
 
 \begin_layout Plain Layout
-Bio7
-\backslash
-plugins
-\backslash
-com.eco.bio7_x.x.x
-\backslash
+
+\size small
 scripts
 \end_layout
 
@@ -690,16 +670,9 @@ scripts
 \begin_inset Text
 
 \begin_layout Plain Layout
-Java, BeanShell,Groovy, Jython, R, JavaScript, ImageJ Macro
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Menu or submenus created from scripts and (nested) folders
+\size small
+Java, R, Python, Groovy, BeanShell, JavaScript, ImageJ macro (*.txt opens in an editor)
 \end_layout
 
 \end_inset
@@ -708,7 +681,9 @@ Menu or submenus created from scripts and (nested) folders
 \begin_inset Text
 
 \begin_layout Plain Layout
-Bio7 main menu
+
+\size small
+Scripts menu of the main menu
 \end_layout
 
 \end_inset
@@ -719,12 +694,8 @@ Bio7 main menu
 \begin_inset Text
 
 \begin_layout Plain Layout
-Bio7
-\backslash
-plugins
-\backslash
-com.eco.bio7_x.x.x
-\backslash
+
+\size small
 grid_scripts
 \end_layout
 
@@ -734,16 +705,9 @@ grid_scripts
 \begin_inset Text
 
 \begin_layout Plain Layout
-Java, BeanShell,Groovy, Jython, R, JavaScript, ImageJ Macro
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Menu or submenus created from scripts and (nested) folders
+\size small
+the same
 \end_layout
 
 \end_inset
@@ -752,7 +716,9 @@ Menu or submenus created from scripts and (nested) folders
 \begin_inset Text
 
 \begin_layout Plain Layout
-Table view menu
+
+\size small
+Scripts menu of the Table view
 \end_layout
 
 \end_inset
@@ -763,12 +729,8 @@ Table view menu
 \begin_inset Text
 
 \begin_layout Plain Layout
-Bio7
-\backslash
-plugins
-\backslash
-com.eco.bio7_x.x.x
-\backslash
+
+\size small
 r_shell_scripts
 \end_layout
 
@@ -778,16 +740,9 @@ r_shell_scripts
 \begin_inset Text
 
 \begin_layout Plain Layout
-Java, BeanShell,Groovy, Jython, R, JavaScript, ImageJ Macro
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Menu or submenus created from scripts and (nested) folders
+\size small
+the same
 \end_layout
 
 \end_inset
@@ -796,7 +751,48 @@ Menu or submenus created from scripts and (nested) folders
 \begin_inset Text
 
 \begin_layout Plain Layout
-R-Shell context menu
+
+\size small
+Context menu of the R-Shell view
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+python_shell_scripts
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+the same (Python scripts get the selected names in 
+\family typewriter
+bio7_shell_vars
+\family default
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Context menu of the Python-Shell view
 \end_layout
 
 \end_inset
@@ -807,12 +803,8 @@ R-Shell context menu
 \begin_inset Text
 
 \begin_layout Plain Layout
-Bio7
-\backslash
-plugins
-\backslash
-com.eco.bio7_x.x.x
-\backslash
+
+\size small
 startup_scripts
 \end_layout
 
@@ -822,16 +814,9 @@ startup_scripts
 \begin_inset Text
 
 \begin_layout Plain Layout
-Groovy
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Scripts executed at startup if option enabled
+\size small
+Java, R, Python, Groovy, BeanShell, JavaScript
 \end_layout
 
 \end_inset
@@ -840,7 +825,17 @@ Scripts executed at startup if option enabled
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+
+\size small
+Executed at the startup of Bio7 if 
+\series bold
+Enable startup scripts
+\series default
+ is selected (
+\series bold
+Preferences Startup
+\series default
+)
 \end_layout
 
 \end_inset
@@ -851,13 +846,16 @@ Scripts executed at startup if option enabled
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Scripts and their install locations for Bio7
+The script folders of Bio7 (default locations in the plugin com.eco.bio7)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:script-folders"
+
+\end_inset
+
 \end_layout
 
 \end_inset
@@ -869,6 +867,31 @@ Scripts and their install locations for Bio7
 
 
 \end_layout
+
+\begin_layout Standard
+In 
+\series bold
+Preferences Startup
+\series default
+ R and Python can be started at the startup of Bio7 (
+\series bold
+Start R
+\series default
+, 
+\series bold
+Start Python
+\series default
+) and Groovy commands can be executed (
+\series bold
+Startup Commands (Groovy Script)
+\series default
+, also only with 
+\series bold
+Enable startup scripts
+\series default
+).
+\end_layout
+
 
 \begin_layout Section
 Bio7 Themes
@@ -1085,6 +1108,20 @@ Toolbar:
 \end_layout
 
 \begin_layout Itemize
+\series bold
+Buttons:
+\series default
+ The style of the push buttons of the views: native (the buttons of the system), flat, rounded or round, in the colors of the buttons of the theme (the dialogs keep the native buttons).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Credits:
+\series default
+ The credit of the artwork (e.g., the source and the license of an image, a link after " - "). When a theme with a credit is imported, the credit is shown.
+\end_layout
+
+\begin_layout Itemize
 
 \series bold
 Colors:
@@ -1260,40 +1297,51 @@ Preferences Appearance > Icons
 
 \begin_layout Section
 Install Git
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Install-Git"
+
+\end_inset
+
 \end_layout
 
 \begin_layout Standard
-One useful plugin for Bio7 is the Git plugin which can easily installed
- with the Update Manager of Bio7.
- Open the Update Manager and select the Update site for the plugin (see
- screenshot below).
- Then select the appropriate plugins.
- After installation a vast amounts of Git methods can be used easily with
- a Graphical User Interface.
- For a documentation please visit: 
+The Git plugin of Eclipse (EGit) can be installed with the update manager: its update site (EGit) is preconfigured in Bio7. Open 
+\series bold
+Help > Install New Software...
+\series default
+, select the EGit update site and the plugins. After the installation the Git functions are available with a graphical user interface (e.g., the Git perspective, 
+\series bold
+Team
+\series default
+ in the context menu of a project). For the documentation please visit 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-http://www.eclipse.org/egit
+https://www.eclipse.org/egit
 \end_layout
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename images/chapter10/installgit.jpg
+	lyxscale 40
+	width 80text%
+	keepAspectRatio
 
 \end_inset
 
@@ -1304,7 +1352,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Installation of the EclipseGit plugin
+Installation of the EGit plugin
 \end_layout
 
 \end_inset
@@ -1312,14 +1360,11 @@ Installation of the EclipseGit plugin
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
+
 
 \begin_layout Section
 Bio7 Browser
@@ -1416,11 +1461,19 @@ name "fig:browser-view"
 \end_layout
 
 \begin_layout Standard
-The browser is used for the R help, rmarkdown and knitr documents (*.html, *.pdf). In the browser preferences (
+The browser is used for the R help, for R Markdown and Quarto documents (*.html, *.pdf) and for interactive charts of Python. In the browser preferences (
 \series bold
-Preferences Bio7 > Preferences Browser
+Preferences Bio7 > Preferences R > Preferences Browser
 \series default
-) PDF files can be embedded in the Browser view, the URL of the help for the installation of R packages can be changed and JavaScript scripts of the JavaScript editor can be executed in the current browser page.
+) PDF files can be embedded in the Browser view (
+\series bold
+Embed PDF in browser view
+\series default
+), the URL of the help for the installation of R packages can be changed and JavaScript scripts of the JavaScript editor can be executed in the current browser page (
+\series bold
+Execute JavaScript editor script in current browser
+\series default
+).
 \end_layout
 
 \begin_layout Section
@@ -1428,58 +1481,66 @@ Uninstall Eclipse Plugins
 \end_layout
 
 \begin_layout Standard
-The about dialog embeds an action to uninstall installed Eclipse plugins
- or revert the installation of Bio7 to a specific date of installation.
- In this way a corrupted installation can be reverted to a previous state
- of installation.
+\series bold
+Help > About Bio7 > Installation Details
+\series default
+ lists the installed plugins: plugins can be uninstalled there, and the 
+\series bold
+Installation History
+\series default
+ reverts the installation of Bio7 to an earlier state. In this way a corrupted installation can be reverted to a previous state.
 \end_layout
 
 \begin_layout Section
 Programming Examples for Bio7
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Programming-Examples"
+
+\end_inset
+
 \end_layout
 
 \begin_layout Standard
-The application Bio7 is distributed with a rich set of programming examples,
- which should facilitate the development of ecological models.
- The examples are so called Snippets (short programming examples) which
- are numbered and divided into two projects.
- One project (
-\series bold
-Bio7_Java_Examples
-\series default
-) contains Java snippets for the different components of Bio7 which demonstrates
- how to use them and the flexibility of the platform in general.
- The other project 
-\series bold
-Bio7_Script_Examples
-\series default
- contains snippets as examples for the scripting languages.
- This Snippets also show that you can use the different embedded application
- and modules to understand and analyze complex systems or bundle them in
- ecological modeling for more complex purposes.
- The examples are available as projects.
- Please import them with 
-\series bold
-\noun on
-File\SpecialChar \menuseparator
-Import\SpecialChar \menuseparator
-Existing Projects into Workspace
-\series default
-\noun default
- into your Bio7 workspace.
- The Snippets can also be browsed and downloaded on github: 
+The examples of Bio7 are available on GitHub: 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-
-https://github.com/Bio7
+https://github.com/Bio7/bio7_examples
 \end_layout
 
 \end_inset
 
-.
+. The repository contains two projects:
 \end_layout
+
+\begin_layout Itemize
+\series bold
+Bio7_Java_Examples:
+\series default
+ Java examples for the components of Bio7, e.g., models (2D and 3D), OpenGL, ImageJ, R and Python from Java, GUIs (also WindowBuilder GUIs with their Shiny and JavaScript apps), GDAL, WorldWind, deep learning and profiling.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Bio7_Script_Examples:
+\series default
+ examples for the script languages and the APIs: R, Python, Groovy, BeanShell, JavaScript, ImageJ macros, the R API of Bio7, flows, LibreOffice, image clustering and 3D measurements.
+\end_layout
+
+\begin_layout Standard
+Download the repository as a ZIP file and import the projects with 
+\series bold
+File > Import > Existing Projects into Workspace
+\series default
+ (
+\series bold
+Select archive file
+\series default
+). The paths of the Java examples are adapted after a confirmation (in a Git clone they have to be adjusted by hand).
+\end_layout
+
 
 \end_body
 \end_document
