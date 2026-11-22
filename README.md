@@ -14,6 +14,21 @@ The user guide of Bio7 4.0 (work in progress): the platform, the perspectives (I
 
 The HTML versions are published with GitHub Pages and updated with every change of this repository.
 
+## 🧪 Simulation models
+
+- **[Simulation Models in Java, Python and R (PDF)](documents/Bio7_Simulation_API_Tutorial.pdf)**: a tutorial of the simulation API of Bio7 ([direct download](https://raw.githubusercontent.com/Bio7/bio7documentation/main/documents/Bio7_Simulation_API_Tutorial.pdf))
+
+Write a model in a few lines of Java, Python or R, run it live in Bio7 (ImageJ, the 3D view, the WorldWind globe) and export it as an interactive HTML page which runs the same model in the web browser with the same results. The tutorial explains:
+
+- the wizard, a first model, the settings, the controls and the views of a model;
+- grids of states and values, agents in 3D, random numbers, mathematics, parallel computation and charts;
+- images, animated glTF models, drawn shapes and several charts;
+- geospatial models with GDAL and agents on the WorldWind globe;
+- models in Python (Pyodide in the page) and R (webR in the page);
+- the export as an HTML page (layouts, themes, maps, WebGL), a reference of the API and the examples.
+
+The examples are in the projects Bio7_Java_Examples (packages `simulation` and `simulation.api`) and Bio7_Script_Examples (folders `Python/Simulation` and `R_Simulation`) of the [Bio7 examples](https://github.com/Bio7/bio7_examples); the classes are documented in the [API](https://bio7.github.io/bio7documentation/api/com/eco/bio7/simulation/package-summary.html).
+
 ## 📄 Further documents
 
 Guides and test reports of Bio7 4.0 (PDF):
