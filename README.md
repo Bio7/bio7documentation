@@ -24,6 +24,7 @@ Guides and test reports of Bio7 4.0 (PDF):
 | [Stress test of the Python and R bridges: Windows](documents/Bio7_Bridge_Stresstest_Windows.pdf) | The embedded Python and R under load: latency, data transfer, memory, callbacks, numerical precision |
 | [Stress test of the Python and R bridges: Linux (WSL)](documents/Bio7_Bridge_Stresstest_Linux_WSL.pdf) | The same tests on Linux (Ubuntu in WSL 2) |
 | [Stress test of the Python and R bridges: macOS](documents/Bio7_Bridge_Stresstest_macOS.pdf) | The same tests on macOS (Apple Silicon), with the comparison against standalone Python and R processes |
+| [Bio7 4.0 API (HTML)](https://bio7.github.io/bio7documentation/api/index.html) | The Java API of Bio7 for scripts and models (Javadoc): Work, CustomView, the R and Python bridges, the 3D views and measurements, GDAL, ImageJ methods and WorldWind |
 | [3D measurements compared with PyMeshLab, Open3D, VTK and CGAL](documents/Bio7_3D_Measurement_Library_Comparison.pdf) | The measurements of the 3D perspective against five mesh libraries and analytic values, with an introduction to voxels, surfaces and measurement errors |
 | [Bio7, CGAL and VTK: a detailed comparison](documents/Bio7_3D_CGAL_VTK_Comparison.pdf) | Mesh validity, distance to the exact surface, Hausdorff distance, mesh quality, convex hull, inside test, smoothing and speed |
 
