@@ -116,7 +116,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The components of the Bio7 window (Resource perspective with an R script, dark theme)
+The components of the Bio7 window (Resource perspective with an R script, light default theme)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:window-components"
@@ -146,23 +146,15 @@ name "fig:window-components"
 \begin_layout Itemize
 
 \series bold
-(2) The search
+(2) The perspective bar
 \series default
- (Ctrl/Cmd+3): finds commands, views, perspectives and preferences by their names.
+: opens and switches the perspectives (e.g., R, Python, Document, ImageJ Edit, Resource, Image Analysis, 3d, WorldWind, Web, Custom).
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-(3) The perspective bar
-\series default
-: opens and switches the perspectives (e.g., R, Document, ImageJ Edit, Resource, R ImageJ Analysis, 3d, WorldWind, Web, Custom).
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-(4) and (8) Views
+(3) and (7) Views
 \series default
 , e.g., the Project Explorer and the Outline.
 \end_layout
@@ -170,7 +162,7 @@ name "fig:window-components"
 \begin_layout Itemize
 
 \series bold
-(5) The editor area
+(4) The editor area
 \series default
  with the opened editors (e.g., the R editor).
 \end_layout
@@ -178,7 +170,7 @@ name "fig:window-components"
 \begin_layout Itemize
 
 \series bold
-(6) Views below the editor
+(5) Views below the editor
 \series default
 , e.g., the Console, the Properties and the Snippets.
 \end_layout
@@ -186,9 +178,17 @@ name "fig:window-components"
 \begin_layout Itemize
 
 \series bold
-(7) The status line
+(6) The status line
 \series default
 : the memory (a click on the trash icon starts the garbage collection of Java), the selection, the time steps of a simulation (see Counter Reset) and the state of the editor (e.g., Writable, Insert, the line).
+\end_layout
+
+\begin_layout Standard
+The search (
+\series bold
+Ctrl/Cmd+3
+\series default
+, Find Actions) finds commands, views, perspectives and preferences by their names.
 \end_layout
 
 \begin_layout Section
@@ -300,7 +300,26 @@ Interrupt R
 \begin_layout Itemize
 
 \series bold
-(4) Create Projects or Files:
+(4) Python:
+\series default
+ Starts the embedded Python (see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:The-Python-Perspective"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) for the data transfer with ImageJ and R and matplotlib plots in Bio7. Python runs in the process of Bio7, too.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+(5) Create Projects or Files:
 \series default
  Creates a project with a default file in one step: a Bio7 Java project (also with a WindowBuilder GUI, OpenGL, WorldWind or an ImageJ plugin), a project with an R, R Markdown, Quarto, R Shiny, Python, Groovy, JavaScript, ImageJ macro or LaTeX file, a WindowBuilder GUI for a Bio7 model, R or Python, a reproducible project or another project or file (
 \series bold
@@ -312,7 +331,7 @@ Other...
 \begin_layout Itemize
 
 \series bold
-(5) Editor actions:
+(6) Editor actions:
 \series default
  The actions of the active editor, e.g., 
 \series bold
@@ -328,7 +347,7 @@ Interpret ImageJ Macro
 \begin_layout Itemize
 
 \series bold
-(6) Open a Terminal:
+(7) Open a Terminal:
 \series default
  Opens a terminal (a shell of the operating system) in the Terminal view.
 \end_layout
