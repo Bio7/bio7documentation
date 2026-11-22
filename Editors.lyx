@@ -1272,6 +1272,1460 @@ Clear Profile Marks
 \end_layout
 
 \begin_layout Subsection
+Simulation Models and the Export as HTML Page
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Simulation-API"
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+The simulation API of Bio7 (the package 
+\family typewriter
+com.eco.bio7.simulation
+\family default
+) is an easy way to create simulation models in Java: a model implements 
+\family typewriter
+init()
+\family default
+ (the start state) and 
+\family typewriter
+step()
+\family default
+ (one time step), runs live in Bio7 (in ImageJ, in the 3D view or on the WorldWind globe) and can be exported as an interactive HTML page: the model is translated to JavaScript and runs in the web browser with the same results. The settings of the model become sliders, checkboxes and choices in Bio7 and in the page.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_dashboard.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+An exported simulation (an epidemic on a grid) in the layout Dashboard: Play/Pause, the speed, the grid, the chart and the settings of the model.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Creating a Model
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+File > New > Bio7 Simulation Project
+\series default
+ (or the menu of the toolbar button for new projects) creates a project with a model in Java, Python or R. The wizard asks for the name of the project, the language, the name of the class (the model), the kind of the model (a 2D grid with states or with values in ImageJ, or 3D agents in the 3D view) and for Java an optional settings panel for the WindowBuilder and an optional parallel computation. The comment at the start of the class (the script) explains the API.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Compile Java
+\series default
+ creates the model and calls 
+\family typewriter
+init()
+\family default
+: the grid opens in the ImageJ-Canvas view (the agents in the 3D view, geospatial agents on the WorldWind globe) with a 
+\series bold
+Settings
+\series default
+ view. The first setup arranges the views in the
+\series bold
+Custom
+\series default
+ perspective: the settings on the left (below the options of the display, e.g., Options3D or the options of WorldWind), on the right the editor above the display of the model and the view Charts beside the display. With
+\family typewriter
+ arrangeViews = false
+\family default
+ the views open in the current perspective.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Play/Pause
+\series default
+ button of the toolbar calls 
+\family typewriter
+step()
+\family default
+ repeatedly (its menu sets the time interval), the 
+\series bold
+Setup
+\series default
+ button calls 
+\family typewriter
+init()
+\family default
+ again. The button shows the state of the simulation: a pause icon while the model runs, a play icon while it is paused.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+Settings
+\series default
+ view has the same controls at the top: 
+\series bold
+Play/Pause
+\series default
+, 
+\series bold
+Step
+\series default
+ (one time step while paused), 
+\series bold
+Setup
+\series default
+ (a new start, the counter at 0) and the speed (the slider of the Control view), followed by the settings of the model and 
+\series bold
+Export HTML...
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+A new model (a compiled class or a script) pauses the simulation, resets the counter of the time steps and opens the Custom perspective new: the panels of the model before (settings, charts) are closed. If the model draws charts, the view 
+\series bold
+Charts
+\series default
+ is shown from the start (beside the display).
+\end_layout
+
+\begin_layout Subsubsection
+The Classes of the API
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+GridModel
+\family default
+: a grid of cells with integer states and a palette of colors (e.g., cellular automata, a forest fire, an epidemic).
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+ValueGridModel
+\family default
+: a grid of double values with a color map (e.g., a diffusion, a reaction-diffusion).
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+AgentModel
+\family default
+ with 
+\family typewriter
+Agent
+\family default
+: agents in a 3D box, displayed as spheres in the 3D view (e.g., a swarm, a predator-prey model).
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+GeoGridModel
+\family default
+: a georeferenced grid whose data (rasters and vectors in all formats of GDAL) is read with GDAL in 
+\family typewriter
+load()
+\family default
+ (e.g., a wildfire on a terrain with land cover data).
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+GeoAgentModel
+\family default
+ with 
+\family typewriter
+GeoAgent
+\family default
+: agents on the Earth (longitude, latitude, altitude), displayed as points or OpenGL 3D shapes on the WorldWind globe (e.g., a bird migration, an epidemic in cities).
+\end_layout
+
+\begin_layout Standard
+A small model (a Game of Life):
+\end_layout
+
+\begin_layout LyX-Code
+public class Life extends GridModel {
+\begin_inset Newline newline
+\end_inset
+
+    @Param(label = "Start density", min = 0, max = 1, step = 0.01, restart = true)
+\begin_inset Newline newline
+\end_inset
+
+    double density = 0.3;
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+    public void init() {
+\begin_inset Newline newline
+\end_inset
+
+        size(120, 120);
+\begin_inset Newline newline
+\end_inset
+
+        palette("#ffffff", "#1f3a93");
+\begin_inset Newline newline
+\end_inset
+
+        for (int i = 0; i < cells.length; i++)
+\begin_inset Newline newline
+\end_inset
+
+            cells[i] = random() < density ? 1 : 0;
+\begin_inset Newline newline
+\end_inset
+
+    }
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+    public void step() {
+\begin_inset Newline newline
+\end_inset
+
+        for (int y = 0; y < height; y++)
+\begin_inset Newline newline
+\end_inset
+
+            for (int x = 0; x < width; x++) {
+\begin_inset Newline newline
+\end_inset
+
+                int n = countNeighbors(x, y, 1);
+\begin_inset Newline newline
+\end_inset
+
+                setNext(x, y, get(x, y) == 1 ? (n == 2 || n == 3 ? 1 : 0) : (n == 3 ? 1 : 0));
+\begin_inset Newline newline
+\end_inset
+
+            }
+\begin_inset Newline newline
+\end_inset
+
+        swap();
+\begin_inset Newline newline
+\end_inset
+
+        chart("Living cells", count(1));
+\begin_inset Newline newline
+\end_inset
+
+    }
+\begin_inset Newline newline
+\end_inset
+
+}
+\end_layout
+
+\begin_layout Subsubsection
+Settings, Actions and Charts
+\end_layout
+
+\begin_layout Itemize
+A field with 
+\family typewriter
+@Param
+\family default
+ is a setting: a slider (with 
+\family typewriter
+min
+\family default
+, 
+\family typewriter
+max
+\family default
+ and 
+\family typewriter
+step
+\family default
+), a number field, a checkbox (a boolean), a choice (a String with 
+\family typewriter
+options
+\family default
+) or a text field. 
+\family typewriter
+restart = true
+\family default
+ calls 
+\family typewriter
+init()
+\family default
+ after a change, 
+\family typewriter
+group
+\family default
+ shows a heading above the settings of the group.
+\end_layout
+
+\begin_layout Itemize
+A public method without parameters with 
+\family typewriter
+@Action
+\family default
+ is a button.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+chart(name, value)
+\family default
+ adds a value to a series of the chart (one value per step).
+\end_layout
+
+\begin_layout Itemize
+The settings are shown in the 
+\series bold
+Settings
+\series default
+ view of Bio7. A model can also show an own panel designed with the WindowBuilder (
+\family typewriter
+settings(Composite parent)
+\family default
+): its widgets are bound to the settings and actions by the names of their fields (e.g., a Scale 
+\family typewriter
+feed
+\family default
+ to the field 
+\family typewriter
+feed
+\family default
+, a Label 
+\family typewriter
+feedValue
+\family default
+ shows the value, a Button 
+\family typewriter
+setup
+\family default
+ calls the setup).
+\end_layout
+
+\begin_layout Subsubsection
+Random Numbers, Mathematics and Parallel Computation
+\end_layout
+
+\begin_layout Itemize
+The random numbers of the model (
+\family typewriter
+random()
+\family default
+, 
+\family typewriter
+random(min, max)
+\family default
+, 
+\family typewriter
+randomInt
+\family default
+, 
+\family typewriter
+chance
+\family default
+, 
+\family typewriter
+randomGaussian
+\family default
+, 
+\family typewriter
+randomExponential
+\family default
+, 
+\family typewriter
+randomPoisson
+\family default
+, 
+\family typewriter
+randomElement
+\family default
+, 
+\family typewriter
+shuffle
+\family default
+, 
+\family typewriter
+seed
+\family default
+) are the same in Bio7 and in the browser.
+\end_layout
+
+\begin_layout Itemize
+Functions for the models: 
+\family typewriter
+clamp
+\family default
+, 
+\family typewriter
+lerp
+\family default
+, 
+\family typewriter
+mapRange
+\family default
+, 
+\family typewriter
+wrapAround
+\family default
+, 
+\family typewriter
+sq
+\family default
+, 
+\family typewriter
+distance
+\family default
+, 
+\family typewriter
+distance3
+\family default
+, 
+\family typewriter
+logistic
+\family default
+, 
+\family typewriter
+logisticGrowth
+\family default
+, the statistics 
+\family typewriter
+sum
+\family default
+, 
+\family typewriter
+mean
+\family default
+, 
+\family typewriter
+variance
+\family default
+, 
+\family typewriter
+sd
+\family default
+, 
+\family typewriter
+min
+\family default
+, 
+\family typewriter
+max
+\family default
+ and 
+\family typewriter
+rk4
+\family default
+ (a Runge-Kutta step for systems of differential equations, the equations as a lambda).
+\end_layout
+
+\begin_layout Itemize
+Parallel computation: 
+\family typewriter
+IntStream.range(0, height).parallel().forEach(y -> ...)
+\family default
+ computes the rows (or the agents) in parallel threads of Java (the browser runs a loop). In the threads 
+\family typewriter
+randomAt(index, k)
+\family default
+ gives the random numbers: it is computed from the seed, the time step and the index, so the results are the same in any order of the threads. Each thread writes only its own cells (
+\family typewriter
+setNext
+\family default
+) or its own agent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_focus3d.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+An agent model (a swarm) exported with the layout Focus and the dark theme: the WebGL view with lighting, shadows and the View panel (background, lighting, shapes, floor).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Geospatial Models: GDAL, WorldWind and Maps
+\end_layout
+
+\begin_layout Itemize
+In 
+\family typewriter
+load()
+\family default
+ a 
+\family typewriter
+GeoGridModel
+\family default
+ reads its data with GDAL (Preferences > GDAL): 
+\family typewriter
+grid(file, columns)
+\family default
+ defines the grid by a raster (extent and coordinate system), 
+\family typewriter
+raster(file)
+\family default
+ resamples a raster to the cells, 
+\family typewriter
+vector(file, value)
+\family default
+ rasterizes points, lines and polygons. 
+\family typewriter
+addLayer(name, values)
+\family default
+ stores a layer, 
+\family typewriter
+layer(name)
+\family default
+ returns a copy for each setup. The relative paths are found in the project of the model.
+\end_layout
+
+\begin_layout Itemize
+Helpers: 
+\family typewriter
+colAt(lon, lat)
+\family default
+, 
+\family typewriter
+rowAt(lon, lat)
+\family default
+, 
+\family typewriter
+lon(x)
+\family default
+, 
+\family typewriter
+lat(y)
+\family default
+, 
+\family typewriter
+cellSizeMeters
+\family default
+, 
+\family typewriter
+gradient
+\family default
+ and 
+\family typewriter
+slopeDegrees
+\family default
+ (e.g., of an elevation), 
+\family typewriter
+showValues
+\family default
+ (a layer with a color map) and 
+\family typewriter
+showStates
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+showOnGlobe()
+\family default
+ shows the grid live on the WorldWind globe. A 
+\family typewriter
+GeoAgentModel
+\family default
+ shows its agents on the globe as points or as 3D shapes (
+\family typewriter
+agentShape
+\family default
+: sphere, cone, box, cylinder in the altitude and heading of the agents, 
+\family typewriter
+viewPitch
+\family default
+ for an oblique view).
+\end_layout
+
+\begin_layout Itemize
+The HTML page shows geospatial models on an online map (Leaflet with OpenTopoMap; OpenStreetMap needs a page on a web server). The page embeds the loaded layers: the licenses of the data must allow it, and 
+\family typewriter
+attribution(text)
+\family default
+ shows the sources of the data on the map (e.g., ESA WorldCover, CC BY 4.0).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_wildfire_map.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A geospatial model (a wildfire in the Harz mountains with elevation and land cover data read with GDAL) exported as HTML page: the grid on an online map with the sources of the data.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_balloons_globe.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A geospatial agent model on the WorldWind globe of Bio7: hot air balloons as OpenGL 3D shapes in their altitude; on the left the options of WorldWind and the settings with Play/Pause, Step, Setup and the speed, on the right the editor, the globe and the view Charts.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The Export as HTML Page
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Export Simulation as HTML...
+\series default
+ in the menu of the Play/Pause button, in the context menu of the Java editor (and of the R editor) or in the Settings view exports the model of the active editor (or the compiled model, the running model of a script).
+\end_layout
+
+\begin_layout Itemize
+The dialog: the file, the title and the description (from the comment of the class), the speed, the theme (automatic, light, dark), the layout of the page (Classic, Dashboard, Focus, Story; all adapt to phones), the accent color, the options of the 3D view (background, lighting, shape, floor, shadows, rotation) or the base map, autoplay and whether the page is opened in the web browser.
+\end_layout
+
+\begin_layout Itemize
+The page: Play/Pause, Step, Reset, the speed, the settings, the actions, the chart, a light/dark switch, the View panel of the 3D view and the Map panel of geospatial models. It is one HTML file (only Leaflet and the map tiles are loaded online).
+\end_layout
+
+\begin_layout Itemize
+The translation supports a subset of Java: fields, methods (no overloading), static nested classes, the statements (no try/catch), arrays, 
+\family typewriter
+Math
+\family default
+, lambdas, 
+\family typewriter
+ArrayList
+\family default
+, 
+\family typewriter
+HashMap
+\family default
+, 
+\family typewriter
+String
+\family default
+ methods, 
+\family typewriter
+IntStream
+\family default
+ and 
+\family typewriter
+System.out.println
+\family default
+ (the console of the browser). Not supported: 
+\family typewriter
+java.util.Random
+\family default
+ (use 
+\family typewriter
+random()
+\family default
+), 
+\family typewriter
+Math.random()
+\family default
+, anonymous classes, enums and other libraries. The errors are marked in the Java editor.
+\end_layout
+
+\begin_layout Subsubsection
+Images, 3D Models, Shapes and Charts
+\end_layout
+
+\begin_layout Standard
+All models can show images, animated 3D models, shapes and several charts, in Bio7 and in the exported page (Java, Python and R):
+\end_layout
+
+\begin_layout Itemize
+Images and 3D models:
+\family typewriter
+loadImage(name, file)
+\family default
+(PNG with transparency) and
+\family typewriter
+loadModel(name, file)
+\family default
+(glTF
+\family typewriter
+.glb
+\family default
+or
+\family typewriter
+.gltf
+\family default
+, also skinned and animated). An agent shows an image (
+\family typewriter
+agent.image
+\family default
+, a billboard in 3D, an image on the map) or a model (
+\family typewriter
+agent.model
+\family default
+,
+\family typewriter
+agent.animation
+\family default
+,
+\family typewriter
+agent.size
+\family default
+) in the 3D view, on the WorldWind globe and in the WebGL view of the page; the heading is the direction of the movement (or
+\family typewriter
+agent.heading
+\family default
+). The page embeds the files.
+\end_layout
+
+\begin_layout Itemize
+Shapes (drawn again in each step, in the coordinates of the model):
+\family typewriter
+drawLine
+\family default
+,
+\family typewriter
+drawLine3
+\family default
+,
+\family typewriter
+drawPath
+\family default
+,
+\family typewriter
+drawPolygon
+\family default
+,
+\family typewriter
+drawCircle
+\family default
+,
+\family typewriter
+drawRect
+\family default
+,
+\family typewriter
+drawText
+\family default
+and
+\family typewriter
+drawImage(name, x, y, size, angle)
+\family default
+, e.g., animals as images on a grid (discrete or continuous), a fence, the line of a hunt or the territory of a wolf on the globe (the radius in km).
+\end_layout
+
+\begin_layout Itemize
+Charts:
+\family typewriter
+chart(name, value)
+\family default
+(the first chart),
+\family typewriter
+chart(chart, name, value)
+\family default
+(further charts with a title),
+\family typewriter
+chartXY(chart, name, x, y)
+\family default
+(e.g., a phase plot) and
+\family typewriter
+chartBars(chart, labels, values)
+\family default
+(a histogram). Bio7 shows them in the view Charts below the display of the model, the page as panels.
+\end_layout
+
+\begin_layout Itemize
+Mathematics (also in the page with the same results): vectors and matrices (
+\family typewriter
+dot
+\family default
+,
+\family typewriter
+matMul
+\family default
+,
+\family typewriter
+matVec
+\family default
+,
+\family typewriter
+solve
+\family default
+,
+\family typewriter
+inverse
+\family default
+,
+\family typewriter
+determinant
+\family default
+), statistics (
+\family typewriter
+linearRegression
+\family default
+,
+\family typewriter
+correlation
+\family default
+,
+\family typewriter
+quantile
+\family default
+,
+\family typewriter
+median
+\family default
+,
+\family typewriter
+normalPdf
+\family default
+,
+\family typewriter
+normalCdf
+\family default
+), a smooth noise (
+\family typewriter
+noise
+\family default
+,
+\family typewriter
+fractalNoise
+\family default
+),
+\family typewriter
+cosDeg
+\family default
+,
+\family typewriter
+sinDeg
+\family default
+,
+\family typewriter
+headingOf
+\family default
+,
+\family typewriter
+randomBinomial
+\family default
+and
+\family typewriter
+randomWeighted
+\family default
+. In Bio7 a Java model can also use the libraries Apache Commons Math, Jama, Parallel Colt, JOML and JTS (not in the page).
+\end_layout
+
+\begin_layout LyX-Code
+loadImage("sheep", "data/sprites/sheep.png");
+\end_layout
+
+\begin_layout LyX-Code
+loadModel("wolf", "data/models/wolf.glb");
+\end_layout
+
+\begin_layout LyX-Code
+drawImage("sheep", a.x, a.y, 2, a.heading);
+\end_layout
+
+\begin_layout LyX-Code
+drawPolygon(FENCE_X, FENCE_Y, "#ffffff22", "#f5f0e6");
+\end_layout
+
+\begin_layout LyX-Code
+chart("Mean energy", "Sheep", energy);
+\end_layout
+
+\begin_layout LyX-Code
+chartXY("Phase plot", "Sheep - wolves", nSheep, nWolves);
+\end_layout
+
+\begin_layout Standard
+The examples SheepWolvesGrid, SheepWolvesField, Pasture3D and AlpineSheep (Bio7_Java_Examples) and sheep_wolves and pasture_3d (Python and R in Bio7_Script_Examples) show them; the sheep and the wolf (images and glTF models) are in the folders data/sprites and data/models of the projects.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_sheep_wolves.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sheep and wolves as images on a field (a continuous model) with a fence, the view of a wolf and the view Charts: the populations, a second chart, a phase plot and a histogram.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_pasture3d_page.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Animated glTF models of sheep and wolves in the exported page (WebGL): the sheep graze, walk and run away from the wolves; the fence and the lines of the hunt are drawn shapes.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Models in Python and R
+\end_layout
+
+\begin_layout Standard
+The same models can be written in Python and in R. A script uses the module
+\family typewriter
+bio7sim
+\family default
+of the embedded Python (numpy arrays) or the functions of
+\family typewriter
+bio7sim
+\family default
+of the embedded R (matrices and data frames; no package is needed). The last line
+\family typewriter
+simulation(model)
+\family default
+starts the model in Bio7: a Java model of the same kind displays the state of the script (ImageJ, the 3D view, the WorldWind globe) and shows its settings and buttons in the Custom perspective. Play/Pause, Setup, the Settings view and the HTML export work as for Java models.
+\end_layout
+
+\begin_layout Standard
+The Game of Life in Python:
+\end_layout
+
+\begin_layout LyX-Code
+from bio7sim import GridModel, param, action, simulation
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+class Life(GridModel):
+\end_layout
+
+\begin_layout LyX-Code
+    density = param(0.3, min=0, max=1, step=0.01, label="Start density", restart=True)
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+    def init(self):
+\end_layout
+
+\begin_layout LyX-Code
+        self.size(120, 120)
+\end_layout
+
+\begin_layout LyX-Code
+        self.palette("#ffffff", "#1f3a93")
+\end_layout
+
+\begin_layout LyX-Code
+        self.cells[:] = self.random_array() < self.density
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+    def step(self):
+\end_layout
+
+\begin_layout LyX-Code
+        n = self.count_neighbors(1)
+\end_layout
+
+\begin_layout LyX-Code
+        self.cells = ((n == 3) | ((self.cells == 1) & (n == 2))).astype(int)
+\end_layout
+
+\begin_layout LyX-Code
+        self.chart("Living cells", self.count(1))
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+simulation(Life)
+\end_layout
+
+\begin_layout Standard
+The same model in R:
+\end_layout
+
+\begin_layout LyX-Code
+m <- grid_model("Life")
+\end_layout
+
+\begin_layout LyX-Code
+m$param("density", 0.3, min = 0, max = 1, step = 0.01, label = "Start density", restart = TRUE)
+\end_layout
+
+\begin_layout LyX-Code
+m$init <- function(m) {
+\end_layout
+
+\begin_layout LyX-Code
+  m$size(120, 120)
+\end_layout
+
+\begin_layout LyX-Code
+  m$palette("#ffffff", "#1f3a93")
+\end_layout
+
+\begin_layout LyX-Code
+  m$cells[] <- as.integer(m$random(length(m$cells)) < m$density)
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout LyX-Code
+m$step <- function(m) {
+\end_layout
+
+\begin_layout LyX-Code
+  n <- m$count_neighbors(1)
+\end_layout
+
+\begin_layout LyX-Code
+  m$cells[] <- as.integer(n == 3 | (m$cells == 1 & n == 2))
+\end_layout
+
+\begin_layout LyX-Code
+  m$chart("Living cells", m$count(1))
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout LyX-Code
+simulation(m)
+\end_layout
+
+\begin_layout Itemize
+Python: a class extends
+\family typewriter
+GridModel
+\family default
+,
+\family typewriter
+ValueGridModel
+\family default
+,
+\family typewriter
+AgentModel
+\family default
+,
+\family typewriter
+GeoGridModel
+\family default
+or
+\family typewriter
+GeoAgentModel
+\family default
+; settings are class attributes with
+\family typewriter
+param(...)
+\family default
+, buttons methods with
+\family typewriter
+@action
+\family default
+. The grids are numpy arrays
+\family typewriter
+cells[y, x]
+\family default
+, the random numbers come from a numpy
+\family typewriter
+Generator
+\family default
+(
+\family typewriter
+self.rng
+\family default
+,
+\family typewriter
+self.random_array()
+\family default
+).
+\end_layout
+
+\begin_layout Itemize
+R:
+\family typewriter
+grid_model()
+\family default
+,
+\family typewriter
+value_grid_model()
+\family default
+,
+\family typewriter
+agent_model()
+\family default
+,
+\family typewriter
+geo_grid_model()
+\family default
+and
+\family typewriter
+geo_agent_model()
+\family default
+create a model (an environment);
+\family typewriter
+m$param(...)
+\family default
+adds a setting,
+\family typewriter
+m$action(...)
+\family default
+a button. The grids are matrices (1-based), the agents data frames; the random numbers are those of R.
+\end_layout
+
+\begin_layout Itemize
+Geospatial scripts read their data in
+\family typewriter
+load()
+\family default
+(Python) or
+\family typewriter
+m$load
+\family default
+(R) with the GDAL of Bio7 (
+\family typewriter
+grid
+\family default
+,
+\family typewriter
+raster
+\family default
+,
+\family typewriter
+vector
+\family default
+,
+\family typewriter
+add_layer
+\family default
+); relative paths are searched from the folder of the script up to the project.
+\end_layout
+
+\begin_layout Itemize
+The HTML export runs the script in the web browser: Python with Pyodide (Python and numpy in WebAssembly), R with webR (R in WebAssembly). Both are loaded from the internet when the page is opened (the first start takes a few seconds). The page gets the settings, the buttons, the chart and the loaded data of the running model (run the script once before the export). The results are the same as in Bio7 (the same code, the same random numbers with the same seed).
+\end_layout
+
+\begin_layout Itemize
+The wizard creates Python and R models (option Language), the examples are in the project Bio7_Script_Examples (folders
+\family typewriter
+Python/Simulation
+\family default
+and
+\family typewriter
+R_Simulation
+\family default
+, each with a README of all functions).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_python_epidemic.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+An epidemic model in Python: the settings of the script (all kinds of controls, groups and buttons) on the left, the grid in ImageJ on the right (the Custom perspective).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_r_wildfire_page.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The wildfire model of R exported as HTML page: the script runs in the web browser with webR, the land cover and elevation data loaded in Bio7 with GDAL are embedded in the page.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Examples
+\end_layout
+
+\begin_layout Standard
+The project Bio7_Java_Examples contains the package 
+\family typewriter
+simulation
+\family default
+ with the examples Game of Life, forest fire, Langton's ant, epidemic (all kinds of settings and a WindowBuilder panel), heat diffusion, reaction-diffusion, swarm, predator-prey, the geospatial models wildfire, rain runoff, lava flow and species dispersal (with data in data/geo) and the WorldWind models bird migration, city epidemic, volcanic ash cloud and hot air balloons. The package 
+\family typewriter
+simulation.api
+\family default
+ explains all methods of the API in six examples (ApiBasics, ApiGrid, ApiValueGrid, ApiAgents, ApiGeoGrid, ApiGeoAgents) with a README. The project Bio7_Script_Examples contains the same kinds of models in Python (folder Python/Simulation) and R (folder R_Simulation): Game of Life, heat diffusion, epidemic, swarm, wildfire and hot air balloons. The Javadoc of the classes is part of the Bio7 API.
+\end_layout
+
+\begin_layout Subsection
 WindowBuilder GUIs: Export to Shiny and JavaScript
 \begin_inset CommandInset label
 LatexCommand label

@@ -14,6 +14,7 @@ com.eco.bio7.pyffm
 com.eco.bio7.rbridge
 com.eco.bio7.rbridge.backend
 com.eco.bio7.rffm
+com.eco.bio7.simulation
 com.eco.bio7.spatial
 com.eco.bio7.time
 com.eco.bio7.worldwind

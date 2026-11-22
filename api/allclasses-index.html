@@ -66,23 +66,47 @@ initTheme();
 <h1 title="All Classes and Interfaces" class="title">All Classes and Interfaces</h1>
 </div>
 <div id="all-classes-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="all-classes-table-tab0" role="tab" aria-selected="true" aria-controls="all-classes-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="all-classes-table-tab1" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab1', 2)" class="table-tab">Interfaces</button><button id="all-classes-table-tab2" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab2', 2)" class="table-tab">Classes</button><button id="all-classes-table-tab3" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab3', 2)" class="table-tab">Enum Classes</button><button id="all-classes-table-tab4" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab4', 2)" class="table-tab">Record Classes</button><button id="all-classes-table-tab5" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab5', 2)" class="table-tab">Exception Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="all-classes-table-tab0" role="tab" aria-selected="true" aria-controls="all-classes-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="all-classes-table-tab1" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab1', 2)" class="table-tab">Interfaces</button><button id="all-classes-table-tab2" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab2', 2)" class="table-tab">Classes</button><button id="all-classes-table-tab3" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab3', 2)" class="table-tab">Enum Classes</button><button id="all-classes-table-tab4" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab4', 2)" class="table-tab">Record Classes</button><button id="all-classes-table-tab5" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab5', 2)" class="table-tab">Exception Classes</button><button id="all-classes-table-tab6" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab6', 2)" class="table-tab">Annotation Interfaces</button></div>
 <div id="all-classes-table.tabpanel" role="tabpanel" aria-labelledby="all-classes-table-tab0">
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/actions/Bio7Action.html" title="class in com.eco.bio7.actions">Bio7Action</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab6"><a href="com/eco/bio7/simulation/Action.html" title="annotation interface in com.eco.bio7.simulation">Action</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab6">
+<div class="block">Marks a method of a simulation model (public, without parameters) as an
+action: a button in the settings of Bio7 and of the HTML export (e.g., "Add
+a glider").</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/Agent.html" title="class in com.eco.bio7.simulation">Agent</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">An agent of an <a href="com/eco/bio7/simulation/AgentModel.html" title="class in com.eco.bio7.simulation"><code>AgentModel</code></a>: a position (x, y, z in the units of the
+box of the model, z is the height) and an optional color (e.g., "#d62728",
+null: the color of the model).</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/AgentModel.html" title="class in com.eco.bio7.simulation">AgentModel&lt;A&gt;</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A simulation of agents in a box (e.g., a swarm): the agents (subclasses of
+<a href="com/eco/bio7/simulation/Agent.html" title="class in com.eco.bio7.simulation"><code>Agent</code></a>) are displayed as spheres in the 3D view of Bio7 (and in the 3D
+view of the HTML export).</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/actions/Bio7Action.html" title="class in com.eco.bio7.actions">Bio7Action</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">This class provides some static methods to access some internal Bio7 methods.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/batch/Bio7Dialog.html" title="class in com.eco.bio7.batch">Bio7Dialog</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/batch/Bio7Dialog.html" title="class in com.eco.bio7.batch">Bio7Dialog</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">This class provides some default dialogs for the Bio7 application.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/rbridge/Bio7Grid.html" title="class in com.eco.bio7.rbridge">Bio7Grid</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/rbridge/Bio7Grid.html" title="class in com.eco.bio7.rbridge">Bio7Grid</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">This class gives access to the Table component (based on the Nebula Grid
 Widget) of Bio7.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ChartData.html" title="class in com.eco.bio7.simulation">ChartData</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A chart of a model: a line chart of values over the steps (chart), an XY
+chart (chartXY, e.g., a phase plot) or a bar chart (chartBars, replaced in
+each call).</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/Clipping.html" title="class in com.eco.bio7.spatial">Clipping</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
@@ -185,14 +209,55 @@ vectors as surface shapes and placemarks.</div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
 <div class="block">The image and its sector (WGS84) of a raster.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab4"><a href="com/eco/bio7/gdal/Geometry.html" title="class in com.eco.bio7.gdal">Geometry</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab4">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/GeoAgent.html" title="class in com.eco.bio7.simulation">GeoAgent</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">An agent of a <a href="com/eco/bio7/simulation/GeoAgentModel.html" title="class in com.eco.bio7.simulation"><code>GeoAgentModel</code></a>: a geographic position (longitude and
+latitude in degrees, WGS84), a color (e.g., "#d62728", null: the color of
+the model), a size (the radius of the point in pixels, 0: the size of the
+model), an optional label, an altitude and a heading (for the 3D shapes on
+the WorldWind globe).</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/GeoAgentModel.html" title="class in com.eco.bio7.simulation">GeoAgentModel&lt;A&gt;</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A simulation of agents on the Earth (e.g., migrating animals, cities in an
+epidemic, ships): the agents (<a href="com/eco/bio7/simulation/GeoAgent.html" title="class in com.eco.bio7.simulation"><code>GeoAgent</code></a>) have a longitude and a
+latitude and are displayed as points on the WorldWind globe of Bio7 (the
+WorldWind perspective is opened) and on a map in the HTML export (online
+base maps).</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/GeoGridModel.html" title="class in com.eco.bio7.simulation">GeoGridModel</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A simulation on a georeferenced grid (a geospatial model, e.g., a wildfire
+on a terrain, a runoff or a species dispersal): the grid and its data layers
+are read with GDAL in Bio7 (rasters and vectors in any format of GDAL, e.g.,
+GeoTIFF, GeoPackage, Shapefile, GeoJSON) and resampled or rasterized to the
+cells.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab4"><a href="com/eco/bio7/gdal/Geometry.html" title="class in com.eco.bio7.gdal">Geometry</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
 <div class="block">A geometry with its coordinates (parsed from WKT): points, line strings and
 polygons (also multi geometries and collections).</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="com/eco/bio7/gdal/GeometryType.html" title="enum class in com.eco.bio7.gdal">GeometryType</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="com/eco/bio7/gdal/GeometryType.html" title="enum class in com.eco.bio7.gdal">GeometryType</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
 <div class="block">The geometry types of vector layers (OGRwkbGeometryType, 2D).</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/Gltf.html" title="class in com.eco.bio7.simulation">Gltf</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A 3D model of glTF 2.0 (.glb or .gltf): the meshes (triangles with normals,
+texture coordinates, the base color and the texture of the material), the
+nodes, the skins and the animations (translation, rotation and scale of the
+nodes; linear, step and cubic spline interpolation).</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/Gltf.Mesh.html" title="class in com.eco.bio7.simulation">Gltf.Mesh</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A mesh of a pose: the triangles and the material.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/GridModel.html" title="class in com.eco.bio7.simulation">GridModel</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A simulation on a grid of cells (e.g., a cellular automaton like the Game of
+Life): the cells have integer states which are displayed with the colors of
+the palette in an ImageJ image (and in the 2D view of the HTML export).</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
@@ -215,20 +280,39 @@ of values over time.</div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Creates and renders an iso surface of an ImageJ stack.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/Measurement3d.html" title="class in com.eco.bio7.spatial">Measurement3d</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/JavaToJs.html" title="class in com.eco.bio7.simulation">JavaToJs</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Translates a simulation model (a subclass of <a href="com/eco/bio7/simulation/GridModel.html" title="class in com.eco.bio7.simulation"><code>GridModel</code></a>,
+<a href="com/eco/bio7/simulation/ValueGridModel.html" title="class in com.eco.bio7.simulation"><code>ValueGridModel</code></a> or <a href="com/eco/bio7/simulation/AgentModel.html" title="class in com.eco.bio7.simulation"><code>AgentModel</code></a>) from Java to JavaScript for the HTML export.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/JavaToJs.ActionInfo.html" title="class in com.eco.bio7.simulation">JavaToJs.ActionInfo</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">An action of the model (a method with the annotation Action): a button.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/JavaToJs.ParamInfo.html" title="class in com.eco.bio7.simulation">JavaToJs.ParamInfo</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A setting of the model (a field with the annotation Param).</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/Measurement3d.html" title="class in com.eco.bio7.spatial">Measurement3d</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Measurements of the iso surface and the volume in the 3D view.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/compile/Model.html" title="class in com.eco.bio7.compile">Model</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/compile/Model.html" title="class in com.eco.bio7.compile">Model</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">This is the superclass for the dynamic compiled Java class! If the methods
 (below) are not implemented in the subclass (Model) the methods of this class
 are executed!</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/loader3d/OBJModel.html" title="class in com.eco.bio7.loader3d">OBJModel</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/loader3d/OBJModel.html" title="class in com.eco.bio7.loader3d">OBJModel</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">A model of an OBJ file (with the materials and textures of the MTL file),
 centered and scaled to a size.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab6"><a href="com/eco/bio7/simulation/Param.html" title="annotation interface in com.eco.bio7.simulation">Param</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab6">
+<div class="block">Marks a field of a simulation model as a setting: the HTML export shows it as
+a control (a slider with min and max, else a number field, a checkbox for a
+boolean, a choice with options, else a text field).</div>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/Plot3D.html" title="class in com.eco.bio7.spatial">Plot3D</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
@@ -434,21 +518,109 @@ for Python.</div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab4">
 <div class="block">A character vector (null is NA).</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/console/ShellUtil.html" title="class in com.eco.bio7.console">ShellUtil</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ScriptExport.html" title="class in com.eco.bio7.simulation">ScriptExport</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">The HTML export of a simulation model of Python or R: the page runs the same
+script in the web browser, Python with Pyodide (Python and numpy in
+WebAssembly), R with webR (R in WebAssembly).</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ScriptSimulation.html" title="class in com.eco.bio7.simulation">ScriptSimulation</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Simulation models written in Python or R (the modules bio7sim of Python and
+R).</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ScriptSimulation.Agents.html" title="class in com.eco.bio7.simulation">ScriptSimulation.Agents</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Agents in a 3D box of a script.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ScriptSimulation.GeoAgents.html" title="class in com.eco.bio7.simulation">ScriptSimulation.GeoAgents</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Agents on the Earth of a script.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ScriptSimulation.GeoGrid.html" title="class in com.eco.bio7.simulation">ScriptSimulation.GeoGrid</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A geospatial grid of a script (the data is loaded by load() of the script with the GDAL of Bio7).</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ScriptSimulation.Grid.html" title="class in com.eco.bio7.simulation">ScriptSimulation.Grid</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A grid with integer states of a script.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/eco/bio7/simulation/ScriptSimulation.Host.html" title="interface in com.eco.bio7.simulation">ScriptSimulation.Host</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">A Java model of a script (the proxies of the kinds).</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ScriptSimulation.Script.html" title="class in com.eco.bio7.simulation">ScriptSimulation.Script</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">The script of a model: the description, the interpreter and a thread for the calls of the user interface.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ScriptSimulation.Spec.html" title="class in com.eco.bio7.simulation">ScriptSimulation.Spec</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">The description of a script model (sent by simulation(model) of the script).</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ScriptSimulation.Values.html" title="class in com.eco.bio7.simulation">ScriptSimulation.Values</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A grid with double values of a script.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/Shape.html" title="class in com.eco.bio7.simulation">Shape</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A shape drawn by a model in a time step (drawLine, drawPath, drawPolygon,
+drawCircle, drawRect, drawText, drawImage, drawLine3 of <a href="com/eco/bio7/simulation/Simulation.html" title="class in com.eco.bio7.simulation"><code>Simulation</code></a>).</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/console/ShellUtil.html" title="class in com.eco.bio7.console">ShellUtil</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">A shell utility class which opens a terminal and starts a process with
 arguments.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/SimulationRecorder.html" title="class in com.eco.bio7.spatial">SimulationRecorder</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/SimRandom.html" title="class in com.eco.bio7.simulation">SimRandom</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A small seeded random number generator (mulberry32) with the same numbers in
+Java and in JavaScript (the HTML export uses the same algorithm): a
+simulation started with the same seed gives the same results in Bio7 and in
+the web browser.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/Simulation.html" title="class in com.eco.bio7.simulation">Simulation</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">The base class of the simulation models of the simulation API (see
+<a href="com/eco/bio7/simulation/GridModel.html" title="class in com.eco.bio7.simulation"><code>GridModel</code></a>, <a href="com/eco/bio7/simulation/ValueGridModel.html" title="class in com.eco.bio7.simulation"><code>ValueGridModel</code></a> and <a href="com/eco/bio7/simulation/AgentModel.html" title="class in com.eco.bio7.simulation"><code>AgentModel</code></a>).</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="com/eco/bio7/simulation/Simulation.Derivatives.html" title="interface in com.eco.bio7.simulation">Simulation.Derivatives</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="block">The derivatives of a system of differential equations: dy/dt = f(t, y).</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/SimulationExport.html" title="class in com.eco.bio7.simulation">SimulationExport</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Exports a simulation model of the simulation API (a Java source file of a
+subclass of <a href="com/eco/bio7/simulation/GridModel.html" title="class in com.eco.bio7.simulation"><code>GridModel</code></a> or <a href="com/eco/bio7/simulation/AgentModel.html" title="class in com.eco.bio7.simulation"><code>AgentModel</code></a>) as an interactive HTML
+page: the model is translated to JavaScript (<a href="com/eco/bio7/simulation/JavaToJs.html" title="class in com.eco.bio7.simulation"><code>JavaToJs</code></a>), runs with the
+JavaScript version of the API and is displayed with the page of
+<a href="com/eco/bio7/spatial/HtmlSimulation.html" title="class in com.eco.bio7.spatial"><code>HtmlSimulation</code></a> (a 2D grid or a 3D view, the settings of the Param
+fields, Play/Pause, Step, Reset, the speed and a chart).</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/SimulationExport.Options.html" title="class in com.eco.bio7.simulation">SimulationExport.Options</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">The options of the page.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/SimulationExport.Result.html" title="class in com.eco.bio7.simulation">SimulationExport.Result</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">The result of a translation: the page or the errors.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/SimulationRecorder.html" title="class in com.eco.bio7.spatial">SimulationRecorder</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Records a simulation written in Java (e.g., a Bio7 model) step by step and
 exports it to an HTML page which plays the recording: Play/Pause, Step,
 Reset, the speed, a timeline to jump to a step, a loop and the chart (see
 HtmlSimulation for the views).</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/SimulationRecorder.Frame.html" title="class in com.eco.bio7.spatial">SimulationRecorder.Frame</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/SimulationRecorder.Frame.html" title="class in com.eco.bio7.spatial">SimulationRecorder.Frame</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">The data of a step: the grid, the agents, the points, the lines, the surface and the chart values.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/SimulationSettings.html" title="class in com.eco.bio7.simulation">SimulationSettings</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">The settings of a simulation model in Bio7: a custom view ("Settings") with
+a control for each field with the annotation <a href="com/eco/bio7/simulation/Param.html" title="annotation interface in com.eco.bio7.simulation"><code>Param</code></a> and a button for
+each method with the annotation <a href="com/eco/bio7/simulation/Action.html" title="annotation interface in com.eco.bio7.simulation"><code>Action</code></a> (the same controls as the
+HTML export, below the headings of their groups).</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/SpatialCamera.html" title="class in com.eco.bio7.spatial">SpatialCamera</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
@@ -489,32 +661,38 @@ object at the mouse position.</div>
 <div class="block">This class provides methods to access the time and the counter of the Bio7
 application.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/ValueSelection.html" title="class in com.eco.bio7.spatial">ValueSelection</a></div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/simulation/ValueGridModel.html" title="class in com.eco.bio7.simulation">ValueGridModel</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">A simulation on a grid of values (e.g., a diffusion or a reaction-diffusion
+model): each cell has a double value which is displayed with a color map
+from min to max in an ImageJ image (and in the 2D view of the HTML export).</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/ValueSelection.html" title="class in com.eco.bio7.spatial">ValueSelection</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">The values of a stack which are displayed as a volume or an iso surface: all
 values (the default), a range of values (e.g., the threshold of the image in
 ImageJ: only the particles) or a list of values (the labels of a
 segmentation).</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/gdal/VectorLayer.html" title="class in com.eco.bio7.gdal">VectorLayer</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/gdal/VectorLayer.html" title="class in com.eco.bio7.gdal">VectorLayer</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">A vector layer of a dataset (OGRLayer): its fields, features, extent and
 coordinate system; filters (attributes, extent); new fields and features
 (a layer of a dataset created or opened for writing).</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/VolumeRenderer.html" title="class in com.eco.bio7.spatial">VolumeRenderer</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/spatial/VolumeRenderer.html" title="class in com.eco.bio7.spatial">VolumeRenderer</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Renders an ImageJ stack as a volume with a 3D texture.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/collection/Work.html" title="class in com.eco.bio7.collection">Work</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/collection/Work.html" title="class in com.eco.bio7.collection">Work</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">This class offers some methods for the control of the views, perspectives and
 the editor area of the Bio7 application.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/worldwind/WorldWindView.html" title="class in com.eco.bio7.worldwind">WorldWindView</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/worldwind/Ww.html" title="class in com.eco.bio7.worldwind">Ww</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/worldwind/WorldWindView.html" title="class in com.eco.bio7.worldwind">WorldWindView</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="com/eco/bio7/worldwind/Ww.html" title="class in com.eco.bio7.worldwind">Ww</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">This class gives access to the WorldWind GLCanvas.</div>
 </div>
 </div>

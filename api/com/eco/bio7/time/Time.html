@@ -100,6 +100,8 @@ initTheme();
 <li><a href="#count()" tabindex="0">count()</a></li>
 <li><a href="#isPause()" tabindex="0">isPause()</a></li>
 <li><a href="#setPause(boolean)" tabindex="0">setPause(boolean)</a></li>
+<li><a href="#addPauseListener(java.lang.Runnable)" tabindex="0">addPauseListener(Runnable)</a></li>
+<li><a href="#removePauseListener(java.lang.Runnable)" tabindex="0">removePauseListener(Runnable)</a></li>
 <li><a href="#getModtime()" tabindex="0">getModtime()</a></li>
 <li><a href="#setModtime(int)" tabindex="0">setModtime(int)</a></li>
 <li><a href="#setMonth(java.lang.String%5B%5D)" tabindex="0">setMonth(String[])</a></li>
@@ -110,6 +112,8 @@ initTheme();
 <li><a href="#setFps(double)" tabindex="0">setFps(double)</a></li>
 <li><a href="#getFps()" tabindex="0">getFps()</a></li>
 <li><a href="#getIntervalNanos()" tabindex="0">getIntervalNanos()</a></li>
+<li><a href="#addIntervalListener(java.lang.Runnable)" tabindex="0">addIntervalListener(Runnable)</a></li>
+<li><a href="#removeIntervalListener(java.lang.Runnable)" tabindex="0">removeIntervalListener(Runnable)</a></li>
 <li><a href="#getInterval()" tabindex="0">getInterval()</a></li>
 </ol>
 </li>
@@ -187,6 +191,17 @@ application.</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addIntervalListener(java.lang.Runnable)" class="member-name-link">addIntervalListener</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/Runnable.html" title="interface in java.lang" class="external-link">Runnable</a>&nbsp;listener)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Adds a listener which is called when the interval (the speed) changes (in the thread which changed it).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#addPauseListener(java.lang.Runnable)" class="member-name-link">addPauseListener</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/Runnable.html" title="interface in java.lang" class="external-link">Runnable</a>&nbsp;listener)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Adds a listener which is called when the pause changes (started or paused;
+in the thread which changed it).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#count()" class="member-name-link">count</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Increments the Bio7 counter.</div>
@@ -250,6 +265,16 @@ application.</div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#isPause()" class="member-name-link">isPause</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns if the pause is activated.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removeIntervalListener(java.lang.Runnable)" class="member-name-link">removeIntervalListener</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/Runnable.html" title="interface in java.lang" class="external-link">Runnable</a>&nbsp;listener)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Removes a listener of the interval.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#removePauseListener(java.lang.Runnable)" class="member-name-link">removePauseListener</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/Runnable.html" title="interface in java.lang" class="external-link">Runnable</a>&nbsp;listener)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Removes a listener of the pause.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setCounter(int)" class="member-name-link">setCounter</a><wbr>(int&nbsp;counter)</code></div>
@@ -568,6 +593,29 @@ application.</div>
 </section>
 </li>
 <li>
+<section class="detail" id="addPauseListener(java.lang.Runnable)">
+<h3>addPauseListener</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addPauseListener</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/Runnable.html" title="interface in java.lang" class="external-link">Runnable</a>&nbsp;listener)</span></div>
+<div class="block">Adds a listener which is called when the pause changes (started or paused;
+in the thread which changed it).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>listener</code> - the listener</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removePauseListener(java.lang.Runnable)">
+<h3>removePauseListener</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removePauseListener</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/Runnable.html" title="interface in java.lang" class="external-link">Runnable</a>&nbsp;listener)</span></div>
+<div class="block">Removes a listener of the pause.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getModtime()">
 <h3>getModtime</h3>
 <div class="horizontal-scroll">
@@ -699,6 +747,24 @@ immediately, also during a long interval.</div>
 <dt>Returns:</dt>
 <dd>the interval in nanoseconds.</dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="addIntervalListener(java.lang.Runnable)">
+<h3>addIntervalListener</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addIntervalListener</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/Runnable.html" title="interface in java.lang" class="external-link">Runnable</a>&nbsp;listener)</span></div>
+<div class="block">Adds a listener which is called when the interval (the speed) changes (in the thread which changed it).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeIntervalListener(java.lang.Runnable)">
+<h3>removeIntervalListener</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeIntervalListener</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/Runnable.html" title="interface in java.lang" class="external-link">Runnable</a>&nbsp;listener)</span></div>
+<div class="block">Removes a listener of the interval.</div>
 </div>
 </section>
 </li>
