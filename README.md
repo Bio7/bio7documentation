@@ -14,6 +14,19 @@ The user guide of Bio7 4.0 (work in progress): the platform, the perspectives (I
 
 The HTML versions are published with GitHub Pages and updated with every change of this repository.
 
+## 📄 Further documents
+
+Guides and test reports of Bio7 4.0 (PDF):
+
+| Document | Content |
+|---|---|
+| [Debugging R and Python in Bio7](documents/Bio7_R_and_Python_Debugger_Guide.pdf) | The R and the Python debugger: from a simple script to classes in several files (breakpoints, stepping, Run to Cursor) and a stress test of both debuggers |
+| [Stress test of the Python and R bridges: Windows](documents/Bio7_Bridge_Stresstest_Windows.pdf) | The embedded Python and R under load: latency, data transfer, memory, callbacks, numerical precision |
+| [Stress test of the Python and R bridges: Linux (WSL)](documents/Bio7_Bridge_Stresstest_Linux_WSL.pdf) | The same tests on Linux (Ubuntu in WSL 2) |
+| [Stress test of the Python and R bridges: macOS](documents/Bio7_Bridge_Stresstest_macOS.pdf) | The same tests on macOS (Apple Silicon), with the comparison against standalone Python and R processes |
+| [3D measurements compared with PyMeshLab, Open3D, VTK and CGAL](documents/Bio7_3D_Measurement_Library_Comparison.pdf) | The measurements of the 3D perspective against five mesh libraries and analytic values, with an introduction to voxels, surfaces and measurement errors |
+| [Bio7, CGAL and VTK: a detailed comparison](documents/Bio7_3D_CGAL_VTK_Comparison.pdf) | Mesh validity, distance to the exact surface, Hausdorff distance, mesh quality, convex hull, inside test, smoothing and speed |
+
 ## Links
 
 - Bio7 website: <https://bio7.org>
