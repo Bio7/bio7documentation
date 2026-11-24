@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="generator" content="http://www.nongnu.org/elyxer/"/>
-<meta name="create-date" content="2026-11-22"/>
+<meta name="create-date" content="2026-11-24"/>
 <link rel="stylesheet" href="bio7.css" type="text/css" media="all"/>
 <title>Bio7 User Guide Version 4.0 (work in progress)</title>
 <script type="text/javascript"
@@ -502,10 +502,19 @@ Table of Contents
 <a class="Link" href="#toc-Subsubsection-5.1.8.7">Subsubsection 5.1.8.7: Images, 3D Models, Shapes and Charts</a>
 </div>
 <div class="toc">
-<a class="Link" href="#toc-Subsubsection-5.1.8.8">Subsubsection 5.1.8.8: Models in Python and R</a>
+<a class="Link" href="#toc-Subsubsection-5.1.8.8">Subsubsection 5.1.8.8: Experiments, Spatial Search and Networks</a>
 </div>
 <div class="toc">
-<a class="Link" href="#toc-Subsubsection-5.1.8.9">Subsubsection 5.1.8.9: Examples</a>
+<a class="Link" href="#toc-Subsubsection-5.1.8.9">Subsubsection 5.1.8.9: Agents on Grids, Stop and Seed</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection-5.1.8.10">Subsubsection 5.1.8.10: Mouse and Keyboard</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection-5.1.8.11">Subsubsection 5.1.8.11: Models in Python and R</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection-5.1.8.12">Subsubsection 5.1.8.12: Examples</a>
 </div>
 </div>
 <div class="toc">
@@ -4819,7 +4828,7 @@ with bio7.task("Analysis", total=10) as t:      # an own job
 
 </div>
 <div class="Indented">
-Progress bars of tqdm are displayed as Bio7 jobs, too.
+Progress bars of tqdm are displayed as Bio7 jobs, too. In R, <tt>bio7_progress(done, total, text)</tt> shows the same job (its stop button interrupts R) and <tt>bio7_progress_end()</tt> ends it; <tt>t &lt;- bio7_task("Analysis", total = 10)</tt> is a task with a job of its own (<tt>t$update()</tt>, <tt>t$done()</tt>). The examples Bio7_API/22_Progress_and_Jobs.py (Bio7_Python_Examples) and Bio7_API/08_Progress_and_Jobs.R (Bio7_R_Examples) show them.
 </div>
 <h3 class="Subsection">
 <a class="toc" name="toc-Subsection-4.7.7">4.7.7</a> The bio7 Module
@@ -5606,6 +5615,18 @@ Images and 3D models:<tt>loadImage(name, file)</tt>(PNG with transparency) and<t
 Shapes (drawn again in each step, in the coordinates of the model):<tt>drawLine</tt>,<tt>drawLine3</tt>,<tt>drawPath</tt>,<tt>drawPolygon</tt>,<tt>drawCircle</tt>,<tt>drawRect</tt>,<tt>drawText</tt>and<tt>drawImage(name, x, y, size, angle)</tt>, e.g., animals as images on a grid (discrete or continuous), a fence, the line of a hunt or the territory of a wolf on the globe (the radius in km).
 </li>
 <li>
+Other 3D model formats: <tt>loadModel</tt> also reads Wavefront OBJ (<tt>.obj</tt> with the materials of its <tt>.mtl</tt> file: the color <tt>Kd</tt>, the transparency <tt>d</tt> and the texture <tt>map_Kd</tt>; y up) and STL (<tt>.stl</tt>, binary or ASCII, one color; z up, as most CAD programs write it). The HTML export converts them to glTF, so the page needs no other loader.
+</li>
+<li>
+The scene of an agent model: <tt>agentShape</tt> (<tt>"sphere"</tt> or <tt>"glider"</tt>: triangles which point in the direction of the movement, climb, dive and bank into turns), <tt>floor</tt> (<tt>"none"</tt>, <tt>"grid"</tt> or <tt>"plane"</tt>), <tt>shadows</tt> (soft shadows on the floor) and <tt>followAgent</tt> (the custom camera of the 3D view follows an agent from behind, the global view beside it). Objects of the environment, e.g., houses, trees or rocks, are 3D models which stay until they are removed: <tt>placeModel(model, x, y, z, heading, size)</tt> (the size is the height), <tt>removeModel(index)</tt> and <tt>clearModels()</tt>; the setup removes them.
+</li>
+<li>
+Shapes at a height: in an agent model, the 2D shapes (<tt>drawLine</tt>, <tt>drawPath</tt>, <tt>drawPolygon</tt>, <tt>drawCircle</tt>, <tt>drawRect</tt>, <tt>drawText</tt>, <tt>drawImage</tt>) take a last argument <tt>z</tt>, the height above the floor (in Python and R the keyword <tt>z</tt>), e.g., a ring in the air or a label above a building; the page shows the texts as labels in the 3D view.
+</li>
+<li>
+3D shapes (agent models, lit like the agents): <tt>drawPoint3(x, y, z, size, color)</tt> (a marker), <tt>drawPath3(xs, ys, zs, color, width)</tt> (e.g., a flight path), <tt>drawBox(x, y, z, w, h, d, fill, stroke)</tt> (the corner and the depth upwards, e.g., a building), <tt>drawSphere(x, y, z, radius, fill)</tt>, <tt>drawPolygon3(xs, ys, zs, fill, stroke)</tt> (a flat polygon, e.g., a roof or a street) and <tt>drawPillar(x, y, radius, height, color)</tt> (a vertical cylinder from the floor). A fill <tt>#rrggbbaa</tt> is transparent.
+</li>
+<li>
 Charts:<tt>chart(name, value)</tt>(the first chart),<tt>chart(chart, name, value)</tt>(further charts with a title),<tt>chartXY(chart, name, x, y)</tt>(e.g., a phase plot) and<tt>chartBars(chart, labels, values)</tt>(a histogram). Bio7 shows them in the view Charts below the display of the model, the page as panels.
 </li>
 <li>
@@ -5622,7 +5643,7 @@ chart("Mean energy", "Sheep", energy);
 chartXY("Phase plot", "Sheep - wolves", nSheep, nWolves);
 </pre>
 <div class="Unindented">
-The examples SheepWolvesGrid, SheepWolvesField, Pasture3D and AlpineSheep (Bio7_Java_Examples) and sheep_wolves and pasture_3d (Python and R in Bio7_Script_Examples) show them; the sheep and the wolf (images and glTF models) are in the folders data/sprites and data/models of the projects.
+The examples SheepWolvesGrid, SheepWolvesField, Pasture3D and AlpineSheep (Bio7_Java_Examples) and sheep_wolves and pasture_3d (Python and R in Bio7_Python_Examples and Bio7_R_Examples) show them, the 3D scenes the examples gliders and glider_town (Python and R): a flock of gliders flies along a route through a small town of OBJ and STL models (houses, trees and a church tower), boxes, streets, a balloon and labels. The images and the 3D models are in the folders data/sprites and data/models of the projects.
 </div>
 <div class="Indented">
 <div class="float">
@@ -5656,8 +5677,165 @@ Figure 5.13 Animated glTF models of sheep and wolves in the exported page (Web
 </div>
 
 </div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-5.14"> </a><div class="figure" style="max-width: 100%;">
+<div class="center">
+<img class="figure" src="images/chapter5/simulation_glider_town.jpg" alt="figure images/chapter5/simulation_glider_town.jpg" style="max-width: 1600px; max-height: 900px;"/>
+
+</div>
+<div class="caption">
+Figure 5.14 The example glider_town (Python): houses and trees (OBJ) and a church tower (STL) placed in the environment, office towers (drawBox), streets (drawPolygon3), the route of the flock (drawPath3, drawPoint3, a ring with drawCircle at a height) and the gliders; the custom camera follows the red boid (bottom left).
+</div>
+
+</div>
+
+</div>
+
+</div>
 <h4 class="Subsubsection">
-<a class="toc" name="toc-Subsubsection-5.1.8.8">5.1.8.8</a> Models in Python and R
+<a class="toc" name="toc-Subsubsection-5.1.8.8">5.1.8.8</a> Experiments, Spatial Search and Networks
+</h4>
+<div class="Unindented">
+An experiment runs a model several times without a display (batch runs) and collects the data in a table: all combinations of the values of some parameters, several repetitions with other seeds and a number of steps. In Bio7, the button Experiment... of the settings opens a dialog for any model (Java, Python or R). The values of a parameter are one value, a list (<tt>0.02, 0.05</tt>) or a range (<tt>0.01:0.08:0.01</tt>, from:to:step). The table is saved as a CSV file in the project of the model (and as a data frame in R). Java models run in parallel threads, Python and R models in their interpreter (the progress also as a job in the Progress view; Cancel interrupts the interpreter).
+</div>
+<div class="Indented">
+Instead of (or combined with) the sweep, an experiment can run given parameter sets: a design, e.g., a Latin hypercube or the samples of a sensitivity analysis or of a calibration created in R or Python. Each row of the design is run with the repetitions, the column<tt>point</tt> of the table is the row of the design (Java and Python from 0, R from 1), values of int parameters are rounded:<tt>experiment(m, design = d)</tt> (R, a data frame),<tt>experiment(Model, design=d)</tt> (Python, a DataFrame, a dict of columns or a list of dicts),<tt>new Experiment(Model.class).design(names, rows)</tt> (Java). The statistics are done in R or Python with their packages; the examples network_epidemic_sensitivity.R (a Latin hypercube of lhs, the mean and the 95 % confidence interval of each parameter set, partial rank correlations of sensitivity) and network_epidemic_sensitivity.py (the method of Morris of SALib) show it.
+</div>
+<div class="Indented">
+A row of the table is a recorded step of a run: the run, the seed, the parameters, the step, the values of the line charts in this step (the first chart by the name of the series, the other charts as <tt>chart: series</tt>) and the values of <tt>record(name, value)</tt>, e.g., the share of the infected people. The seed of the repetition k is the seed plus k (the same seeds for all values of the parameters), so the first repetition with the seed of the settings is the run of the model in Bio7. A run ends early when the model calls ‘stop()‘ (its last step is recorded). In code:
+</div>
+<pre class="LyX-Code">
+Experiment.Table t = new Experiment(NetworkEpidemic.class)
+        .param("infection", 0.02, 0.04, 0.06)
+        .steps(300).repetitions(5).every(10).run();
+t.save("experiments/epidemic.csv"); // a file of the project
+t.toR("epidemic");                 // a data frame in R
+</pre>
+<div class="Unindented">
+In Python, <tt>experiment(Model, params={"infection": [0.02, 0.04]}, steps=300, repetitions=5)</tt> returns a pandas DataFrame, in R <tt>experiment(m, params = list(infection = c(0.02, 0.04)), steps = 300, repetitions = 5)</tt> a data frame (the settings of the model are restored afterwards).
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-5.15"> </a><div class="figure" style="max-width: 70%;">
+<div class="center">
+<img class="figure" src="images/chapter5/simulation_experiment_dialog.jpg" alt="figure images/chapter5/simulation_experiment_dialog.jpg" style="max-width: 1100px; max-height: 1142px;"/>
+
+</div>
+<div class="caption">
+Figure 5.15 The dialog Experiment of the model NetworkEpidemic: the infection from 0.01 to 0.08 for two networks, 5 repetitions of 300 steps (80 runs in parallel threads), the table as a CSV file in the project.
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-5.16"> </a><div class="figure" style="max-width: 100%;">
+<div class="center">
+<img class="figure" src="images/chapter5/simulation_experiment_plot.jpg" alt="figure images/chapter5/simulation_experiment_plot.jpg" style="max-width: 1500px; max-height: 1000px;"/>
+
+</div>
+<div class="caption">
+Figure 5.16 The result of an experiment in R (network_epidemic_experiment.R): the share of the infected people after 300 steps over the infection rate for moving contacts and a small-world network (the mean and the single runs).
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+Spatial search: the neighbors of many agents are found fast with a spatial index (a grid of cells): <tt>index(radius)</tt> returns a <tt>SpatialIndex</tt> of the positions now with <tt>neighbors(agent, radius)</tt>, <tt>nearest(agent, radius)</tt>, <tt>near(x, y, z, radius)</tt> and <tt>forEachPair(radius, (a, b) -&gt; ...)</tt> (the results in the order of the list, the same as <tt>neighbors</tt> of the model). In Python and R, <tt>pairs_within(points, radius)</tt> returns all pairs of points within the distance at once (vectorized) and <tt>neighbor_pairs(radius)</tt> the pairs of the agents.
+</div>
+<div class="Indented">
+Networks: agents of an agent model can be linked (<tt>link(a, b)</tt>, also with a color of the link, <tt>unlink</tt>, <tt>removeLinks</tt>, <tt>clearLinks</tt>, <tt>linked</tt>, <tt>linkNeighbors</tt>, <tt>degree</tt>, <tt>getLinks</tt>); the links are drawn as lines between the agents in the 3D view and in the page (<tt>linkColor</tt>, <tt>linkWidth</tt>). Networks are created with <tt>linkRandom(p)</tt> (Erdős–Rényi), <tt>linkSmallWorld(k, p)</tt> (Watts–Strogatz), <tt>linkScaleFree(m)</tt> (Barabási–Albert) and <tt>linkNearby(radius)</tt> (all agents within a distance), analyzed with <tt>components()</tt>, <tt>shortestPath(a, b)</tt> and <tt>clustering(a)</tt> and arranged with <tt>layoutCircle()</tt> and <tt>layoutSpring(iterations)</tt>. Python and R have the same functions (snake case; in R the agents are rows).
+</div>
+<div class="Indented">
+The example NetworkEpidemic (Java, Python and R) is an epidemic (SIR) on a network: moving people with the contacts of each step (a spatial index) or a small-world, scale-free or random network; a link which passed on the infection turns red. network_epidemic_experiment.R and .py run the experiment of the figure above.
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-5.17"> </a><div class="figure" style="max-width: 100%;">
+<div class="center">
+<img class="figure" src="images/chapter5/simulation_network_epidemic.jpg" alt="figure images/chapter5/simulation_network_epidemic.jpg" style="max-width: 1600px; max-height: 900px;"/>
+
+</div>
+<div class="caption">
+Figure 5.17 The example NetworkEpidemic on a small-world network: the susceptible (blue), infected (red) and recovered (grey) people, the links (red: the infection passed) and the view Charts.
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-5.1.8.9">5.1.8.9</a> Agents on Grids, Stop and Seed
+</h4>
+<div class="Unindented">
+Grid models (<tt>GridModel</tt>, <tt>ValueGridModel</tt>, <tt>GeoGridModel</tt>) can have agents on the grid, like turtles on patches: a <tt>GridAgent</tt> has a position in cells (<tt>x</tt>, <tt>y</tt>; the centre of the cell (i, j) is i + 0.5, j + 0.5), a <tt>heading</tt> (degrees, 0 up, clockwise) and a look: a <tt>color</tt> with a <tt>shape</tt> (<tt>"circle"</tt>, <tt>"arrow"</tt> in the heading or <tt>"square"</tt>), or an <tt>image</tt> (loadImage) turned to the heading, and a <tt>size</tt> in cells. Extend it with own fields. The model keeps them in <tt>agents</tt> (<tt>addAgent</tt>, <tt>removeAgent</tt>; the setup removes them), moves them (<tt>forward(a, d)</tt> in the heading, <tt>moveTo</tt>, <tt>face(a, x, y)</tt>; on a torus or at the edge of the grid: <tt>wrap</tt>) and finds them (<tt>agentsAt(x, y)</tt>, <tt>countAgentsAt</tt>, <tt>agentsNear(a, r)</tt>, <tt>agentDistance</tt>). The agents are drawn on top of the grid in ImageJ, on the WorldWind globe and in the page.
+</div>
+<pre class="LyX-Code">
+static class Ant extends GridAgent {
+    boolean carrying;
+}
+Ant a = addAgent(new Ant());     // in init()
+a.shape = "arrow";
+face(a, NEST_X, NEST_Y);         // in step()
+forward(a, 1);
+double pheromone = get(a.cellX(), a.cellY());
+</pre>
+<div class="Unindented">
+In Python the same functions are snake case (<tt>GridAgent</tt>, <tt>self.add_agent</tt>, <tt>self.forward</tt>, <tt>a.cell_x()</tt>); in R the agents are the rows of the data frame <tt>m$agents</tt> (<tt>m$add_agents(n, x =, y =, heading =, ...)</tt> with own columns) and the functions work on many rows at once (<tt>m$forward(rows, d)</tt>, <tt>m$face(rows, x, y)</tt>, <tt>m$agent_counts(rows)</tt>: the number of agents in each cell as a matrix).
+</div>
+<div class="Indented">
+A model ends a run with <tt>stop()</tt> in <tt>step()</tt> (Python <tt>self.stop()</tt>, R <tt>m$stop()</tt>), e.g., when all food is in the nest: Bio7 pauses the simulation (Play continues it), the page stops and an experiment ends the run. The Settings view has a field Seed below the speed (with New for a random seed): the seed of the random numbers of the setup, the same seed gives the same run. A change sets the model up again; the exported page starts with this seed and has the same field, and the dialog Experiment starts with it.
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-5.18"> </a><div class="figure" style="max-width: 100%;">
+<div class="center">
+<img class="figure" src="images/chapter5/simulation_ants_page.jpg" alt="figure images/chapter5/simulation_ants_page.jpg" style="max-width: 1300px; max-height: 850px;"/>
+
+</div>
+<div class="caption">
+Figure 5.18 The example Ants (Java, Python and R) in the page: the ants are agents on a grid of pheromone (red arrows), the trails to the food piles, the nest and the charts; the run stopped when all food was in the nest (stop()). The field Seed is below the speed.
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-5.1.8.10">5.1.8.10</a> Mouse and Keyboard
+</h4>
+<div class="Unindented">
+A model can react to the mouse and the keyboard in its view with three optional methods:<tt>click(x, y)</tt>,<tt>drag(x, y)</tt> and<tt>key(key)</tt> (Python: the same methods, R:<tt>m$click &lt;- function(m, x, y)</tt>,<tt>m$drag</tt>,<tt>m$key</tt>). They are called between the steps (also when the simulation is paused) and the view is updated afterwards. The HTML export calls them with the same values.
+</div>
+<ul>
+<li>
+<b>Positions:</b> a grid in cells from the top left (the cell<tt>((int) x, (int) y)</tt>; R: positions from 0, the column<tt>floor(x) + 1</tt> and the row<tt>floor(y) + 1</tt> of<tt>m$values</tt>), an agent model the point on the floor of the box.
+</li>
+<li>
+<b>2D view (ImageJ):</b> a click, a drag with the left button (the start and each new cell). While the model uses the mouse, the tools of ImageJ don’t make selections in the image (the mouse wheel still zooms).
+</li>
+<li>
+<b>3D view:</b> a click without a movement, a drag with the Shift key (a drag without Shift rotates the view). Clicks in the split view use its camera.
+</li>
+<li>
+<b>Keys:</b> a character (e.g., "a") or a special key ("ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Enter", "Escape", "Backspace", "Delete", "Tab"). A model with<tt>key</tt> gets the keys of its view instead of the shortcuts of ImageJ or the 3D view.
+</li>
+
+</ul>
+<div class="Unindented">
+The examples HeatDiffusion (a click adds a heat source, a drag paints heat, the key c cools the plate) and NetworkEpidemic (a click infects the nearest person) use them in Java, Python and R. A run with input can’t be repeated from the seed alone; experiments run without a view and get no input.
+</div>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-5.1.8.11">5.1.8.11</a> Models in Python and R
 </h4>
 <div class="Unindented">
 The same models can be written in Python and in R. A script uses the module<tt>bio7sim</tt>of the embedded Python (numpy arrays) or the functions of<tt>bio7sim</tt>of the embedded R (matrices and data frames; no package is needed). The last line<tt>simulation(model)</tt>starts the model in Bio7: a Java model of the same kind displays the state of the script (ImageJ, the 3D view, the WorldWind globe) and shows its settings and buttons in the Custom perspective. Play/Pause, Setup, the Settings view and the HTML export work as for Java models.
@@ -5715,19 +5893,19 @@ Geospatial scripts read their data in<tt>load()</tt>(Python) or<tt>m$load</tt>(R
 The HTML export runs the script in the web browser: Python with Pyodide (Python and numpy in WebAssembly), R with webR (R in WebAssembly). Both are loaded from the internet when the page is opened (the first start takes a few seconds). The page gets the settings, the buttons, the chart and the loaded data of the running model (run the script once before the export). The results are the same as in Bio7 (the same code, the same random numbers with the same seed).
 </li>
 <li>
-The wizard creates Python and R models (option Language), the examples are in the project Bio7_Script_Examples (folders<tt>Python/Simulation</tt>and<tt>R_Simulation</tt>, each with a README of all functions).
+The wizard creates Python and R models (option Language), the examples are in the projects Bio7_Python_Examples and Bio7_R_Examples (folders<tt>Simulation</tt>, each with a README of all functions).
 </li>
 
 </ul>
 <div class="Unindented">
 <div class="float">
-<a class="Label" name="Figure-5.14"> </a><div class="figure" style="max-width: 100%;">
+<a class="Label" name="Figure-5.19"> </a><div class="figure" style="max-width: 100%;">
 <div class="center">
 <img class="figure" src="images/chapter5/simulation_python_epidemic.jpg" alt="figure images/chapter5/simulation_python_epidemic.jpg" style="max-width: 1600px; max-height: 903px;"/>
 
 </div>
 <div class="caption">
-Figure 5.14 An epidemic model in Python: the settings of the script (all kinds of controls, groups and buttons) on the left, the grid in ImageJ on the right (the Custom perspective).
+Figure 5.19 An epidemic model in Python: the settings of the script (all kinds of controls, groups and buttons) on the left, the grid in ImageJ on the right (the Custom perspective).
 </div>
 
 </div>
@@ -5737,13 +5915,13 @@ Figure 5.14 An epidemic model in Python: the settings of the script (all kinds
 </div>
 <div class="Indented">
 <div class="float">
-<a class="Label" name="Figure-5.15"> </a><div class="figure" style="max-width: 100%;">
+<a class="Label" name="Figure-5.20"> </a><div class="figure" style="max-width: 100%;">
 <div class="center">
 <img class="figure" src="images/chapter5/simulation_r_wildfire_page.jpg" alt="figure images/chapter5/simulation_r_wildfire_page.jpg" style="max-width: 1300px; max-height: 820px;"/>
 
 </div>
 <div class="caption">
-Figure 5.15 The wildfire model of R exported as HTML page: the script runs in the web browser with webR, the land cover and elevation data loaded in Bio7 with GDAL are embedded in the page.
+Figure 5.20 The wildfire model of R exported as HTML page: the script runs in the web browser with webR, the land cover and elevation data loaded in Bio7 with GDAL are embedded in the page.
 </div>
 
 </div>
@@ -5752,10 +5930,10 @@ Figure 5.15 The wildfire model of R exported as HTML page: the script runs in 
 
 </div>
 <h4 class="Subsubsection">
-<a class="toc" name="toc-Subsubsection-5.1.8.9">5.1.8.9</a> Examples
+<a class="toc" name="toc-Subsubsection-5.1.8.12">5.1.8.12</a> Examples
 </h4>
 <div class="Unindented">
-The project Bio7_Java_Examples contains the package <tt>simulation</tt> with the examples Game of Life, forest fire, Langton’s ant, epidemic (all kinds of settings and a WindowBuilder panel), heat diffusion, reaction-diffusion, swarm, predator-prey, the geospatial models wildfire, rain runoff, lava flow and species dispersal (with data in data/geo) and the WorldWind models bird migration, city epidemic, volcanic ash cloud and hot air balloons. The package <tt>simulation.api</tt> explains all methods of the API in six examples (ApiBasics, ApiGrid, ApiValueGrid, ApiAgents, ApiGeoGrid, ApiGeoAgents) with a README. The project Bio7_Script_Examples contains the same kinds of models in Python (folder Python/Simulation) and R (folder R_Simulation): Game of Life, heat diffusion, epidemic, swarm, wildfire and hot air balloons. The Javadoc of the classes is part of the Bio7 API.
+The project Bio7_Java_Examples contains the package <tt>simulation</tt> with the examples Game of Life, forest fire, Langton’s ant, epidemic (all kinds of settings and a WindowBuilder panel), heat diffusion, reaction-diffusion, swarm, predator-prey, the geospatial models wildfire, rain runoff, lava flow and species dispersal (with data in data/geo) and the WorldWind models bird migration, city epidemic, volcanic ash cloud and hot air balloons. The package <tt>simulation.api</tt> explains all methods of the API in six examples (ApiBasics, ApiGrid, ApiValueGrid, ApiAgents, ApiGeoGrid, ApiGeoAgents) with a README. The projects Bio7_Python_Examples and Bio7_R_Examples contain the same kinds of models in Python and R (folder Simulation): Game of Life, heat diffusion, epidemic, swarm, wildfire and hot air balloons. The Javadoc of the classes is part of the Bio7 API.
 </div>
 <h3 class="Subsection">
 <a class="toc" name="toc-Subsection-5.1.9">5.1.9</a> WindowBuilder GUIs: Export to Shiny and JavaScript<a class="Label" name="subsec:WindowBuilder-Export"> </a>
@@ -5819,7 +5997,7 @@ The design file (<tt>ui.R</tt> or <tt>index.html</tt>) is written again with eac
 
 </div>
 <div class="caption">
-Figure 5.16 A Shiny app (predator-prey model) created from a WindowBuilder GUI with WindowBuilder Shiny
+Figure 5.21 A Shiny app (predator-prey model) created from a WindowBuilder GUI with WindowBuilder Shiny
 </div>
 
 </div>
@@ -5886,7 +6064,7 @@ Widgets which can’t be converted are written as comments and listed in the dia
 
 </div>
 <div class="caption">
-Figure 5.17 A JavaScript app with a WebGL canvas created from a WindowBuilder GUI (WindowBuilder JavaScript)
+Figure 5.22 A JavaScript app with a WebGL canvas created from a WindowBuilder GUI (WindowBuilder JavaScript)
 </div>
 
 </div>
@@ -6019,13 +6197,13 @@ Bio7 embedds a complete ImageJ macro editor with dynamic error detection, syntax
 </div>
 <div class="Indented">
 <div class="float">
-<a class="Label" name="Figure-5.18"> </a><div class="figure" style="max-width: 100%;">
+<a class="Label" name="Figure-5.23"> </a><div class="figure" style="max-width: 100%;">
 <div class="center">
 <img class="figure" src="images/chapter5/imagejmacroeditor.jpg" alt="figure images/chapter5/imagejmacroeditor.jpg" style="max-width: 1800px; max-height: 980px;"/>
 
 </div>
 <div class="caption">
-Figure 5.18 The opened ImageJ Macro editor
+Figure 5.23 The opened ImageJ Macro editor
 </div>
 
 </div>
@@ -6056,13 +6234,13 @@ The main strength of this tool is that you can assemble all methods and informat
 </div>
 <div class="Indented">
 <div class="float">
-<a class="Label" name="Figure-5.19"> </a><div class="figure" style="max-width: 100%;">
+<a class="Label" name="Figure-5.24"> </a><div class="figure" style="max-width: 100%;">
 <div class="center">
 <img class="figure" src="images/chapter5/flow.jpg" alt="figure images/chapter5/flow.jpg" style="max-width: 1800px; max-height: 980px;"/>
 
 </div>
 <div class="caption">
-Figure 5.19 The Flow editor
+Figure 5.24 The Flow editor
 </div>
 
 </div>
@@ -7629,14 +7807,20 @@ The browser is used for the R help, for R Markdown and Quarto documents (*.html,
 <a class="toc" name="toc-Section-10.8">10.8</a> Programming Examples for Bio7<a class="Label" name="sec:Programming-Examples"> </a>
 </h2>
 <div class="Unindented">
-The examples of Bio7 are available on GitHub: <a class="FlexURL" href="https://github.com/Bio7/bio7_examples">https://github.com/Bio7/bio7_examples</a>. The repository contains two projects:
+The examples of Bio7 are available on GitHub: <a class="FlexURL" href="https://github.com/Bio7/bio7_examples">https://github.com/Bio7/bio7_examples</a>. The repository contains a project for each language:
 </div>
 <ul>
 <li>
-<b>Bio7_Java_Examples:</b> Java examples for the components of Bio7, e.g., models (2D and 3D), OpenGL, ImageJ, R and Python from Java, GUIs (also WindowBuilder GUIs with their Shiny and JavaScript apps), GDAL, WorldWind, deep learning and profiling.
+<b>Bio7_Java_Examples:</b> Java examples for the components of Bio7, e.g., the simulation API, models (2D and 3D), OpenGL, ImageJ, R and Python from Java, GUIs (also WindowBuilder GUIs with their Shiny and JavaScript apps), GDAL, WorldWind, flows, deep learning and profiling.
 </li>
 <li>
-<b>Bio7_Script_Examples:</b> examples for the script languages and the APIs: R, Python, Groovy, BeanShell, JavaScript, ImageJ macros, the R API of Bio7, flows, LibreOffice, image clustering and 3D measurements.
+<b>Bio7_R_Examples, Bio7_Python_Examples:</b> the R and Python APIs of Bio7, simulations, OpenCV and snippets.
+</li>
+<li>
+<b>Bio7_Groovy_Examples, Bio7_BeanShell_Examples, Bio7_JavaScript_Examples, Bio7_ImageJ_Macro_Examples:</b> examples for the other script languages, e.g., ImageJ, R, the Bio7 GUI, LibreOffice and image clustering.
+</li>
+<li>
+<b>Bio7_Flow_Examples, Bio7_Data:</b> flows with their components and the data of the 3D measurements.
 </li>
 
 </ul>
@@ -8641,22 +8825,37 @@ List of Figures
 <a class="Link" href="#Figure-5.13">Figure 5.13: Animated glTF models of sheep and wolves in the exported page (WebGL): the sheep graze, walk and run away from the wolves; the fence and the lines of the hunt are drawn shapes.</a>
 </div>
 <div class="toc">
-<a class="Link" href="#Figure-5.14">Figure 5.14: An epidemic model in Python: the settings of the script (all kinds of controls, groups and buttons) on the left, the grid in ImageJ on the right (the Custom perspective).</a>
+<a class="Link" href="#Figure-5.14">Figure 5.14: The example glider_town (Python): houses and trees (OBJ) and a church tower (STL) placed in the environment, office towers (drawBox), streets (drawPolygon3), the route of the flock (drawPath3, drawPoint3, a ring with drawCircle at a height) and the gliders; the custom camera follows the red boid (bottom left).</a>
 </div>
 <div class="toc">
-<a class="Link" href="#Figure-5.15">Figure 5.15: The wildfire model of R exported as HTML page: the script runs in the web browser with webR, the land cover and elevation data loaded in Bio7 with GDAL are embedded in the page.</a>
+<a class="Link" href="#Figure-5.15">Figure 5.15: The dialog Experiment of the model NetworkEpidemic: the infection from 0.01 to 0.08 for two networks, 5 repetitions of 300 steps (80 runs in parallel threads), the table as a CSV file in the project.</a>
 </div>
 <div class="toc">
-<a class="Link" href="#fig:wb-shiny">Figure 5.16: A Shiny app (predator-prey model) created from a WindowBuilder GUI with WindowBuilder Shiny</a>
+<a class="Link" href="#Figure-5.16">Figure 5.16: The result of an experiment in R (network_epidemic_experiment.R): the share of the infected people after 300 steps over the infection rate for moving contacts and a small-world network (the mean and the single runs).</a>
 </div>
 <div class="toc">
-<a class="Link" href="#fig:wb-webgl">Figure 5.17: A JavaScript app with a WebGL canvas created from a WindowBuilder GUI (WindowBuilder JavaScript)</a>
+<a class="Link" href="#Figure-5.17">Figure 5.17: The example NetworkEpidemic on a small-world network: the susceptible (blue), infected (red) and recovered (grey) people, the links (red: the infection passed) and the view Charts.</a>
 </div>
 <div class="toc">
-<a class="Link" href="#Figure-5.18">Figure 5.18: The opened ImageJ Macro editor</a>
+<a class="Link" href="#Figure-5.18">Figure 5.18: The example Ants (Java, Python and R) in the page: the ants are agents on a grid of pheromone (red arrows), the trails to the food piles, the nest and the charts; the run stopped when all food was in the nest (stop()). The field Seed is below the speed.</a>
 </div>
 <div class="toc">
-<a class="Link" href="#Figure-5.19">Figure 5.19: The Flow editor</a>
+<a class="Link" href="#Figure-5.19">Figure 5.19: An epidemic model in Python: the settings of the script (all kinds of controls, groups and buttons) on the left, the grid in ImageJ on the right (the Custom perspective).</a>
+</div>
+<div class="toc">
+<a class="Link" href="#Figure-5.20">Figure 5.20: The wildfire model of R exported as HTML page: the script runs in the web browser with webR, the land cover and elevation data loaded in Bio7 with GDAL are embedded in the page.</a>
+</div>
+<div class="toc">
+<a class="Link" href="#fig:wb-shiny">Figure 5.21: A Shiny app (predator-prey model) created from a WindowBuilder GUI with WindowBuilder Shiny</a>
+</div>
+<div class="toc">
+<a class="Link" href="#fig:wb-webgl">Figure 5.22: A JavaScript app with a WebGL canvas created from a WindowBuilder GUI (WindowBuilder JavaScript)</a>
+</div>
+<div class="toc">
+<a class="Link" href="#Figure-5.23">Figure 5.23: The opened ImageJ Macro editor</a>
+</div>
+<div class="toc">
+<a class="Link" href="#Figure-5.24">Figure 5.24: The Flow editor</a>
 </div>
 <div class="toc">
 <a class="Link" href="#fig:pref-bio7">Figure 6.1: Preferences Bio7: the path to LibreOffice, the script locations and the console</a>
@@ -8750,7 +8949,7 @@ List of Figures
 
 <hr class="footer"/>
 <div class="footer" id="generated-by">
-Document generated by <a href="http://elyxer.nongnu.org/">eLyXer 1.2.5 (2013-03-10)</a> on <span class="create-date">2026-11-22T20:23:02.122511</span>
+Document generated by <a href="http://elyxer.nongnu.org/">eLyXer 1.2.5 (2013-03-10)</a> on <span class="create-date">2026-11-24T10:43:45.803584</span>
 </div>
 </div>
 </body>

@@ -82,8 +82,10 @@ initTheme();
 <li><a href="#description(java.lang.String)" tabindex="0">description(String)</a></li>
 <li><a href="#view(com.eco.bio7.spatial.HtmlSimulation.View)" tabindex="0">view(HtmlSimulation.View)</a></li>
 <li><a href="#colorMap(int%5B%5D)" tabindex="0">colorMap(int[])</a></li>
+<li><a href="#seed(int)" tabindex="0">seed(int)</a></li>
 <li><a href="#speed(double)" tabindex="0">speed(double)</a></li>
 <li><a href="#asynchronous(boolean)" tabindex="0">asynchronous(boolean)</a></li>
+<li><a href="#inputs(java.util.Collection)" tabindex="0">inputs(Collection)</a></li>
 <li><a href="#autoplay(boolean)" tabindex="0">autoplay(boolean)</a></li>
 <li><a href="#layout(java.lang.String)" tabindex="0">layout(String)</a></li>
 <li><a href="#accent(java.lang.String)" tabindex="0">accent(String)</a></li>
@@ -153,7 +155,8 @@ colored with the color map (and points and lines like SCENE_3D).</li>
 sim.chart('Name', value) adds a value to a series of the chart (one value
 per step), sim.clearChart() removes the values. sim.t is the number of the
 steps, sim.random() a random number and sim.pause() pauses the simulation
-(step(sim) can also return false to stop). An optional (async) function
+(step(sim) can also return false to stop without counting the step, or
+'stop' to stop after the step). An optional (async) function
 prepare(sim) is called once before the start (e.g., to load data).
 <p>
 Example:
@@ -301,64 +304,75 @@ edit the model).</div>
 <div class="block">A heading between the controls.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#layout(java.lang.String)" class="member-name-link">layout</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;layout)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#inputs(java.util.Collection)" class="member-name-link">inputs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Collection.html" title="interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;&nbsp;events)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">The input of the view for the model: "click", "drag" and/or "key".</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#layout(java.lang.String)" class="member-name-link">layout</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;layout)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The layout of the page: "classic" (a sidebar with the controls, the default),
 "dashboard" (a top bar with Play/Pause, the view, the settings on the right),
 "focus" (the view fills the window, floating panels which can be hidden) or
 "story" (one column: the title, the view, the controls, the settings in a
 grid, the chart).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#map(double,double,double,double,java.lang.String,double,java.lang.String)" class="member-name-link">map</a><wbr>(double&nbsp;south,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#map(double,double,double,double,java.lang.String,double,java.lang.String)" class="member-name-link">map</a><wbr>(double&nbsp;south,
  double&nbsp;west,
  double&nbsp;north,
  double&nbsp;east,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;basemap,
  double&nbsp;opacity,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;attribution)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Shows the 2D grid on a map (online base maps with Leaflet): the grid covers
 the geographic bounds (WGS84 degrees; the grid is drawn in Web Mercator, exact
 for a grid in EPSG:3857).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#number(java.lang.String,java.lang.String,double)" class="member-name-link">number</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;name,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#number(java.lang.String,java.lang.String,double)" class="member-name-link">number</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;label,
  double&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">A number field (sim.p.name).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#open(java.lang.String)" class="member-name-link">open</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;file)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#open(java.lang.String)" class="member-name-link">open</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;file)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Opens a file (e.g., an exported page) with the default application of the system (the web browser).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#restartOn(java.lang.String...)" class="member-name-link">restartOn</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>...&nbsp;names)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#restartOn(java.lang.String...)" class="member-name-link">restartOn</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>...&nbsp;names)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The settings which restart the simulation (setup) if they are changed (e.g., the size of a grid).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scene(java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean)" class="member-name-link">scene</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;background,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scene(java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean)" class="member-name-link">scene</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;background,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;lighting,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;shape,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;floor,
  boolean&nbsp;shadows)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The look of the 3D views (SCENE_3D, SURFACE_3D).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sceneControls(boolean)" class="member-name-link">sceneControls</a><wbr>(boolean&nbsp;show)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sceneControls(boolean)" class="member-name-link">sceneControls</a><wbr>(boolean&nbsp;show)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Shows the "View" panel of the 3D views in the page (default: true).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scriptFile(java.lang.String)" class="member-name-link">scriptFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;file)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scriptFile(java.lang.String)" class="member-name-link">scriptFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;file)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The JavaScript code of the model in a separate file (e.g., edited in an
 editor of Bio7): the page loads the file (script src) and export copies the
 file next to the page (if it is in another folder).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#seed(int)" class="member-name-link">seed</a><wbr>(int&nbsp;seed)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">The seed of the random numbers of the setup (default 42; sim.seed in the
+code; the page has a field Seed: the same seed gives the same run).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#slider(java.lang.String,java.lang.String,double,double,double,double)" class="member-name-link">slider</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;name,
@@ -475,6 +489,16 @@ N_0, is possible).</div>
 </section>
 </li>
 <li>
+<section class="detail" id="seed(int)">
+<h3>seed</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></span>&nbsp;<span class="element-name">seed</span><wbr><span class="parameters">(int&nbsp;seed)</span></div>
+<div class="block">The seed of the random numbers of the setup (default 42; sim.seed in the
+code; the page has a field Seed: the same seed gives the same run).</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="speed(double)">
 <h3>speed</h3>
 <div class="horizontal-scroll">
@@ -491,6 +515,19 @@ N_0, is possible).</div>
 <div class="block">The functions setup(sim), step(sim) and the functions of the buttons can
 return a Promise (e.g., a model of R in webR): the calls run one after the
 other (default false: synchronous functions).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="inputs(java.util.Collection)">
+<h3>inputs</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="HtmlSimulation.html" title="class in com.eco.bio7.spatial">HtmlSimulation</a></span>&nbsp;<span class="element-name">inputs</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Collection.html" title="interface in java.util" class="external-link">Collection</a>&lt;<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;&nbsp;events)</span></div>
+<div class="block">The input of the view for the model: "click", "drag" and/or "key". The page
+calls the function input(sim, ev) of the code with ev = {type: 'click', x,
+y} (a grid: cells, x and y from the top left; the 3D view: the point on the
+floor), {type: 'drag', x, y} (the 2D view: a drag, the 3D view: Shift +
+drag) or {type: 'key', key} (the key of the keyboard event). Default: none.</div>
 </div>
 </section>
 </li>

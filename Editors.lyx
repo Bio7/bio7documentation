@@ -2154,6 +2154,162 @@ drawImage(name, x, y, size, angle)
 \end_layout
 
 \begin_layout Itemize
+Other 3D model formats: 
+\family typewriter
+loadModel
+\family default
+ also reads Wavefront OBJ (
+\family typewriter
+.obj
+\family default
+ with the materials of its 
+\family typewriter
+.mtl
+\family default
+ file: the color 
+\family typewriter
+Kd
+\family default
+, the transparency 
+\family typewriter
+d
+\family default
+ and the texture 
+\family typewriter
+map_Kd
+\family default
+; y up) and STL (
+\family typewriter
+.stl
+\family default
+, binary or ASCII, one color; z up, as most CAD programs write it). The HTML export converts them to glTF, so the page needs no other loader.
+\end_layout
+
+\begin_layout Itemize
+The scene of an agent model: 
+\family typewriter
+agentShape
+\family default
+ (
+\family typewriter
+"sphere"
+\family default
+ or 
+\family typewriter
+"glider"
+\family default
+: triangles which point in the direction of the movement, climb, dive and bank into turns), 
+\family typewriter
+floor
+\family default
+ (
+\family typewriter
+"none"
+\family default
+, 
+\family typewriter
+"grid"
+\family default
+ or 
+\family typewriter
+"plane"
+\family default
+), 
+\family typewriter
+shadows
+\family default
+ (soft shadows on the floor) and 
+\family typewriter
+followAgent
+\family default
+ (the custom camera of the 3D view follows an agent from behind, the global view beside it). Objects of the environment, e.g., houses, trees or rocks, are 3D models which stay until they are removed: 
+\family typewriter
+placeModel(model, x, y, z, heading, size)
+\family default
+ (the size is the height), 
+\family typewriter
+removeModel(index)
+\family default
+ and 
+\family typewriter
+clearModels()
+\family default
+; the setup removes them.
+\end_layout
+
+\begin_layout Itemize
+Shapes at a height: in an agent model, the 2D shapes (
+\family typewriter
+drawLine
+\family default
+, 
+\family typewriter
+drawPath
+\family default
+, 
+\family typewriter
+drawPolygon
+\family default
+, 
+\family typewriter
+drawCircle
+\family default
+, 
+\family typewriter
+drawRect
+\family default
+, 
+\family typewriter
+drawText
+\family default
+, 
+\family typewriter
+drawImage
+\family default
+) take a last argument 
+\family typewriter
+z
+\family default
+, the height above the floor (in Python and R the keyword 
+\family typewriter
+z
+\family default
+), e.g., a ring in the air or a label above a building; the page shows the texts as labels in the 3D view.
+\end_layout
+
+\begin_layout Itemize
+3D shapes (agent models, lit like the agents): 
+\family typewriter
+drawPoint3(x, y, z, size, color)
+\family default
+ (a marker), 
+\family typewriter
+drawPath3(xs, ys, zs, color, width)
+\family default
+ (e.g., a flight path), 
+\family typewriter
+drawBox(x, y, z, w, h, d, fill, stroke)
+\family default
+ (the corner and the depth upwards, e.g., a building), 
+\family typewriter
+drawSphere(x, y, z, radius, fill)
+\family default
+, 
+\family typewriter
+drawPolygon3(xs, ys, zs, fill, stroke)
+\family default
+ (a flat polygon, e.g., a roof or a street) and 
+\family typewriter
+drawPillar(x, y, radius, height, color)
+\family default
+ (a vertical cylinder from the floor). A fill 
+\family typewriter
+#rrggbbaa
+\family default
+ is transparent.
+\end_layout
+
+\begin_layout Itemize
 Charts:
 \family typewriter
 chart(name, value)
@@ -2278,7 +2434,7 @@ chartXY("Phase plot", "Sheep - wolves", nSheep, nWolves);
 \end_layout
 
 \begin_layout Standard
-The examples SheepWolvesGrid, SheepWolvesField, Pasture3D and AlpineSheep (Bio7_Java_Examples) and sheep_wolves and pasture_3d (Python and R in Bio7_Script_Examples) show them; the sheep and the wolf (images and glTF models) are in the folders data/sprites and data/models of the projects.
+The examples SheepWolvesGrid, SheepWolvesField, Pasture3D and AlpineSheep (Bio7_Java_Examples) and sheep_wolves and pasture_3d (Python and R in Bio7_Python_Examples and Bio7_R_Examples) show them, the 3D scenes the examples gliders and glider_town (Python and R): a flock of gliders flies along a route through a small town of OBJ and STL models (houses, trees and a church tower), boxes, streets, a balloon and labels. The images and the 3D models are in the folders data/sprites and data/models of the projects.
 \end_layout
 
 \begin_layout Standard
@@ -2359,6 +2515,694 @@ Animated glTF models of sheep and wolves in the exported page (WebGL): the sheep
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_glider_town.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The example glider_town (Python): houses and trees (OBJ) and a church tower (STL) placed in the environment, office towers (drawBox), streets (drawPolygon3), the route of the flock (drawPath3, drawPoint3, a ring with drawCircle at a height) and the gliders; the custom camera follows the red boid (bottom left).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Experiments, Spatial Search and Networks
+\end_layout
+
+\begin_layout Standard
+An experiment runs a model several times without a display (batch runs) and collects the data in a table: all combinations of the values of some parameters, several repetitions with other seeds and a number of steps. In Bio7, the button Experiment... of the settings opens a dialog for any model (Java, Python or R). The values of a parameter are one value, a list (
+\family typewriter
+0.02, 0.05
+\family default
+) or a range (
+\family typewriter
+0.01:0.08:0.01
+\family default
+, from:to:step). The table is saved as a CSV file in the project of the model (and as a data frame in R). Java models run in parallel threads, Python and R models in their interpreter (the progress also as a job in the Progress view; Cancel interrupts the interpreter).
+\end_layout
+
+\begin_layout Standard
+Instead of (or combined with) the sweep, an experiment can run given parameter sets: a design, e.g., a Latin hypercube or the samples of a sensitivity analysis or of a calibration created in R or Python. Each row of the design is run with the repetitions, the column
+\family typewriter
+point
+\family default
+ of the table is the row of the design (Java and Python from 0, R from 1), values of int parameters are rounded:
+\family typewriter
+experiment(m, design = d)
+\family default
+ (R, a data frame),
+\family typewriter
+experiment(Model, design=d)
+\family default
+ (Python, a DataFrame, a dict of columns or a list of dicts),
+\family typewriter
+new Experiment(Model.class).design(names, rows)
+\family default
+ (Java). The statistics are done in R or Python with their packages; the examples network_epidemic_sensitivity.R (a Latin hypercube of lhs, the mean and the 95 % confidence interval of each parameter set, partial rank correlations of sensitivity) and network_epidemic_sensitivity.py (the method of Morris of SALib) show it.
+\end_layout
+
+\begin_layout Standard
+A row of the table is a recorded step of a run: the run, the seed, the parameters, the step, the values of the line charts in this step (the first chart by the name of the series, the other charts as 
+\family typewriter
+chart: series
+\family default
+) and the values of 
+\family typewriter
+record(name, value)
+\family default
+, e.g., the share of the infected people. The seed of the repetition k is the seed plus k (the same seeds for all values of the parameters), so the first repetition with the seed of the settings is the run of the model in Bio7. A run ends early when the model calls `stop()` (its last step is recorded). In code:
+\end_layout
+
+\begin_layout LyX-Code
+Experiment.Table t = new Experiment(NetworkEpidemic.class)
+\end_layout
+
+\begin_layout LyX-Code
+        .param("infection", 0.02, 0.04, 0.06)
+\end_layout
+
+\begin_layout LyX-Code
+        .steps(300).repetitions(5).every(10).run();
+\end_layout
+
+\begin_layout LyX-Code
+t.save("experiments/epidemic.csv"); // a file of the project
+\end_layout
+
+\begin_layout LyX-Code
+t.toR("epidemic");                 // a data frame in R
+\end_layout
+
+\begin_layout Standard
+In Python, 
+\family typewriter
+experiment(Model, params={"infection": [0.02, 0.04]}, steps=300, repetitions=5)
+\family default
+ returns a pandas DataFrame, in R 
+\family typewriter
+experiment(m, params = list(infection = c(0.02, 0.04)), steps = 300, repetitions = 5)
+\family default
+ a data frame (the settings of the model are restored afterwards).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_experiment_dialog.jpg
+	lyxscale 40
+	width 70text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The dialog Experiment of the model NetworkEpidemic: the infection from 0.01 to 0.08 for two networks, 5 repetitions of 300 steps (80 runs in parallel threads), the table as a CSV file in the project.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_experiment_plot.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The result of an experiment in R (network_epidemic_experiment.R): the share of the infected people after 300 steps over the infection rate for moving contacts and a small-world network (the mean and the single runs).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Spatial search: the neighbors of many agents are found fast with a spatial index (a grid of cells): 
+\family typewriter
+index(radius)
+\family default
+ returns a 
+\family typewriter
+SpatialIndex
+\family default
+ of the positions now with 
+\family typewriter
+neighbors(agent, radius)
+\family default
+, 
+\family typewriter
+nearest(agent, radius)
+\family default
+, 
+\family typewriter
+near(x, y, z, radius)
+\family default
+ and 
+\family typewriter
+forEachPair(radius, (a, b) -> ...)
+\family default
+ (the results in the order of the list, the same as 
+\family typewriter
+neighbors
+\family default
+ of the model). In Python and R, 
+\family typewriter
+pairs_within(points, radius)
+\family default
+ returns all pairs of points within the distance at once (vectorized) and 
+\family typewriter
+neighbor_pairs(radius)
+\family default
+ the pairs of the agents.
+\end_layout
+
+\begin_layout Standard
+Networks: agents of an agent model can be linked (
+\family typewriter
+link(a, b)
+\family default
+, also with a color of the link, 
+\family typewriter
+unlink
+\family default
+, 
+\family typewriter
+removeLinks
+\family default
+, 
+\family typewriter
+clearLinks
+\family default
+, 
+\family typewriter
+linked
+\family default
+, 
+\family typewriter
+linkNeighbors
+\family default
+, 
+\family typewriter
+degree
+\family default
+, 
+\family typewriter
+getLinks
+\family default
+); the links are drawn as lines between the agents in the 3D view and in the page (
+\family typewriter
+linkColor
+\family default
+, 
+\family typewriter
+linkWidth
+\family default
+). Networks are created with 
+\family typewriter
+linkRandom(p)
+\family default
+ (Erdős–Rényi), 
+\family typewriter
+linkSmallWorld(k, p)
+\family default
+ (Watts–Strogatz), 
+\family typewriter
+linkScaleFree(m)
+\family default
+ (Barabási–Albert) and 
+\family typewriter
+linkNearby(radius)
+\family default
+ (all agents within a distance), analyzed with 
+\family typewriter
+components()
+\family default
+, 
+\family typewriter
+shortestPath(a, b)
+\family default
+ and 
+\family typewriter
+clustering(a)
+\family default
+ and arranged with 
+\family typewriter
+layoutCircle()
+\family default
+ and 
+\family typewriter
+layoutSpring(iterations)
+\family default
+. Python and R have the same functions (snake case; in R the agents are rows).
+\end_layout
+
+\begin_layout Standard
+The example NetworkEpidemic (Java, Python and R) is an epidemic (SIR) on a network: moving people with the contacts of each step (a spatial index) or a small-world, scale-free or random network; a link which passed on the infection turns red. network_epidemic_experiment.R and .py run the experiment of the figure above.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_network_epidemic.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The example NetworkEpidemic on a small-world network: the susceptible (blue), infected (red) and recovered (grey) people, the links (red: the infection passed) and the view Charts.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Agents on Grids, Stop and Seed
+\end_layout
+
+\begin_layout Standard
+Grid models (
+\family typewriter
+GridModel
+\family default
+, 
+\family typewriter
+ValueGridModel
+\family default
+, 
+\family typewriter
+GeoGridModel
+\family default
+) can have agents on the grid, like turtles on patches: a 
+\family typewriter
+GridAgent
+\family default
+ has a position in cells (
+\family typewriter
+x
+\family default
+, 
+\family typewriter
+y
+\family default
+; the centre of the cell (i, j) is i + 0.5, j + 0.5), a 
+\family typewriter
+heading
+\family default
+ (degrees, 0 up, clockwise) and a look: a 
+\family typewriter
+color
+\family default
+ with a 
+\family typewriter
+shape
+\family default
+ (
+\family typewriter
+"circle"
+\family default
+, 
+\family typewriter
+"arrow"
+\family default
+ in the heading or 
+\family typewriter
+"square"
+\family default
+), or an 
+\family typewriter
+image
+\family default
+ (loadImage) turned to the heading, and a 
+\family typewriter
+size
+\family default
+ in cells. Extend it with own fields. The model keeps them in 
+\family typewriter
+agents
+\family default
+ (
+\family typewriter
+addAgent
+\family default
+, 
+\family typewriter
+removeAgent
+\family default
+; the setup removes them), moves them (
+\family typewriter
+forward(a, d)
+\family default
+ in the heading, 
+\family typewriter
+moveTo
+\family default
+, 
+\family typewriter
+face(a, x, y)
+\family default
+; on a torus or at the edge of the grid: 
+\family typewriter
+wrap
+\family default
+) and finds them (
+\family typewriter
+agentsAt(x, y)
+\family default
+, 
+\family typewriter
+countAgentsAt
+\family default
+, 
+\family typewriter
+agentsNear(a, r)
+\family default
+, 
+\family typewriter
+agentDistance
+\family default
+). The agents are drawn on top of the grid in ImageJ, on the WorldWind globe and in the page.
+\end_layout
+
+\begin_layout LyX-Code
+static class Ant extends GridAgent {
+\end_layout
+
+\begin_layout LyX-Code
+    boolean carrying;
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout LyX-Code
+Ant a = addAgent(new Ant());     // in init()
+\end_layout
+
+\begin_layout LyX-Code
+a.shape = "arrow";
+\end_layout
+
+\begin_layout LyX-Code
+face(a, NEST_X, NEST_Y);         // in step()
+\end_layout
+
+\begin_layout LyX-Code
+forward(a, 1);
+\end_layout
+
+\begin_layout LyX-Code
+double pheromone = get(a.cellX(), a.cellY());
+\end_layout
+
+\begin_layout Standard
+In Python the same functions are snake case (
+\family typewriter
+GridAgent
+\family default
+, 
+\family typewriter
+self.add_agent
+\family default
+, 
+\family typewriter
+self.forward
+\family default
+, 
+\family typewriter
+a.cell_x()
+\family default
+); in R the agents are the rows of the data frame 
+\family typewriter
+m$agents
+\family default
+ (
+\family typewriter
+m$add_agents(n, x =, y =, heading =, ...)
+\family default
+ with own columns) and the functions work on many rows at once (
+\family typewriter
+m$forward(rows, d)
+\family default
+, 
+\family typewriter
+m$face(rows, x, y)
+\family default
+, 
+\family typewriter
+m$agent_counts(rows)
+\family default
+: the number of agents in each cell as a matrix).
+\end_layout
+
+\begin_layout Standard
+A model ends a run with 
+\family typewriter
+stop()
+\family default
+ in 
+\family typewriter
+step()
+\family default
+ (Python 
+\family typewriter
+self.stop()
+\family default
+, R 
+\family typewriter
+m$stop()
+\family default
+), e.g., when all food is in the nest: Bio7 pauses the simulation (Play continues it), the page stops and an experiment ends the run. The Settings view has a field Seed below the speed (with New for a random seed): the seed of the random numbers of the setup, the same seed gives the same run. A change sets the model up again; the exported page starts with this seed and has the same field, and the dialog Experiment starts with it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename images/chapter5/simulation_ants_page.jpg
+	lyxscale 40
+	width 100text%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The example Ants (Java, Python and R) in the page: the ants are agents on a grid of pheromone (red arrows), the trails to the food piles, the nest and the charts; the run stopped when all food was in the nest (stop()). The field Seed is below the speed.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Mouse and Keyboard
+\end_layout
+
+\begin_layout Standard
+A model can react to the mouse and the keyboard in its view with three optional methods:
+\family typewriter
+click(x, y)
+\family default
+,
+\family typewriter
+drag(x, y)
+\family default
+ and
+\family typewriter
+key(key)
+\family default
+ (Python: the same methods, R:
+\family typewriter
+m$click <- function(m, x, y)
+\family default
+,
+\family typewriter
+m$drag
+\family default
+,
+\family typewriter
+m$key
+\family default
+). They are called between the steps (also when the simulation is paused) and the view is updated afterwards. The HTML export calls them with the same values.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Positions:
+\series default
+ a grid in cells from the top left (the cell
+\family typewriter
+((int) x, (int) y)
+\family default
+; R: positions from 0, the column
+\family typewriter
+floor(x) + 1
+\family default
+ and the row
+\family typewriter
+floor(y) + 1
+\family default
+ of
+\family typewriter
+m$values
+\family default
+), an agent model the point on the floor of the box.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+2D view (ImageJ):
+\series default
+ a click, a drag with the left button (the start and each new cell). While the model uses the mouse, the tools of ImageJ don't make selections in the image (the mouse wheel still zooms).
+\end_layout
+
+\begin_layout Itemize
+\series bold
+3D view:
+\series default
+ a click without a movement, a drag with the Shift key (a drag without Shift rotates the view). Clicks in the split view use its camera.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Keys:
+\series default
+ a character (e.g., "a") or a special key ("ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Enter", "Escape", "Backspace", "Delete", "Tab"). A model with
+\family typewriter
+key
+\family default
+ gets the keys of its view instead of the shortcuts of ImageJ or the 3D view.
+\end_layout
+
+\begin_layout Standard
+The examples HeatDiffusion (a click adds a heat source, a drag paints heat, the key c cools the plate) and NetworkEpidemic (a click infects the nearest person) use them in Java, Python and R. A run with input can't be repeated from the seed alone; experiments run without a view and get no input.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2618,13 +3462,9 @@ The HTML export runs the script in the web browser: Python with Pyodide (Python 
 \end_layout
 
 \begin_layout Itemize
-The wizard creates Python and R models (option Language), the examples are in the project Bio7_Script_Examples (folders
+The wizard creates Python and R models (option Language), the examples are in the projects Bio7_Python_Examples and Bio7_R_Examples (folders
 \family typewriter
-Python/Simulation
-\family default
-and
-\family typewriter
-R_Simulation
+Simulation
 \family default
 , each with a README of all functions).
 \end_layout
@@ -2722,7 +3562,7 @@ simulation
 \family typewriter
 simulation.api
 \family default
- explains all methods of the API in six examples (ApiBasics, ApiGrid, ApiValueGrid, ApiAgents, ApiGeoGrid, ApiGeoAgents) with a README. The project Bio7_Script_Examples contains the same kinds of models in Python (folder Python/Simulation) and R (folder R_Simulation): Game of Life, heat diffusion, epidemic, swarm, wildfire and hot air balloons. The Javadoc of the classes is part of the Bio7 API.
+ explains all methods of the API in six examples (ApiBasics, ApiGrid, ApiValueGrid, ApiAgents, ApiGeoGrid, ApiGeoAgents) with a README. The projects Bio7_Python_Examples and Bio7_R_Examples contain the same kinds of models in Python and R (folder Simulation): Game of Life, heat diffusion, epidemic, swarm, wildfire and hot air balloons. The Javadoc of the classes is part of the Bio7 API.
 \end_layout
 
 \begin_layout Subsection

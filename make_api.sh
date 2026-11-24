@@ -33,10 +33,21 @@ for p in "$APP"/plugins/*; do
 done
 FILES=()
 while IFS= read -r f; do [ -n "$f" ] && FILES+=("$SRC/$f"); done < api_classes.txt
-rm -rf api
-"$JAVADOC" -J-Duser.language=en -J-Duser.country=US -locale en_US -d api -notimestamp -quiet -Xdoclint:none \
+# the optional api_support.txt: sources of the repository which are not documented but needed for
+# the documented classes while the installed Bio7 is older than the repository (e.g., a new class)
+mkdir -p "$TMP/src"
+if [ -f api_support.txt ]; then
+  while IFS= read -r f; do
+    [ -n "$f" ] || continue
+    rel="${f#*/src/}"; mkdir -p "$TMP/src/$(dirname "$rel")"; cp "$SRC/$f" "$TMP/src/$rel"
+  done < api_support.txt
+fi
+# into a temporary folder: a failed run keeps the existing api/
+"$JAVADOC" -J-Duser.language=en -J-Duser.country=US -locale en_US -d "$TMP/api" -notimestamp -quiet -Xdoclint:none \
   -encoding UTF-8 -docencoding UTF-8 -charset UTF-8 \
   -windowtitle "Bio7 4.0 API" -doctitle "Bio7 4.0 API" -header "Bio7 4.0 API" \
   -bottom "Bio7 4.0 – Eclipse Public License 2.0 – <a href=\"https://bio7.org\">bio7.org</a>" \
-  -cp "${CP#:}" "${FILES[@]}"
+  --source-path "$TMP/src" -cp "${CP#:}" "${FILES[@]}"
+rm -rf api
+mv "$TMP/api" api
 echo "Created api/index.html"

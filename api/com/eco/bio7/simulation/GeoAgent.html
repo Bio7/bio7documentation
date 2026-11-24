@@ -137,7 +137,9 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 </div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#color" class="member-name-link">color</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">The color (e.g., "#d62728"; null: the color of the model, agentColor).</div>
+</div>
 <div class="col-first odd-row-color"><code>double</code></div>
 <div class="col-second odd-row-color"><code><a href="#heading" class="member-name-link">heading</a></code></div>
 <div class="col-last odd-row-color">
@@ -150,13 +152,19 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#label" class="member-name-link">label</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">A text beside the agent (null: none).</div>
+</div>
 <div class="col-first even-row-color"><code>double</code></div>
 <div class="col-second even-row-color"><code><a href="#lat" class="member-name-link">lat</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">The position: longitude and latitude in degrees (WGS84).</div>
+</div>
 <div class="col-first odd-row-color"><code>double</code></div>
 <div class="col-second odd-row-color"><code><a href="#lon" class="member-name-link">lon</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">The position: longitude and latitude in degrees (WGS84).</div>
+</div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#model" class="member-name-link">model</a></code></div>
 <div class="col-last even-row-color">
@@ -164,7 +172,9 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 </div>
 <div class="col-first odd-row-color"><code>double</code></div>
 <div class="col-second odd-row-color"><code><a href="#size" class="member-name-link">size</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">The radius of the point in pixels (0: the size of the model, agentSize).</div>
+</div>
 </div>
 </section>
 </li>
@@ -177,10 +187,14 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">GeoAgent</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">An agent at longitude 0, latitude 0.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(double,double)" class="member-name-link">GeoAgent</a><wbr>(double&nbsp;lon,
  double&nbsp;lat)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">An agent at the position (degrees).</div>
+</div>
 </div>
 </section>
 </li>
@@ -207,6 +221,7 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 <h3>lon</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">lon</span></div>
+<div class="block">The position: longitude and latitude in degrees (WGS84).</div>
 </div>
 </section>
 </li>
@@ -215,6 +230,7 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 <h3>lat</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">lat</span></div>
+<div class="block">The position: longitude and latitude in degrees (WGS84).</div>
 </div>
 </section>
 </li>
@@ -223,6 +239,7 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 <h3>color</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">color</span></div>
+<div class="block">The color (e.g., "#d62728"; null: the color of the model, agentColor).</div>
 </div>
 </section>
 </li>
@@ -231,6 +248,7 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 <h3>size</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">size</span></div>
+<div class="block">The radius of the point in pixels (0: the size of the model, agentSize).</div>
 </div>
 </section>
 </li>
@@ -239,6 +257,7 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 <h3>label</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">label</span></div>
+<div class="block">A text beside the agent (null: none).</div>
 </div>
 </section>
 </li>
@@ -300,6 +319,7 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 <h3>GeoAgent</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GeoAgent</span>()</div>
+<div class="block">An agent at longitude 0, latitude 0.</div>
 </div>
 </section>
 </li>
@@ -309,6 +329,7 @@ the WorldWind globe). Subclasses add their own fields and methods.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GeoAgent</span><wbr><span class="parameters">(double&nbsp;lon,
  double&nbsp;lat)</span></div>
+<div class="block">An agent at the position (degrees).</div>
 </div>
 </section>
 </li>

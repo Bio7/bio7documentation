@@ -96,8 +96,16 @@ initTheme();
 <li><a href="#init()" tabindex="0">init()</a></li>
 <li><a href="#step()" tabindex="0">step()</a></li>
 <li><a href="#display()" tabindex="0">display()</a></li>
+<li><a href="#click(double,double)" tabindex="0">click(double, double)</a></li>
+<li><a href="#drag(double,double)" tabindex="0">drag(double, double)</a></li>
+<li><a href="#key(java.lang.String)" tabindex="0">key(String)</a></li>
 <li><a href="#prepareDisplay()" tabindex="0">prepareDisplay()</a></li>
 <li><a href="#setup()" tabindex="0">setup()</a></li>
+<li><a href="#stop()" tabindex="0">stop()</a></li>
+<li><a href="#isStopped()" tabindex="0">isStopped()</a></li>
+<li><a href="#getStartSeed()" tabindex="0">getStartSeed()</a></li>
+<li><a href="#setStartSeed(int)" tabindex="0">setStartSeed(int)</a></li>
+<li><a href="#record(java.lang.String,double)" tabindex="0">record(String, double)</a></li>
 <li><a href="#run()" tabindex="0">run()</a></li>
 <li><a href="#settings(org.eclipse.swt.widgets.Composite)" tabindex="0">settings(Composite)</a></li>
 <li><a href="#seed(int)" tabindex="0">seed(int)</a></li>
@@ -160,13 +168,26 @@ initTheme();
 <li><a href="#getSeries()" tabindex="0">getSeries()</a></li>
 <li><a href="#getCharts()" tabindex="0">getCharts()</a></li>
 <li><a href="#drawLine(double,double,double,double,java.lang.String,double)" tabindex="0">drawLine(double, double, double, double, String, double)</a></li>
+<li><a href="#drawLine(double,double,double,double,java.lang.String,double,double)" tabindex="0">drawLine(double, double, double, double, String, double, double)</a></li>
 <li><a href="#drawLine3(double,double,double,double,double,double,java.lang.String,double)" tabindex="0">drawLine3(double, double, double, double, double, double, String, double)</a></li>
+<li><a href="#drawPillar(double,double,double,double,java.lang.String)" tabindex="0">drawPillar(double, double, double, double, String)</a></li>
 <li><a href="#drawPath(double%5B%5D,double%5B%5D,java.lang.String,double)" tabindex="0">drawPath(double[], double[], String, double)</a></li>
+<li><a href="#drawPath(double%5B%5D,double%5B%5D,java.lang.String,double,double)" tabindex="0">drawPath(double[], double[], String, double, double)</a></li>
 <li><a href="#drawPolygon(double%5B%5D,double%5B%5D,java.lang.String,java.lang.String)" tabindex="0">drawPolygon(double[], double[], String, String)</a></li>
+<li><a href="#drawPolygon(double%5B%5D,double%5B%5D,java.lang.String,java.lang.String,double)" tabindex="0">drawPolygon(double[], double[], String, String, double)</a></li>
 <li><a href="#drawCircle(double,double,double,java.lang.String,java.lang.String)" tabindex="0">drawCircle(double, double, double, String, String)</a></li>
+<li><a href="#drawCircle(double,double,double,java.lang.String,java.lang.String,double)" tabindex="0">drawCircle(double, double, double, String, String, double)</a></li>
 <li><a href="#drawRect(double,double,double,double,java.lang.String,java.lang.String)" tabindex="0">drawRect(double, double, double, double, String, String)</a></li>
+<li><a href="#drawRect(double,double,double,double,java.lang.String,java.lang.String,double)" tabindex="0">drawRect(double, double, double, double, String, String, double)</a></li>
 <li><a href="#drawText(double,double,java.lang.String,java.lang.String,double)" tabindex="0">drawText(double, double, String, String, double)</a></li>
+<li><a href="#drawText(double,double,java.lang.String,java.lang.String,double,double)" tabindex="0">drawText(double, double, String, String, double, double)</a></li>
 <li><a href="#drawImage(java.lang.String,double,double,double,double)" tabindex="0">drawImage(String, double, double, double, double)</a></li>
+<li><a href="#drawImage(java.lang.String,double,double,double,double,double)" tabindex="0">drawImage(String, double, double, double, double, double)</a></li>
+<li><a href="#drawPoint3(double,double,double,double,java.lang.String)" tabindex="0">drawPoint3(double, double, double, double, String)</a></li>
+<li><a href="#drawPath3(double%5B%5D,double%5B%5D,double%5B%5D,java.lang.String,double)" tabindex="0">drawPath3(double[], double[], double[], String, double)</a></li>
+<li><a href="#drawBox(double,double,double,double,double,double,java.lang.String,java.lang.String)" tabindex="0">drawBox(double, double, double, double, double, double, String, String)</a></li>
+<li><a href="#drawSphere(double,double,double,double,java.lang.String)" tabindex="0">drawSphere(double, double, double, double, String)</a></li>
+<li><a href="#drawPolygon3(double%5B%5D,double%5B%5D,double%5B%5D,java.lang.String,java.lang.String)" tabindex="0">drawPolygon3(double[], double[], double[], String, String)</a></li>
 <li><a href="#getDrawing()" tabindex="0">getDrawing()</a></li>
 <li><a href="#loadImage(java.lang.String,java.lang.String)" tabindex="0">loadImage(String, String)</a></li>
 <li><a href="#loadModel(java.lang.String,java.lang.String)" tabindex="0">loadModel(String, String)</a></li>
@@ -328,59 +349,100 @@ on the right, its options (e.g., Options3D) top left and the settings left.</div
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The value limited to [min, max].</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#correlation(double%5B%5D,double%5B%5D)" class="member-name-link">correlation</a><wbr>(double[]&nbsp;x,
- double[]&nbsp;y)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">The correlation coefficient of Pearson.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#click(double,double)" class="member-name-link">click</a><wbr>(double&nbsp;x,
+ double&nbsp;y)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A click of the mouse in the view of the model (override it): for a grid the
+position in cells (the cell <code>((int) x, (int) y)</code>, y from the top as
+in get(x, y)), for an agent model the point on the floor of the box.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#cosDeg(double)" class="member-name-link">cosDeg</a><wbr>(double&nbsp;deg)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#correlation(double%5B%5D,double%5B%5D)" class="member-name-link">correlation</a><wbr>(double[]&nbsp;x,
+ double[]&nbsp;y)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">The correlation coefficient of Pearson.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#cosDeg(double)" class="member-name-link">cosDeg</a><wbr>(double&nbsp;deg)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The cosine of an angle in degrees (the same digits in Bio7 and in the browser, e.g., for a movement in the heading).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#determinant(double%5B%5D%5B%5D)" class="member-name-link">determinant</a><wbr>(double[][]&nbsp;a)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#determinant(double%5B%5D%5B%5D)" class="member-name-link">determinant</a><wbr>(double[][]&nbsp;a)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The determinant of a matrix.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#display()" class="member-name-link">display</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#display()" class="member-name-link">display</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Displays the model (ImageJ image or 3D view).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#distance(double,double,double,double)" class="member-name-link">distance</a><wbr>(double&nbsp;x1,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#distance(double,double,double,double)" class="member-name-link">distance</a><wbr>(double&nbsp;x1,
  double&nbsp;y1,
  double&nbsp;x2,
  double&nbsp;y2)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The distance of two points in 2D.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#distance3(double,double,double,double,double,double)" class="member-name-link">distance3</a><wbr>(double&nbsp;x1,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#distance3(double,double,double,double,double,double)" class="member-name-link">distance3</a><wbr>(double&nbsp;x1,
  double&nbsp;y1,
  double&nbsp;z1,
  double&nbsp;x2,
  double&nbsp;y2,
  double&nbsp;z2)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The distance of two points in 3D.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dot(double%5B%5D,double%5B%5D)" class="member-name-link">dot</a><wbr>(double[]&nbsp;a,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dot(double%5B%5D,double%5B%5D)" class="member-name-link">dot</a><wbr>(double[]&nbsp;a,
  double[]&nbsp;b)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The dot product of two vectors.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drag(double,double)" class="member-name-link">drag</a><wbr>(double&nbsp;x,
+ double&nbsp;y)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A drag of the mouse in the view of the model (override it), e.g., to paint
+cells: called for the position where the drag started and for each further
+position (a grid: each new cell).</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawCircle(double,double,double,java.lang.String,java.lang.String)" class="member-name-link">drawCircle</a><wbr>(double&nbsp;x,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawBox(double,double,double,double,double,double,java.lang.String,java.lang.String)" class="member-name-link">drawBox</a><wbr>(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;z,
+ double&nbsp;w,
+ double&nbsp;h,
+ double&nbsp;d,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A box in 3D (an agent model): the corner x, y, z (the lowest values), the
+width (x), the height (y) and the depth (z, upwards) as in box(...); fill:
+the color of the sides, stroke: the color of the edges (null: none), e.g., a
+house or a tower.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawCircle(double,double,double,java.lang.String,java.lang.String)" class="member-name-link">drawCircle</a><wbr>(double&nbsp;x,
  double&nbsp;y,
  double&nbsp;radius,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">A circle (a geospatial agent model: the radius in km).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawCircle(double,double,double,java.lang.String,java.lang.String,double)" class="member-name-link">drawCircle</a><wbr>(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;radius,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke,
+ double&nbsp;z)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A circle at the height z above the floor (an agent model).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawImage(java.lang.String,double,double,double,double)" class="member-name-link">drawImage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;name,
@@ -394,14 +456,35 @@ side, in cells of a grid, in pixels on a map or the globe) and the angle in
 degrees (clockwise, e.g., the heading of an animal).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawLine(double,double,double,double,java.lang.String,double)" class="member-name-link">drawLine</a><wbr>(double&nbsp;x1,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawImage(java.lang.String,double,double,double,double,double)" class="member-name-link">drawImage</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;name,
+ double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;size,
+ double&nbsp;angle,
+ double&nbsp;z)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">An image at the height z above the floor (an agent model: the lower edge of the image, standing).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawLine(double,double,double,double,java.lang.String,double)" class="member-name-link">drawLine</a><wbr>(double&nbsp;x1,
  double&nbsp;y1,
  double&nbsp;x2,
  double&nbsp;y2,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
  double&nbsp;width)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">A line (the width in pixels).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawLine(double,double,double,double,java.lang.String,double,double)" class="member-name-link">drawLine</a><wbr>(double&nbsp;x1,
+ double&nbsp;y1,
+ double&nbsp;x2,
+ double&nbsp;y2,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
+ double&nbsp;width,
+ double&nbsp;z)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A line at the height z above the floor (an agent model).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawLine3(double,double,double,double,double,double,java.lang.String,double)" class="member-name-link">drawLine3</a><wbr>(double&nbsp;x1,
@@ -424,12 +507,69 @@ degrees (clockwise, e.g., the heading of an animal).</div>
 <div class="block">A line through the points (e.g., the track of an agent).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawPath(double%5B%5D,double%5B%5D,java.lang.String,double,double)" class="member-name-link">drawPath</a><wbr>(double[]&nbsp;xs,
+ double[]&nbsp;ys,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
+ double&nbsp;width,
+ double&nbsp;z)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A line through the points at the height z above the floor (an agent model).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawPath3(double%5B%5D,double%5B%5D,double%5B%5D,java.lang.String,double)" class="member-name-link">drawPath3</a><wbr>(double[]&nbsp;xs,
+ double[]&nbsp;ys,
+ double[]&nbsp;zs,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
+ double&nbsp;width)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A line through the points in 3D (an agent model; the width in pixels), e.g., a flight path.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawPillar(double,double,double,double,java.lang.String)" class="member-name-link">drawPillar</a><wbr>(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;radius,
+ double&nbsp;height,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A pillar in 3D (an agent model: a vertical cylinder from the floor at x, y of
+the box with the radius and the height, e.g., an obstacle; color: e.g.,
+"#9aa6b8").</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawPoint3(double,double,double,double,java.lang.String)" class="member-name-link">drawPoint3</a><wbr>(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;z,
+ double&nbsp;size,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A point in 3D (an agent model): a small sphere with the diameter size, e.g., a marker.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawPolygon(double%5B%5D,double%5B%5D,java.lang.String,java.lang.String)" class="member-name-link">drawPolygon</a><wbr>(double[]&nbsp;xs,
  double[]&nbsp;ys,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">A polygon (the fill and the color of the line, null: none; e.g., a pasture or a territory).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawPolygon(double%5B%5D,double%5B%5D,java.lang.String,java.lang.String,double)" class="member-name-link">drawPolygon</a><wbr>(double[]&nbsp;xs,
+ double[]&nbsp;ys,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke,
+ double&nbsp;z)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A polygon at the height z above the floor (an agent model).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawPolygon3(double%5B%5D,double%5B%5D,double%5B%5D,java.lang.String,java.lang.String)" class="member-name-link">drawPolygon3</a><wbr>(double[]&nbsp;xs,
+ double[]&nbsp;ys,
+ double[]&nbsp;zs,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A flat polygon in 3D (an agent model; the points should lie in a plane): the
+fill and the color of the outline (null: none), e.g., a roof or a ramp.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawRect(double,double,double,double,java.lang.String,java.lang.String)" class="member-name-link">drawRect</a><wbr>(double&nbsp;x,
@@ -442,6 +582,26 @@ degrees (clockwise, e.g., the heading of an animal).</div>
 <div class="block">A rectangle (x, y: the upper left corner of a grid).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawRect(double,double,double,double,java.lang.String,java.lang.String,double)" class="member-name-link">drawRect</a><wbr>(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;w,
+ double&nbsp;h,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke,
+ double&nbsp;z)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A rectangle at the height z above the floor (an agent model).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawSphere(double,double,double,double,java.lang.String)" class="member-name-link">drawSphere</a><wbr>(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;z,
+ double&nbsp;radius,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A sphere in 3D (an agent model): the center and the radius, e.g., a balloon or a tree crown.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawText(double,double,java.lang.String,java.lang.String,double)" class="member-name-link">drawText</a><wbr>(double&nbsp;x,
  double&nbsp;y,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;text,
@@ -450,37 +610,52 @@ degrees (clockwise, e.g., the heading of an animal).</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">A text (the size in cells of a grid, in pixels on a map or the globe).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fractalNoise(double,double,int)" class="member-name-link">fractalNoise</a><wbr>(double&nbsp;x,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawText(double,double,java.lang.String,java.lang.String,double,double)" class="member-name-link">drawText</a><wbr>(double&nbsp;x,
+ double&nbsp;y,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;text,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
+ double&nbsp;size,
+ double&nbsp;z)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A text at the height z above the floor (an agent model, e.g., a label above an object).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fractalNoise(double,double,int)" class="member-name-link">fractalNoise</a><wbr>(double&nbsp;x,
  double&nbsp;y,
  int&nbsp;octaves)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">A fractal noise (0 - 1): the sum of octaves of noise (finer details with more octaves).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/List.html" title="interface in java.util" class="external-link">List</a><wbr>&lt;<a href="ChartData.html" title="class in com.eco.bio7.simulation">ChartData</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCharts()" class="member-name-link">getCharts</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/List.html" title="interface in java.util" class="external-link">List</a><wbr>&lt;com.eco.bio7.simulation.ChartData&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCharts()" class="member-name-link">getCharts</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies of all charts (the first chart has the title "").</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/List.html" title="interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Shape.html" title="class in com.eco.bio7.simulation">Shape</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDrawing()" class="member-name-link">getDrawing</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/List.html" title="interface in java.util" class="external-link">List</a><wbr>&lt;com.eco.bio7.simulation.Shape&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDrawing()" class="member-name-link">getDrawing</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The shapes of the current step (a copy).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Map.html" title="interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImageFiles()" class="member-name-link">getImageFiles</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Map.html" title="interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImageFiles()" class="member-name-link">getImageFiles</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The images loaded with loadImage (the name and the file).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Map.html" title="interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getModelFiles()" class="member-name-link">getModelFiles</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Map.html" title="interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getModelFiles()" class="member-name-link">getModelFiles</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The 3D models loaded with loadModel (the name and the file).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Map.html" title="interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/List.html" title="interface in java.util" class="external-link">List</a>&lt;double[]&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSeries()" class="member-name-link">getSeries</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/Map.html" title="interface in java.util" class="external-link">Map</a><wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>, <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/List.html" title="interface in java.util" class="external-link">List</a>&lt;double[]&gt;&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSeries()" class="member-name-link">getSeries</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The values of the series of the first chart (name: [step, value] pairs).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStartSeed()" class="member-name-link">getStartSeed</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">The seed of the setup (default 42; the field Seed of the settings in Bio7).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#headingOf(double,double)" class="member-name-link">headingOf</a><wbr>(double&nbsp;dx,
@@ -497,6 +672,19 @@ degrees (clockwise, e.g., the heading of an animal).</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#inverse(double%5B%5D%5B%5D)" class="member-name-link">inverse</a><wbr>(double[][]&nbsp;a)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The inverse matrix (NaN if the matrix is singular).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isStopped()" class="member-name-link">isStopped</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">True if stop() was called in the last step (or in init()).</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#key(java.lang.String)" class="member-name-link">key</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;key)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">A key pressed in the view of the model (override it): a character ("a",
+"A", "1", " ") or the name of a special key ("ArrowLeft", "ArrowRight",
+"ArrowUp", "ArrowDown", "Enter", "Escape", "Backspace", "Delete", "Tab"; the
+names of the key of JavaScript).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#lerp(double,double,double)" class="member-name-link">lerp</a><wbr>(double&nbsp;a,
@@ -522,8 +710,10 @@ degrees (clockwise, e.g., the heading of an animal).</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadModel(java.lang.String,java.lang.String)" class="member-name-link">loadModel</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;file)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Loads a 3D model (glTF: .glb or .gltf, also animated) for the agents
-(agent.model = name, agent.animation = the name of an animation).</div>
+<div class="block">Loads a 3D model (glTF: .glb or .gltf, also animated; Wavefront OBJ with
+the materials and textures of its .mtl file, y up; STL, binary or ASCII, z
+up) for the agents (agent.model = name, agent.animation = the name of an
+animation) and placeModel.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#logistic(double)" class="member-name-link">logistic</a><wbr>(double&nbsp;x)</code></div>
@@ -693,29 +883,41 @@ numbers in any order of the threads, in Java and in JavaScript.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">A random index chosen with the weights (e.g., a cell with more grass is chosen more often), -1 if all are 0.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rk4(com.eco.bio7.simulation.Simulation.Derivatives,double,double%5B%5D,double)" class="member-name-link">rk4</a><wbr>(<a href="Simulation.Derivatives.html" title="interface in com.eco.bio7.simulation">Simulation.Derivatives</a>&nbsp;f,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#record(java.lang.String,double)" class="member-name-link">record</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;name,
+ double&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Records a value of the current step for an Experiment (a column of its
+table, besides the values of the line charts).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rk4(com.eco.bio7.simulation.Simulation.Derivatives,double,double%5B%5D,double)" class="member-name-link">rk4</a><wbr>(<a href="Simulation.Derivatives.html" title="interface in com.eco.bio7.simulation">Simulation.Derivatives</a>&nbsp;f,
  double&nbsp;t,
  double[]&nbsp;y,
  double&nbsp;dt)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">One step of the Runge-Kutta method (4th order) for dy/dt = f(t, y), e.g., a
 Lotka-Volterra model:</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run()" class="member-name-link">run</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run()" class="member-name-link">run</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The main method which is called from the calculation thread!</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sd(double%5B%5D)" class="member-name-link">sd</a><wbr>(double[]&nbsp;values)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sd(double%5B%5D)" class="member-name-link">sd</a><wbr>(double[]&nbsp;values)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The standard deviation of the values.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#seed(int)" class="member-name-link">seed</a><wbr>(int&nbsp;seed)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#seed(int)" class="member-name-link">seed</a><wbr>(int&nbsp;seed)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the seed of the random numbers (e.g., in init()).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setStartSeed(int)" class="member-name-link">setStartSeed</a><wbr>(int&nbsp;seed)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets the seed of the next setup (the field Seed of the settings).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.eclipse.swt.widgets.Composite</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#settings(org.eclipse.swt.widgets.Composite)" class="member-name-link">settings</a><wbr>(org.eclipse.swt.widgets.Composite&nbsp;parent)</code></div>
@@ -760,30 +962,37 @@ the thread of the user interface.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">One time step (called by the Play/Pause button).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sum(double%5B%5D)" class="member-name-link">sum</a><wbr>(double[]&nbsp;values)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">The sum of the values.</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stop()" class="member-name-link">stop</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Ends the simulation after this step, e.g., <code>if (infected == 0) stop();</code>
+in step(): Bio7 pauses the simulation (Play continues it), the HTML page
+stops, an Experiment ends the run (its last step is recorded).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sum(int%5B%5D)" class="member-name-link">sum</a><wbr>(int[]&nbsp;values)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sum(double%5B%5D)" class="member-name-link">sum</a><wbr>(double[]&nbsp;values)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The sum of the values.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double[][]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transpose(double%5B%5D%5B%5D)" class="member-name-link">transpose</a><wbr>(double[][]&nbsp;a)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sum(int%5B%5D)" class="member-name-link">sum</a><wbr>(int[]&nbsp;values)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">The sum of the values.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double[][]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#transpose(double%5B%5D%5B%5D)" class="member-name-link">transpose</a><wbr>(double[][]&nbsp;a)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The transposed matrix.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#variance(double%5B%5D)" class="member-name-link">variance</a><wbr>(double[]&nbsp;values)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#variance(double%5B%5D)" class="member-name-link">variance</a><wbr>(double[]&nbsp;values)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The variance of the values (n - 1, 0 for less than two values).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#wrapAround(double,double)" class="member-name-link">wrapAround</a><wbr>(double&nbsp;value,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static double</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#wrapAround(double,double)" class="member-name-link">wrapAround</a><wbr>(double&nbsp;value,
  double&nbsp;size)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">The value on a torus of the size (e.g., wrapAround(-1, 100) = 99).</div>
 </div>
 </div>
@@ -957,6 +1166,61 @@ subclass are initialized).</div>
 </section>
 </li>
 <li>
+<section class="detail" id="click(double,double)">
+<h3>click</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">click</span><wbr><span class="parameters">(double&nbsp;x,
+ double&nbsp;y)</span></div>
+<div class="block">A click of the mouse in the view of the model (override it): for a grid the
+position in cells (the cell <code>((int) x, (int) y)</code>, y from the top as
+in get(x, y)), for an agent model the point on the floor of the box. Called
+between the steps (also when the simulation is paused; the view is updated
+after the call), in the HTML export with the same values.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>x</code> - the x position</dd>
+<dd><code>y</code> - the y position</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drag(double,double)">
+<h3>drag</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drag</span><wbr><span class="parameters">(double&nbsp;x,
+ double&nbsp;y)</span></div>
+<div class="block">A drag of the mouse in the view of the model (override it), e.g., to paint
+cells: called for the position where the drag started and for each further
+position (a grid: each new cell). In the 2D view a drag with the left mouse
+button, in the 3D view with the Shift key (a drag without it rotates the
+view). The positions as in <a href="#click(double,double)"><code>click(double, double)</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>x</code> - the x position</dd>
+<dd><code>y</code> - the y position</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="key(java.lang.String)">
+<h3>key</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">key</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;key)</span></div>
+<div class="block">A key pressed in the view of the model (override it): a character ("a",
+"A", "1", " ") or the name of a special key ("ArrowLeft", "ArrowRight",
+"ArrowUp", "ArrowDown", "Enter", "Escape", "Backspace", "Delete", "Tab"; the
+names of the key of JavaScript). With this method, the view gives the keys to
+the model (not to its own shortcuts).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>key</code> - the key</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="prepareDisplay()">
 <h3>prepareDisplay</h3>
 <div class="horizontal-scroll">
@@ -976,6 +1240,57 @@ subclass are initialized).</div>
 <dt>Overrides:</dt>
 <dd><code><a href="../compile/Model.html#setup()">setup</a></code>&nbsp;in class&nbsp;<code><a href="../compile/Model.html" title="class in com.eco.bio7.compile">Model</a></code></dd>
 </dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="stop()">
+<h3>stop</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stop</span>()</div>
+<div class="block">Ends the simulation after this step, e.g., <code>if (infected == 0) stop();</code>
+in step(): Bio7 pauses the simulation (Play continues it), the HTML page
+stops, an Experiment ends the run (its last step is recorded).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isStopped()">
+<h3>isStopped</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isStopped</span>()</div>
+<div class="block">True if stop() was called in the last step (or in init()).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getStartSeed()">
+<h3>getStartSeed</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getStartSeed</span>()</div>
+<div class="block">The seed of the setup (default 42; the field Seed of the settings in Bio7).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setStartSeed(int)">
+<h3>setStartSeed</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setStartSeed</span><wbr><span class="parameters">(int&nbsp;seed)</span></div>
+<div class="block">Sets the seed of the next setup (the field Seed of the settings). A seed set
+in init() with seed(...) has priority.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="record(java.lang.String,double)">
+<h3>record</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">record</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;name,
+ double&nbsp;value)</span></div>
+<div class="block">Records a value of the current step for an Experiment (a column of its
+table, besides the values of the line charts). Without an Experiment, the
+value is kept but not shown.</div>
 </div>
 </section>
 </li>
@@ -1605,7 +1920,7 @@ chart, one value per step).</div>
 <section class="detail" id="getCharts()">
 <h3>getCharts</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/List.html" title="interface in java.util" class="external-link">List</a>&lt;<a href="ChartData.html" title="class in com.eco.bio7.simulation">ChartData</a>&gt;</span>&nbsp;<span class="element-name">getCharts</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/List.html" title="interface in java.util" class="external-link">List</a>&lt;com.eco.bio7.simulation.ChartData&gt;</span>&nbsp;<span class="element-name">getCharts</span>()</div>
 <div class="block">Copies of all charts (the first chart has the title "").</div>
 </div>
 </section>
@@ -1621,6 +1936,21 @@ chart, one value per step).</div>
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
  double&nbsp;width)</span></div>
 <div class="block">A line (the width in pixels).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawLine(double,double,double,double,java.lang.String,double,double)">
+<h3>drawLine</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawLine</span><wbr><span class="parameters">(double&nbsp;x1,
+ double&nbsp;y1,
+ double&nbsp;x2,
+ double&nbsp;y2,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
+ double&nbsp;width,
+ double&nbsp;z)</span></div>
+<div class="block">A line at the height z above the floor (an agent model).</div>
 </div>
 </section>
 </li>
@@ -1641,6 +1971,21 @@ chart, one value per step).</div>
 </section>
 </li>
 <li>
+<section class="detail" id="drawPillar(double,double,double,double,java.lang.String)">
+<h3>drawPillar</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawPillar</span><wbr><span class="parameters">(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;radius,
+ double&nbsp;height,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color)</span></div>
+<div class="block">A pillar in 3D (an agent model: a vertical cylinder from the floor at x, y of
+the box with the radius and the height, e.g., an obstacle; color: e.g.,
+"#9aa6b8").</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="drawPath(double[],double[],java.lang.String,double)">
 <h3>drawPath</h3>
 <div class="horizontal-scroll">
@@ -1649,6 +1994,19 @@ chart, one value per step).</div>
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
  double&nbsp;width)</span></div>
 <div class="block">A line through the points (e.g., the track of an agent).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawPath(double[],double[],java.lang.String,double,double)">
+<h3>drawPath</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawPath</span><wbr><span class="parameters">(double[]&nbsp;xs,
+ double[]&nbsp;ys,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
+ double&nbsp;width,
+ double&nbsp;z)</span></div>
+<div class="block">A line through the points at the height z above the floor (an agent model).</div>
 </div>
 </section>
 </li>
@@ -1665,6 +2023,19 @@ chart, one value per step).</div>
 </section>
 </li>
 <li>
+<section class="detail" id="drawPolygon(double[],double[],java.lang.String,java.lang.String,double)">
+<h3>drawPolygon</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawPolygon</span><wbr><span class="parameters">(double[]&nbsp;xs,
+ double[]&nbsp;ys,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke,
+ double&nbsp;z)</span></div>
+<div class="block">A polygon at the height z above the floor (an agent model).</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="drawCircle(double,double,double,java.lang.String,java.lang.String)">
 <h3>drawCircle</h3>
 <div class="horizontal-scroll">
@@ -1674,6 +2045,20 @@ chart, one value per step).</div>
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke)</span></div>
 <div class="block">A circle (a geospatial agent model: the radius in km).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawCircle(double,double,double,java.lang.String,java.lang.String,double)">
+<h3>drawCircle</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawCircle</span><wbr><span class="parameters">(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;radius,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke,
+ double&nbsp;z)</span></div>
+<div class="block">A circle at the height z above the floor (an agent model).</div>
 </div>
 </section>
 </li>
@@ -1692,6 +2077,21 @@ chart, one value per step).</div>
 </section>
 </li>
 <li>
+<section class="detail" id="drawRect(double,double,double,double,java.lang.String,java.lang.String,double)">
+<h3>drawRect</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawRect</span><wbr><span class="parameters">(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;w,
+ double&nbsp;h,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke,
+ double&nbsp;z)</span></div>
+<div class="block">A rectangle at the height z above the floor (an agent model).</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="drawText(double,double,java.lang.String,java.lang.String,double)">
 <h3>drawText</h3>
 <div class="horizontal-scroll">
@@ -1701,6 +2101,20 @@ chart, one value per step).</div>
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
  double&nbsp;size)</span></div>
 <div class="block">A text (the size in cells of a grid, in pixels on a map or the globe).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawText(double,double,java.lang.String,java.lang.String,double,double)">
+<h3>drawText</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawText</span><wbr><span class="parameters">(double&nbsp;x,
+ double&nbsp;y,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;text,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
+ double&nbsp;size,
+ double&nbsp;z)</span></div>
+<div class="block">A text at the height z above the floor (an agent model, e.g., a label above an object).</div>
 </div>
 </section>
 </li>
@@ -1720,10 +2134,96 @@ degrees (clockwise, e.g., the heading of an animal).</div>
 </section>
 </li>
 <li>
+<section class="detail" id="drawImage(java.lang.String,double,double,double,double,double)">
+<h3>drawImage</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawImage</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;name,
+ double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;size,
+ double&nbsp;angle,
+ double&nbsp;z)</span></div>
+<div class="block">An image at the height z above the floor (an agent model: the lower edge of the image, standing).</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawPoint3(double,double,double,double,java.lang.String)">
+<h3>drawPoint3</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawPoint3</span><wbr><span class="parameters">(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;z,
+ double&nbsp;size,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color)</span></div>
+<div class="block">A point in 3D (an agent model): a small sphere with the diameter size, e.g., a marker.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawPath3(double[],double[],double[],java.lang.String,double)">
+<h3>drawPath3</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawPath3</span><wbr><span class="parameters">(double[]&nbsp;xs,
+ double[]&nbsp;ys,
+ double[]&nbsp;zs,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;color,
+ double&nbsp;width)</span></div>
+<div class="block">A line through the points in 3D (an agent model; the width in pixels), e.g., a flight path.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawBox(double,double,double,double,double,double,java.lang.String,java.lang.String)">
+<h3>drawBox</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawBox</span><wbr><span class="parameters">(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;z,
+ double&nbsp;w,
+ double&nbsp;h,
+ double&nbsp;d,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke)</span></div>
+<div class="block">A box in 3D (an agent model): the corner x, y, z (the lowest values), the
+width (x), the height (y) and the depth (z, upwards) as in box(...); fill:
+the color of the sides, stroke: the color of the edges (null: none), e.g., a
+house or a tower.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawSphere(double,double,double,double,java.lang.String)">
+<h3>drawSphere</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawSphere</span><wbr><span class="parameters">(double&nbsp;x,
+ double&nbsp;y,
+ double&nbsp;z,
+ double&nbsp;radius,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill)</span></div>
+<div class="block">A sphere in 3D (an agent model): the center and the radius, e.g., a balloon or a tree crown.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="drawPolygon3(double[],double[],double[],java.lang.String,java.lang.String)">
+<h3>drawPolygon3</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawPolygon3</span><wbr><span class="parameters">(double[]&nbsp;xs,
+ double[]&nbsp;ys,
+ double[]&nbsp;zs,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;fill,
+ <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;stroke)</span></div>
+<div class="block">A flat polygon in 3D (an agent model; the points should lie in a plane): the
+fill and the color of the outline (null: none), e.g., a roof or a ramp.</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getDrawing()">
 <h3>getDrawing</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/List.html" title="interface in java.util" class="external-link">List</a>&lt;<a href="Shape.html" title="class in com.eco.bio7.simulation">Shape</a>&gt;</span>&nbsp;<span class="element-name">getDrawing</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/List.html" title="interface in java.util" class="external-link">List</a>&lt;com.eco.bio7.simulation.Shape&gt;</span>&nbsp;<span class="element-name">getDrawing</span>()</div>
 <div class="block">The shapes of the current step (a copy).</div>
 </div>
 </section>
@@ -1746,10 +2246,12 @@ model; the HTML export embeds the image.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadModel</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/lang/String.html" title="class in java.lang" class="external-link">String</a>&nbsp;file)</span></div>
-<div class="block">Loads a 3D model (glTF: .glb or .gltf, also animated) for the agents
-(agent.model = name, agent.animation = the name of an animation). A relative
-path is searched in the project of the model; the HTML export embeds the
-model.</div>
+<div class="block">Loads a 3D model (glTF: .glb or .gltf, also animated; Wavefront OBJ with
+the materials and textures of its .mtl file, y up; STL, binary or ASCII, z
+up) for the agents (agent.model = name, agent.animation = the name of an
+animation) and placeModel. A relative path is searched in the project of
+the model; the HTML export embeds the model (OBJ and STL converted to
+glTF).</div>
 </div>
 </section>
 </li>

@@ -23,7 +23,7 @@ The Java API (Javadoc) in the folder `api/` is generated from the sources of Bio
 # e.g. ./make_api.sh ~/git/bio7 /Applications/Bio7.app/Contents/Eclipse
 ```
 
-The plugins of the installed Bio7 are the classpath and its JDK runs javadoc (English texts, no time stamps). GitHub Pages publishes it at <https://bio7.github.io/bio7documentation/api/index.html>.
+The plugins of the installed Bio7 are the classpath and its JDK runs javadoc (English texts, no time stamps). If the installed Bio7 is older than the repository (a documented class uses a new class of another package), list that source in `api_support.txt` (used for the symbols, not documented); a failed run keeps the existing `api/`. GitHub Pages publishes it at <https://bio7.github.io/bio7documentation/api/index.html>.
 
 Note: eLyXer needs Python 3.10 or older (newer versions removed the file mode it uses).
 

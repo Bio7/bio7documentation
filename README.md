@@ -23,11 +23,14 @@ Write a model in a few lines of Java, Python or R, run it live in Bio7 (ImageJ, 
 - the wizard, a first model, the settings, the controls and the views of a model;
 - grids of states and values, agents in 3D, random numbers, mathematics, parallel computation and charts;
 - images, animated glTF models, drawn shapes and several charts;
+- 3D scenes: 3D shapes, shapes at a height, OBJ and STL models, objects of the environment;
+- experiments (batch runs with parameter sweeps and repetitions; the data as CSV or an R data frame), networks of agents and a fast neighbor search;
+- agents on grids (turtles on patches), the end of a run (stop) and the seed of the setup;
 - geospatial models with GDAL and agents on the WorldWind globe;
 - models in Python (Pyodide in the page) and R (webR in the page);
 - the export as an HTML page (layouts, themes, maps, WebGL), a reference of the API and the examples.
 
-The examples are in the projects Bio7_Java_Examples (packages `simulation` and `simulation.api`) and Bio7_Script_Examples (folders `Python/Simulation` and `R_Simulation`) of the [Bio7 examples](https://github.com/Bio7/bio7_examples); the classes are documented in the [API](https://bio7.github.io/bio7documentation/api/com/eco/bio7/simulation/package-summary.html).
+The examples are in the projects Bio7_Java_Examples (packages `simulation` and `simulation.api`) and Bio7_Python_Examples / Bio7_R_Examples (folder `Simulation`) of the [Bio7 examples](https://github.com/Bio7/bio7_examples); the classes are documented in the [API](https://bio7.github.io/bio7documentation/api/com/eco/bio7/simulation/package-summary.html).
 
 ## 📄 Further documents
 

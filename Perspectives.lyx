@@ -11331,7 +11331,27 @@ with bio7.task("Analysis", total=10) as t:      # an own job
 \end_layout
 
 \begin_layout Standard
-Progress bars of tqdm are displayed as Bio7 jobs, too.
+Progress bars of tqdm are displayed as Bio7 jobs, too. In R, 
+\family typewriter
+bio7_progress(done, total, text)
+\family default
+ shows the same job (its stop button interrupts R) and 
+\family typewriter
+bio7_progress_end()
+\family default
+ ends it; 
+\family typewriter
+t <- bio7_task("Analysis", total = 10)
+\family default
+ is a task with a job of its own (
+\family typewriter
+t$update()
+\family default
+, 
+\family typewriter
+t$done()
+\family default
+). The examples Bio7_API/22_Progress_and_Jobs.py (Bio7_Python_Examples) and Bio7_API/08_Progress_and_Jobs.R (Bio7_R_Examples) show them.
 \end_layout
 
 \begin_layout Subsection

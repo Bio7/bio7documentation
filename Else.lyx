@@ -1512,21 +1512,35 @@ https://github.com/Bio7/bio7_examples
 
 \end_inset
 
-. The repository contains two projects:
+. The repository contains a project for each language:
 \end_layout
 
 \begin_layout Itemize
 \series bold
 Bio7_Java_Examples:
 \series default
- Java examples for the components of Bio7, e.g., models (2D and 3D), OpenGL, ImageJ, R and Python from Java, GUIs (also WindowBuilder GUIs with their Shiny and JavaScript apps), GDAL, WorldWind, deep learning and profiling.
+ Java examples for the components of Bio7, e.g., the simulation API, models (2D and 3D), OpenGL, ImageJ, R and Python from Java, GUIs (also WindowBuilder GUIs with their Shiny and JavaScript apps), GDAL, WorldWind, flows, deep learning and profiling.
 \end_layout
 
 \begin_layout Itemize
 \series bold
-Bio7_Script_Examples:
+Bio7_R_Examples, Bio7_Python_Examples:
 \series default
- examples for the script languages and the APIs: R, Python, Groovy, BeanShell, JavaScript, ImageJ macros, the R API of Bio7, flows, LibreOffice, image clustering and 3D measurements.
+ the R and Python APIs of Bio7, simulations, OpenCV and snippets.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Bio7_Groovy_Examples, Bio7_BeanShell_Examples, Bio7_JavaScript_Examples, Bio7_ImageJ_Macro_Examples:
+\series default
+ examples for the other script languages, e.g., ImageJ, R, the Bio7 GUI, LibreOffice and image clustering.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Bio7_Flow_Examples, Bio7_Data:
+\series default
+ flows with their components and the data of the 3D measurements.
 \end_layout
 
 \begin_layout Standard
