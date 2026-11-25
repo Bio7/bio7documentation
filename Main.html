@@ -874,7 +874,7 @@ Bio7 embeds R directly: R runs in the process of Bio7 (with the Foreign Function
 Install R from CRAN (<a class="FlexURL" href="https://cran.r-project.org">https://cran.r-project.org</a>) with the installer of your operating system (Windows, macOS) or with the package manager (Linux, e.g., <tt>sudo apt install r-base</tt>). Bio7 uses the default installation of R automatically. Another R installation is selected in the R preferences (<b>Preferences Bio7 &gt; Preferences R</b>, <b>Path to R</b>). The button <b>R Setup...</b> (<b>Find or install R</b>) searches the installed R versions on this computer: <b>Use for Bio7</b> sets the path to R (applied at the next start of R). The dialog also helps to install R (the commands for the operating systems, <b>Open R Download Page</b>, on Windows <b>Install R with winget</b>).
 </div>
 <div class="Indented">
-R is started with <b>Start R</b> in the main toolbar or in the R menu (optionally at the startup of Bio7: <b>Preferences Startup</b>, <b>Start R</b>). The R preferences describe the restrictions of embedded R:
+R is started with <b>Start R</b> in the main toolbar or in the R menu (optionally at the startup of Bio7: <b>Preferences Startup</b>, <b>Start R</b>; by default R also starts when it is used, e.g., by a script: <b>Start R when it is used</b>). The R preferences describe the restrictions of embedded R:
 </div>
 <ul>
 <li>
@@ -1127,10 +1127,10 @@ Figure 3.2 The toolbar of Bio7 (with the action of the R editor)
 <b>(2) Setup:</b> Invokes the setup method of the compiled Java class (if available).
 </li>
 <li>
-<b>(3) R:</b> Starts the embedded R (see <a class="Reference" href="#sec:The-R-Perspective">4.6↓</a>). The menu of the action contains <b>Start R</b> and <b>Interrupt R</b>. R runs in the process of Bio7 and can’t be restarted without a restart of Bio7.
+<b>(3) R:</b> Starts the embedded R (see <a class="Reference" href="#sec:The-R-Perspective">4.6↓</a>). If R runs, the action switches the console to R. The menu of the action contains <b>Start R</b> (<b>R Console</b> if R runs) and <b>Interrupt R</b>. R runs in the process of Bio7 and can’t be restarted without a restart of Bio7.
 </li>
 <li>
-<b>(4) Python:</b> Starts the embedded Python (see <a class="Reference" href="#sec:The-Python-Perspective">4.7↓</a>) for the data transfer with ImageJ and R and matplotlib plots in Bio7. Python runs in the process of Bio7, too.
+<b>(4) Python:</b> Starts the embedded Python (see <a class="Reference" href="#sec:The-Python-Perspective">4.7↓</a>) for the data transfer with ImageJ and R and matplotlib plots in Bio7. If Python runs, the action switches the console to Python. The menu of the action contains <b>Start Python</b> (<b>Python Console</b> if Python runs) and <b>Interrupt Python</b>. Python runs in the process of Bio7, too, and can’t be restarted without a restart of Bio7.
 </li>
 <li>
 <b>(5) Create Projects or Files:</b> Creates a project with a default file in one step: a Bio7 Java project (also with a WindowBuilder GUI, OpenGL, WorldWind or an ImageJ plugin), a project with an R, R Markdown, Quarto, R Shiny, Python, Groovy, JavaScript, ImageJ macro or LaTeX file, a WindowBuilder GUI for a Bio7 model, R or Python, a reproducible project or another project or file (<b>Other...</b>).
@@ -1578,25 +1578,25 @@ The actions of the Image-Methods view in Python (the names of the created Python
 <b>IJ RT:</b> the ImageJ results table as the pandas DataFrame <tt>IJResultsTable</tt>.
 </li>
 <li>
-<b>IJ RasterStack:</b> the opened stack as <tt>imageStack</tt> (numpy arrays).
+<b>IJ RasterStack:</b> all slices of the opened stack as the numpy array <tt>imageStack</tt> (slices, height, width) in the selected data type as for R: Double float64 (the exact values), Integer int32, Byte uint8 (an RGB image: its luminance), RGB Byte uint8 (slices, height, width, 3); with <tt>imageSizeX</tt> and <tt>imageSizeY</tt>.
 </li>
 <li>
-<b>ROI:</b> the coordinates of the selection as <tt>selectionx</tt> and <tt>selectiony</tt>.
+<b>ROI:</b> the coordinates of the selection as <tt>selectionx</tt> and <tt>selectiony</tt> and the size of the image as <tt>imageSizeX</tt> and <tt>imageSizeY</tt> (as for R).
 </li>
 <li>
-<b>Particles:</b> the results of the particle analysis as the DataFrame <tt>Particles</tt>.
+<b>Particles:</b> the results of the particle analysis as the DataFrame <tt>Particles</tt>, <tt>imageSizeX</tt>, <tt>imageSizeY</tt> and the coordinates of the selection (<tt>selectionx</tt>, <tt>selectiony</tt>, if any).
 </li>
 <li>
-<b>Pixel:</b> the pixels of the selection as a DataFrame (optionally with a class column).
+<b>Pixel:</b> the pixels of the selection in all opened images as a DataFrame (named in the dialog) with a column per image (<tt>layer1</tt>, <tt>layer2</tt>, ...) and optionally the column <tt>Class</tt>, and <tt>imageSizeX</tt>, <tt>imageSizeY</tt> (as for R).
 </li>
 <li>
-<b>Selection RM:</b> the selections of the ROI Manager as <tt>roiSelections</tt>.
+<b>Measure RM:</b> the measurements of the selections of the ROI Manager as the DataFrame <tt>RoiMeasurements</tt> (as for R).
 </li>
 <li>
-<b>Pixel RM, Pixel RM Stack:</b> a DataFrame for each selection and all pixels as <tt>roi_pixels</tt>.
+<b>Pixel RM, Pixel RM Stack:</b> a DataFrame for each selection of the ROI Manager (named as the selection) with a column per image or slice (<tt>layer…</tt>) and optionally the column <tt>Class</tt>, and <tt>imageSizeX</tt>, <tt>imageSizeY</tt> (as for R).
 </li>
 <li>
-<b>Pic&lt;-, Pic-&gt;:</b> the image as a numpy array and an array as an image.
+<b>Pic&lt;-, Pic-&gt;:</b> as for R the current image (of a stack the current slice) with <tt>imageSizeX</tt>, <tt>imageSizeY</tt> and <tt>imageDataName</tt>: Double optionally as a matrix (height, width), else as a vector; Integer and Byte as a vector; RGB optionally as an integer matrix (pixels, 3), else as the vectors <tt>name_R</tt>, <tt>name_G</tt>, <tt>name_B</tt>. Pic-&gt; creates an image from an array; a vector (or the RGB matrix) is shaped with <tt>imageSizeX</tt> and <tt>imageSizeY</tt>.
 </li>
 <li>
 <b>Cluster Pic:</b> a k-means cluster analysis with scikit-learn (without scikit-learn with numpy) which creates the cluster image and plots.
@@ -1651,7 +1651,7 @@ Figure 4.11 The Image-Methods view
 <b>Pixel:</b> Transfers the selected pixels (freehand, rectangle, etc.) of one or several images with or without a signature as a matrix to R.
 </li>
 <li>
-<b>Selection RM:</b> Transfers the coordinates of the selections of the ROI Manager as a list of lists to R (see the Geometry Selections view for spatial data).
+<b>Measure RM:</b> Measures each selection of the ROI Manager (the selected ones, else all) in the current image (of a stack the current slice) with the measurements of ImageJ and transfers the table <tt>RoiMeasurements</tt> to R (one row per selection): the name of the selection (ROI), its group, area, mean, standard deviation, median, minimum, maximum, integrated density, centroid, perimeter, the shape descriptors (circularity, aspect ratio, roundness, solidity) and the Feret diameters in the units of the image, and <tt>imageSizeX</tt>, <tt>imageSizeY</tt>. The results table of ImageJ and the selection of the image are not changed. The coordinates of the selections are transferred in the Geometry Selections view.
 </li>
 <li>
 <b>Pixel RM:</b> Transfers the pixels of the selections of the ROI Manager (all images) with or without a signature as a matrix to R.
@@ -1732,7 +1732,7 @@ Figure 4.12 Pixel RM Stack: the transfer of the selected pixels of a stack (RM
 <a class="toc" name="toc-Subsubsection-4.3.2.3">4.3.2.3</a> Transfer of Selection Coordinates
 </h4>
 <div class="Unindented">
-With <b>ROI</b> single and with <b>Selection RM</b> multiple selection coordinates can be transferred to R, e.g., for a shape analysis or morphometrics. ImageJ has several actions to edit the selections in the menu <b>Edit &gt; Selection</b>, e.g., an interpolation with a spline or the convex hull to reduce the number of points.
+With <b>ROI</b> single selection coordinates can be transferred to R, multiple selections of the ROI Manager in the Geometry Selections view (below), e.g., for a shape analysis or morphometrics. ImageJ has several actions to edit the selections in the menu <b>Edit &gt; Selection</b>, e.g., an interpolation with a spline or the convex hull to reduce the number of points.
 </div>
 <h4 class="Subsubsection">
 <a class="toc" name="toc-Subsubsection-4.3.2.4">4.3.2.4</a> Geometry Selections View
@@ -6246,7 +6246,7 @@ Figure 5.24 The Flow editor
 </div>
 
 </div>
-If the editor is opened default actions will be added to the Bio7 toolbar<b> (1)</b> and a new menu will appear in the menubar of the application. Additionally, a specialized context menu will be available for calling different methods inside the Flow editor. In the flowchart of Bio7 files can simply be dragged from the <b>Project Explorer</b><b> (2)</b> of Bio7 and dropped into the Flow editor <b>(3)</b> of the application. According to their file extension these files are executed in the sequence of the flow which has been created. A created Flow editor file has the extension *.ecoflow. Some other files will be handled by default from the Flow editor when they are dragged from outside the workspace. Executable files (*.exe) will be executed, too and it is also possible to execute these files with an argument (by creating a file with the extension *.argument). Files from external that have different extensions will be executed according to their registration in the system environment. Furthermore an <b>Outline</b> view<b> (4)</b> on the left will show an overview of the flow - if the flow cannot easily be displayed in the main window because of its size a blue rectangle will be displayed in the <b>Outline</b> for a flow selection. The selection is the area of the flow which can be displayed in the main Flow editor window. A new <b>Palette</b> bar <b>(5)</b> will also be displayed for inserting flowchart elements in a newly created file. 
+If the editor is opened default actions will be added to the Bio7 toolbar<b> (1)</b> and a new menu will appear in the menubar of the application. Additionally, a specialized context menu will be available for calling different methods inside the Flow editor. In the flowchart of Bio7 files can simply be dragged from the <b>Project Explorer</b><b> (2)</b> of Bio7 and dropped into the Flow editor <b>(3)</b> of the application. According to their file extension these files are executed in the sequence of the flow which has been created. A created Flow editor file has the extension *.flow (flows of older versions with the extension *.ecoflow are opened and executed, too). Some other files will be handled by default from the Flow editor when they are dragged from outside the workspace. Executable files (*.exe) will be executed, too and it is also possible to execute these files with an argument (by creating a file with the extension *.argument). Files from external that have different extensions will be executed according to their registration in the system environment. Furthermore an <b>Outline</b> view<b> (4)</b> on the left will show an overview of the flow - if the flow cannot easily be displayed in the main window because of its size a blue rectangle will be displayed in the <b>Outline</b> for a flow selection. The selection is the area of the flow which can be displayed in the main Flow editor window. A new <b>Palette</b> bar <b>(5)</b> will also be displayed for inserting flowchart elements in a newly created file. 
 </div>
 <h4 class="Subsubsection">
 <a class="toc" name="toc-Subsubsection-5.1.12.1">5.1.12.1</a> Execute and Verify a Flow
@@ -6343,7 +6343,7 @@ The <b>Save</b> action will save the current flow to the before defined file (Sa
 The <b>Save Image</b> action will save an image in the formats *.gif*, *.jpeg, *.ico to a file. The current size of the flow will determine the pic size (the rulers display the size of the flow in pixel. So be cautious not to store large images with a resized flow !).
 </li>
 <li>
-The <b>Debug Mode</b> option enables a visualization of the current flow by colouring the active shape white to mark files that are currently interpreted or compiled, etc. A mouse-click on the flow deletes marked components.
+The <b>Debug Mode</b> option (enabled by default) enables a visualization of the current flow by highlighting the active shape (a blue border) to mark files that are currently interpreted or compiled, etc. A mouse-click on the flow deletes marked components.
 </li>
 <li>
 <b>Size Layout Grid</b> opens a dialog to resize the grid (layout) if enabled.
@@ -6486,7 +6486,7 @@ Info: An info component can be placed outside the connected flow for an informat
 <a class="toc" name="toc-Paragraph-45"></a><div class="medskip"> </div>
 </div>
 <div class="Unindented">
-A running flow can be interrupted at the next possible flow position with the <b>Cancel</b> action in the progress dialog (the dialog is only displayed for long operations) or by selecting the key combination Ctrl+x (short and long operations). An R calculation can be interrupted with Interrupt R (menu of the toolbar action Start R) or with Ctrl+C in the console. If possible it is highly recommend to test all files before they are used in the flow editor.
+A running flow can be interrupted at the next possible flow position with the <b>Cancel</b> action in the progress dialog (the dialog is only displayed for long operations) or by selecting the key combination Ctrl+Alt+Shift+X (short and long operations). Both also interrupt the running step: an R or Python script (as <b>Interrupt R</b> and <b>Interrupt Python</b> in the menus of the toolbar actions Start R and Start Python) or a Java class (its thread is interrupted, see Thread.interrupted()). A Python step continues the flow when the script has finished. If possible it is highly recommend to test all files before they are used in the flow editor.
 </div>
 <div class="Paragraph">
 <a class="toc" name="toc-Paragraph-46"></a><div class="medskip"> </div>Dropped from the Project Explorer
@@ -6583,6 +6583,9 @@ Figure 6.2 Preferences Startup
 <ul>
 <li>
 <b>Start at the startup of Bio7 (in the background):</b> <b>Start R</b> and <b>Start Python</b> start R and Python when Bio7 starts. <b>The console shows (if both are started)</b> selects the language of the console: <b>R</b> or <b>Python</b>.
+</li>
+<li>
+<b>Start when used (a script, a chunk, the API):</b> <b>Start R when it is used</b> and <b>Start Python when it is used</b> (both activated by default) start R and Python in the background when they are needed, as GDAL is loaded when it is used: running a script or a selection, a chunk of a markdown document, a simulation, the API (e.g., RUtil and PythonUtil in Java, Groovy and BeanShell). Without these options R and Python only start with the toolbar actions (or at the startup of Bio7) and a message is shown instead. The views and the code completion of the editors don't start R or Python.
 </li>
 <li>
 <b>Enable startup scripts:</b> executes the scripts of the startup folder (Java, R, Python, Groovy, BeanShell, JavaScript) and the <b>Startup Commands (Groovy Script)</b> when Bio7 starts.
@@ -7607,7 +7610,7 @@ In <b>Preferences Startup</b> R and Python can be started at the startup of Bio7
 <a class="toc" name="toc-Section-10.4">10.4</a> Bio7 Themes<a class="Label" name="sec:Bio7-Themes"> </a>
 </h2>
 <div class="Unindented">
-Bio7 has a light and a dark default theme (<b>Bio7 Light</b> and <b>Bio7 Dark</b>) and <b>custom themes</b>: a custom theme is based on the light or dark default theme and defines the colors of the workbench (the windows, views, tabs, toolbars, editors, the console and the widgets), the fonts, the style of the view tabs, an artwork image which fades over the main toolbar (and optional the view tab rows) and the colors of the icons. Several example themes are shipped with Bio7: Modern Light, Modern Midnight, Nightshift, Ocean, Ocean Waves and Stars.
+Bio7 has a light and a dark default theme (<b>Bio7 Light</b> and <b>Bio7 Dark</b>) and <b>custom themes</b>: a custom theme is based on the light or dark default theme and defines the colors of the workbench (the windows, views, tabs, toolbars, editors, the console and the widgets), the fonts, the style of the view tabs, an artwork image which fades over the main toolbar (and optional the view tab rows) and the colors of the icons. Several example themes are shipped with Bio7: Silver and Azure Glass (light), Slate, Graphite, Aurora, Modern Midnight, Nightshift, Ocean, Ocean Waves and Stars.
 </div>
 <div class="Indented">
 <div class="float">

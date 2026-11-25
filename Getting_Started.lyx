@@ -336,6 +336,10 @@ Preferences Startup
 \series bold
 Start R
 \series default
+; by default R also starts when it is used, e.g., by a script: 
+\series bold
+Start R when it is used
+\series default
 ). The R preferences describe the restrictions of embedded R:
 \end_layout
 

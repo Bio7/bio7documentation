@@ -4740,7 +4740,8 @@ Project Explorer
  of the application.
  According to their file extension these files are executed in the sequence
  of the flow which has been created.
- A created Flow editor file has the extension *.ecoflow.
+ A created Flow editor file has the extension *.flow (flows of older versions
+ with the extension *.ecoflow are opened and executed, too).
  Some other files will be handled by default from the Flow editor when they
  are dragged from outside the workspace.
  Executable files (*.exe) will be executed, too and it is also possible to
@@ -5071,8 +5072,9 @@ The
 \series bold
 Debug Mode
 \series default
- option enables a visualization of the current flow by colouring the active
- shape white to mark files that are currently interpreted or compiled, etc.
+ option (enabled by default) enables a visualization of the current flow
+ by highlighting the active shape (a blue border) to mark files that are
+ currently interpreted or compiled, etc.
  A mouse-click on the flow deletes marked components.
 \end_layout
 
@@ -5330,8 +5332,11 @@ A running flow can be interrupted at the next possible flow position with
 Cancel
 \series default
  action in the progress dialog (the dialog is only displayed for long operations
-) or by selecting the key combination Ctrl+x (short and long operations).
- An R calculation can be interrupted with Interrupt R (menu of the toolbar action Start R) or with Ctrl+C in the console.
+) or by selecting the key combination Ctrl+Alt+Shift+X (short and long operations).
+ Both also interrupt the running step: an R or Python script (as Interrupt
+ R and Interrupt Python in the menus of the toolbar actions Start R and Start
+ Python) or a Java class (its thread is interrupted, see Thread.interrupted()).
+ A Python step continues the flow when the script has finished.
  If possible it is highly recommend to test all files before they are used
  in the flow editor.
 \end_layout

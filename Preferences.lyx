@@ -316,6 +316,21 @@ Python
 
 \begin_layout Itemize
 \series bold
+Start when used (a script, a chunk, the API):
+\series default
+ 
+\series bold
+Start R when it is used
+\series default
+ and 
+\series bold
+Start Python when it is used
+\series default
+ (both activated by default) start R and Python in the background when they are needed, as GDAL is loaded when it is used: running a script or a selection, a chunk of a markdown document, a simulation, the API (e.g., RUtil and PythonUtil in Java, Groovy and BeanShell). Without these options R and Python only start with the toolbar actions (or at the startup of Bio7) and a message is shown instead. The views and the code completion of the editors don't start R or Python.
+\end_layout
+
+\begin_layout Itemize
+\series bold
 Enable startup scripts:
 \series default
  executes the scripts of the startup folder (Java, R, Python, Groovy, BeanShell, JavaScript) and the 

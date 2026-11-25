@@ -916,7 +916,7 @@ Bio7 Dark
 \series bold
 custom themes
 \series default
-: a custom theme is based on the light or dark default theme and defines the colors of the workbench (the windows, views, tabs, toolbars, editors, the console and the widgets), the fonts, the style of the view tabs, an artwork image which fades over the main toolbar (and optional the view tab rows) and the colors of the icons. Several example themes are shipped with Bio7: Modern Light, Modern Midnight, Nightshift, Ocean, Ocean Waves and Stars.
+: a custom theme is based on the light or dark default theme and defines the colors of the workbench (the windows, views, tabs, toolbars, editors, the console and the widgets), the fonts, the style of the view tabs, an artwork image which fades over the main toolbar (and optional the view tab rows) and the colors of the icons. Several example themes are shipped with Bio7: Silver and Azure Glass (light), Slate, Graphite, Aurora, Modern Midnight, Nightshift, Ocean, Ocean Waves and Stars.
 \end_layout
 
 \begin_layout Standard

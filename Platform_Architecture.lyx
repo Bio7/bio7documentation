@@ -286,11 +286,15 @@ nolink "false"
 
 \end_inset
 
-). The menu of the action contains 
+). If R runs, the action switches the console to R. The menu of the action contains 
 \series bold
 Start R
 \series default
- and 
+ (
+\series bold
+R Console
+\series default
+ if R runs) and 
 \series bold
 Interrupt R
 \series default
@@ -313,7 +317,19 @@ nolink "false"
 
 \end_inset
 
-) for the data transfer with ImageJ and R and matplotlib plots in Bio7. Python runs in the process of Bio7, too.
+) for the data transfer with ImageJ and R and matplotlib plots in Bio7. If Python runs, the action switches the console to Python. The menu of the action contains 
+\series bold
+Start Python
+\series default
+ (
+\series bold
+Python Console
+\series default
+ if Python runs) and 
+\series bold
+Interrupt Python
+\series default
+. Python runs in the process of Bio7, too, and can't be restarted without a restart of Bio7.
 \end_layout
 
 \begin_layout Itemize

@@ -1215,11 +1215,19 @@ IJResultsTable
 \series bold
 IJ RasterStack:
 \series default
- the opened stack as 
+ all slices of the opened stack as the numpy array 
 \family typewriter
 imageStack
 \family default
- (numpy arrays).
+ (slices, height, width) in the selected data type as for R: Double float64 (the exact values), Integer int32, Byte uint8 (an RGB image: its luminance), RGB Byte uint8 (slices, height, width, 3); with 
+\family typewriter
+imageSizeX
+\family default
+ and 
+\family typewriter
+imageSizeY
+\family default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -1234,7 +1242,15 @@ selectionx
 \family typewriter
 selectiony
 \family default
-.
+ and the size of the image as 
+\family typewriter
+imageSizeX
+\family default
+ and 
+\family typewriter
+imageSizeY
+\family default
+ (as for R).
 \end_layout
 
 \begin_layout Itemize
@@ -1245,43 +1261,123 @@ Particles:
 \family typewriter
 Particles
 \family default
-.
+, 
+\family typewriter
+imageSizeX
+\family default
+, 
+\family typewriter
+imageSizeY
+\family default
+ and the coordinates of the selection (
+\family typewriter
+selectionx
+\family default
+, 
+\family typewriter
+selectiony
+\family default
+, if any).
 \end_layout
 
 \begin_layout Itemize
 \series bold
 Pixel:
 \series default
- the pixels of the selection as a DataFrame (optionally with a class column).
+ the pixels of the selection in all opened images as a DataFrame (named in the dialog) with a column per image (
+\family typewriter
+layer1
+\family default
+, 
+\family typewriter
+layer2
+\family default
+, ...) and optionally the column 
+\family typewriter
+Class
+\family default
+, and 
+\family typewriter
+imageSizeX
+\family default
+, 
+\family typewriter
+imageSizeY
+\family default
+ (as for R).
 \end_layout
 
 \begin_layout Itemize
 \series bold
-Selection RM:
+Measure RM:
 \series default
- the selections of the ROI Manager as 
+ the measurements of the selections of the ROI Manager as the DataFrame 
 \family typewriter
-roiSelections
+RoiMeasurements
 \family default
-.
+ (as for R).
 \end_layout
 
 \begin_layout Itemize
 \series bold
 Pixel RM, Pixel RM Stack:
 \series default
- a DataFrame for each selection and all pixels as 
+ a DataFrame for each selection of the ROI Manager (named as the selection) with a column per image or slice (
 \family typewriter
-roi_pixels
+layer…
 \family default
-.
+) and optionally the column 
+\family typewriter
+Class
+\family default
+, and 
+\family typewriter
+imageSizeX
+\family default
+, 
+\family typewriter
+imageSizeY
+\family default
+ (as for R).
 \end_layout
 
 \begin_layout Itemize
 \series bold
 Pic<-, Pic->:
 \series default
- the image as a numpy array and an array as an image.
+ as for R the current image (of a stack the current slice) with 
+\family typewriter
+imageSizeX
+\family default
+, 
+\family typewriter
+imageSizeY
+\family default
+ and 
+\family typewriter
+imageDataName
+\family default
+: Double optionally as a matrix (height, width), else as a vector; Integer and Byte as a vector; RGB optionally as an integer matrix (pixels, 3), else as the vectors 
+\family typewriter
+name_R
+\family default
+, 
+\family typewriter
+name_G
+\family default
+, 
+\family typewriter
+name_B
+\family default
+. Pic-> creates an image from an array; a vector (or the RGB matrix) is shaped with 
+\family typewriter
+imageSizeX
+\family default
+ and 
+\family typewriter
+imageSizeY
+\family default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -1414,9 +1510,21 @@ Pixel:
 \begin_layout Itemize
 
 \series bold
-Selection RM:
+Measure RM:
 \series default
- Transfers the coordinates of the selections of the ROI Manager as a list of lists to R (see the Geometry Selections view for spatial data).
+ Measures each selection of the ROI Manager (the selected ones, else all) in the current image (of a stack the current slice) with the measurements of ImageJ and transfers the table 
+\family typewriter
+RoiMeasurements
+\family default
+ to R (one row per selection): the name of the selection (ROI), its group, area, mean, standard deviation, median, minimum, maximum, integrated density, centroid, perimeter, the shape descriptors (circularity, aspect ratio, roundness, solidity) and the Feret diameters in the units of the image, and 
+\family typewriter
+imageSizeX
+\family default
+, 
+\family typewriter
+imageSizeY
+\family default
+. The results table of ImageJ and the selection of the image are not changed. The coordinates of the selections are transferred in the Geometry Selections view.
 \end_layout
 
 \begin_layout Itemize
@@ -1618,11 +1726,7 @@ With
 \series bold
 ROI
 \series default
- single and with 
-\series bold
-Selection RM
-\series default
- multiple selection coordinates can be transferred to R, e.g., for a shape analysis or morphometrics. ImageJ has several actions to edit the selections in the menu 
+ single selection coordinates can be transferred to R, multiple selections of the ROI Manager in the Geometry Selections view (below), e.g., for a shape analysis or morphometrics. ImageJ has several actions to edit the selections in the menu 
 \series bold
 Edit > Selection
 \series default
