@@ -328,7 +328,7 @@ R is started with
 \series bold
 Start R
 \series default
- in the main toolbar or in the R menu (optionally at the startup of Bio7: 
+ in the main toolbar or in the R menu of the R-Shell (optionally at the startup of Bio7: 
 \series bold
 Preferences Startup
 \series default

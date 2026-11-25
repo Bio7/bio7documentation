@@ -7373,7 +7373,7 @@ nolink "false"
 \series bold
 Start R
 \series default
- in the main toolbar or in the R menu starts R in the Bio7 console. R can then be used in the R-Shell view, the R editor, the Markdown editor, the Table view, the ImageJ views and with the scripts and the compiler of Bio7. The path to R, the R startup commands and the other settings are in the R preferences (see 
+ in the main toolbar or in the R menu of the R-Shell starts R in the Bio7 console. R can then be used in the R-Shell view, the R editor, the Markdown editor, the Table view, the ImageJ views and with the scripts and the compiler of Bio7. The path to R, the R startup commands and the other settings are in the R preferences (see 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Rserve-preferences"
@@ -7388,13 +7388,17 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsection
-R Menus in the Bio7 Main Menu
+The R Menu of the R-Shell
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:R-Menus-in"
 
 \end_inset
 
+\end_layout
+
+\begin_layout Standard
+The actions of R are in the context menu of the R-Shell view (above LibreOffice): the submenu R (Start R, Interrupt R), Load Workspace and Save Workspace, the submenu Editor (Evaluate Line or Selection, Evaluate Expression, Evaluate Clipboard) and the submenu Data (Get Clipboard Data, Remove All Objects); their shortcuts work in all of Bio7.
 \end_layout
 
 \begin_layout Itemize
@@ -7458,14 +7462,6 @@ Get Clipboard Data:
 Remove All Objects:
 \series default
  Removes all objects of the current workspace.
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Start RGui with Workspace:
-\series default
- Windows: starts RGui with the current workspace.
 \end_layout
 
 \begin_layout Subsection
@@ -10957,6 +10953,17 @@ Plot with Options...
 Delete:
 \series default
  Deletes the selected objects.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+Save All Objects...:
+\series default
+ Saves all objects of the workspace which can be pickled (the data, e.g., numpy arrays and DataFrames; not the imports, the functions and the classes, and not names beginning with _) in one pickle file (*.pkl) as a dict {name: object}; the objects which cannot be pickled are listed. 
+\series bold
+Load Objects...
+\series default
+ adds the saved objects to the workspace (existing names are replaced). A pickle file can run code when it is loaded: only load files of trusted sources.
 \end_layout
 
 \begin_layout Itemize

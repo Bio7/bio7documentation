@@ -190,7 +190,7 @@ tr:first-child td { background: var(--bg-soft); }
 <li class="l3"><a href="#toc-Subsection-4.5.1" data-id="toc-Subsection-4.5.1"><span class="num">4.5.1</span>The Controls of the Globe</a></li>
 <li class="l3"><a href="#toc-Subsection-4.5.2" data-id="toc-Subsection-4.5.2"><span class="num">4.5.2</span>The Options WorldWind View</a></li>
 <li class="l2"><a href="#toc-Section-4.6" data-id="toc-Section-4.6"><span class="num">4.6</span>The R Perspective and Menus</a></li>
-<li class="l3"><a href="#toc-Subsection-4.6.1" data-id="toc-Subsection-4.6.1"><span class="num">4.6.1</span>R Menus in the Bio7 Main Menu</a></li>
+<li class="l3"><a href="#toc-Subsection-4.6.1" data-id="toc-Subsection-4.6.1"><span class="num">4.6.1</span>The R Menu of the R-Shell</a></li>
 <li class="l3"><a href="#toc-Subsection-4.6.2" data-id="toc-Subsection-4.6.2"><span class="num">4.6.2</span>R Plot Devices</a></li>
 <li class="l3"><a href="#toc-Subsection-4.6.3" data-id="toc-Subsection-4.6.3"><span class="num">4.6.3</span>The R Perspective</a></li>
 <li class="l2"><a href="#toc-Section-4.7" data-id="toc-Section-4.7"><span class="num">4.7</span>The Python Perspective</a></li>
@@ -392,7 +392,7 @@ Bio7 embeds R directly: R runs in the process of Bio7 (with the Foreign Function
 Install R from CRAN (<a class="FlexURL" href="https://cran.r-project.org">https://cran.r-project.org</a>) with the installer of your operating system (Windows, macOS) or with the package manager (Linux, e.g., <tt>sudo apt install r-base</tt>). Bio7 uses the default installation of R automatically. Another R installation is selected in the R preferences (<b>Preferences Bio7 &gt; Preferences R</b>, <b>Path to R</b>). The button <b>R Setup...</b> (<b>Find or install R</b>) searches the installed R versions on this computer: <b>Use for Bio7</b> sets the path to R (applied at the next start of R). The dialog also helps to install R (the commands for the operating systems, <b>Open R Download Page</b>, on Windows <b>Install R with winget</b>).
 </div>
 <div class="Indented">
-R is started with <b>Start R</b> in the main toolbar or in the R menu (optionally at the startup of Bio7: <b>Preferences Startup</b>, <b>Start R</b>; by default R also starts when it is used, e.g., by a script: <b>Start R when it is used</b>). The R preferences describe the restrictions of embedded R:
+R is started with <b>Start R</b> in the main toolbar or in the R menu of the R-Shell (optionally at the startup of Bio7: <b>Preferences Startup</b>, <b>Start R</b>; by default R also starts when it is used, e.g., by a script: <b>Start R when it is used</b>). The R preferences describe the restrictions of embedded R:
 </div>
 <ul>
 <li>
@@ -2891,9 +2891,12 @@ Figure 4.56 The flat projection of the globe (Lat-Lon)
 </div>
 <h2 class="Section" id="toc-Section-4.6"><a class="toc" name="toc-Section-4.6">4.6</a> The R Perspective and Menus<a class="Label" name="sec:The-R-Perspective"> </a><a class="anchor" href="#toc-Section-4.6" aria-label="Link">#</a></h2>
 <div class="Unindented">
-Bio7 embeds R for the statistical analysis of data, images and models: R runs <b>embedded</b> in the process of Bio7 (R 4.3 or later, see <a class="Reference" href="#subsec:Embedded-R">2.1.3↑</a>). <b>Start R</b> in the main toolbar or in the R menu starts R in the Bio7 console. R can then be used in the R-Shell view, the R editor, the Markdown editor, the Table view, the ImageJ views and with the scripts and the compiler of Bio7. The path to R, the R startup commands and the other settings are in the R preferences (see <a class="Reference" href="#subsec:Rserve-preferences">4.6.3.13↓</a>).
+Bio7 embeds R for the statistical analysis of data, images and models: R runs <b>embedded</b> in the process of Bio7 (R 4.3 or later, see <a class="Reference" href="#subsec:Embedded-R">2.1.3↑</a>). <b>Start R</b> in the main toolbar or in the R menu of the R-Shell starts R in the Bio7 console. R can then be used in the R-Shell view, the R editor, the Markdown editor, the Table view, the ImageJ views and with the scripts and the compiler of Bio7. The path to R, the R startup commands and the other settings are in the R preferences (see <a class="Reference" href="#subsec:Rserve-preferences">4.6.3.13↓</a>).
 </div>
-<h3 class="Subsection" id="toc-Subsection-4.6.1"><a class="toc" name="toc-Subsection-4.6.1">4.6.1</a> R Menus in the Bio7 Main Menu<a class="Label" name="subsec:R-Menus-in"> </a><a class="anchor" href="#toc-Subsection-4.6.1" aria-label="Link">#</a></h3>
+<h3 class="Subsection" id="toc-Subsection-4.6.1"><a class="toc" name="toc-Subsection-4.6.1">4.6.1</a> The R Menu of the R-Shell<a class="Label" name="subsec:R-Menus-in"> </a><a class="anchor" href="#toc-Subsection-4.6.1" aria-label="Link">#</a></h3>
+<div class="Standard">
+The actions of R are in the context menu of the R-Shell view (above LibreOffice): the submenu R (Start R, Interrupt R), Load Workspace and Save Workspace, the submenu Editor (Evaluate Line or Selection, Evaluate Expression, Evaluate Clipboard) and the submenu Data (Get Clipboard Data, Remove All Objects); their shortcuts work in all of Bio7.
+</div>
 <ul>
 <li>
 <b>Start R:</b> Starts the embedded R (the menu of the toolbar action Start R contains Start R and Interrupt R). R can’t be restarted without a restart of Bio7.
@@ -2918,9 +2921,6 @@ Bio7 embeds R for the statistical analysis of data, images and models: R runs <b
 </li>
 <li>
 <b>Remove All Objects:</b> Removes all objects of the current workspace.
-</li>
-<li>
-<b>Start RGui with Workspace:</b> Windows: starts RGui with the current workspace.
 </li>
 
 </ul>
@@ -4041,6 +4041,9 @@ The list of the objects has a context menu with the following actions:
 </li>
 <li>
 <b>Delete:</b> Deletes the selected objects.
+</li>
+<li>
+<b>Save All Objects...:</b> Saves all objects of the workspace which can be pickled (the data, e.g., numpy arrays and DataFrames; not the imports, the functions and the classes, and not names beginning with _) in one pickle file (*.pkl) as a dict {name: object}; the objects which cannot be pickled are listed. <b>Load Objects...</b> adds the saved objects to the workspace (existing names are replaced). A pickle file can run code when it is loaded: only load files of trusted sources.
 </li>
 <li>
 The scripts of the Python-Shell scripts folder (Python preferences) are listed at the end of the menu. In these scripts the names of the selected objects are available as <tt>bio7_shell_vars</tt>.

@@ -38,6 +38,7 @@ Guides and test reports of Bio7 4.0 (PDF):
 
 | Document | Content |
 |---|---|
+| [R and Python in Bio7: Runtime and Workspace](documents/Bio7_R_and_Python_Runtime.pdf) | The basic concepts of the embedded R and Python: the start, the workspaces (.GlobalEnv and __main__), threads and interrupts, the data exchange between Java, R and Python, the lifetime and the saving of the workspaces |
 | [Debugging R and Python in Bio7](documents/Bio7_R_and_Python_Debugger_Guide.pdf) | The R and the Python debugger: from a simple script to classes in several files (breakpoints, stepping, Run to Cursor) and a stress test of both debuggers |
 | [Stress test of the Python and R bridges: Windows](documents/Bio7_Bridge_Stresstest_Windows.pdf) | The embedded Python and R under load: latency, data transfer, memory, callbacks, numerical precision |
 | [Stress test of the Python and R bridges: Linux (WSL)](documents/Bio7_Bridge_Stresstest_Linux_WSL.pdf) | The same tests on Linux (Ubuntu in WSL 2) |
