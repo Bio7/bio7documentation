@@ -4744,6 +4744,7 @@ Project Explorer
  with the extension *.ecoflow are opened and executed, too).
  Some other files will be handled by default from the Flow editor when they
  are dragged from outside the workspace.
+ Flows can also be opened from the file system and executed (see below).
  Executable files (*.exe) will be executed, too and it is also possible to
  execute these files with an argument (by creating a file with the extension
  *.argument).
@@ -4795,6 +4796,38 @@ FlowAction
 .
  In addition since Bio7 1.5 a new action - left action - is available to
  verify the connections for a valid Bio7 flow graph.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Errors and stopping a flow:
+\series default
+ If a step of a flow fails (e.g., the file of a component is not found or a job was cancelled) the flow is stopped, the component is marked and the reason is printed in the console (“Flow stopped: ...”). Errors inside a script (e.g., an R or Python error) are printed in the console and the flow continues with the next step. The stop action stops a running flow at any time (also a running R, Python or Java step). Afterwards a new flow can always be started. If a flow is still running (a step is executed) the execute action shows a message to stop the flow first.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+The files of the components:
+\series default
+ A file dropped from the workspace is stored with its workspace path (/Project/folder/file.R), a file dropped from outside of the workspace below the folder of the flow file with a path relative to the flow file (folder/file.R), other files with their absolute path. When the flow is executed the files are searched in the following order: an absolute file, the location of the workspace project (also a project of a Git repository which is not in the workspace folder or a linked folder), the path relative to the folder of the flow file, the workspace path below the folder of the project or repository which contains the flow. A double-click on a component opens its file in the same way.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Flows in Git repositories:
+\series default
+ Flows (e.g., of a cloned GitHub repository) can be executed without copying the files into the workspace: import the project with
+\series bold
+ File → Import → Existing Projects into Workspace
+\series default
+ (without copying the projects into the workspace; the files stay in the repository) or open the flow file directly with
+\series bold
+ File → Open File...
+\series default
+ (the flow can be edited, saved and executed; the files are found relative to the flow file). Java files of a flow are compiled in their project and must be in a project of the workspace (imported).
 \end_layout
 
 \begin_layout Subsubsection
