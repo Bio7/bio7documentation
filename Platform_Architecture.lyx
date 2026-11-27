@@ -116,7 +116,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-The components of the Bio7 window (Resource perspective with an R script, light default theme)
+The components of the Bio7 window (Resource perspective with an R script, dark default theme)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:window-components"
@@ -381,7 +381,15 @@ The menu bar of Bio7 contains the menus for the work with the components of the 
 \series bold
 File:
 \series default
- New projects and files, Save, Save All, Save As, Refresh, Import and Export of projects and files and 
+ New projects and files, Save, Save All, Save As, Refresh, 
+\series bold
+Switch Workspace
+\series default
+, Import and Export of projects and files, 
+\series bold
+GDAL
+\series default
+ (raster and vector data) and 
 \series bold
 Restart in Debug Mode...
 \series default
@@ -393,7 +401,7 @@ Restart in Debug Mode...
 \series bold
 Edit:
 \series default
- Undo, Redo, Cut, Copy, Paste, Delete, Find/Replace, Select All and Print for the editors of Bio7.
+ Undo, Redo, Cut, Copy, Paste, Delete, Find/Replace (with Find Next, Find Previous and the incremental find), Select All, the block and the multi-selection, Print and Word Completion for the editors of Bio7.
 \end_layout
 
 \begin_layout Itemize
@@ -401,7 +409,11 @@ Edit:
 \series bold
 Search:
 \series default
- The search in files and projects.
+ 
+\series bold
+Quick Search...
+\series default
+: a text in the files of the workspace (the results while typing).
 \end_layout
 
 \begin_layout Itemize
@@ -409,7 +421,11 @@ Search:
 \series bold
 Preferences:
 \series default
- Opens the preferences of Bio7 (see 
+ Opens the preferences of Bio7 (on macOS 
+\series bold
+Bio7 > Settings...
+\series default
+, see 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:The-Bio7-Preferences"
@@ -447,7 +463,7 @@ nolink "false"
 \series bold
 R:
 \series default
- The actions for the interaction with R and the transfer of data (see 
+ The actions for the interaction with R and the transfer of data are in the context menu of the R-Shell view (no main menu, see 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:R-Menus-in"
@@ -467,10 +483,6 @@ nolink "false"
 Window:
 \series default
  
-\series bold
-Show Selected View
-\series default
-, 
 \series bold
 Show View
 \series default
@@ -513,11 +525,7 @@ nolink "false"
 
 \end_inset
 
-) and 
-\series bold
-Save Perspective As
-\series default
- (a custom arrangement of views).
+).
 \end_layout
 
 \begin_layout Itemize

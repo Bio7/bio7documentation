@@ -7398,7 +7398,7 @@ name "subsec:R-Menus-in"
 \end_layout
 
 \begin_layout Standard
-The actions of R are in the context menu of the R-Shell view (above LibreOffice): the submenu R (Start R, Interrupt R), Load Workspace and Save Workspace, the submenu Editor (Evaluate Line or Selection, Evaluate Expression, Evaluate Clipboard) and the submenu Data (Get Clipboard Data, Remove All Objects); their shortcuts work in all of Bio7.
+The actions of R are in the context menu of the R-Shell view (above LibreOffice): the submenu R (Start R, Interrupt R), Load Workspace and Save Workspace, the submenu Evaluation (Evaluate Expression, Evaluate Clipboard) and the submenu Data (Get Clipboard Data, Remove All Objects); their shortcuts work in all of Bio7.
 \end_layout
 
 \begin_layout Itemize
@@ -7435,9 +7435,9 @@ Evaluate Expression:
 \begin_layout Itemize
 
 \series bold
-Evaluate Line or Selection:
+Evaluate Line/Selection:
 \series default
- Evaluates the selected text or the current line of the R editor and moves to the next line. A line is only evaluated if the expression is complete, else it is collected until the expression is complete (interrupt with the action of the R-Shell view).
+ In the context menu of the R editor (and of the Python editor, F8, also the toolbar action): evaluates the selected text or the current line and moves to the next line. A line is only evaluated if the expression is complete, else it is collected until the expression is complete (interrupt with the action of the R-Shell view).
 \end_layout
 
 \begin_layout Itemize

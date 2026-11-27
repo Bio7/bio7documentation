@@ -561,7 +561,7 @@ After Bio7 has been launched an Eclipse workbench window is displayed. A window 
 
 </div>
 <div class="caption">
-Figure 3.1 The components of the Bio7 window (Resource perspective with an R script, light default theme)
+Figure 3.1 The components of the Bio7 window (Resource perspective with an R script, dark default theme)
 </div>
 
 </div>
@@ -601,7 +601,7 @@ The toolbar contains the default actions of Bio7 which are described below. Edit
 <div class="float">
 <a class="Label" name="fig:toolbar"> </a><div class="figure" style="max-width: 60%;">
 <div class="center">
-<img loading="lazy" decoding="async" style="width: 594px" class="figure" src="images/chapter3/toolbar.png" alt="figure images/chapter3/toolbar.png"/>
+<img loading="lazy" decoding="async" style="width: 615px" class="figure" src="images/chapter3/toolbar.png" alt="figure images/chapter3/toolbar.png"/>
 
 </div>
 <div class="caption">
@@ -643,25 +643,25 @@ The menu bar of Bio7 contains the menus for the work with the components of the 
 </div>
 <ul>
 <li>
-<b>File:</b> New projects and files, Save, Save All, Save As, Refresh, Import and Export of projects and files and <b>Restart in Debug Mode...</b> (a restart with a port for a Java debugger).
+<b>File:</b> New projects and files, Save, Save All, Save As, Refresh, <b>Switch Workspace</b>, Import and Export of projects and files, <b>GDAL</b> (raster and vector data) and <b>Restart in Debug Mode...</b> (a restart with a port for a Java debugger).
 </li>
 <li>
-<b>Edit:</b> Undo, Redo, Cut, Copy, Paste, Delete, Find/Replace, Select All and Print for the editors of Bio7.
+<b>Edit:</b> Undo, Redo, Cut, Copy, Paste, Delete, Find/Replace (with Find Next, Find Previous and the incremental find), Select All, the block and the multi-selection, Print and Word Completion for the editors of Bio7.
 </li>
 <li>
-<b>Search:</b> The search in files and projects.
+<b>Search:</b> <b>Quick Search...</b>: a text in the files of the workspace (the results while typing).
 </li>
 <li>
-<b>Preferences:</b> Opens the preferences of Bio7 (see <a class="Reference" href="#sec:The-Bio7-Preferences">6.1↓</a>).
+<b>Preferences:</b> Opens the preferences of Bio7 (on macOS <b>Bio7 &gt; Settings...</b>, see <a class="Reference" href="#sec:The-Bio7-Preferences">6.1↓</a>).
 </li>
 <li>
 <b>Scripts:</b> Submenus with own scripts (BeanShell, Groovy, Python, R scripts and ImageJ macros) of special folders (see <a class="Reference" href="#sec:Install-Eclipse,-R,">10.3↓</a>).
 </li>
 <li>
-<b>R:</b> The actions for the interaction with R and the transfer of data (see <a class="Reference" href="#subsec:R-Menus-in">4.6.1↓</a>).
+<b>R:</b> The actions for the interaction with R and the transfer of data are in the context menu of the R-Shell view (no main menu, see <a class="Reference" href="#subsec:R-Menus-in">4.6.1↓</a>).
 </li>
 <li>
-<b>Window:</b> <b>Show Selected View</b>, <b>Show View</b> and <b>Open Perspective</b>, <b>Show/Hide Editor</b>, <b>Show/Hide Toolbar</b>, <b>Show All Menus</b>, <b>Hide All Menus</b> and <b>Fullscreen/Hide Menus</b>, <b>Switch Theme...</b> (see <a class="Reference" href="#sec:Bio7-Themes">10.4↓</a>) and <b>Save Perspective As</b> (a custom arrangement of views).
+<b>Window:</b> <b>Show View</b> and <b>Open Perspective</b>, <b>Show/Hide Editor</b>, <b>Show/Hide Toolbar</b>, <b>Show All Menus</b>, <b>Hide All Menus</b> and <b>Fullscreen/Hide Menus</b>, <b>Switch Theme...</b> (see <a class="Reference" href="#sec:Bio7-Themes">10.4↓</a>).
 </li>
 <li>
 <b>Help:</b> The help of the application, the dynamic help, <b>Bio7 Internet</b> (the Browser view), the installation of new software and updates (see <a class="Reference" href="#chap:Update-Manager">8↓</a>) and the About dialog (with the uninstallation of plugins).
@@ -2894,8 +2894,8 @@ Figure 4.56 The flat projection of the globe (Lat-Lon)
 Bio7 embeds R for the statistical analysis of data, images and models: R runs <b>embedded</b> in the process of Bio7 (R 4.3 or later, see <a class="Reference" href="#subsec:Embedded-R">2.1.3↑</a>). <b>Start R</b> in the main toolbar or in the R menu of the R-Shell starts R in the Bio7 console. R can then be used in the R-Shell view, the R editor, the Markdown editor, the Table view, the ImageJ views and with the scripts and the compiler of Bio7. The path to R, the R startup commands and the other settings are in the R preferences (see <a class="Reference" href="#subsec:Rserve-preferences">4.6.3.13↓</a>).
 </div>
 <h3 class="Subsection" id="toc-Subsection-4.6.1"><a class="toc" name="toc-Subsection-4.6.1">4.6.1</a> The R Menu of the R-Shell<a class="Label" name="subsec:R-Menus-in"> </a><a class="anchor" href="#toc-Subsection-4.6.1" aria-label="Link">#</a></h3>
-<div class="Standard">
-The actions of R are in the context menu of the R-Shell view (above LibreOffice): the submenu R (Start R, Interrupt R), Load Workspace and Save Workspace, the submenu Editor (Evaluate Line or Selection, Evaluate Expression, Evaluate Clipboard) and the submenu Data (Get Clipboard Data, Remove All Objects); their shortcuts work in all of Bio7.
+<div class="Unindented">
+The actions of R are in the context menu of the R-Shell view (above LibreOffice): the submenu R (Start R, Interrupt R), Load Workspace and Save Workspace, the submenu Evaluation (Evaluate Expression, Evaluate Clipboard) and the submenu Data (Get Clipboard Data, Remove All Objects); their shortcuts work in all of Bio7.
 </div>
 <ul>
 <li>
@@ -2911,7 +2911,7 @@ The actions of R are in the context menu of the R-Shell view (above LibreOffice)
 <b>Evaluate Expression:</b> Opens a dialog to evaluate an R expression, the result is displayed in the console.
 </li>
 <li>
-<b>Evaluate Line or Selection:</b> Evaluates the selected text or the current line of the R editor and moves to the next line. A line is only evaluated if the expression is complete, else it is collected until the expression is complete (interrupt with the action of the R-Shell view).
+<b>Evaluate Line/Selection:</b> In the context menu of the R editor (and of the Python editor, F8, also the toolbar action): evaluates the selected text or the current line and moves to the next line. A line is only evaluated if the expression is complete, else it is collected until the expression is complete (interrupt with the action of the R-Shell view).
 </li>
 <li>
 <b>Evaluate Clipboard:</b> Evaluates the R script in the clipboard.
@@ -5500,7 +5500,7 @@ The execution of a flow will be triggered with the item <b>FlowAction</b> in the
 <b>The files of the components:</b> A file dropped from the workspace is stored with its workspace path (/Project/folder/file.R), a file dropped from outside of the workspace below the folder of the flow file with a path relative to the flow file (folder/file.R), other files with their absolute path. When the flow is executed the files are searched in the following order: an absolute file, the location of the workspace project (also a project of a Git repository which is not in the workspace folder or a linked folder), the path relative to the folder of the flow file, the workspace path below the folder of the project or repository which contains the flow. A double-click on a component opens its file in the same way.
 </div>
 <div class="Indented">
-<b>Flows in Git repositories:</b> Flows (e.g., of a cloned GitHub repository) can be executed without copying the files into the workspace: import the project with <b>File → Import → Existing Projects into Workspace</b> (without copying the projects into the workspace; the files stay in the repository) or open the flow file directly with <b>File → Open File...</b> (the flow can be edited, saved and executed; the files are found relative to the flow file). Java files of a flow are compiled in their project and must be in a project of the workspace (imported).
+<b>Flows in Git repositories:</b> Flows (e.g., of a cloned GitHub repository) can be executed without copying the files into the workspace: import the project with<b> File → Import → Existing Projects into Workspace</b> (without copying the projects into the workspace; the files stay in the repository) or open the flow file directly with<b> File → Open File...</b> (the flow can be edited, saved and executed; the files are found relative to the flow file). Java files of a flow are compiled in their project and must be in a project of the workspace (imported).
 </div>
 <h4 class="Subsubsection" id="toc-Subsubsection-5.1.12.2"><a class="toc" name="toc-Subsubsection-5.1.12.2">5.1.12.2</a> The Palette of the Flow Editor<a class="anchor" href="#toc-Subsubsection-5.1.12.2" aria-label="Link">#</a></h4>
 <div class="Unindented">
@@ -5735,7 +5735,7 @@ Info: An info component can be placed outside the connected flow for an informat
 <a class="toc" name="toc-Paragraph-45"></a><div class="medskip"> </div>
 </div>
 <div class="Unindented">
-A running flow can be interrupted at the next possible flow position with the <b>Cancel</b> action in the progress dialog (the dialog is only displayed for long operations) or by selecting the key combination Ctrl+Alt+Shift+X (short and long operations). Both also interrupt the running step: an R or Python script (as <b>Interrupt R</b> and <b>Interrupt Python</b> in the menus of the toolbar actions Start R and Start Python) or a Java class (its thread is interrupted, see Thread.interrupted()). A Python step continues the flow when the script has finished. If possible it is highly recommend to test all files before they are used in the flow editor.
+A running flow can be interrupted at the next possible flow position with the <b>Cancel</b> action in the progress dialog (the dialog is only displayed for long operations) or by selecting the key combination Ctrl+Alt+Shift+X (short and long operations). Both also interrupt the running step: an R or Python script (as Interrupt R and Interrupt Python in the menus of the toolbar actions Start R and Start Python) or a Java class (its thread is interrupted, see Thread.interrupted()). A Python step continues the flow when the script has finished. If possible it is highly recommend to test all files before they are used in the flow editor.
 </div>
 <div class="Paragraph">
 <a class="toc" name="toc-Paragraph-46"></a><div class="medskip"> </div>Dropped from the Project Explorer
@@ -5826,7 +5826,7 @@ Figure 6.2 Preferences Startup
 <b>Start at the startup of Bio7 (in the background):</b> <b>Start R</b> and <b>Start Python</b> start R and Python when Bio7 starts. <b>The console shows (if both are started)</b> selects the language of the console: <b>R</b> or <b>Python</b>.
 </li>
 <li>
-<b>Start when used (a script, a chunk, the API):</b> <b>Start R when it is used</b> and <b>Start Python when it is used</b> (both activated by default) start R and Python in the background when they are needed, as GDAL is loaded when it is used: running a script or a selection, a chunk of a markdown document, a simulation, the API (e.g., RUtil and PythonUtil in Java, Groovy and BeanShell). Without these options R and Python only start with the toolbar actions (or at the startup of Bio7) and a message is shown instead. The views and the code completion of the editors don't start R or Python.
+<b>Start when used (a script, a chunk, the API):</b> <b>Start R when it is used</b> and <b>Start Python when it is used</b> (both activated by default) start R and Python in the background when they are needed, as GDAL is loaded when it is used: running a script or a selection, a chunk of a markdown document, a simulation, the API (e.g., RUtil and PythonUtil in Java, Groovy and BeanShell). Without these options R and Python only start with the toolbar actions (or at the startup of Bio7) and a message is shown instead. The views and the code completion of the editors don’t start R or Python.
 </li>
 <li>
 <b>Enable startup scripts:</b> executes the scripts of the startup folder (Java, R, Python, Groovy, BeanShell, JavaScript) and the <b>Startup Commands (Groovy Script)</b> when Bio7 starts.
@@ -7660,7 +7660,7 @@ Bibliography
 
 <hr class="footer"/>
 <div class="footer" id="generated-by">
-Document generated by <a href="http://elyxer.nongnu.org/">eLyXer 1.2.5 (2013-03-10)</a> on <span class="create-date">2026-11-24T10:43:45.803584</span>
+Document generated by <a href="http://elyxer.nongnu.org/">eLyXer 1.2.5 (2013-03-10)</a> on <span class="create-date">2026-11-27T18:40:52.612806</span>
 </div>
 
 </div></main>
