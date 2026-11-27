@@ -5517,7 +5517,7 @@ For the creation of a running flowchart it is necessary to create a start and a 
 <b>Loop</b> : A loop will repeat a sequence in the flowchart. The number of iterations can be adjusted with an integer value directly in the shape (click and hold ca. one second to edit).
 </li>
 <li>
-<b>Decision</b> : A decision in the flow will execute an if statement. According to a self defined condition a static variable (Bio7Flow.setDecision(“true”)) can be set to true or false. The direction of the flow then depends on the linked connection which can be set to true or false in the properties dialog (select the connections to set the values).
+<b>Decision</b> : A decision in the flow will execute an if statement. According to a self defined condition a static variable (Bio7Flow.setDecision(“true”)) can be set to true or false. The direction of the flow then depends on the value of the connection: a connection which starts on the left half of the decision is true, on the right half false (if this value is connected already, the other one). The decision shows its outputs: true at the left corner, false at the right corner, the input is the top corner. The value of a connection can be changed in the Properties view (context menu of the flow: Show Properties).
 </li>
 <li>
 <b>Info</b> : A single line label for an info which can be edited in the shape.
@@ -5571,12 +5571,15 @@ The context menu offers some of the aforementioned methods and several new metho
 </div>
 <ol>
 <li>
-The options <b>Manhatten Router</b> and <b>Shortest Path</b> action are responsible for the layout of the connections.<ol>
+The options <b>Manhatten Router</b>, <b>Shortest Path</b> and <b>Curves (Splines)</b> action are responsible for the layout of the connections.<ol>
 <li>
 The Shortest Path action applies the shortest path algorithm to find paths around obstacles in the flow. 
 </li>
 <li>
 The Manhatten Router algorithm will use rectangular lines for connections in the flow.
+</li>
+<li>
+The Curves (Splines) option draws the connections as smooth curves: a connection leaves and enters a shape perpendicular to its side (e.g., the outputs of a decision sideways). The router is stored in the flow.
 </li>
 
 </ol>
